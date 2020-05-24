@@ -1,0 +1,17 @@
+---
+ospf:
+  - process_id: 1
+    router_id: 1.1.1.1
+    networks:
+      - network: 192.168.1.0
+        wildmask: 0.0.0.255
+        area: 0
+      - network: 192.168.2.0
+        area: 0
+        wildmask: 0.0.0.255
+      - network: 192.168.3.0
+        area: 1
+        wildmask: 0.0.0.255
+      - network: 192.168.4.0
+        area: 2
+        wildmask: 0.0.0.255
