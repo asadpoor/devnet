@@ -1,0 +1,23 @@
+---
+- name: Get junos facts and configuration
+  hosts: junos
+  vars_files:
+    - ../ansible_cred.yaml
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+#      username: "{{user}}"
+      password: "{{password}}"
+  tasks:
+    - name: "Get committed configuration xml format"
+      juniper_junos_config:
+        retrieve: "committed"
+        format: "xml"
+        filter: "system/services/ssh"
+        dest: "{{ inventory_hostname }}-system-service-ssh"
+        provider: "{{ cli }}"
+

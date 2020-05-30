@@ -1,0 +1,31 @@
+---
+#!
+# load: "merge", Merge the loaded configuration with the existing configuration.
+#!
+# load: "override", Replace the entire configuration with the loaded configuration.
+#!
+# load "replace", Merge the loaded configuration with the existing configuration, butreplace statements in the existing configuration with those that specify the replace: tag in the loaded configuration. If there is no statement in the existing configuration, the statement in the loaded configuration is added.
+#!
+# load: "set", Load configuration data that is in set format. The configuration data is loaded line by line and can contain configuration mode commands such as set, delete, and deactivate.
+#!
+# load: "update", Compare the complete loaded configuration against the existing configuration. Each configuration element that is different in the loaded configuration replaces its corresponding element in the existing configuration. During the commit operation, only system processes that are affected by changed configuration elements parse the new configuration.
+
+- name: Load configuration from a local file and commit
+#  hosts: kheili morageb bash
+  hosts: vSRX1
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+
+  tasks:
+   - name: Load configuration from a local file and commit
+     juniper_junos_config:
+       load: "merge"
+       src: "./root-login.xml"
+#       src: "~//{{ inventory_hostname }}.xml"
+     register: response
+   - name: "Print result"
+     debug:
+       var: response

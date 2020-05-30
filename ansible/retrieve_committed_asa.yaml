@@ -1,0 +1,52 @@
+---
+- name: testing asa playbook
+  hosts: asa1
+  vars_files:
+    - ../ansible_cred.yaml
+  gather_facts: false
+  connection: local
+
+  vars:
+#    hello: [Asia, Americas, Artic, Antartic ,Oceania,Europe,Africa]
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: "{{user}}"
+      password: "{{password}}"
+      authorize: yes
+      auth_pass: "{{password}}"
+#  tasks:
+#    - name: Ansible array variables example
+#      debug: 
+#        msg: "{{ item }}"
+#      with_items:
+#        - "{{ hello }}"
+
+  tasks:
+    - name: show runn
+      asa_config:
+        lines: 
+#          - show asp drop
+          - show memory
+#          - show running-config
+        provider: "{{ cli }}"
+        backup: yes
+#        backup_options:
+#          filename: backup.cfg
+#          dir_path: ../ansible
+#      register: run
+#      become: yes
+#      tags:
+#        - show_runn
+#    - debug:
+#        msg: "{{run.stdout[0]}}"
+#      tags:
+#        - show_memory
+
+#    - name: asa_config
+#      asa_config:
+#        lines:
+#          - no network-object host 50.50.50.50
+#          - no network-object host 50.50.50.51
+#          - no network-object host 50.50.50.52
+#        parents: ['object-group network OG1']
+#        provider: "{{ cli }}"

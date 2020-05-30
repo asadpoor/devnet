@@ -1,0 +1,24 @@
+---
+- name: Get IOS configuration
+  hosts: ios
+  gather_facts: no
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: "{{user}}"
+      #password: "{{password}}"
+      authorize: yes
+      #auth_pass: "{{password}}"
+
+  tasks:
+    - name: Gather all legacy facts
+      ios_facts:
+        gather_subset: all
+        provider: "{{ cli }}"
+      register: fact
+    - debug:
+        msg: "{{ fact }}"
+    - copy:
+         content: "{{ fact }}"
+         dest: "~/IaC/{{ inventory_hostname }}.fact" 

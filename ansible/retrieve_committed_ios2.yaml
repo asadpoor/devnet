@@ -1,0 +1,37 @@
+---
+- name: Get IOS configuration
+  hosts: ios 
+  gather_facts: no
+  connection: local
+
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: "{{user}}"
+      #password: "{{password}}"
+      authorize: yes
+      #auth_pass: "{{password}}"
+
+  tasks:
+    - name: backup config
+      ios_config:
+        backup: yes
+        provider: "{{ cli }}"
+      register: config_output
+
+
+
+    - name: remove non config lines
+      lineinfile: 
+       path: "./backup/{{inventory_hostname}}.config"
+       line: "Building configuration..."
+       state: absent 
+
+
+    - name: REMOVE NON CONFIG LINES - REGEXP
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        regexp: 'Current configuration.*'
+        state: absent
+
+

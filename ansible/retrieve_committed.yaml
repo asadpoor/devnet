@@ -1,0 +1,81 @@
+---
+- name: Get junos facts and configuration
+  hosts: junos
+  vars_files:
+    - ../ansible_cred.yaml
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+#      username: "{{user}}"
+      password: "{{password}}"
+  tasks:
+    - name: "Get committed configuration xml format"
+      juniper_junos_config:
+        retrieve: "committed"
+        format: "xml"
+        dest_dir: "./IaC/"
+        provider: "{{ cli }}"
+
+    - name: "Get committed configuration set format"
+      juniper_junos_config:
+        retrieve: "committed"
+        format: "set"
+        dest_dir: "./IaC/"
+        provider: "{{ cli }}"
+
+    - name: "Get device facts and inventory"
+      juniper_junos_facts:
+        #savedir: "{{ playbook_dir }}"
+        savedir: "./IaC/"
+        config_format: "xml"
+        provider: "{{ cli }}"
+
+- name: Get IOS configuration
+  hosts: ios
+  vars_files:
+    - ../ansible_cred.yaml
+  gather_facts: no
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: "{{user}}"
+      password: "{{password}}"
+      authorize: yes
+      auth_pass: "{{password}}"
+
+  tasks:
+    - name: ios backup config
+      ios_config:
+        backup: yes
+        provider: "{{ cli }}"
+      register: config_output
+
+    - name: remove non config lines
+      lineinfile: 
+       path: "./backup/{{inventory_hostname}}.config"
+       line: "Building configuration..."
+       state: absent 
+
+
+    - name: REMOVE NON CONFIG LINES - REGEXP
+      lineinfile:
+        path: "./backup/{{inventory_hostname}}.config"
+        regexp: 'Current configuration.*'
+        state: absent
+
+
+    - name: Gather all legacy facts
+      ios_facts:
+        gather_subset: all
+        provider: "{{ cli }}"
+      register: fact
+#    - debug:
+#        msg: "{{ fact }}"
+    - copy:
+         content: "{{ fact }}"
+         dest: "./IaC/{{ inventory_hostname }}.fact" 

@@ -1,0 +1,20 @@
+---
+- name: Get committed configuration
+  hosts: hosts
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+
+  tasks:
+    - name: "Get committed configuration set format"
+      juniper_junos_config:
+        retrieve: "committed"
+        format: "set"
+        dest_dir: "~/IaaC/"
+#        dest_dir: "{{ playbook_dir }}"
+#      register: response
+#    - name: "Print result"
+#      debug:
+#        var: response
