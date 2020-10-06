@@ -1,0 +1,27 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  tags:
+    - all
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: eigrp config
+      ios_config:
+        src: "eigrp_template.j2"
+        provider: "{{ cli }}"
+        match: none
+      tags:
+        - eigrp
+
+    - name: hostname config
+      ios_config:
+        lines: hostname {{ inventory_hostname }}
+        provider: "{{ cli }}"
+      tags:
+        - hostname

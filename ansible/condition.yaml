@@ -1,0 +1,38 @@
+---
+- name: backup configuration
+  hosts: router
+  gather_facts: true
+  connection: local
+
+  vars:
+    backup_root: ./backups
+
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+      #transport: cli
+      authorize: yes
+
+  tasks:
+    - name: gather ios facts
+      ios_facts:
+        authorize: yes
+        gather_subset: "min"
+        provider: "{{ cli }}"
+      register: ios_fact
+    
+    - name: print facts
+      debug:
+        msg: "{{ansible_net_system}}/{{ansible_net_iostype}}"
+#        msg: "{{ios_fact}}"
+
+    - name: eigrp config
+      ios_config:
+        src: "eigrp_template.j2"
+        provider: "{{ cli }}"
+        match: none
+      when:
+        - ansible_net_system == 'ios'
+        - ansible_net_iostype == "IOS-XE"
+

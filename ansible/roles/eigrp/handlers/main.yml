@@ -1,0 +1,7 @@
+---
+# handlers file for eigrp
+    - name: "changes.."
+      listen: config_changed
+      debug:
+        msg: "{{ response }}"
+

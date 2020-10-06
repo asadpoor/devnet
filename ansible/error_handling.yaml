@@ -1,0 +1,30 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: eigrp config
+      ios_config:
+        src: "eigrp_template.j2"
+        provider: "{{ cli }}"
+        match: none
+      register: response
+      ignore_errors: true
+
+    - name: print response
+#      debug:
+      fail:
+#        msg: "{{ response }}"
+        msg: "..... your configuration is not valid. please check it"
+      when: response is failed
+
+    - name: hostname config
+      ios_config:
+        lines: hostname {{ inventory_hostname }}
+        provider: "{{ cli }}"

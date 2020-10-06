@@ -1,0 +1,15 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: backup config
+      ios_config:
+        backup: yes
+        provider: "{{ cli }}"

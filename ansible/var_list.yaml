@@ -1,0 +1,21 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+#    var_list: [babolsar, ghaemshahr, kelardasht, tehran]
+    var_list:
+      - babolsar
+      - ghaemshahr
+      - kelardasht
+      - tehran
+
+  tasks:
+    - name: configure dhcp server with loop fucntion
+      debug:
+#        msg: "{{ var_list[0] }}"
+        msg: "{{ item }}"
+      loop:
+        - "{{ var_list }}"
+
+      

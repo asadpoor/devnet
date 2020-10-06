@@ -1,0 +1,13 @@
+---
+# vars file for eigrp
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+      #as: 1
+      #router_id: 1.1.1.1
+      #networks:
+      #  - 192.168.1.0 0.0.0.255
+      #  - 192.168.2.0 0.0.0.255
+

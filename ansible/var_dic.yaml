@@ -1,0 +1,20 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+#    var_dic: {name: 'majid', family: 'asadpoor', company: 'rayka'}
+    var_dic:
+      name: 'majid'
+      family: 'asadpoor'
+      company: 'rayka'
+
+  tasks:
+    - name: configure dhcp server with loop fucntion
+      debug:
+#        msg: "{{ var_dic }}"
+#        msg: "{{var_dic.name}}"
+#        msg: "{{var_dic['name']}}"
+        msg: "key is {{item.key}} and value is {{item.value}}"
+      loop: "{{ var_dic|dict2items}}"
+      

@@ -1,0 +1,11 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  roles:
+    - eigrp
+  tasks:
+    - name: debug task 
+      debug:
+        msg: "{{ dummyvar }}"
+

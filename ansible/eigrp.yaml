@@ -1,0 +1,40 @@
+---
+- hosts: router1
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: eigrp config
+      ios_config:
+        lines:
+          - router-id 1.1.1.1
+          - network 192.168.1.0 0.0.0.255
+          - network 192.168.2.0 0.0.0.255
+        parents: "router eigrp 1"
+        provider: "{{ cli }}"
+
+
+- hosts: router2
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: eigrp config
+      ios_config:
+        lines:
+          - "router-id {{router_id}}"
+          - "network {{ item }}"
+        parents: "router eigrp {{ as }}"
+        provider: "{{ cli }}"
+      with_items:
+        - "{{ networks }}"

@@ -1,0 +1,43 @@
+---
+- name: backup configuration
+  hosts: router
+  gather_facts: true
+  connection: local
+
+  vars:
+    backup_root: ./backups
+
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+      #transport: cli
+      authorize: yes
+
+  tasks:
+    - name: run show running-config on remote devices
+      ios_command:
+        authorize: yes
+        commands: show running
+        provider: "{{ cli }}"
+      register: config
+
+    - name: ensure backup folder is created
+      file:
+        path: "{{ backup_root }}"
+        state: directory
+      run_once: yes
+
+    - name: ensure device rolder is created
+      file:
+        path: "{{ backup_root }}/{{ inventory_hostname }}"
+        state: directory
+
+    - name: get timestamp
+      command: date +%Y%m%d
+      register: timestamp
+
+    - name: get/copy backup
+      copy:
+        content: "{{ config.stdout[0] }}"
+        dest: "{{ backup_root }}/{{ inventory_hostname }}/running-config_{{ timestamp.stdout }}"

@@ -1,0 +1,12 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+    var_int: 7
+
+  tasks:
+    - name: configure dhcp server with loop fucntion
+      debug:
+        msg: "{{ var_int * 1.5 }}"
+      

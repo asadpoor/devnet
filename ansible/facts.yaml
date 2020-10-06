@@ -1,0 +1,34 @@
+---
+- name: backup configuration
+  hosts: router
+  gather_facts: true
+  connection: local
+
+  vars:
+    backup_root: ./backups
+
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+      #transport: cli
+      authorize: yes
+
+  tasks:
+    - name: get facts
+      debug:
+        msg: "{{ansible_facts.ens160.ipv4.address}}"
+
+        
+    - name: gather ios facts
+      ios_facts:
+        authorize: yes
+        gather_subset: "config"
+        #gather_network_resources: l3_interfaces
+        provider: "{{ cli }}"
+      register: ios_fact
+    
+    - name: print facts
+      debug:
+        msg: "{{ios_fact}}"
+

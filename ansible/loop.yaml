@@ -1,0 +1,22 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: configure dhcp server with loop fucntion
+      ios_config:
+        lines:
+          - ip helper-address 172.26.1.10
+          - ip helper-address 172.26.3.8
+        parents: "{{ item }}"
+      loop:
+        - interface GigabitEthernet1
+        - interface GigabitEthernet2
+        - interface GigabitEthernet3
+      

@@ -1,0 +1,24 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: eigrp config
+      ios_config:
+        src: "eigrp_template.j2"
+        provider: "{{ cli }}"
+        match: none
+      notify: config_changed
+      register: response
+
+  handlers:
+    - name: "changes.."
+      listen: config_changed
+      debug:
+        msg: "{{ response }}"

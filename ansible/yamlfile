@@ -1,0 +1,109 @@
+---
+fruits:
+ - apple
+ - orange
+ - lemon
+ - strawberry
+
+employee:
+ name: majid
+ family: asadpoor
+ job: network
+
+
+employees:
+ - majid asadpoor:
+    age: 32
+    married: yes
+    skills:
+     - skill1:
+        experience: yes
+        theory: yes
+     - skill2 
+ - ali rezaee:
+
+
+name:
+ user: "{{username}}"
+ pass: "{{password}}"
+
+# add comment here
+###########################################################################
+###########################################################################
+###########################################################################
+---
+- name: play1
+  hosts: routers
+  vars:
+    var1: value1
+
+  tasks:
+    - name: task1
+        module1:
+          command1: value1
+          command2: "{{var1}}"
+    - name: task2
+          command3: value3
+          command4: value4
+   
+- name: play2
+  hosts: switches
+  vars:
+    var2: value2
+
+  tasks:
+    - name: task3
+        module3:
+          command5: value5
+          command6: value6
+    - name: task4
+          command7: value7
+          command8: value8
+
+
+###########################################################################
+###########################################################################
+###########################################################################
+---
+- name: backup configuration
+  hosts: router
+  gather_facts: true
+  connection: local
+
+  vars:
+    backup_root: ./backups
+
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+      #transport: cli
+      authorize: yes
+
+  tasks:
+    - name: run show running-config on remote devices
+      ios_command:
+        authorize: yes
+        commands: show running
+        provider: "{{ cli }}"
+      register: config
+
+    - name: ensure backup folder is created
+      file:
+        path: "{{ backup_root }}"
+        state: directory
+      run_once: yes
+
+    - name: ensure device rolder is created
+      file:
+        path: "{{ backup_root }}/{{ inventory_hostname }}"
+        state: directory
+
+    - name: get timestamp
+      command: date +%Y%m%d
+      register: timestamp
+
+    - name: get/copy backup
+      copy:
+        content: "{{ config.stdout[0] }}"
+        dest: "{{ backup_root }}/{{ inventory_hostname }}/running-config_{{ timestamp.stdout }}"

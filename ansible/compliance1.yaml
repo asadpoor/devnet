@@ -1,0 +1,29 @@
+---
+- hosts: router
+  gather_facts: false
+  connection: local
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+  tasks:
+    - name: compare running configuration against master (a reference file)
+      ios_config:
+        diff_against: intended
+        intended_config: "{{ lookup('file', 'master.cfg') }}"
+        provider: "{{ cli }}"
+        match: line
+#        diff_ignore_lines:
+#          - ntp clock .*
+#          - secret 5 *
+#          - hostname *
+#          - date *
+      diff: true
+      register: diff_results
+      changed_when: false
+
+    - name: print response
+      debug:
+        msg: "{{ diff_results }}"
+

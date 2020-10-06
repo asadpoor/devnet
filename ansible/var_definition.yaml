@@ -1,0 +1,51 @@
+---
+- hosts: router1
+  gather_facts: false
+  connection: local
+#  include_vars: "{{ansible_hostname}}.yaml"
+  vars:
+#    play1: "play1_value"
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: backup config
+      ios_config:
+        backup: yes
+        provider: "{{ cli }}"
+#    - name: print a variable
+#      debug:
+#        msg: "{{router1_yaml_variable}}"
+
+- hosts: router2
+  gather_facts: false
+  connection: local
+#  vars_prompt:
+#  - name: "test"
+#    prompt: "please let me know what is the value of test variable:"
+#    private: no
+#    default: "this is value of test variable"
+
+#  vars_files:
+#    - ./credential.yaml
+
+  vars:
+    play1: "play1_value"
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.ir
+
+  tasks:
+    - name: backup config
+      ios_config:
+        backup: yes
+        provider: "{{ cli }}"
+    - name: print a variable
+      debug:
+#        msg: "{{play1}}"
+#        msg: "test"
+#        msg: "line_varble={{test}}"
+        msg: "all_variable={{all_variable}} and group_variable={{group_variable}} and router2_variable={{router2_variable}}"

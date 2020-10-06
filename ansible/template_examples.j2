@@ -1,0 +1,207 @@
+# source: https://ttl255.com/
+
+!!!!!!! Variable Substitution !!!!!!!
+hostname par-rtr-core-01
+
+no ip domain lookup
+ip domain name local.lab
+ip name-server 1.1.1.1
+ip name-server 8.8.8.8
+
+ntp server 0.pool.ntp.org prefer
+ntp server 1.pool.ntp.org
+!
+!
+!
+hostname {{ hostname }}
+
+no ip domain lookup
+ip domain name local.lab
+ip name-server {{ name_server_pri }}
+ip name-server {{ name_server_sec }}
+
+ntp server {{ ntp_server_pri }} prefer
+ntp server {{ ntp_server_sec }}
+
+
+!!!!!!! Dictionaries As Variables !!!!!!!
+{
+  "interface": {
+    "name": "GigabitEthernet1/1",
+    "ip_address": "10.0.0.1/31",
+    "description": "Uplink to core",
+    "speed": "1000",
+    "duplex": "full",
+    "mtu": "9124"
+  }
+}
+
+!
+!
+!
+
+interface {{ interface.name }}
+ description {{ interface.description }}
+ ip address {{ interface.ip_address }}
+ speed {{ interface.speed }}
+ duplex {{ interface.duplex }}
+ mtu {{ interface.mtu }}
+
+!!!!!!! Dictionaries As Variables: keys having special characters !!!!!!!
+
+prefixes:
+  10.0.0.0/24:
+    description: Corporate NAS
+    region: Europe
+    site: Telehouse-West
+
+!
+!
+!
+Details for 10.0.0.0/24 prefix:
+ Description: {{ prefixes['10.0.0.0/24'].description }}
+ Region: {{ prefixes['10.0.0.0/24'].region }}
+ Site: {{ prefixes['10.0.0.0/24'].site }}
+
+
+!!!!!!! Add comments !!!!!!!
+#    {# ... #}
+
+
+!!!!!!! Loops !!!!!!!
+
+prefixes:
+  - permit 10.96.0.0/24
+  - permit 10.97.11.0/24
+  - permit 10.99.15.0/24
+  - permit 10.100.5.0/25
+  - permit 10.100.6.128/25
+!
+!
+!
+ip prefix-list PL_AS_65003_IN
+{% for line in prefixes %}
+ {{ line }}
+{% endfor %}
+
+
+
+!!!!!!! Looping Over Dictionaries !!!!!!!
+
+interfaces:
+  Ethernet1:
+    description: leaf01-eth51
+    ipv4_address: 10.50.0.0/31
+  Ethernet2:
+    description: leaf02-eth51
+    ipv4_address: 10.50.0.2/31
+!
+!
+!
+{% for intf in interfaces %}
+interface {{ intf }}
+ description {{ interfaces[intf].description }}
+ ip address {{ interfaces[intf].ipv4_address }}
+{% endfor %}
+
+There is another way of iterating over dictionary. We can retrieve key and its value at the same time by using items() method.
+
+{% for iname, idata in interfaces.items() -%}
+interface {{ iname }}
+ description {{ idata.description }}
+ ip address {{ idata.ipv4_address }}
+{% endfor %}
+
+
+!!!!!!! Looping Over Dictionaries (another Example) !!!!!!!
+prefix_lists:
+  PL_AS_65003_IN:
+    - permit 10.96.0.0/24
+    - permit 10.97.11.0/24
+    - permit 10.99.15.0/24
+    - permit 10.100.5.0/25
+    - permit 10.100.6.128/25
+
+!
+!
+!
+# Configuring Prefix List
+{% for pl_name, pl_lines in prefix_lists.items() -%}
+ip prefix-list {{ pl_name }}
+{% for line in pl_lines %}
+ {{ line }}
+{%  endfor %}
+{% endfor %}
+
+
+!!!!!!! Condition and Comparisons !!!!!!!
+
+hostname: router-w-bgp
+routing_protocol: bgp
+
+interfaces:
+  Loopback0: 
+    ip: 10.0.0.1
+    mask: 32
+
+bgp:
+  as: 65001
+!
+hostname: router-w-ospf
+routing_protocol: ospf
+
+interfaces:
+  Loopback0:
+    ip: 10.0.0.2
+    mask: 32
+
+ospf:
+  pid: 1
+!
+hostname: router-w-defgw
+
+interfaces:
+  Ethernet1:
+    ip: 10.10.0.10
+    mask: 24
+
+default_nh: 10.10.0.1
+!
+!
+!
+
+hostname {{ hostname }}
+ip routing
+
+{% for intf, idata in interfaces.items() %}
+interface {{ intf }}
+  ip address {{ idata.ip }}/{{ idata.mask }}
+{% endfor %}
+
+{% if routing_protocol == 'bgp' %}
+router bgp {{ bgp.as }}
+  router-id {{ interfaces.Loopback0.ip }}
+  network {{ interfaces.Loopback0.ip }}/{{ interfaces.Loopback0.mask }}
+{% elif routing_protocol == 'ospf' %}
+router ospf {{ ospf.pid }}
+  router-id {{ interfaces.Loopback0.ip }}
+  network {{ interfaces.Loopback0.ip }}/{{ interfaces.Loopback0.mask }} area 0
+{% else %}
+  ip route 0.0.0.0/0 {{ default_nh }}
+{% endif %}
+
+
+!!!!!!! Condition and In Operator !!!!!!!
+can be used to check if value on the left is contained in the value on the right one
+
+
+{% if 'Loopback0' in interfaces %}
+sflow source-interface Loopback0
+snmp-server source-interface Loopback0
+ip radius source-interface Loopback0
+{% else %}
+sflow source-interface Management1
+snmp-server source-interface Management1
+ip radius source-interface Management1
+{% endif %}
+

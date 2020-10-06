@@ -1,0 +1,11 @@
+---
+# tasks file for eigrp
+    - name: eigrp config
+      ios_config:
+        src: "eigrp_template.j2"
+        provider: "{{ cli }}"
+        match: none
+      notify: config_changed
+      register: response
+
+
