@@ -1,0 +1,59 @@
+#!/usr/bin/expect -f
+ 
+# Variables
+ set hostname [lindex $argv 0]
+ set username [lindex $argv 1]
+ set password [lindex $argv 2]
+ set enablepwd [lindex $argv 3]
+
+# Log config
+ log_file -a ~/config.log
+ 
+# Output current device and time
+ send_user "\n"
+ send_user "/***  Working $hostname @ [exec date] ***/\n"
+ send_user "\n"
+ 
+# Disable key check if needed
+ spawn ssh -o StrictHostKeyChecking=no $username\@$hostname
+ 
+# Enable SSH timeout notification
+ expect {
+ timeout { send_user "\nTimeout Exceeded > Check Device\n"; exit 1 }
+ eof { send_user "\nSSH Connection To $hostname Failed\n"; exit 1 }
+ "*#" {}
+ "*assword:" {
+ send "$password\n"
+ }
+ }
+ 
+# Enter enable mode if not there
+ expect {
+ default { send_user "\nEnable Mode Failed > Check Password\n"; exit 1 }
+ "*#" {}
+ "*>" {
+ send "enable\n"
+ expect "*assword"
+ send "$enablepwd\n"
+ expect "*#"
+ }
+ }
+ 
+# Enter config mode
+ send "conf t\n"
+ expect "(config)#"
+ 
+# Enter commands
+ send "ntp server 1.1.1.1\n"
+ expect "(config)#"
+# send "ntp source 2.2.2.2\n"
+# expect "(config)#"
+ 
+#Wrap it up
+ send "end\n"
+ expect "#"
+ send "write mem\n"
+ expect "#"
+ send "exit\n"
+ expect ":~\$"
+ exit
