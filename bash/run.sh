@@ -14,6 +14,7 @@ cp $logfile $newlogfile
 # Get SSH and enable passwords
  echo -n "Enter your SSH username "
  read -s -e username
+ echo -ne '\n'
  echo -n "Enter your SSH password "
  read -s -e password
  echo -ne '\n'
