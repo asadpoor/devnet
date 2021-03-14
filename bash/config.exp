@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
- 
+# http://networkbit.ch/expect-ssh-script-cisco/ 
 # Variables
  set hostname [lindex $argv 0]
  set username [lindex $argv 1]
