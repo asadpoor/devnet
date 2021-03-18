@@ -1,0 +1,14 @@
+/usr/local/rancid/bin/clogin  -c "show ver" 192.168.1.95 | grep Version
+
+/usr/local/rancid/bin/clogin  -c "conf t; int g2; shut" 192.168.1.95
+
+
+/usr/local/rancid/bin/clogin  -c "conf t; int g2; shut" 192.168.1.95 &> /dev/null
+
+/usr/local/rancid/bin/clogin  -x commands.txt 192.168.1.95
+
+
+/usr/local/rancid/bin/clogin  -x commands.txt `cat devices.txt`
+
+
+/usr/local/rancid/bin/clogin  -x commands.txt `cat devices.txt` 2>&1> output.txt

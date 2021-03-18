@@ -1,0 +1,4 @@
+conf t
+int gi2
+shut
+
