@@ -1,0 +1,14 @@
+#! /bin/bash
+# awk 'BEGIN{FS="="} {print $2}' ./processes | sed 's/^.//g' | sed 's/.$//g'
+# awk 'BEGIN{FS="\t"} {print $1}' tasks | sed '1,3d'
+
+`awk '{print $1}' tasks | sed '1,3d' | sed '/^$/d' > newtasks`
+`awk 'BEGIN{FS="="} {print $2}' ./processes | sed 's/^.//g' | sed 's/.$//g' | sed '/^$/d' > newprocesses`
+
+while read process; do
+  while read task; do
+    echo $task | grep $process 2>/dev/null
+    #echo "task ............ $task"
+    #echo "process ............$process"
+  done < newtasks
+done < newprocesses
