@@ -1,0 +1,12 @@
+#! /bin/bash
+
+var1=(var1_1 var1_2 var1_3)
+var2=(var2_1 var2_2 var2_3)
+var3=(var3_1 var3_2 var3_3)
+varn=(varn_1 varn_2 varn_3)
+
+for i in {0..2}
+do
+	cat input20 | sed -e "s/var1/${var1[$i]}/g ; s/var2/${var2[$i]}/g ; s/var3/${var3[$i]}/g" > input20_$i
+done
+

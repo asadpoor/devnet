@@ -1,0 +1,5 @@
+hostname HOSTNAME
+!
+interface mgmt0
+ ip address IP
+!

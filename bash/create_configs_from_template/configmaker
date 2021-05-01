@@ -1,0 +1,9 @@
+#! /bin/bash
+
+HOSTNAME=(hostname1 hostname2 hostname3)
+IP=(192.168.1.10 192.168.2.10 192.168.3.10)
+
+for i in {0..2}
+do
+sed -e "s/HOSTNAME/${HOSTNAME[$i]}/g ; s/IP/${IP[$i]}/g" template > configvpn_$i
+done
