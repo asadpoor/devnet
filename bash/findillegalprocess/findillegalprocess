@@ -1,9 +1,7 @@
 #! /bin/bash
-# awk 'BEGIN{FS="="} {print $2}' ./processes | sed 's/^.//g' | sed 's/.$//g'
-# awk 'BEGIN{FS="\t"} {print $1}' tasks | sed '1,3d'
 
 `awk '{print $1}' tasks | sed '1,3d' | sed '/^$/d' > ./tmp/newtasks`
-`awk 'BEGIN{FS="="} {print $2}' processes | sed 's/^.//g' | sed 's/.$//g' | sed '/^$/d' > ./tmp/newprocesses`
+`awk 'BEGIN{FS="="} {print $2}' illegalprocesses | sed 's/^.//g' | sed 's/.$//g' | sed '/^$/d' > ./tmp/newillegalprocesses`
 
 while read process; do
   while read task; do
@@ -11,4 +9,4 @@ while read process; do
     #echo "task ............ $task"
     #echo "process ............$process"
   done < ./tmp/newtasks
-done < ./tmp/newprocesses
+done < ./tmp/newillegalprocesses
