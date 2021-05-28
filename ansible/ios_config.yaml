@@ -1,0 +1,13 @@
+---
+- hosts: csr
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name:  test ios config module
+      ios_config:
+        lines:
+          - description test
+          - shutdown
+          - ip address 172.31.1.1 255.255.255.0
+        parents: interface GigabitEthernet2

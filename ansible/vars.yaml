@@ -1,0 +1,49 @@
+---
+- hosts: csr1
+  gather_facts: false
+  connection: network_cli
+  vars_files:
+    - "./vars/credential.yml"
+    - "./vars/blacklist.yml"
+  vars:
+    var_int: 4
+    var_str: "a string text"
+    var_list1: [1, 3, 5, 7, 9, 11]
+    var_list2:
+      - city1
+      - city3
+      - city5
+      - city7
+      - city9
+    var_dic1:
+      name: Majid
+      family: Asadpoor
+      age: 43
+
+  tasks:
+    - name: include vars
+      include_vars: var1.yml
+
+    - name: print vars
+      debug:
+        msg:
+          - "var_int * 2: {{var_int*2}}"
+          - "var_str: {{var_str}}"
+          - "var_list1: {{var_list1}}"
+          - "var_list2: {{ item }}"
+          - "var_list2[1]: {{var_list2[1]}}"
+          - "var_dic1: {{var_dic1}}"
+          - "var_dic1.name: {{var_dic1.name}}"
+
+          - "I like {{pizza_name}} pizza in {{pizza_shop_name}}"
+
+          - "username:{{username}} , password: {{password}}"
+          - "list of IP Addresses in black list: {{blacklist_ip}}"
+
+          - "domain: {{domain}}"
+
+          - "hostname: {{hostname}}"
+
+      loop:
+        - "{{var_list2}}"
+

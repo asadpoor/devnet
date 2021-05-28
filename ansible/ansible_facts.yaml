@@ -1,0 +1,30 @@
+---
+- hosts: csr
+  gather_facts: true
+  connection: local
+
+  tasks:
+    - name: print ansible facts
+      debug:
+        msg: 
+#          - "{{ ansible_facts }}"
+          - "{{ ansible_facts.net_iostype }}"
+          - "{{ ansible_facts.net_hostname }}"
+          - "{{ ansible_facts.net_all_ipv4_addresses }}"
+          - "{{ ansible_facts.net_interfaces.GigabitEthernet1.ipv4 }}"
+
+    - name:  config eigrp on csr1
+      ios_config:
+        lines:
+          - router-id 1.1.1.1
+          - network 0.0.0.0
+        parents: router eigrp 1
+      when: (ansible_facts.net_iostype == "IOS-XE" and ansible_facts.net_hostname == "csr1")
+
+    - name:  config eigrp on csr2
+      ios_config:
+        lines:
+          - router-id 2.2.2.2
+          - network 0.0.0.0
+        parents: router eigrp 1
+      when: (ansible_facts.net_iostype == "IOS-XE" and ansible_facts.net_hostname == "csr2")

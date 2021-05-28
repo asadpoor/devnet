@@ -1,0 +1,20 @@
+---
+- hosts: csr
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: test ignore_errors flag
+      ios_config:
+        lines:
+          - descriptiok test
+          - shutdown
+          - ip address 172.31.1.1 255.255.255.0
+        parents: interface GigabitEthernet2
+      ignore_errors: yes
+      register: result
+
+    - name: print the result of previous task
+      debug:
+        msg: previous task run not successfuly
+      when: result is failed

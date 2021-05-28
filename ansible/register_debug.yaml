@@ -1,0 +1,19 @@
+---
+- hosts: csr
+  gather_facts: false
+  connection: network_cli
+  vars:
+    cli:
+      host: "{{ inventory_hostname }}"
+      username: rayka
+      password: rayka-co.com
+
+  tasks:
+    - name: backup config
+      ios_config:
+        backup: yes
+        provider: "{{ cli }}"
+      register: result
+    - name: print result
+      debug:
+        msg: "{{ result }}"
