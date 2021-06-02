@@ -1,0 +1,40 @@
+---
+hostname: csr1
+router_id: 1.1.1.1
+
+# list
+networks:
+  - 192.168.5.0
+  - 192.168.6.0
+  - 192.168.7.0
+
+# dictionary
+interface:
+  name: GigabitEthernet3
+  ip_address: "10.0.0.1 255.255.254.0"
+  description: "Uplink to core"
+  speed: 1000
+  mtu: 9124
+
+# dictionary. list of dictionary 
+interfaces:
+  GigabitEthernet2:
+    description: server1
+    ipv4_address: "10.50.0.1 255.255.255.0"
+  GigabitEthernet3:
+    description: server2
+    ipv4_address: "10.50.1.1 255.255.255.0"
+  loopback0:
+    ipv4_address: "10.11.11.1 255.255.255.255"
+    description: "just a test"
+    
+
+# dictionary for conditional test
+routing_protocol: bgp
+interfaces_lp:
+  Loopback0: 
+    ip: 10.11.12.1
+    mask: 255.255.255.255
+bgp:
+  as: 65001
+

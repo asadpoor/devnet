@@ -1,0 +1,10 @@
+---
+- hosts: csr
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: eigrp config
+      ios_config:
+        src: "eigrp_template.j2"
+        match: none

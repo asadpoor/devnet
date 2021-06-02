@@ -1,0 +1,52 @@
+# main reference: https://ttl255.com/
+
+# variable substitution
+# loop over list 
+no router eigrp {{ as }}
+router eigrp {{ as }}
+ router-id {{ router_id }}
+ {% for network in networks %}
+  network {{ network }}
+ {% endfor %}
+
+# dictionary as a variable; variable substitution
+interface {{ interface.name }}
+ description {{ interface.description }}
+ ip address {{ interface.ip_address }}
+ speed {{ interface.speed }}
+ mtu {{ interface.mtu }}
+
+# loop over dictionary method 1
+{% for intf in interfaces -%}
+ interface {{ intf }}
+  description {{ interfaces[intf].description }}
+  ip address {{ interfaces[intf].ipv4_address }}
+{% endfor %}
+
+# loop over dictionary method 2
+{% for iname, idata in interfaces.items() -%}
+ interface {{ iname }}
+  description {{ idata.description }}
+  ip address {{ idata.ipv4_address }}
+{% endfor %}
+
+
+# conditional commands
+{% if routing_protocol == 'bgp' -%}
+router bgp {{ bgp.as }}
+  bgp router-id {{ interfaces_lp.Loopback0.ip }}
+  network {{ interfaces_lp.Loopback0.ip }} mask {{ interfaces_lp.Loopback0.mask }}
+{%- elif routing_protocol == 'ospf' -%}
+router ospf {{ ospf.pid }}
+  router-id {{ interfaces_lp.Loopback0.ip }}
+  network {{ interfaces_lp.Loopback0.ip }} {{ interfaces_lp.Loopback0.wildmask }} area 0
+{%- else -%}
+  ip route 0.0.0.0/0 {{ default_nh }}
+{%- endif %}
+
+# in operator
+{%- if 'Loopback0' in interfaces -%}
+ ip radius source-interface Loopback0
+{%- else %}
+ ip radius source-interface GigabitEthernet1
+{% endif %}
