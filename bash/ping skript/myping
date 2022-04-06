@@ -1,0 +1,40 @@
+#! /bin/bash 
+
+# ping ...
+#  if ping ok & status "down" -> give email & change status to "up"
+#  if ping ok & status "up" -> do nothing
+#  if ping nok & status "down" -> do nothing
+#  if ping nok & status "up" -> give email & change "status down"
+
+# create another file with the name of "IPs" and put your IP addresse, IP description of IP and current status (up or down), each line for one ip, as follows:
+#10.10.1.1:description:up
+
+LOSS=35
+
+while true; do 
+  while read IP; 
+    do
+      IP_ADD=`echo $IP | awk -F ":" '{print $1}'`
+      IP_DES=`echo $IP | awk -F ":" '{print $2}'`
+      IP_STATUS=`echo $IP | awk -F ":" '{print $3}'`
+      PINGRESULT=`ping -f -i 0.2 -c 20 $IP_ADD | grep "packet loss" | awk -F "," '{print $3}' | awk -F " " '{print $1}' | awk -F "%" '{print $1}'`
+
+      if ([[ $PINGRESULT -le $LOSS ]] && [[ $IP_STATUS = "up" ]])
+      then
+           :
+      elif ([[ $PINGRESULT -le $LOSS ]] && [[ $IP_STATUS = "down" ]])
+      then
+           sed -i "/$IP_ADD/s/down/up/g" ./IPs
+           echo "$IP_ADD : $IP_DES wieder UP" | mail -s "$IP_ADD : $IP_DES wieder UP" majid.asadpoor@gmail.com
+      elif ([[ $PINGRESULT -ge $LOSS ]] && [[ $IP_STATUS = "down" ]])
+      then
+           :
+      elif ([[ $PINGRESULT -ge $LOSS ]] && [[ $IP_STATUS = "up" ]])
+      then
+           sed -i "/$IP_ADD/s/up/down/g" ./IPs
+           echo "$IP_ADD : $IP_DES  with $PINGRESULT % LOSS is DOWN" | mail -s "$IP_ADD : $IP_DES  with $PINGRESULT % LOSS is DOWN" majid.asadpoor@gmail.com
+      fi
+    done < IPs
+
+   sleep 60
+done
