@@ -1,0 +1,4 @@
+show ip interface brief
+show interface gigabitEthernet 1
+show version
+ping 8.8.8.8

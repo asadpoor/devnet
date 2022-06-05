@@ -1,0 +1,236 @@
+2022-05-23 00:00:55,770 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-23 00:00:55,815 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No matching key exchange found for host, their offer: diffie-hellman-group14-sha1
+
+2022-05-23 00:03:07,230 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-23 00:03:07,273 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No matching key exchange found for host, their offer: diffie-hellman-group14-sha1
+
+2022-05-23 00:18:42,263 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-23 00:18:42,285 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/projects/venv/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No matching key exchange found for host, their offer: diffie-hellman-group14-sha1
+
+2022-05-23 00:34:26,302 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-24 15:54:20,123 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-24 17:00:06,061 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-25 23:23:33,769 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ntp config'} on 1 hosts
+2022-05-25 23:24:05,951 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc ios'} on 1 hosts
+2022-05-25 23:24:26,818 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2022-05-25 23:24:56,394 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-25 23:27:04,936 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-25 23:28:23,386 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-25 23:39:05,678 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-25 23:39:51,391 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-26 00:31:51,289 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-26 00:32:31,867 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-26 00:32:43,551 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-27 13:40:34,211 -  nornir.core -     INFO -        run() - Running task 'random_config' with args {} on 1 hosts
+2022-05-27 14:19:24,206 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'ntp server 1.1.1.1'} on 1 hosts
+2022-05-27 14:19:41,824 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'ntp server 1.1.1.1'} on 1 hosts
+2022-05-27 14:43:14,494 -  nornir.core -     INFO -        run() - Running task 'ntp_config' with args {} on 1 hosts
+2022-05-28 16:47:32,188 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-28 16:48:22,567 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-28 16:48:37,595 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2022-05-28 16:49:07,606 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc IOS|XE'} on 1 hosts
+2022-05-28 16:49:41,230 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 1 hosts
+2022-05-28 16:54:02,484 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip interface brief', 'show interface status']} on 1 hosts
+2022-05-28 16:54:25,340 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip interface brief', 'show interface gigaethernet1']} on 1 hosts
+2022-05-28 16:54:38,382 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip interface brief', 'show version']} on 1 hosts
+2022-05-28 16:55:30,928 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip interface brief', 'show interface gigabitEthernet 1']} on 1 hosts
+2022-05-28 16:58:25,217 -  nornir.core -     INFO -        run() - Running task 'send_commands_from_file' with args {'file': 'command_list'} on 1 hosts
+2022-05-28 18:28:24,072 -  nornir.core -     INFO -        run() - Running task 'send_commands_from_file' with args {'file': 'command_list'} on 1 hosts
+2022-05-28 23:08:38,656 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 1 hosts
+2022-05-28 23:25:50,908 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief'} on 1 hosts
+2022-05-28 23:26:17,705 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show ip interface brief | exc unassig'} on 1 hosts
+2022-05-28 23:26:32,564 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version'} on 1 hosts
+2022-05-28 23:26:46,299 -  nornir.core -     INFO -        run() - Running task 'send_command' with args {'command': 'show version | inc XE'} on 1 hosts
+2022-05-28 23:29:41,655 -  nornir.core -     INFO -        run() - Running task 'send_commands' with args {'commands': ['show ip interface brief', 'show interface gigabitEthernet 1']} on 1 hosts
+2022-05-28 23:30:34,010 -  nornir.core -     INFO -        run() - Running task 'send_commands_from_file' with args {'file': 'command_list'} on 1 hosts
+2022-05-30 21:29:41,251 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'ntp server 2.3.4.5'} on 1 hosts
+2022-05-30 22:06:44,483 -  nornir.core -     INFO -        run() - Running task 'ntp_config' with args {} on 2 hosts
+2022-05-30 22:07:38,092 -  nornir.core -     INFO -        run() - Running task 'ntp_config' with args {} on 2 hosts
+2022-05-30 22:07:38,094 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'ntp_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/2.1.send_commad_versus_send_config_access_data.py", line 7, in ntp_config
+    print(task.host[ntp_server])
+NameError: name 'ntp_server' is not defined
+
+2022-05-30 22:07:38,094 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'ntp_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/2.1.send_commad_versus_send_config_access_data.py", line 7, in ntp_config
+    print(task.host[ntp_server])
+NameError: name 'ntp_server' is not defined
+
+2022-05-30 22:08:03,392 -  nornir.core -     INFO -        run() - Running task 'ntp_config' with args {} on 2 hosts
+2022-05-30 22:09:09,198 -  nornir.core -     INFO -        run() - Running task 'access_data' with args {} on 2 hosts
+2022-05-30 22:45:18,248 -  nornir.core -     INFO -        run() - Running task 'access_data' with args {} on 2 hosts
+2022-05-30 23:20:59,310 -  nornir.core -     INFO -        run() - Running task 'access_data' with args {} on 3 hosts
+2022-05-30 23:21:21,412 -  nornir.core -     INFO -        run() - Running task 'access_data' with args {} on 3 hosts
+2022-05-30 23:23:00,959 -  nornir.core -     INFO -        run() - Running task 'access_data' with args {} on 3 hosts
+2022-06-02 21:23:18,664 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka'} on 1 hosts
+2022-06-02 21:24:09,797 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka'} on 1 hosts
+2022-06-02 21:24:50,229 -  nornir.core -     INFO -        run() - Running task 'ntp_config' with args {} on 1 hosts
+2022-06-02 21:25:03,785 -  nornir.core -     INFO -        run() - Running task 'ntp_config' with args {} on 1 hosts
+2022-06-02 21:25:43,804 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka'} on 1 hosts
+2022-06-02 21:36:36,552 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:36:36,554 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/3.2.nornir_scrapli_send_configs.py", line 8, in send_configs_test
+    task.run(task=send_config, configs=[f"snmp-server community {task.host['community']}", "ntp server 1.1.1.1"])
+NameError: name 'send_config' is not defined
+
+2022-06-02 21:38:01,078 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:38:01,079 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/3.2.nornir_scrapli_send_configs.py", line 8, in send_configs_test
+    task.run(task=send_config, configs=["ntp server 2.2.2.2", "ntp server 1.1.1.1"])
+NameError: name 'send_config' is not defined
+
+2022-06-02 21:39:12,363 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:43:50,225 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:47:08,012 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:49:59,197 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:49:59,198 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/projects/3.3.nornir_scrapli_send_configs_from_file.py", line 8, in send_configs_test
+    task.run(task=send_configs_from_file, file="config_list", dry_run=true)
+NameError: name 'true' is not defined
+
+2022-06-02 21:50:11,433 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:50:40,336 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 21:51:01,897 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:19:54,503 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka'} on 1 hosts
+2022-06-02 22:20:34,955 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka', 'dry_run': 'true'} on 1 hosts
+2022-06-02 22:20:55,130 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka', 'dry_run': 'false'} on 1 hosts
+2022-06-02 22:21:15,619 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka', 'dry_run': 'None'} on 1 hosts
+2022-06-02 22:21:27,544 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka', 'dry_run': 'False'} on 1 hosts
+2022-06-02 22:21:49,125 -  nornir.core -     INFO -        run() - Running task 'send_config' with args {'config': 'snmp-server community rayka'} on 1 hosts
+2022-06-02 22:22:06,363 -  nornir.core -     INFO -        run() - Running task 'snmp_config' with args {} on 1 hosts
+2022-06-02 22:22:52,025 -  nornir.core -     INFO -        run() - Running task 'snmp_config' with args {} on 1 hosts
+2022-06-02 22:24:09,346 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:24:24,135 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:24:59,754 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:26:20,530 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:26:42,489 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:26:52,142 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-02 22:27:03,657 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts

@@ -1,0 +1,11 @@
+---
+
+cisco:
+#  platform: ios
+  data:
+    community: rayka-co.ir
+
+juniper:
+  platform: junos
+  data:
+    community: rayka-co.ir

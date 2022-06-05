@@ -1,0 +1,27 @@
+---
+
+R1:
+  hostname: "192.168.2.91"
+#  username: "rayka"
+#  password: "rayka-co.ir"
+  groups:
+    - cisco
+  data:
+    community: rayka
+#R2:
+#  hostname: "192.168.2.92"
+#  username: "rayka"
+#  password: "rayka-co.ir"
+#  groups:
+#    - cisco
+#  data:
+#    community: rayka
+
+#R3:
+#  hostname: "192.168.2.93"
+#  username: "rayka"
+#  password: "rayka-co.ir"
+#  groups:
+#    - juniper
+#  data:
+#    community: rayka-co.com
