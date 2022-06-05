@@ -1,0 +1,10 @@
+from nornir import InitNornir
+from nornir_netmiko.tasks import netmiko_send_command
+from nornir_utils.plugins.functions import print_result
+
+nr = InitNornir(config_file="config.yaml")
+commands=["show ip int brief | exc unass", "show version | inc XE"]
+
+for command in commands:
+    results = nr.run(task=netmiko_send_command, command_string=command)
+    print_result(results)

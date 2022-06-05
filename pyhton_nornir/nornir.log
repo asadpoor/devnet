@@ -234,3 +234,245 @@ NameError: name 'true' is not defined
 2022-06-02 22:26:42,489 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
 2022-06-02 22:26:52,142 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
 2022-06-02 22:27:03,657 -  nornir.core -     INFO -        run() - Running task 'send_configs_test' with args {} on 1 hosts
+2022-06-05 13:11:31,600 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief | exc unass'} on 1 hosts
+2022-06-05 13:16:51,861 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief | exc unass'} on 1 hosts
+2022-06-05 13:16:52,579 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show version | inc XE'} on 1 hosts
+2022-06-05 17:59:04,037 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 17:59:04,040 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 15, in interactive_commands_exmple
+    ("rayka-co.com", prompt, True),
+NameError: name 'prompt' is not defined
+
+2022-06-05 18:03:31,002 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:04:01,943 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:04:32,546 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_interactive' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_interactive.py", line 80, in send_interactive
+    scrapli_response = scrapli_conn.send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/network/sync_driver.py", line 437, in send_interactive
+    response: Response = super().send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 413, in decorate
+    result = wrapped_func(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/generic/sync_driver.py", line 438, in send_interactive
+    raw_response, processed_response = self.channel.send_inputs_interact(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out sending interactive input to device
+
+2022-06-05 18:04:32,549 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 17, in interactive_commands_exmple
+    task.run(task=send_interactive, interact_events=interact_lists )
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
+
+
+2022-06-05 18:04:36,541 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:05:07,306 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_interactive' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_interactive.py", line 80, in send_interactive
+    scrapli_response = scrapli_conn.send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/network/sync_driver.py", line 437, in send_interactive
+    response: Response = super().send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 413, in decorate
+    result = wrapped_func(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/generic/sync_driver.py", line 438, in send_interactive
+    raw_response, processed_response = self.channel.send_inputs_interact(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out sending interactive input to device
+
+2022-06-05 18:05:07,307 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 17, in interactive_commands_exmple
+    task.run(task=send_interactive, interact_events=interact_lists )
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
+
+
+2022-06-05 18:08:33,685 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:09:04,277 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_interactive' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_interactive.py", line 80, in send_interactive
+    scrapli_response = scrapli_conn.send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/network/sync_driver.py", line 437, in send_interactive
+    response: Response = super().send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 413, in decorate
+    result = wrapped_func(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/generic/sync_driver.py", line 438, in send_interactive
+    raw_response, processed_response = self.channel.send_inputs_interact(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out sending interactive input to device
+
+2022-06-05 18:09:04,278 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 17, in interactive_commands_exmple
+    task.run(task=send_interactive, interact_events=interact_lists )
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
+
+
+2022-06-05 18:13:12,740 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:14:22,894 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:16:18,499 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:17:21,877 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 18:17:52,447 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_interactive' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_interactive.py", line 80, in send_interactive
+    scrapli_response = scrapli_conn.send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/network/sync_driver.py", line 437, in send_interactive
+    response: Response = super().send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 413, in decorate
+    result = wrapped_func(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/generic/sync_driver.py", line 438, in send_interactive
+    raw_response, processed_response = self.channel.send_inputs_interact(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out sending interactive input to device
+
+2022-06-05 18:17:52,448 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 19, in interactive_commands_exmple
+    task.run(task=send_interactive, interact_events=interact_lists )
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
+
+
+2022-06-05 21:11:40,991 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 21:12:11,575 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_interactive' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_interactive.py", line 80, in send_interactive
+    scrapli_response = scrapli_conn.send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/network/sync_driver.py", line 437, in send_interactive
+    response: Response = super().send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 413, in decorate
+    result = wrapped_func(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/generic/sync_driver.py", line 438, in send_interactive
+    raw_response, processed_response = self.channel.send_inputs_interact(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 340, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 316, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out sending interactive input to device
+
+2022-06-05 21:12:11,576 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 21, in interactive_commands_exmple
+    task.run(task=send_interactive, interact_events=interact_lists )
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
+
+
+2022-06-05 21:16:34,738 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 21:16:34,739 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 21, in interactive_commands_exmple
+    task.host.connections['scrapli'].connection.channel.timeout_ops = timeout
+NameError: name 'timeout' is not defined
+
+2022-06-05 21:16:56,672 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 21:16:56,673 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 21, in interactive_commands_exmple
+    task.host.connections['scrapli'].connection.channel.timeout_ops = timeout
+KeyError: 'scrapli'
+
+2022-06-05 21:20:32,522 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-05 21:21:03,132 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_interactive' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_interactive.py", line 80, in send_interactive
+    scrapli_response = scrapli_conn.send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/network/sync_driver.py", line 437, in send_interactive
+    response: Response = super().send_interactive(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 421, in decorate
+    result = wrapped_func(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/generic/sync_driver.py", line 438, in send_interactive
+    raw_response, processed_response = self.channel.send_inputs_interact(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 646, in send_inputs_interact
+    buf += self._read_until_explicit_prompt(prompts=prompts)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 177, in _read_until_explicit_prompt
+    read_buf.write(self.read())
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 176, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 152, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out reading from transport
+
+2022-06-05 21:21:03,133 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'interactive_commands_exmple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/4.nornir_scrapli_send_interactive.py", line 22, in interactive_commands_exmple
+    task.run(task=send_interactive, interact_events=interact_lists, timeout_ops=200 )
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
+
+
