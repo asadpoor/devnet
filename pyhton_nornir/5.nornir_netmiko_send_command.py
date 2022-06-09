@@ -4,5 +4,8 @@ from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
-results = nr.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+def netmiko_send_commands_example(task):
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+
+results=nr.run(task=netmiko_send_commands_example)
 print_result(results)

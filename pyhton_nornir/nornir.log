@@ -476,3 +476,130 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: send_interactive (failed)
 
 
+2022-06-06 10:46:57,180 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:47:09,886 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:47:46,015 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:48:05,232 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:48:26,678 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:48:39,886 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:48:48,349 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:49:00,692 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:49:12,875 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 10:49:48,125 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:00:54,629 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:01:41,374 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:03:17,419 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:41:32,634 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:41:48,515 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:47:26,637 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:48:10,736 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:48:56,980 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:49:46,519 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:50:46,923 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 11:59:37,109 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 21:47:53,792 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 21:48:03,375 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 22:14:41,929 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 22:30:53,215 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-06 22:32:49,657 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts
+2022-06-09 21:58:01,513 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'show ip int brief | exc unass'} on 1 hosts
+2022-06-09 21:58:55,739 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_exmple' with args {} on 1 hosts
+2022-06-09 22:00:14,721 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_exmple' with args {} on 1 hosts
+2022-06-09 22:12:55,347 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-09 22:13:04,297 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-09 22:14:25,534 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:15:19,951 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:16:03,960 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:18:46,766 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:20:13,560 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:20:14,398 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:23:14,359 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:23:15,216 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:23:41,806 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:23:42,612 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:23:54,544 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:23:55,382 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:24:07,952 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:24:08,778 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:24:17,350 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:24:18,170 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:24:27,558 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:24:28,376 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:26:26,484 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:26:27,104 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 40, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1808, in send_config_from_file
+    with io.open(config_file, "rt", encoding="utf-8") as cfg_file:
+TypeError: expected str, bytes or os.PathLike object, not list
+
+2022-06-09 22:26:27,104 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/5.3.nornir_netmiko_send_config_from_file.py", line 10, in netmiko_send_config_exmaple
+    task.run(task=netmiko_send_config, config_file=["config_list"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-06-09 22:26:27,105 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:27:47,944 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:28:45,205 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:29:12,234 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:29:12,855 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 40, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1808, in send_config_from_file
+    with io.open(config_file, "rt", encoding="utf-8") as cfg_file:
+TypeError: expected str, bytes or os.PathLike object, not list
+
+2022-06-09 22:29:12,856 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/5.3.nornir_netmiko_send_config_from_file.py", line 10, in netmiko_send_config_exmaple
+    task.run(task=netmiko_send_config, config_file=["config_list"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-06-09 22:29:12,857 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:32:45,166 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_from_file_exmaple' with args {} on 1 hosts
+2022-06-09 22:32:45,807 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 40, in netmiko_send_config
+    result = net_connect.send_config_from_file(config_file=config_file, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1808, in send_config_from_file
+    with io.open(config_file, "rt", encoding="utf-8") as cfg_file:
+TypeError: expected str, bytes or os.PathLike object, not list
+
+2022-06-09 22:32:45,808 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config_from_file_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/5.3.nornir_netmiko_send_config_from_file.py", line 9, in netmiko_send_config_from_file_exmaple
+    task.run(task=netmiko_send_config, config_file=["config_list"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-06-09 22:32:45,809 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 22:34:58,837 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_from_file_exmaple' with args {} on 1 hosts
+2022-06-09 22:34:59,651 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-09 23:15:39,668 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-09 23:16:20,888 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-09 23:17:21,439 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-09 23:19:16,317 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_from_file_exmaple' with args {} on 1 hosts
+2022-06-09 23:19:18,246 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
