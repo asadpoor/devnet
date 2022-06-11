@@ -603,3 +603,7 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
 2022-06-09 23:17:21,439 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
 2022-06-09 23:19:16,317 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_from_file_exmaple' with args {} on 1 hosts
 2022-06-09 23:19:18,246 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-11 23:40:50,230 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-11 23:42:25,100 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-11 23:42:52,157 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-11 23:43:27,073 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
