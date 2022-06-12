@@ -761,3 +761,5 @@ AttributeError: 'Result' object has no attribute 'type'
 2022-06-12 01:59:09,340 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
 2022-06-12 01:59:18,250 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
 2022-06-12 01:59:44,671 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 21:50:28,595 -  nornir.core -     INFO -        run() - Running task 'napalm_cli_commands_example' with args {} on 1 hosts
+2022-06-12 21:50:53,572 -  nornir.core -     INFO -        run() - Running task 'napalm_cli_commands_example' with args {} on 1 hosts
