@@ -608,3 +608,156 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
 2022-06-11 23:42:52,157 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
 2022-06-11 23:43:27,073 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
 2022-06-12 00:20:17,413 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 00:36:12,856 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 00:40:04,066 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 00:40:04,795 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(interfaces)
+NameError: name 'interfaces' is not defined
+
+2022-06-12 00:40:23,421 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 00:40:24,128 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(interfaces)
+NameError: name 'interfaces' is not defined
+
+2022-06-12 00:40:40,010 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 00:40:59,962 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 00:41:00,700 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print("hello"+interfaces)
+TypeError: can only concatenate str (not "MultiResult") to str
+
+2022-06-12 01:02:03,168 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:02:30,555 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:02:45,689 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:03:05,197 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:03:05,893 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(interfaces.type)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'type'
+
+2022-06-12 01:04:20,435 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:04:21,156 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(task.host["R1"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'R1'
+
+2022-06-12 01:04:47,903 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:05:06,350 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:05:07,078 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(task.hosts)
+AttributeError: 'Task' object has no attribute 'hosts'
+
+2022-06-12 01:05:17,232 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:05:17,947 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(task.hosts["R1"])
+AttributeError: 'Task' object has no attribute 'hosts'
+
+2022-06-12 01:06:00,603 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:06:01,347 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 9, in napalm_get_example
+    task.host["facts"]=interafces.result
+NameError: name 'interafces' is not defined
+
+2022-06-12 01:06:31,700 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:06:32,422 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 9, in napalm_get_example
+    task.host["facts"]=interafces.result
+NameError: name 'interafces' is not defined
+
+2022-06-12 01:42:16,793 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:42:17,513 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 10, in napalm_get_example
+    print(task.host["R1"]["facts"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'R1'
+
+2022-06-12 01:44:30,729 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:44:31,452 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 11, in napalm_get_example
+    rprint(task.host["R1"]["facts"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'R1'
+
+2022-06-12 01:45:53,464 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:45:54,249 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 12, in napalm_get_example
+    rprint(task.host["R1"]["facts"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'R1'
+
+2022-06-12 01:46:45,909 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:47:01,552 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:47:14,141 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:47:37,220 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:48:07,230 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:49:29,729 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:50:08,779 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:50:27,055 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:51:29,188 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:51:36,957 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:51:48,858 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:52:01,730 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:52:02,462 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.1.nornir_napalm_get_result_parsing.py", line 11, in napalm_get_example
+    print(interfaces.type)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'Result' object has no attribute 'type'
+
+2022-06-12 01:52:21,676 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:56:48,019 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:57:31,783 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:57:49,027 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:59:09,340 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:59:18,250 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 01:59:44,671 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
