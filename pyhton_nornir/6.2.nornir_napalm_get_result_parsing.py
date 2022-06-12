@@ -6,14 +6,14 @@ from rich import print as rprint
 nr = InitNornir(config_file="config.yaml")
 
 def napalm_get_example(task):
-#    interfaces=task.run(task=napalm_get, getters=["get_interfaces"])
-    config=task.run(task=napalm_get, getters=["get_config"])
-#    print(interfaces.result)
+    interfaces=task.run(task=napalm_get, getters=["get_interfaces"])
+#    config=task.run(task=napalm_get, getters=["get_config"])
+
+    print(interfaces.result)
 #    rprint(interfaces.result)
 #    rprint(interfaces.result["get_interfaces"])
 #    rprint(interfaces.result["get_interfaces"]["GigabitEthernet1"])
 
-#    rprint(config)
 #    rprint(config.result)
 #    rprint(config.result["get_config"])
     rprint(config.result["get_config"]["running"])

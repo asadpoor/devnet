@@ -763,3 +763,14 @@ AttributeError: 'Result' object has no attribute 'type'
 2022-06-12 01:59:44,671 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
 2022-06-12 21:50:28,595 -  nornir.core -     INFO -        run() - Running task 'napalm_cli_commands_example' with args {} on 1 hosts
 2022-06-12 21:50:53,572 -  nornir.core -     INFO -        run() - Running task 'napalm_cli_commands_example' with args {} on 1 hosts
+2022-06-12 22:22:26,499 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 22:26:27,152 -  nornir.core -     INFO -        run() - Running task 'napalm_cli_commands_example' with args {} on 1 hosts
+2022-06-12 22:52:01,573 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 22:52:02,394 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 19, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
