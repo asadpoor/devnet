@@ -774,3 +774,345 @@ Traceback (most recent call last):
     rprint(config.result["get_config"]["running"])
 NameError: name 'config' is not defined
 
+2022-06-12 23:03:21,550 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:04:51,662 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:04:52,475 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 19, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
+2022-06-12 23:05:22,544 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:05:23,403 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 19, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
+2022-06-12 23:05:54,140 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:05:55,000 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 19, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
+2022-06-12 23:06:07,449 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:06:08,335 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 19, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
+2022-06-12 23:06:41,331 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:06:42,290 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 20, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
+2022-06-12 23:06:52,438 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:06:53,338 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.2.nornir_napalm_get_result_parsing.py", line 20, in napalm_get_example
+    rprint(config.result["get_config"]["running"])
+NameError: name 'config' is not defined
+
+2022-06-12 23:07:15,669 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-12 23:08:03,280 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-15 14:16:16,894 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:17:20,499 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:17:34,278 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:55:45,227 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:55:46,146 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 316, in load_merge_candidate
+    return_status, msg = self._load_candidate_wrapper(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 283, in _load_candidate_wrapper
+    (return_status, msg) = self._scp_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 626, in _scp_file
+    return self._xfer_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 676, in _xfer_file
+    with TransferClass(**kwargs) as transfer:
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 358, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/scp_handler.py", line 105, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/scp_handler.py", line 311, in file_md5
+    with open(file_name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'napalm_configure'
+
+2022-06-15 14:55:46,147 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 8, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="napalm_configure")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 14:56:32,475 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:56:34,454 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 316, in load_merge_candidate
+    return_status, msg = self._load_candidate_wrapper(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 283, in _load_candidate_wrapper
+    (return_status, msg) = self._scp_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 626, in _scp_file
+    return self._xfer_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 695, in _xfer_file
+    raise CommandErrorException(msg)
+napalm.base.exceptions.CommandErrorException: SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+
+2022-06-15 14:56:34,455 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 8, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 14:57:17,906 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:59:33,303 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 14:59:45,668 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 15:00:12,099 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 15:00:52,604 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 15:00:55,874 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 542, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: napalm-ios replace() requires Cisco 'archive' feature to be enabled.
+
+2022-06-15 15:00:55,875 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 15:01:43,677 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 15:01:46,449 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 539, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: Candidate config could not be applied
+
+
+%The input file is not a valid config file.
+
+
+2022-06-15 15:01:46,450 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 16:03:45,671 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:11:30,787 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:12:10,916 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:12:59,548 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:13:36,377 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:14:11,827 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:16:01,871 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 16:16:05,148 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 539, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: Candidate config could not be applied
+
+%The input file is not a valid config file.
+
+
+2022-06-15 16:16:05,149 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 17:04:00,911 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-15 17:29:58,608 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-15 17:29:59,544 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: write_file() got an unexpected keyword argument 'content'
+
+2022-06-15 17:29:59,545 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.4.nornir_utils_write_file.py", line 12, in napalm_get_example
+    task.run(task=write_file, content=config, filename=f"{task.host}")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: write_file (failed)
+
+
+2022-06-15 17:30:45,529 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-15 17:30:46,443 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: write_file() got an unexpected keyword argument 'content'
+
+2022-06-15 17:30:46,444 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.4.nornir_utils_write_file.py", line 12, in napalm_get_example
+    task.run(task=write_file, content=config, filename=f"{task.host}")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: write_file (failed)
+
+
+2022-06-15 17:32:05,656 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-15 17:32:06,576 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'write_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: write_file() got an unexpected keyword argument 'content'
+
+2022-06-15 17:32:06,576 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.4.nornir_utils_write_file.py", line 12, in napalm_get_example
+    task.run(task=write_file, content=running_config, filename=f"{task.host}")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: write_file (failed)
+
+
+2022-06-15 17:33:38,670 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-06-15 17:34:29,710 -  nornir.core -     INFO -        run() - Running task 'napalm_write_file_example' with args {} on 1 hosts
+2022-06-15 17:55:02,551 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 17:58:07,569 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 17:58:10,880 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 539, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: Candidate config could not be applied
+
+%The input file is not a valid config file.
+
+
+2022-06-15 17:58:10,881 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.5.nornir_napalm_send_config_replace.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}_OSPF", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 18:01:45,578 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 18:14:55,579 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 18:14:57,500 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 316, in load_merge_candidate
+    return_status, msg = self._load_candidate_wrapper(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 283, in _load_candidate_wrapper
+    (return_status, msg) = self._scp_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 626, in _scp_file
+    return self._xfer_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 695, in _xfer_file
+    raise CommandErrorException(msg)
+napalm.base.exceptions.CommandErrorException: SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+
+2022-06-15 18:14:57,500 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-15 18:15:24,644 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 18:15:48,170 -  nornir.core -     INFO -        run() - Running task 'napalm_write_file_example' with args {} on 1 hosts
+2022-06-15 18:16:31,329 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 18:16:59,008 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-15 18:17:02,029 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 542, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: napalm-ios replace() requires Cisco 'archive' feature to be enabled.
+
+2022-06-15 18:17:02,029 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.5.nornir_napalm_send_config_replace.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
