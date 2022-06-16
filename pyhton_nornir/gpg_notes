@@ -1,0 +1,31 @@
+python3 -m pip install python-gnupg
+gpg --gen-key
+#real name: majid asadpoor
+#email ddress: majid.asadpoor@gmail.com
+#passphrase: "GIVE_A_DEFAULT_PASSWORD"
+
+
+#create a file with teh name of (for example) credential:
+username=rayka
+password=rayka-co.ir
+
+
+gpg --symmetric -o credential.gpg credential
+# GIVE A PASSWORD TO ENCRYPT THE FILE
+
+# NOW REMOVE ORIGINAL credential FILE
+# YOU CAN DECRYPT ENCRYPTED FILE
+gpg --decrypt credential.gpg
+
+# CLEAR SYMMETRIC KEY FROM CACHE
+echo RELOADAGENT | gpg-connect-agent
+gpg --decrypt credential.gpg
+
+
+# HOW TO USE in PYTHON
+import os
+nr.inventory.hosts["R1"].username=os.environ["username"]
+nr.inventory.hosts["R1"].password=os.environ["password"]
+
+# HOW TO RUN RUN A SCRIPT
+env $(gpg --decrypt credential.gpg) python3 script.py

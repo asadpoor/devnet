@@ -1116,3 +1116,235 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
 
 
+2022-06-16 01:48:44,887 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_from_file_exmaple' with args {} on 1 hosts
+2022-06-16 01:48:47,448 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-16 01:49:25,720 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config_from_file_exmaple' with args {} on 1 hosts
+2022-06-16 01:49:26,956 -  nornir.core -     INFO -        run() - Running task 'netmiko_save_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:26:00,090 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:26:43,978 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:27:24,720 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:31:04,073 -  nornir.core -     INFO -        run() - Running task 'napalm_write_file_example' with args {} on 1 hosts
+2022-06-16 02:32:01,464 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:32:03,687 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 316, in load_merge_candidate
+    return_status, msg = self._load_candidate_wrapper(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 283, in _load_candidate_wrapper
+    (return_status, msg) = self._scp_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 626, in _scp_file
+    return self._xfer_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 695, in _xfer_file
+    raise CommandErrorException(msg)
+napalm.base.exceptions.CommandErrorException: SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+
+2022-06-16 02:32:03,687 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-16 02:32:39,247 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:33:58,962 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:34:47,270 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:34:50,482 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 542, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: napalm-ios replace() requires Cisco 'archive' feature to be enabled.
+
+2022-06-16 02:34:50,483 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.5.nornir_napalm_send_config_replace.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-16 02:35:39,029 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:36:40,409 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-16 02:36:44,296 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 539, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: Candidate config could not be applied
+
+%The input file is not a valid config file.
+
+
+2022-06-16 02:36:44,298 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/6.3.nornir_napalm_send_config.py", line 9, in napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_list", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-06-16 02:37:53,643 -  nornir.core -     INFO -        run() - Running task 'napalm_send_config_exmaple' with args {} on 1 hosts
+2022-06-17 00:02:55,667 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 00:02:55,994 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 767, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2022-06-17 00:02:55,995 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/7.nornir_publick_key_authentication.py", line 8, in netmiko_send_commands_example
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-06-17 00:03:22,676 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 00:09:48,859 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 00:09:49,357 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 245, in wait_for_response
+    raise e
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2164, in run
+    handler(self.auth_handler, m)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 381, in _parse_service_accept
+    password = b(self.password)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/py3compat.py", line 156, in b
+    raise TypeError("Expected unicode or bytes, got {!r}".format(s))
+TypeError: Expected unicode or bytes, got <function unix_getpass at 0x7f2a2671bbe0>
+
+2022-06-17 00:09:49,358 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/7.get_password_by_getpass.py", line 10, in netmiko_send_commands_example
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-06-17 00:10:14,551 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 00:10:15,054 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 245, in wait_for_response
+    raise e
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2164, in run
+    handler(self.auth_handler, m)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 381, in _parse_service_accept
+    password = b(self.password)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/py3compat.py", line 156, in b
+    raise TypeError("Expected unicode or bytes, got {!r}".format(s))
+TypeError: Expected unicode or bytes, got <function unix_getpass at 0x7ffb37b5bbe0>
+
+2022-06-17 00:10:15,054 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/7.get_password_by_getpass.py", line 10, in netmiko_send_commands_example
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-06-17 00:10:32,980 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 00:37:53,372 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 00:48:10,595 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 01:18:58,146 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts

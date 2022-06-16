@@ -6,6 +6,9 @@ R1:
 #  password: "rayka-co.ir"
   groups:
     - cisco
+#  extras:
+#    use_keys: true
+#    key_file: "/home/coder/.ssh/id_rsa"
   data:
     community: rayka
 #R2:
