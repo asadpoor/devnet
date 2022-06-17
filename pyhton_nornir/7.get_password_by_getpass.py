@@ -4,8 +4,11 @@ from nornir_netmiko.tasks import netmiko_send_command
 from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
+
 mypassword=getpass.getpass()
 nr.inventory.defaults.password=mypassword
+#nr.inventory.hosts["R1"].password=mypassword
+
 def netmiko_send_commands_example(task):
     task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
 

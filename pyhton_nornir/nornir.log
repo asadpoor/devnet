@@ -1348,3 +1348,8 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 2022-06-17 00:37:53,372 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
 2022-06-17 00:48:10,595 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
 2022-06-17 01:18:58,146 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 01:57:37,624 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 01:59:02,807 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 02:01:07,822 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 02:08:25,281 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2022-06-17 02:08:42,727 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
