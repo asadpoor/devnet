@@ -2,15 +2,33 @@
 
 R1:
   hostname: "192.168.2.91"
-#  username: "rayka"
+  username: "rayka1"
 #  password: "rayka-co.ir"
   groups:
     - cisco
-#  extras:
-#    use_keys: true
-#    key_file: "/home/coder/.ssh/id_rsa"
+#  connection_options:
+#    netmiko:
+#      username: "rayka1"
+#      extras:
+#        use_keys: True
+#        key_file: "/home/majid/.ssh/id_rsa"
+#        conn_timeout: 20
+#    napalm:
+#      platfotm: ios
+#      username: "rayka1"
+#      extras:
+#        use_keys: True
+#        key_file: '/home/majid/.ssh/id_rsa'
+#        conn_timeout: 20
+  extras:
+    use_keys: True
+    key_file: '/home/majid/.ssh/id_rsa'
   data:
     community: rayka
+    type: router
+    city: babolsar
+    core: False
+    as: 65001
 #R2:
 #  hostname: "192.168.2.92"
 #  username: "rayka"
@@ -19,6 +37,10 @@ R1:
 #    - cisco
 #  data:
 #    community: rayka
+#    type: switch
+#    city: shiraz
+#    core: True
+#    as: 65002
 
 #R3:
 #  hostname: "192.168.2.93"
@@ -28,3 +50,7 @@ R1:
 #    - juniper
 #  data:
 #    community: rayka-co.com
+#    type: switch
+#    city: tehran
+#    core: True
+#    as: 65003

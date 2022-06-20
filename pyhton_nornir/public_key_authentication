@@ -63,3 +63,7 @@ R1(conf-ssh-pubkey-user)#do sh runn | begin pubkey-chain
 ip ssh pubkey-chain
   username rayka1
    key-hash ssh-rsa 15132255F3BCA324AE8996759358F091 majid@devnet
+
+no ip ssh server algorithm authentication password
+no ip ssh server algorithm authentication keyboard
+ip ssh server algorithm authentication publickey
