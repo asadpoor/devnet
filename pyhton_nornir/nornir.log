@@ -4279,3 +4279,396 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
 
 
+2022-06-22 17:53:50,920 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 17:53:58,235 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 17:53:58,502 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 767, in _auth
+    raise SSHException("No authentication methods available")
+paramiko.ssh_exception.SSHException: No authentication methods available
+
+2022-06-22 17:53:58,503 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.1.textfsm_nornir_netmiko_send_command.py", line 8, in textfsm_netmiko_example
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-06-22 17:54:33,560 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 17:56:56,345 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 17:56:58,629 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: b'rayka@192.168.2.91: permission denied (publickey).\n'
+
+2022-06-22 17:56:58,630 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 8, in textfsm_scrapli_example
+    task.run(task=send_command, command="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-06-22 17:57:42,199 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 17:57:50,067 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 18:02:14,861 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:02:17,267 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:02:32,358 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 18:02:53,238 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 18:02:56,913 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:02:59,332 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:03:09,965 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:03:12,369 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:03:23,873 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:03:26,270 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:07:18,946 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:07:21,414 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:07:28,442 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:07:31,051 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:07:41,809 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:07:44,398 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 9, in textfsm_scrapli_example
+    structured_output = scrapli_result.scrapli_respone.textfsm_parse_output()
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 255, in __getattr__
+    return getattr(self[0], name)
+AttributeError: 'ScrapliResult' object has no attribute 'scrapli_respone'
+
+2022-06-22 18:10:02,803 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:10:27,097 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:10:43,963 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:11:35,003 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:12:10,730 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 18:13:55,127 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:13:57,659 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 10, in textfsm_scrapli_example
+    rprint(structured_output["intf"])
+TypeError: list indices must be integers or slices, not str
+
+2022-06-22 18:14:31,659 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:15:20,314 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:15:48,586 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:16:36,372 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:18:28,564 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:18:31,134 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 16, in textfsm_scrapli_example
+    for key, value in interface:
+ValueError: too many values to unpack (expected 2)
+
+2022-06-22 18:18:48,993 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:18:51,757 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 16, in textfsm_scrapli_example
+    for key, value in interface:
+ValueError: too many values to unpack (expected 2)
+
+2022-06-22 18:19:12,467 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:19:15,042 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 16, in textfsm_scrapli_example
+    for key, value in interface:
+ValueError: too many values to unpack (expected 2)
+
+2022-06-22 18:19:31,211 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:19:57,589 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:20:00,161 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 16, in textfsm_scrapli_example
+    for key, value in interface:
+ValueError: too many values to unpack (expected 2)
+
+2022-06-22 18:20:12,523 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:21:01,638 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:21:04,210 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 16, in textfsm_scrapli_example
+    for key, value in interface:
+ValueError: too many values to unpack (expected 2)
+
+2022-06-22 18:22:44,528 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:23:02,782 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:23:58,227 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 18:24:13,581 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:53:32,761 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:55:33,254 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:55:35,779 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 18, in textfsm_scrapli_example
+    print(interface["key"])
+KeyError: 'key'
+
+2022-06-22 21:56:23,630 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:57:10,707 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:59:10,202 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:59:12,819 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 18, in textfsm_scrapli_example
+    print(interface[key], inetrface[value])
+NameError: name 'inetrface' is not defined
+
+2022-06-22 21:59:25,244 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 21:59:27,818 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 18, in textfsm_scrapli_example
+    print(interface[key], inetrface[value])
+NameError: name 'inetrface' is not defined
+
+2022-06-22 22:00:48,293 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:00:50,902 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 19, in textfsm_scrapli_example
+    rprrint(interface[value])
+NameError: name 'rprrint' is not defined
+
+2022-06-22 22:00:54,230 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:00:56,880 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 19, in textfsm_scrapli_example
+    rprint(interface[value])
+KeyError: 'GigabitEthernet1'
+
+2022-06-22 22:03:22,680 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:03:25,396 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 19, in textfsm_scrapli_example
+    rprint(interface[value])
+KeyError: '192.168.2.91'
+
+2022-06-22 22:05:07,237 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:06:17,937 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:06:20,608 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 18, in textfsm_scrapli_example
+    rprint(interface[key])
+KeyError: ('intf', 'GigabitEthernet1')
+
+2022-06-22 22:09:09,708 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:09:45,792 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:10:59,968 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:11:02,646 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 19, in textfsm_scrapli_example
+    rprint(value)
+NameError: name 'value' is not defined
+
+2022-06-22 22:11:23,586 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:12:00,380 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:12:41,147 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:15:53,379 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:17:31,675 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:18:04,591 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:19:05,919 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:20:50,341 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:20:53,000 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.textfsm_nornir_scrapli_send_command.py", line 14, in textfsm_scrapli_example
+    rprint("interface", interface["intf"], "with IP address", interface["ipaddr"] , "is physically ", interface["status"], "line protocol is". interface["proto"])
+AttributeError: 'str' object has no attribute 'interface'
+
+2022-06-22 22:21:22,547 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:22:30,628 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:23:05,094 -  nornir.core -     INFO -        run() - Running task 'textfsm_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:24:14,961 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 22:24:15,976 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/utilities.py", line 500, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1550, in send_command
+    structured_output = get_structured_data(
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/utilities.py", line 347, in get_structured_data
+    return _textfsm_parse(textfsm_obj, raw_output, attrs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/utilities.py", line 319, in _textfsm_parse
+    textfsm_obj.ParseCmd(raw_output, attrs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/_textfsm/_clitable.py", line 272, in ParseCmd
+    self.table = self._ParseCmdItem(self.raw, template_file=template_files[0])
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/_textfsm/_clitable.py", line 303, in _ParseCmdItem
+    for record in fsm.ParseText(cmd_input):
+  File "/home/majid/.local/lib/python3.10/site-packages/textfsm/parser.py", line 897, in ParseText
+    self._CheckLine(line)
+  File "/home/majid/.local/lib/python3.10/site-packages/textfsm/parser.py", line 946, in _CheckLine
+    if self._Operations(rule, line):
+  File "/home/majid/.local/lib/python3.10/site-packages/textfsm/parser.py", line 1026, in _Operations
+    raise TextFSMError('State Error raised. Rule Line: %s. Input Line: %s'
+textfsm.parser.TextFSMError: State Error raised. Rule Line: 17. Input Line:                       ^
+
+2022-06-22 22:24:15,977 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/9.1.textfsm_nornir_netmiko_send_command.py", line 8, in textfsm_netmiko_example
+    netmiko_result=task.run(task=netmiko_send_command, command_string="show interface status", use_textfsm=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2022-06-22 22:24:52,565 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 22:25:50,696 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 22:26:20,890 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 22:26:44,380 -  nornir.core -     INFO -        run() - Running task 'textfsm_netmiko_example' with args {} on 1 hosts
+2022-06-22 22:28:45,402 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-22 22:29:42,812 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:58:26,790 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-22 22:59:06,292 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-22 23:01:43,192 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-22 23:01:51,869 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-22 23:02:29,632 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-22 23:03:42,186 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:08:36,787 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:08:58,419 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:09:24,609 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:09:53,305 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:10:16,495 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:11:35,277 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:11:51,559 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:13:36,031 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:14:17,184 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:14:37,415 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:14:49,364 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:15:35,119 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts

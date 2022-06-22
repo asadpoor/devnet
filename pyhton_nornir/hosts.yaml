@@ -2,7 +2,7 @@
 
 R1:
   hostname: "192.168.2.91"
-  username: "rayka1"
+#  username: "rayka"
 #  password: "rayka-co.ir"
   groups:
     - cisco
@@ -20,15 +20,16 @@ R1:
 #        use_keys: True
 #        key_file: '/home/majid/.ssh/id_rsa'
 #        conn_timeout: 20
-  extras:
-    use_keys: True
-    key_file: '/home/majid/.ssh/id_rsa'
-  data:
-    community: rayka
-    type: router
-    city: babolsar
-    core: False
-    as: 65001
+#  extras:
+#    use_keys: True
+#    key_file: '/home/majid/.ssh/id_rsa'
+#  data:
+#    community: rayka
+#    type: router
+#    city: babolsar
+#    core: False
+#    as: 65001
+
 #R2:
 #  hostname: "192.168.2.92"
 #  username: "rayka"
