@@ -4672,3 +4672,16 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 2022-06-23 00:14:37,415 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
 2022-06-23 00:14:49,364 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
 2022-06-23 00:15:35,119 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:37:07,071 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:37:37,699 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:38:16,112 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:38:37,630 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:39:01,934 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:40:03,770 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:40:17,510 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-23 00:41:47,179 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:42:11,581 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:42:24,292 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:42:34,658 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:42:46,530 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-23 00:43:34,541 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
