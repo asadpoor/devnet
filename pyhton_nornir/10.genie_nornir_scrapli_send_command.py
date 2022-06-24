@@ -9,11 +9,19 @@ def textfsm_nornir_scrapli_example(task):
     interfaces = scrapli_result.scrapli_response.genie_parse_output()
     rprint(interfaces)
 #    rprint(type(interfaces))
+#    rprint(interfaces["interface"])
+#    rprint(type(interfaces["interface"]))
 
-#    for interface in interfaces:
-#        rprint(interface)
-#        rprint(type(interface))
-#        rprint("interface", interface["intf"], "with IP address", interface["ipaddr"] , "is physically ", interface["status"], "and line protocol is", interface["proto"])
+
+#    for key, value in interfaces["interface"].items():
+#        rprint("key=",key)
+#        rprint("value=",value)
+
+#    for key in interfaces["interface"].keys():
+#        rprint("key=", key)
+#        rprint(interfaces["interface"][key])
+#        rprint(type(interfaces["interface"][key]))
+#        rprint("IP Address of", key, " is ", interfaces["interface"][key]["ip_address"])
 
 
 

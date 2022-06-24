@@ -4685,3 +4685,66 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 2022-06-23 00:42:34,658 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
 2022-06-23 00:42:46,530 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
 2022-06-23 00:43:34,541 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 22:19:19,668 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:19:39,406 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:20:05,994 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:20:29,479 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:21:36,003 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:22:08,060 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:25:35,354 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:27:00,973 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:27:53,252 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:33:51,684 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:37:50,016 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:38:02,887 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:38:06,257 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/10.genie_nornir_scrapli_send_command.py", line 21, in textfsm_nornir_scrapli_example
+    rprint(interfaces["interface"].key)
+AttributeError: 'dict' object has no attribute 'key'
+
+2022-06-24 22:38:22,957 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:38:26,280 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/10.genie_nornir_scrapli_send_command.py", line 21, in textfsm_nornir_scrapli_example
+    rprint(interfaces["interface"].key["ip_address"])
+AttributeError: 'dict' object has no attribute 'key'
+
+2022-06-24 22:38:47,128 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:38:50,540 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/10.genie_nornir_scrapli_send_command.py", line 21, in textfsm_nornir_scrapli_example
+    rprint("IP Address=", interfaces["interface"].key["ip_address"])
+AttributeError: 'dict' object has no attribute 'key'
+
+2022-06-24 22:39:05,787 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:39:09,112 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_scrapli_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/10.genie_nornir_scrapli_send_command.py", line 21, in textfsm_nornir_scrapli_example
+    rprint("IP Address=", interfaces["interface"].key["ip_address"])
+AttributeError: 'dict' object has no attribute 'key'
+
+2022-06-24 22:39:23,759 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:40:12,473 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:40:44,085 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:41:33,917 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:41:59,947 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:42:50,003 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:43:11,725 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 22:44:42,385 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2022-06-24 23:01:13,973 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:01:42,372 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:02:45,049 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:03:50,631 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:04:26,532 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:04:37,892 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:06:50,273 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-06-24 23:07:34,154 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
