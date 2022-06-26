@@ -10,7 +10,7 @@ python3 -m pip install rich
 python3 -m pip install python-gnupg
 # genie
 python3 -m pip install pyats
-python3 -m pip install geniey
+python3 -m pip install genie
 
 python3 -m venv .venv
 source .venv/bin/activate
