@@ -11,6 +11,9 @@ python3 -m pip install python-gnupg
 # genie
 python3 -m pip install pyats
 python3 -m pip install genie
+#jinja2
+python3 -m pip install nornir_jinja2
+
 
 python3 -m venv .venv
 source .venv/bin/activate
