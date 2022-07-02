@@ -5555,3 +5555,486 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 2022-06-29 00:10:08,304 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
 2022-06-29 00:10:58,858 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2022-06-29 00:10:58,862 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:10:03,381 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:10:03,387 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:10:17,420 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:10:17,423 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:23:39,582 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:23:39,586 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:23:39,594 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp.j2", line 2, in top-level template code
+    ntp server {{ host.ciscodata.ntp.server }}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ciscodata'
+
+2022-07-02 01:23:39,594 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.nornir_jinja2_template.py", line 17, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 01:24:13,450 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:24:13,455 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:24:13,459 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp.j2", line 2, in top-level template code
+    #ntp server {{ host.ciscodata.ntp.server }}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'ciscodata'
+
+2022-07-02 01:24:13,460 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.nornir_jinja2_template.py", line 17, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 01:25:36,010 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:25:36,013 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:25:36,018 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp.j2", line 2, in top-level template code
+    ntp server {{ host.gdata.ntp.server }}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'gdata'
+
+2022-07-02 01:25:36,019 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.nornir_jinja2_template.py", line 17, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 01:25:56,081 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:25:56,085 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:26:30,791 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:26:30,794 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:27:29,273 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:27:29,277 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:30:13,188 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:30:13,192 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:46:19,872 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:46:19,877 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:46:19,883 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 1, in top-level template code
+    {% for server in hosts.hdata.ntp.servers %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2022-07-02 01:46:19,884 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 01:53:31,597 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:53:31,602 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:53:31,607 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 1, in top-level template code
+    {% for server in hosts.hdata.ntp.servers %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2022-07-02 01:53:31,608 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 01:54:10,056 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:54:10,061 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:55:05,583 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:55:05,587 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 01:55:41,036 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 01:55:41,040 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:13:47,982 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:13:47,987 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:13:47,997 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in hosts.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'hosts' is undefined
+
+2022-07-02 02:13:47,998 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:14:04,250 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:14:04,254 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:14:04,266 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:14:04,267 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:15:16,702 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:15:16,707 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:15:16,715 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:15:16,716 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:16:01,742 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:16:01,746 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:16:01,754 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:16:01,754 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:17:54,303 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:17:54,308 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:18:21,244 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:18:21,248 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:18:21,257 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:18:21,257 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:19:20,262 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:19:20,268 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:19:20,276 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:19:20,277 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:19:34,369 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:19:34,374 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:20:25,007 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:20:25,012 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:20:57,383 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:20:57,388 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:20:57,396 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:20:57,396 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:21:36,750 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:21:36,756 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:21:36,764 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:21:36,764 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:21:55,191 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:21:55,195 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:21:55,203 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:21:55,203 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:23:02,699 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:23:02,703 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:23:02,711 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ios-ntp-.j2", line 16, in top-level template code
+    {% for key in host.hdata.ntp.authentication.keys %}
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 417, in __init__
+    self._iterator = self._to_iterator(iterable)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/runtime.py", line 425, in _to_iterator
+    return iter(iterable)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+2022-07-02 02:23:02,712 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_snmp' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/11.1.nornir_jinja2_template_advanced.py", line 21, in template_snmp
+    template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-07-02 02:23:28,169 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:23:28,174 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:24:17,204 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:24:17,209 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-02 02:24:41,481 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-02 02:24:41,485 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts

@@ -1,4 +1,5 @@
 ---
 
 ntp:
-  server: 4.4.4.4
+  servers: 
+    - 5.5.5.5

@@ -1,0 +1,11 @@
+{% for server in host.hdata.ntp.servers %}
+ set system ntp server {{ server }}
+{% endfor %}
+
+{% for server in host.juniperdata.ntp.servers %}
+ set system ntp server {{ server }}
+{% endfor %}
+
+{% for server in host.alldata.ntp.servers %}
+ set system ntp server {{ server }}
+{% endfor %}

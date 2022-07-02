@@ -3,5 +3,12 @@
 snmp:
   community: "rayka"
 ntp:
-  server: 2.2.2.2
+  servers:
+    - 2.2.2.2
+    - 22.22.22.22
+  authentication:
+    hash: md5
+    key:
+      - rayka1
+      - rayka2
 

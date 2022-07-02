@@ -1,0 +1,19 @@
+{% for server in host.hdata.ntp.servers %}
+ntp server {{ server }}
+{% endfor %}
+
+{% for server in host.ciscodata.ntp.servers %}
+ntp server {{ server }}
+{% endfor %}
+
+{% for server in host.alldata.ntp.servers %}
+ntp server {{ server }}
+{% endfor %}
+
+
+{% if host.hdata.ntp.authentication is defined %}
+ntp authenticate
+{% for key in host.hdata.ntp.authentication.key %}
+ntp authentication-key {{loop.index}} md5 {{ key }}
+{% endfor %}
+{% endif %}
