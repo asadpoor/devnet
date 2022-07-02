@@ -6038,3 +6038,5 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 2022-07-02 02:24:17,209 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
 2022-07-02 02:24:41,481 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2022-07-02 02:24:41,485 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
+2022-07-03 00:18:09,432 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-07-03 00:18:09,438 -  nornir.core -     INFO -        run() - Running task 'template_sample' with args {} on 1 hosts

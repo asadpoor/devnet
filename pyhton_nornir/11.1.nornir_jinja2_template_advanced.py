@@ -17,12 +17,12 @@ def load_data(task):
   task.host["juniperdata"] = juniper_groups_data.result
   task.host["alldata"] = all_data.result
 
-def template_snmp(task):
+def template_sample(task):
     template = task.run(task=template_file, template=f"{task.host.platform}-ntp-.j2", path="./templates/", severity_level=logging.DEBUG)
     task.host["config"]=template.result
     configurations=task.host["config"].splitlines()
     task.run(task=send_configs, configs=configurations)
 
 nr.run(task=load_data)
-results = nr.run(task=template_snmp)
+results = nr.run(task=template_sample)
 print_result(results)
