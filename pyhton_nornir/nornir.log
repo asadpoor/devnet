@@ -6040,3 +6040,99 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 2022-07-02 02:24:41,485 -  nornir.core -     INFO -        run() - Running task 'template_snmp' with args {} on 1 hosts
 2022-07-03 00:18:09,432 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2022-07-03 00:18:09,438 -  nornir.core -     INFO -        run() - Running task 'template_sample' with args {} on 1 hosts
+2022-07-04 22:08:24,678 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:09:27,982 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:11:02,670 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:11:24,687 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:12:51,731 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:16:23,178 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:18:27,908 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:18:29,474 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 13, in textfsm_nornir_netmiko_example
+    rprint("interface ", key, " MAC address is", interfaces[key]["mac_address"])
+KeyError: 'mac_address'
+
+2022-07-04 22:19:53,492 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:21:12,759 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:21:40,806 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:21:42,358 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 14, in textfsm_nornir_netmiko_example
+    rprint("interface ", key, " MAC address is", interfaces[key]["mac_address"])
+KeyError: 'mac_address'
+
+2022-07-04 22:22:11,169 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:23:50,158 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:23:51,683 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 15, in textfsm_nornir_netmiko_example
+    rprint("interface ", key, " MAC address is", interfaces[key]["mac_address"])
+KeyError: 'mac_address'
+
+2022-07-04 22:24:19,037 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:24:20,515 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 15, in textfsm_nornir_netmiko_example
+    rptint("hello")
+NameError: name 'rptint' is not defined
+
+2022-07-04 22:25:12,362 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:25:22,823 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:25:45,696 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:25:47,219 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 16, in textfsm_nornir_netmiko_example
+    rptint("hello")
+NameError: name 'rptint' is not defined
+
+2022-07-04 22:26:00,403 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:26:01,981 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 16, in textfsm_nornir_netmiko_example
+    rptint("hello")
+NameError: name 'rptint' is not defined
+
+2022-07-04 22:26:22,099 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:26:38,490 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:26:51,868 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:27:37,056 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:28:58,864 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:29:00,412 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 17, in textfsm_nornir_netmiko_example
+    rprint(interfaces[key]["mac_address"])
+KeyError: 'mac_address'
+
+2022-07-04 22:29:50,335 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:29:51,820 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 18, in textfsm_nornir_netmiko_example
+    rprint("interface ", key, " MAC address is", interfaces[key]["mac_address"])
+KeyError: 'mac_address'
+
+2022-07-04 22:30:01,288 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2022-07-04 22:30:02,840 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'textfsm_nornir_netmiko_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.1.error_handling_genie_netmiko.py", line 18, in textfsm_nornir_netmiko_example
+    rprint("interface ", key, " MAC address is", interfaces[key]["mac_address"])
+KeyError: 'mac_address'
+
