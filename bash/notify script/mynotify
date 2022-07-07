@@ -10,7 +10,6 @@ do
 echo "$LINE" | egrep -q "$notify1|$notify2|$notify3"
 if [ $? = 0 ]
 then
-#echo -e "$LINE" | tee -a >>mynotifylog >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" m.asadpoor@tv1.eu) >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" c2ce98a2x.tv1.eu@emea.teams.ms)
-echo -e "$LINE" | tee -a >>mynotifylog >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" t.bernhard@tv1.eu) >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" s.schlichtmeier@tv1.eu) >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" m.asadpoor@tv1.eu)
+echo -e "$LINE" | tee -a >>mynotifylog >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" masadpour@yahoo.com) >(mail -s "TV1-Netzwerkbenachrichtigung: $LINE" majid.asadpoor@gmail.com)
 fi
 done
