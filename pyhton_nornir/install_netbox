@@ -40,6 +40,8 @@ git clone -b release https://github.com/netbox-community/netbox-docker.git
 
 cd netbox-docker/
 
+cp docker-compose.override.yml.example docker-compose.override.yml
+
 nano docker-compose.override.yml
 
 
@@ -67,4 +69,4 @@ sudo chmod 755 $DESTINATION
 
 sudo docker-compose pull
 
-sudo docker-compose up
+sudo docker-compose up &
