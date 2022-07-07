@@ -1,0 +1,70 @@
+#majid@devnet:~/devnet/pyhton_nornir$ lsb_release -a
+#No LSB modules are available.
+#Distributor ID:	Ubuntu
+#Description:	Ubuntu 22.04 LTS
+#Release:	22.04
+#Codename:	jammy
+
+# https://ducko.uk/install-netbox-on-proxmox-docker/
+# https://www.youtube.com/watch?v=djNis2wFfNU
+# https://github.com/IPvZero/CodeSamples/blob/main/ADV-NET/Optimise/netbox-install.txt
+
+
+sudo apt update
+sudo apt upgrade
+sudo adduser admin
+sudo usermod -aG sudo admin
+
+sudo apt install git
+sudo apt install docker
+sudo apt install docker-compose
+
+git clone -b release https://github.com/netbox-community/netbox-docker.git
+ls
+cd netbox-docker
+cp docker-compose.override.yml.example docker-compose.override.yml
+cat docker-compose.override.yml
+sudo docker-compose pull
+sudo docker-compose up &
+
+
+sudo apt install git
+
+sudo apt install curl
+
+sudo apt install docker.io
+
+sudo apt install docker-compose
+
+git clone -b release https://github.com/netbox-community/netbox-docker.git
+
+cd netbox-docker/
+
+nano docker-compose.override.yml
+
+
+------------------------------------------------------------------------
+
+version: '3.4'
+services:
+  netbox:
+    ports:
+    - 8000:8080
+
+------------------------------------------------------------------------
+
+
+
+sudo apt install jq
+
+VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)
+
+DESTINATION=/usr/local/bin/docker-compose
+
+sudo curl -L https://github.com/docker/compose/releases/download/${VERSION}/docker-compose-$(uname -s)-$(uname -m) -o $DESTINATION
+
+sudo chmod 755 $DESTINATION
+
+sudo docker-compose pull
+
+sudo docker-compose up
