@@ -1,0 +1,15 @@
+device: R1
+ site: central_office
+  as*
+ role: router
+ type: IOSv
+  manufacture: cisco
+  model: ios
+ platform: ios
+  manufacture: cisco
+
+R1:
+ add interface: GigabitEthernet1
+ type: 1000Base-T
+  IP Address: 192.168.2.91
+  primary: yes

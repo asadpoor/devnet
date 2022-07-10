@@ -1,0 +1,12 @@
+---
+inventory:
+  plugin: NetBoxInventory2
+  options:
+    nb_url: "http://127.0.0.1:8000"
+    nb_token: "0123456789abcdef0123456789abcdef01234567"
+    ssl_verify: false
+
+runner:
+  plugin: threaded
+  options:
+    num_workers: 10

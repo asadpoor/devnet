@@ -1,0 +1,30 @@
+#majid@devnet:~/devnet/pyhton_nornir$ lsb_release -a
+#No LSB modules are available.
+#Distributor ID:	Ubuntu
+#Description:	Ubuntu 22.04 LTS
+#Release:	22.04
+#Codename:	jammy
+
+# https://ducko.uk/install-netbox-on-proxmox-docker/
+# https://www.youtube.com/watch?v=djNis2wFfNU
+
+
+sudo apt update
+sudo apt upgrade
+
+#sudo adduser admin
+#sudo usermod -aG sudo admin
+
+sudo apt install git
+sudo apt install docker
+sudo apt install docker-compose
+
+git clone -b release https://github.com/netbox-community/netbox-docker.git
+ls
+cd netbox-docker
+cp docker-compose.override.yml.example docker-compose.override.yml
+cat docker-compose.override.yml
+sudo docker-compose pull
+sudo docker-compose up &
+
+

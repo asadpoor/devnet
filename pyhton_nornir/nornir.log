@@ -6136,3 +6136,4 @@ Traceback (most recent call last):
     rprint("interface ", key, " MAC address is", interfaces[key]["mac_address"])
 KeyError: 'mac_address'
 
+2022-07-10 01:26:02,991 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
