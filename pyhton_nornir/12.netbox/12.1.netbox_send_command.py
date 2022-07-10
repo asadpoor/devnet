@@ -8,9 +8,9 @@ nr.inventory.defaults.username = "rayka"
 nr.inventory.defaults.password = "rayka-co.ir"
 
 
-def test_show_command(task):
+def netbox_send_command(task):
     task.run(task=send_command, command="show ip interface brief")
 
 
-results = nr.run(task=test_show_command)
+results = nr.run(task=netbox_send_command)
 print_result(results)

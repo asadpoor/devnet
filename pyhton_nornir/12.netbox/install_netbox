@@ -23,8 +23,16 @@ git clone -b release https://github.com/netbox-community/netbox-docker.git
 ls
 cd netbox-docker
 cp docker-compose.override.yml.example docker-compose.override.yml
+
+# this is the configuration of docker-compose.override.yml
 cat docker-compose.override.yml
+version: '3.4'
+services:
+  netbox:
+    ports:
+      - 8000:8080
+
 sudo docker-compose pull
 sudo docker-compose up &
 
-
+sudo docker ps
