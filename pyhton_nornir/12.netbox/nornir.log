@@ -177,3 +177,5 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 
 
+2022-07-11 00:03:15,599 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2022-07-11 00:05:34,759 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts

@@ -2,7 +2,7 @@ device: R1
  site: central_office
   as*
  role: router
- type: IOSv
+ type:
   manufacture: cisco
   model: ios
  platform: ios
