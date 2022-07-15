@@ -18,6 +18,9 @@ python3 -m pip install nornir_jinja2
 
 #netbox
 python3 -m pip install nornir-netbox
+
+
+
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install nornir
