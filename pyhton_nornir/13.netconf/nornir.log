@@ -1,0 +1,108 @@
+2022-07-22 15:42:15,359 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:42:25,595 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 31, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 280, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 117, in open
+    self.channel.channel_authenticate_netconf(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 100, in channel_authenticate_netconf
+    buf = self.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 176, in _multiprocessing_timeout
+    self._handle_timeout()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 152, in _handle_timeout
+    raise ScrapliTimeout(self.message)
+scrapli.exceptions.ScrapliTimeout: timed out reading from transport
+
+2022-07-22 15:42:25,596 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.netconf.py", line 8, in get_device_config
+    task.run(task=netconf_get_config, source="running")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-07-22 15:50:32,703 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:50:54,962 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:51:52,954 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:53:23,150 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:53:23,151 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2022-07-22 15:53:23,152 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.netconf.py", line 9, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="xpath", filters="/native")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-07-22 15:55:05,135 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:55:05,136 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2022-07-22 15:55:05,136 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.netconf.py", line 9, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="xpath", filters="/native")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-07-22 15:55:29,438 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:55:29,440 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter'
+
+2022-07-22 15:55:29,441 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_device_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.netconf.py", line 9, in get_device_config
+    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter="/native")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-07-22 15:56:23,423 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:57:04,959 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-07-22 15:57:55,446 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
