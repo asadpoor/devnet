@@ -20,6 +20,14 @@ python3 -m pip install nornir_jinja2
 python3 -m pip install nornir-netbox
 
 
+#pyang
+python3 -m pip install pyang
+sudo apt-get install git
+git clone https://github.com/YangModels/yang.git
+cd yang/standard/ietf/RFC/
+pyang -f tree ietf-interfaces.yang
+pyang -f sample-xml-skeleton ietf-interfaces.yang
+
 
 python3 -m venv .venv
 source .venv/bin/activate

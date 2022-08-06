@@ -1,0 +1,9 @@
+python3 -m pip install pyang
+git clone https://github.com/YangModels/yang.git
+pynag -f tree ietf-interfaces.yang
+pynag -f sample-xml-skeleton ietf-interfaces.yang
+
+egrep -lr "bgp" ./
+less -S output.txt # not wrapping
+grep -in  "rw bgp" output.txt #caseinsensitive & line number
+more +173 output.txt

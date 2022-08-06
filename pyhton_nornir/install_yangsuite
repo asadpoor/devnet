@@ -1,0 +1,46 @@
+sudo apt-get install git
+sudo apt-get install docker
+sudo apt-get install docker-compose
+
+git clone https://github.com/CiscoDevNet/yangsuite.git
+cd yangsuite/docker/ ; sudo bash ./start_yang_suite.sh
+or
+cd yangsuite/docker/ ; sudo docker compose up &
+    or
+cd yangsuite/docker/ ; sudo docker-compose up &
+
+majid@majid-ubuntu:~/yangsuite/docker$ sudo bash ./start_yang_suite.sh
+[sudo] password for majid: 
+Hello, please setup YANG Suite admin user.
+username: admin
+password: 
+confirm password: 
+email: majid.asadpoor@gmail.com
+
+Setup test certificates? (y/n): y
+################################################################
+## Generating self-signed certificates...                     ##
+##                                                            ##
+## WARNING: Obtain certificates from a trusted authority!     ##
+##                                                            ##
+## NOTE: Some browsers may still reject these certificates!!  ##
+################################################################
+ :wq!
+
+..................+..+....+...+...+........+.......+..+..........+...............+..+......+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..............+.+...+......+...............+..+...+...................+...+........+......+.+..+...............+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..+..+...+.+...+..+...+.............+.....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.....+.....+...+...+.+...+...+...+..+...+.+.....+...+.............+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*....+...+.......+........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.......+...+...+.....................+.+.....+.......+..+......+.......+.....+...+....+...+...............+.................+......+...+....+..+.+.....+.........+.............+..+...+.......+...+..+......+....+......+.....+....+...+...+.........+........+...+...............+....+..............+....+...+..+.+..+.......+........+...............+.......+....................+.+.....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:IR
+State or Province Name (full name) [Some-State]:TEHRAN
+Locality Name (eg, city) []:TEHRAN
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:RAYKA
+Organizational Unit Name (eg, section) []:AUTOMATION
+Common Name (e.g. server FQDN or YOUR name) []:YANGSUITE
+Email Address []:majid.asadpoor@gmail.com
