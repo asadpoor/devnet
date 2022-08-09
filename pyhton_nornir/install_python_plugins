@@ -28,6 +28,13 @@ cd yang/standard/ietf/RFC/
 pyang -f tree ietf-interfaces.yang
 pyang -f sample-xml-skeleton ietf-interfaces.yang
 
+#netconf
+python3 -m pip install nornir
+python3 -m pip install nornir-scrapli
+python3 -m pip install nornir-utils
+python3 -m pip install nornir-netconf
+
+
 
 python3 -m venv .venv
 source .venv/bin/activate

@@ -193,3 +193,174 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
 
 2022-07-25 00:48:47,070 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
 2022-07-25 00:56:01,462 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-08-06 20:59:54,420 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-08-06 21:07:37,165 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-08-06 23:19:38,286 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2022-08-07 00:00:52,437 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-07 00:17:06,297 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-07 00:17:30,576 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-07 00:17:31,262 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.1.netconf_get_config.py", line 8, in get_config
+    task.run(task=netconf_get_config, source="startup")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-07 00:17:55,177 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-07 00:22:40,066 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:13:18,539 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:13:18,551 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get_config.py", line 49, in netconf_get_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 135, in connect_ssh
+    device_handler = make_device_handler(device_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 83, in make_device_handler
+    dev_module_obj      = __import__(devices_module_name)
+ModuleNotFoundError: No module named 'ncclient.devices.ios'
+
+2022-08-09 20:13:18,551 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.1.netconf_get_config.py", line 9, in get_config
+    task.run(task=netconf_get_config, source="running")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-09 20:18:04,288 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:18:04,290 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get_config.py", line 49, in netconf_get_config
+    manager = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/connections/netconf.py", line 116, in open
+    self.connection = manager.connect_ssh(**parameters)  # pylint: disable=W0201
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 135, in connect_ssh
+    device_handler = make_device_handler(device_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 83, in make_device_handler
+    dev_module_obj      = __import__(devices_module_name)
+ModuleNotFoundError: No module named 'ncclient.devices.ios'
+
+2022-08-09 20:18:04,291 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.1.netconf_get_config.py", line 10, in get_config
+    task.run(task=netconf_get_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-09 20:28:51,001 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:29:54,784 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:31:09,181 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:32:04,271 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:33:27,743 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:34:10,157 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:34:29,499 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:36:34,872 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:37:07,986 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:37:22,513 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:38:35,685 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:38:52,218 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:43:27,281 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:48:01,848 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 20:48:44,488 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:12:35,241 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:23:48,584 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:24:32,911 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:24:33,617 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.2.netconf_xpath_filter.py", line 9, in get_config
+    task.run(task=netconf_get_config, filter_type="xpath", filter_="/native/router/ios-ospf:router-ospf/")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-09 21:24:53,312 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:24:53,979 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.2.netconf_xpath_filter.py", line 9, in get_config
+    task.run(task=netconf_get_config, filter_type="xpath", filter_="/native/router/router-ospf/")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-09 21:25:13,703 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:25:35,779 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:28:46,796 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:29:07,498 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:29:22,877 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:29:35,467 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:33:46,242 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:33:46,243 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter_'
+
+2022-08-09 21:33:46,244 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.2.netconf_xpath_filter.py", line 14, in get_config
+    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="xpath", filter_="/native")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-09 21:34:01,153 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:34:01,155 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter'
+
+2022-08-09 21:34:01,155 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.2.netconf_xpath_filter.py", line 14, in get_config
+    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="xpath", filter="/native")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-09 21:34:33,383 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:35:35,649 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:35:58,392 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 21:36:24,636 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 22:01:48,310 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 22:02:42,667 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 22:03:29,374 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-09 22:04:25,481 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2022-08-10 00:39:19,907 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts

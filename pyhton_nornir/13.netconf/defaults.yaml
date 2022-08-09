@@ -2,4 +2,5 @@
 
 username: "rayka"
 password: "rayka-co.ir"
-platform: "ios"
+#platform: "ios"
+platform: "iosxe"

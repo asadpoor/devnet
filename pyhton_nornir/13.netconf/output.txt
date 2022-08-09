@@ -1,0 +1,331 @@
+[1m[36mget_config**********************************************************************[0m
+[0m[1m[34m* R1 ** changed : False ********************************************************[0m
+[0m[1m[32mvvvv get_config ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO[0m
+[0m[1m[32m---- netconf_get_config ** changed : False ------------------------------------- INFO[0m
+[0m<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
+  <data>
+    <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+      <version>17.1</version>
+      <boot-start-marker/>
+      <boot-end-marker/>
+      <memory>
+        <free>
+          <low-watermark>
+            <processor>72107</processor>
+          </low-watermark>
+        </free>
+      </memory>
+      <call-home>
+        <contact-email-addr xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-call-home">sch-smart-licensing@cisco.com</contact-email-addr>
+        <profile xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-call-home">
+          <profile-name>CiscoTAC-1</profile-name>
+          <active>true</active>
+          <destination>
+            <transport-method>http</transport-method>
+          </destination>
+        </profile>
+      </call-home>
+      <service>
+        <timestamps>
+          <debug>
+            <datetime>
+              <msec/>
+            </datetime>
+          </debug>
+          <log>
+            <datetime>
+              <msec/>
+            </datetime>
+          </log>
+        </timestamps>
+        <call-home/>
+      </service>
+      <platform>
+        <console xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-platform">
+          <output>virtual</output>
+        </console>
+        <qfp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-platform">
+          <utilization>
+            <monitor>
+              <load>80</load>
+            </monitor>
+          </utilization>
+        </qfp>
+        <punt-keepalive xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-platform">
+          <disable-kernel-core>true</disable-kernel-core>
+        </punt-keepalive>
+      </platform>
+      <hostname>R1</hostname>
+      <enable>
+        <password>
+          <secret>rayka-co.com</secret>
+        </password>
+      </enable>
+      <username>
+        <name>rayka</name>
+        <privilege>15</privilege>
+        <password>
+          <encryption>0</encryption>
+          <password>rayka-co.ir</password>
+        </password>
+      </username>
+      <ip>
+        <domain>
+          <name>rayka-co.ir</name>
+        </domain>
+        <forward-protocol>
+          <protocol>nd</protocol>
+        </forward-protocol>
+        <multicast>
+          <route-limit xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-multicast">2147483647</route-limit>
+        </multicast>
+        <pim>
+          <autorp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-multicast"/>
+        </pim>
+        <access-list>
+          <standard xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-acl">
+            <name>93</name>
+            <access-list-seq-rule>
+              <sequence>10</sequence>
+              <permit>
+                <std-ace>
+                  <any/>
+                </std-ace>
+              </permit>
+            </access-list-seq-rule>
+          </standard>
+          <extended xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-acl">
+            <name>meraki-fqdn-dns</name>
+          </extended>
+        </access-list>
+        <http xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-http">
+          <authentication>
+            <local/>
+          </authentication>
+          <server>true</server>
+          <secure-server>true</secure-server>
+        </http>
+      </ip>
+      <ipv6>
+        <mld xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mld">
+          <ssm-map>
+            <query>
+              <dns/>
+            </query>
+          </ssm-map>
+        </mld>
+      </ipv6>
+      <interface>
+        <GigabitEthernet>
+          <name>1</name>
+          <ip>
+            <address>
+              <primary>
+                <address>192.168.1.11</address>
+                <mask>255.255.255.0</mask>
+              </primary>
+            </address>
+            <igmp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-igmp">
+              <explicit-tracking>false</explicit-tracking>
+              <proxy-service>false</proxy-service>
+              <unidirectional-link>false</unidirectional-link>
+              <v3lite>false</v3lite>
+            </igmp>
+          </ip>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+        <GigabitEthernet>
+          <name>2</name>
+          <ip>
+            <address>
+              <primary>
+                <address>192.168.200.1</address>
+                <mask>255.255.255.0</mask>
+              </primary>
+            </address>
+            <igmp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-igmp">
+              <explicit-tracking>false</explicit-tracking>
+              <proxy-service>false</proxy-service>
+              <unidirectional-link>false</unidirectional-link>
+              <v3lite>false</v3lite>
+            </igmp>
+          </ip>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+        <GigabitEthernet>
+          <name>3</name>
+          <shutdown/>
+          <ip>
+            <igmp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-igmp">
+              <explicit-tracking>false</explicit-tracking>
+              <proxy-service>false</proxy-service>
+              <unidirectional-link>false</unidirectional-link>
+              <v3lite>false</v3lite>
+            </igmp>
+          </ip>
+          <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+          </mop>
+          <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+          </negotiation>
+        </GigabitEthernet>
+      </interface>
+      <control-plane/>
+      <login>
+        <on-success>
+          <log/>
+        </on-success>
+      </login>
+      <multilink>
+        <bundle-name xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ppp">authenticated</bundle-name>
+      </multilink>
+      <redundancy/>
+      <spanning-tree>
+        <extend xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-spanning-tree">
+          <system-id/>
+        </extend>
+      </spanning-tree>
+      <subscriber>
+        <templating/>
+      </subscriber>
+      <ethernet>
+        <cfm xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+          <alarm>
+            <delay>2500</delay>
+            <reset>10000</reset>
+          </alarm>
+        </cfm>
+      </ethernet>
+      <crypto>
+        <pki xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-crypto">
+          <certificate>
+            <chain>
+              <name>SLA-TrustPoint</name>
+              <certificate>
+                <serial>01</serial>
+                <certtype>ca</certtype>
+              </certificate>
+            </chain>
+            <chain>
+              <name>TP-self-signed-1662852456</name>
+              <certificate>
+                <serial>01</serial>
+                <certtype>self-signed</certtype>
+              </certificate>
+            </chain>
+          </certificate>
+          <trustpoint>
+            <id>SLA-TrustPoint</id>
+            <enrollment>
+              <pkcs12/>
+            </enrollment>
+            <revocation-check>crl</revocation-check>
+          </trustpoint>
+          <trustpoint>
+            <id>TP-self-signed-1662852456</id>
+            <enrollment>
+              <selfsigned/>
+            </enrollment>
+            <revocation-check>none</revocation-check>
+            <subject-name>cn=IOS-Self-Signed-Certificate-1662852456</subject-name>
+          </trustpoint>
+        </pki>
+      </crypto>
+      <router>
+        <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
+          <id>65000</id>
+          <bgp>
+            <router-id>
+              <ip-id>2.2.2.2</ip-id>
+            </router-id>
+          </bgp>
+        </bgp>
+        <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+          <ospf>
+            <process-id>
+              <id>1</id>
+              <router-id>1.1.1.1</router-id>
+            </process-id>
+          </ospf>
+        </router-ospf>
+        <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+          <id>1</id>
+          <auto-cost>
+            <reference-bandwidth>100</reference-bandwidth>
+          </auto-cost>
+          <timers>
+            <throttle>
+              <spf>
+                <delay>50</delay>
+                <min-delay>200</min-delay>
+                <max-delay>5000</max-delay>
+              </spf>
+            </throttle>
+          </timers>
+          <router-id>1.1.1.1</router-id>
+          <compatible>
+            <rfc1583/>
+          </compatible>
+        </ospf>
+      </router>
+      <license>
+        <udi>
+          <pid>CSR1000V</pid>
+          <sn>9HQP8IAWUTX</sn>
+        </udi>
+      </license>
+      <line>
+        <console>
+          <first>0</first>
+          <stopbits>1</stopbits>
+        </console>
+        <vty>
+          <first>0</first>
+          <last>4</last>
+          <login>
+            <local/>
+          </login>
+          <privilege>
+            <level>
+              <number>15</number>
+            </level>
+          </privilege>
+          <transport>
+            <input>
+              <all/>
+            </input>
+          </transport>
+        </vty>
+      </line>
+      <ntp>
+        <server xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ntp">
+          <server-list>
+            <ip-address>3.3.3.3</ip-address>
+          </server-list>
+        </server>
+      </ntp>
+      <diagnostic xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-diagnostics">
+        <bootup>
+          <level>minimal</level>
+        </bootup>
+      </diagnostic>
+    </native>
+  </data>
+</rpc-reply>
+[0m
+[0m[1m[32m^^^^ END get_config ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m
