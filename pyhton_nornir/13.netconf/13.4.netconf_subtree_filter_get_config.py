@@ -1,6 +1,6 @@
 from nornir import InitNornir
-#from nornir_scrapli.tasks import netconf_get_config
-from nornir_netconf.plugins.tasks import netconf_get_config
+from nornir_scrapli.tasks import netconf_get_config
+#from nornir_netconf.plugins.tasks import netconf_get_config
 from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
@@ -26,11 +26,32 @@ filter3 = """
     </native>
 """
 
+filter4 = """
+    <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    </native>
+"""
+
+filter5 = """
+    <network-instances xmlns="http://openconfig.net/yang/network-instance">
+      <network-instance>
+        <protocols>
+          <protocol>
+            <bgp>
+              <neighbors>
+                <neighbor>
+                </neighbor>
+              </neighbors>
+            </bgp>
+          </protocol>
+        </protocols>
+      </network-instance>
+    </network>
+"""
+
 
 def netconf_subtree_get_config(task):
-#    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter3)
-
-    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter3)
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter5)
+#    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter3)
 
 results = nr.run(task=netconf_subtree_get_config)
 print_result(results)

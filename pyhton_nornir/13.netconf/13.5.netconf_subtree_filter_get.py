@@ -30,10 +30,24 @@ filter3 = """
   </interfaces>
 """
 
+filter4 = """
+  <interfaces xmlns="http://openconfig.net/yang/interfaces">
+      <interface>
+        <state>
+          <name>
+          </name>
+          <counters>
+            <in-octets>
+            </in-octets
+          </counters>
+        </state>
+      </interface>
+  </interfaces>
+"""
 
 def netconf_subtree_get(task):
-    task.run(task=netconf_get, filter_type="subtree", filter_=filter3)
-#    task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+    task.run(task=netconf_get, filter_type="subtree", filter_=filter4)
+#    task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter4)
 
 results = nr.run(task=netconf_subtree_get)
 print_result(results)

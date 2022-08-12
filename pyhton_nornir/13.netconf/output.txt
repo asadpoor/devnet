@@ -253,6 +253,10 @@
               <ip-id>2.2.2.2</ip-id>
             </router-id>
           </bgp>
+          <neighbor>
+            <id>1.1.1.1</id>
+            <remote-as>65001</remote-as>
+          </neighbor>
         </bgp>
         <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
           <ospf>
@@ -581,6 +585,26 @@
                   </config>
                 </route-selection-options>
               </global>
+              <neighbors>
+                <neighbor>
+                  <neighbor-address>1.1.1.1</neighbor-address>
+                  <config>
+                    <neighbor-address>1.1.1.1</neighbor-address>
+                    <peer-as>65001</peer-as>
+                  </config>
+                  <timers>
+                    <config>
+                      <hold-time>180.0</hold-time>
+                      <keepalive-interval>60.0</keepalive-interval>
+                    </config>
+                  </timers>
+                  <ebgp-multihop>
+                    <config>
+                      <enabled>false</enabled>
+                    </config>
+                  </ebgp-multihop>
+                </neighbor>
+              </neighbors>
             </bgp>
           </protocol>
           <protocol>

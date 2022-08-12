@@ -842,3 +842,91 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
 2022-08-13 00:50:27,611 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
 2022-08-13 00:51:20,819 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
 2022-08-13 00:51:51,035 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:21:45,986 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-13 01:22:01,393 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-13 01:24:17,517 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:26:16,812 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:27:09,882 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:28:01,742 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:28:28,462 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:28:58,776 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:29:59,761 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:30:41,760 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:31:53,521 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 01:35:46,792 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:37:03,357 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:38:15,499 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:39:11,773 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:39:38,006 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:39:39,271 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 10
+lxml.etree.XMLSyntaxError: expected '>', line 10, column 11
+
+2022-08-13 01:39:39,271 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.5.netconf_subtree_filter_get.py", line 50, in netconf_subtree_get
+    task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter4)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-13 01:40:05,139 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:40:32,696 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 01:40:33,857 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 10
+lxml.etree.XMLSyntaxError: expected '>', line 10, column 11
+
+2022-08-13 01:40:33,858 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.5.netconf_subtree_filter_get.py", line 50, in netconf_subtree_get
+    task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter4)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
