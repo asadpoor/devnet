@@ -378,3 +378,467 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
 2022-08-10 01:12:07,544 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
 2022-08-10 01:13:07,246 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
 2022-08-10 01:13:31,580 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-10 01:38:04,990 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:38:04,991 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get() got an unexpected keyword argument 'source'
+
+2022-08-10 01:38:04,991 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.3.netconf_xpath_filter_get.py", line 9, in netconf_xpath_get
+    task.run(task=netconf_get, source="running", filter_type="xpath", filter_="//neighbor")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-10 01:38:28,797 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:39:34,080 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:40:29,245 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:41:12,174 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:44:14,805 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:45:20,627 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 01:47:28,669 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 02:04:00,272 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 02:05:17,704 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 02:06:14,500 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-10 02:06:56,073 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2022-08-12 22:39:44,102 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:39:56,532 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:47:27,719 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:47:27,720 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2022-08-12 22:47:27,720 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filters="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:48:58,067 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:48:58,785 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 22:48:58,786 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:50:03,369 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:50:04,071 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 22:50:04,072 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 16, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:50:16,907 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:50:17,573 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 22:50:17,574 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:50:54,814 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:50:54,815 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2022-08-12 22:50:54,815 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filters="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:51:11,950 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:51:11,951 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter'
+
+2022-08-12 22:51:11,951 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:51:24,816 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:51:25,504 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 22:51:25,505 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filter1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 22:52:20,915 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 22:52:21,584 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 22:52:21,586 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 23:03:18,001 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 23:03:18,680 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 23:03:18,681 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_xpath
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 23:04:23,388 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:04:24,049 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 23:04:24,050 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 23:07:22,974 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:07:23,652 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 32, in netconf_get_config
+    scrapli_response = scrapli_conn.get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 172, in get_config
+    response = self._pre_get_config(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 659, in _pre_get_config
+    xml_filter_elem = self._build_filter(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/base_driver.py", line 469, in _build_filter
+    if tmp_xml_filter_element.getchildren()[0].tag == "filter":
+IndexError: list index out of range
+
+2022-08-12 23:07:23,653 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_="filt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 23:08:00,540 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:08:00,541 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2022-08-12 23:08:00,542 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 14, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filters=filt)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-12 23:08:43,616 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:09:25,111 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:10:03,324 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:10:23,228 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:10:37,974 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:13:33,074 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:14:45,071 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:16:33,944 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:18:22,529 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:19:26,916 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 23:19:35,287 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-12 23:23:43,824 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:24:01,085 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:25:00,448 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:25:44,944 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-12 23:28:15,931 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:20:49,553 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:22:11,387 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:22:11,388 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter'
+
+2022-08-13 00:22:11,389 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 33, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", filter=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-13 00:22:27,217 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:22:27,218 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter_'
+
+2022-08-13 00:22:27,218 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 33, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", filter_=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-13 00:22:45,210 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:22:45,211 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filter'
+
+2022-08-13 00:22:45,211 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 33, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", filter=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-13 00:23:05,043 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:23:05,044 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'filters'
+
+2022-08-13 00:23:05,044 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.4.netconf_subtree_filter.py", line 33, in netconf_subtree
+    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", filters=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-13 00:24:24,495 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree' with args {} on 1 hosts
+2022-08-13 00:34:18,769 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 00:36:05,051 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 00:42:26,165 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:44:34,554 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:47:00,634 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:47:23,646 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:47:23,647 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get() got an unexpected keyword argument 'xmldict'
+
+2022-08-13 00:47:23,647 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.5.netconf_subtree_filter_get.py", line 36, in netconf_subtree_get
+    task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-13 00:47:58,641 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:47:58,642 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get() got an unexpected keyword argument 'path'
+
+2022-08-13 00:47:58,643 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.5.netconf_subtree_filter_get.py", line 36, in netconf_subtree_get
+    task.run(task=netconf_get, filter_type="subtree", path=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-13 00:49:30,543 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:49:30,544 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get() got an unexpected keyword argument 'filter'
+
+2022-08-13 00:49:30,544 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.5.netconf_subtree_filter_get.py", line 36, in netconf_subtree_get
+    task.run(task=netconf_get, filter_type="subtree", filter=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-13 00:49:52,130 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:50:27,611 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:51:20,819 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 00:51:51,035 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
