@@ -930,3 +930,271 @@ Traceback (most recent call last):
 nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
 
 
+2022-08-13 14:20:06,502 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 14:29:16,960 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2022-08-13 14:33:54,206 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:34:47,479 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:36:10,455 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:36:50,553 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:37:33,184 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:38:13,527 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:39:31,076 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:39:31,856 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 24, in netconf_xmltodict
+    pprint(interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]["name"])
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:39:50,537 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:39:51,322 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 24, in netconf_xmltodict
+    pprint(interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]["name"])
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:40:34,985 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:40:53,891 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:40:54,687 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 24, in netconf_xmltodict
+    pprint(interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]["name"])
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:41:32,784 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:41:33,606 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 24, in netconf_xmltodict
+    pprint(type(interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]["name"]))
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:42:01,456 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:45:24,587 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:47:01,393 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:48:06,483 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:48:45,258 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:48:46,091 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 31, in netconf_xmltodict
+    pprint(interface["ipv4"]["address"])
+KeyError: 'address'
+
+2022-08-13 14:49:21,791 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:49:22,598 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 32, in netconf_xmltodict
+    pprint(interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2022-08-13 14:52:12,874 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:52:14,430 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 36, in netconf_xmltodict
+    interfaceslist = interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:52:49,467 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:52:50,914 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 36, in netconf_xmltodict
+    interfaceslist = interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:53:21,432 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:53:22,902 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:53:41,086 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:53:42,542 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]
+TypeError: list indices must be integers or slices, not str
+
+2022-08-13 14:54:33,089 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:54:34,564 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]
+KeyError: 'rpc-reply'
+
+2022-08-13 14:54:58,367 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:54:59,803 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 38, in netconf_xmltodict
+    interfaceslist = interfaces_dic["rpc-reply"]["data"]["interfaces"]["interface"]
+KeyError: 'rpc-reply'
+
+2022-08-13 14:55:43,936 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:55:45,511 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 38, in netconf_xmltodict
+    interfaceslist = interfaces_dic["data"]["interfaces"]["interface"]
+KeyError: 'data'
+
+2022-08-13 14:56:10,000 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:56:11,483 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 38, in netconf_xmltodict
+    interfaceslist = interfaces_dic["data"]["interfaces"]["interface"]
+KeyError: 'data'
+
+2022-08-13 14:56:43,154 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:56:44,628 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["data"]["interfaces"]["interface"]
+KeyError: 'data'
+
+2022-08-13 14:57:00,096 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:57:01,499 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["data"]["interfaces"]["interface"]
+KeyError: 'data'
+
+2022-08-13 14:57:24,987 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:57:26,578 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["data"]["interfaces"]
+KeyError: 'data'
+
+2022-08-13 14:57:43,792 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:57:45,229 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    interfaceslist = interfaces_dic["data"]
+KeyError: 'data'
+
+2022-08-13 14:58:32,505 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:58:57,846 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:58:59,265 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 37, in netconf_xmltodict
+    pprint(interfaces_dic["data"])
+KeyError: 'data'
+
+2022-08-13 14:59:23,698 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 14:59:57,289 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:01:06,691 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:01:08,138 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 38, in netconf_xmltodict
+    for key,value in interfaces_dic:
+ValueError: too many values to unpack (expected 2)
+
+2022-08-13 15:01:37,295 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:01:38,736 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 38, in netconf_xmltodict
+    for key,value in interfaces_dic:
+ValueError: too many values to unpack (expected 2)
+
+2022-08-13 15:02:36,195 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:04:01,351 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:04:48,432 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:04:49,898 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 39, in netconf_xmltodict
+    pprint("key=",key)
+  File "/usr/lib/python3.10/pprint.py", line 55, in pprint
+    printer.pprint(object)
+  File "/usr/lib/python3.10/pprint.py", line 152, in pprint
+    self._format(object, self._stream, 0, 0, {}, 0)
+  File "/usr/lib/python3.10/pprint.py", line 193, in _format
+    stream.write(rep)
+AttributeError: 'str' object has no attribute 'write'
+
+2022-08-13 15:05:06,391 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:06:56,301 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:07:38,915 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:08:24,321 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:09:10,908 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:09:12,368 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 43, in netconf_xmltodict
+    pprint(interface["name"])
+TypeError: string indices must be integers
+
+2022-08-13 15:09:58,347 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:10:22,612 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:11:29,978 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:12:16,578 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:12:52,374 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:13:16,468 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:13:17,947 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 43, in netconf_xmltodict
+    for key,value in interfaceslist.items():
+AttributeError: 'list' object has no attribute 'items'
+
+2022-08-13 15:13:54,630 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:14:19,068 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:14:20,495 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.netconf_xmltodict.py", line 50, in netconf_xmltodict
+    pprint(interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2022-08-13 15:17:00,411 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 15:17:01,262 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 31, in netconf_xmltodict
+    pprint(interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
