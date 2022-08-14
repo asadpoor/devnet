@@ -6,7 +6,7 @@ from nornir_utils.plugins.functions import print_result
 nr = InitNornir(config_file="config.yaml")
 
 def netconf_xpath(task):
-    task.run(task=netconf_get_config, source="running")
+#    task.run(task=netconf_get_config, source="running")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/username")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/ip/access-list/standard")
@@ -17,7 +17,10 @@ def netconf_xpath(task):
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//interfaces")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native//interface")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//bgp")
+    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//protocol/bgp")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/network-instances//bgp")
+#    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//ntp")
+
 
 #    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="xpath", path="/native")
 #    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="xpath", path="/native/router/router-ospf")

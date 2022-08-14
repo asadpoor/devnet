@@ -1198,3 +1198,467 @@ Traceback (most recent call last):
     pprint(interface["ipv4"]["address"]["ip"])
 KeyError: 'address'
 
+2022-08-13 15:48:10,782 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 16:09:46,219 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-13 16:13:17,519 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:14:08,395 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:15:16,989 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:16:01,101 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:16:28,699 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:17:05,131 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:17:28,207 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:17:53,665 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:18:16,839 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:18:45,923 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:19:41,268 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:20:09,986 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:21:39,306 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:22:48,040 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:23:45,940 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:23:46,748 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(inetrface["ipv4"])
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:24:44,129 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:26:01,541 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:26:02,339 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(inetrface["ipv4"]["address"])
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:26:43,046 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:26:43,862 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(inetrface["ipv4"]["address"]["ip"])
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:30:43,420 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:30:44,244 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(inetrface["ipv4"]["address"]["ip"])
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:31:40,196 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:31:41,007 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(type(inetrface["ipv4"]))
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:32:02,247 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:32:03,025 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print("hooooooooooo",type(inetrface["ipv4"]))
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:32:51,491 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:32:52,291 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 24, in netconf_xmltodict
+    print("hooooooooooo",type(inetrface["ipv4"]))
+NameError: name 'inetrface' is not defined
+
+2022-08-13 16:33:07,106 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:33:48,060 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:34:25,321 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:34:57,301 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:35:23,983 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:35:24,754 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(interface["ipv4"]["address"])
+KeyError: 'address'
+
+2022-08-13 16:35:40,038 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:35:40,826 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 23, in netconf_xmltodict
+    print(interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2022-08-13 16:52:46,625 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:52:47,455 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.6.nornir_scrapli_netconf_xmltodict.py", line 31, in netconf_xmltodict
+    pprint(interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2022-08-13 16:53:31,986 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2022-08-13 16:53:33,452 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.7.nornir_netconf_xmltodict.py", line 31, in netconf_xmltodict
+    pprint(interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2022-08-14 16:50:10,105 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 16:50:46,867 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:01:38,711 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:02:16,551 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:17:22,445 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get' with args {} on 1 hosts
+2022-08-14 17:17:22,446 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_subtree_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_subtree_get
+    task.run(task=netconf_get, target="running", config=ospf_config)
+NameError: name 'netconf_get' is not defined
+
+2022-08-14 17:18:07,347 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:18:07,348 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'target'
+
+2022-08-14 17:18:07,349 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_get_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-14 17:18:49,835 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:18:49,836 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'target'
+
+2022-08-14 17:18:49,836 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_get_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-14 17:18:58,919 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:18:58,920 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: netconf_get_config() got an unexpected keyword argument 'target'
+
+2022-08-14 17:18:58,920 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_get_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2022-08-14 17:19:36,183 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:19:36,911 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 17:21:03,591 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:21:04,296 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 17:21:37,615 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:21:38,293 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 17:25:19,849 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:25:20,576 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 35, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 17:26:48,836 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:28:31,616 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:28:32,315 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 70, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 17:30:02,432 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:30:13,652 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:31:33,423 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:31:52,663 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:32:44,026 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:33:02,402 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 17:34:46,116 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:34:46,800 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 22, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ntp_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 17:37:28,088 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 17:37:28,782 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 40, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ntp_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 19:59:51,929 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 19:59:51,930 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 41, in netconf_edit_config_example
+    task.run(task=netconf_get_config, xmldict="false", target="running", config=ntp_config)
+NameError: name 'netconf_get_config' is not defined
+
+2022-08-14 20:00:17,429 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:00:18,810 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: Unsupported capability :writable-running
+
+2022-08-14 20:00:18,810 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 41, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, xmldict="false", target="running", config=ntp_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:01:22,137 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:01:23,445 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: Unsupported capability :writable-running
+
+2022-08-14 20:01:23,445 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 36, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, xmldict="false", target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:06:05,245 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:06:05,945 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 12, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:07:44,690 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:07:45,389 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 12, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:09:19,645 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:09:20,319 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 12, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:09:50,050 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:11:00,716 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:11:42,809 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:13:36,260 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:13:37,697 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 38, in netconf_edit_config_example
+    task.run(task=netconf_commit, manager=manager)
+NameError: name 'manager' is not defined
+
+2022-08-14 20:14:28,116 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:15:40,834 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:16:19,022 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:16:20,329 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 76, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: Unsupported capability :writable-running
+
+2022-08-14 20:16:20,329 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 56, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, xmldict="false", target="running", config=ospf_config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:32:30,356 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 20:33:41,314 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:33:41,315 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 51, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, xmldict="false", target="candidate", config=ospf_config)
+NameError: name 'ospf_config' is not defined
+
+2022-08-14 20:34:13,313 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:34:37,743 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:36:03,381 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:37:07,120 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:37:38,508 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:37:58,626 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:38:45,124 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:40:31,839 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:41:59,789 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:43:50,569 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:43:51,241 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.18.netconf_edit_config.py", line 44, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=config1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:45:25,143 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 20:45:33,627 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 20:47:08,931 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2022-08-14 20:49:49,581 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:49:50,287 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.8.netconf_edit_config.py", line 116, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="running", config=config2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-14 20:50:14,287 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:52:36,828 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2022-08-14 20:53:16,976 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts

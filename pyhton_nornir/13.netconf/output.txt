@@ -249,13 +249,18 @@
         <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
           <id>65000</id>
           <bgp>
+            <log-neighbor-changes>true</log-neighbor-changes>
             <router-id>
               <ip-id>2.2.2.2</ip-id>
             </router-id>
           </bgp>
           <neighbor>
-            <id>1.1.1.1</id>
+            <id>9.9.9.9</id>
             <remote-as>65001</remote-as>
+          </neighbor>
+          <neighbor>
+            <id>19.19.19.19</id>
+            <remote-as>65002</remote-as>
           </neighbor>
         </bgp>
         <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
@@ -268,7 +273,37 @@
                 <area>10</area>
               </network>
               <network>
+                <ip>172.16.3.1</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>10</area>
+              </network>
+              <network>
+                <ip>172.16.5.1</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>10</area>
+              </network>
+              <network>
+                <ip>172.16.7.1</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>10</area>
+              </network>
+              <network>
                 <ip>172.17.2.1</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>20</area>
+              </network>
+              <network>
+                <ip>172.17.4.1</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>20</area>
+              </network>
+              <network>
+                <ip>172.17.6.1</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>20</area>
+              </network>
+              <network>
+                <ip>172.17.8.1</ip>
                 <wildcard>0.0.0.0</wildcard>
                 <area>20</area>
               </network>
@@ -328,7 +363,7 @@
       <ntp>
         <server xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ntp">
           <server-list>
-            <ip-address>3.3.3.3</ip-address>
+            <ip-address>13.15.17.19</ip-address>
           </server-list>
         </server>
       </ntp>
@@ -587,10 +622,28 @@
               </global>
               <neighbors>
                 <neighbor>
-                  <neighbor-address>1.1.1.1</neighbor-address>
+                  <neighbor-address>9.9.9.9</neighbor-address>
                   <config>
-                    <neighbor-address>1.1.1.1</neighbor-address>
+                    <neighbor-address>9.9.9.9</neighbor-address>
                     <peer-as>65001</peer-as>
+                  </config>
+                  <timers>
+                    <config>
+                      <hold-time>180.0</hold-time>
+                      <keepalive-interval>60.0</keepalive-interval>
+                    </config>
+                  </timers>
+                  <ebgp-multihop>
+                    <config>
+                      <enabled>false</enabled>
+                    </config>
+                  </ebgp-multihop>
+                </neighbor>
+                <neighbor>
+                  <neighbor-address>19.19.19.19</neighbor-address>
+                  <config>
+                    <neighbor-address>19.19.19.19</neighbor-address>
+                    <peer-as>65002</peer-as>
                   </config>
                   <timers>
                     <config>
@@ -663,27 +716,12 @@
         <name>GigabitEthernet3</name>
         <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
         <enabled>false</enabled>
-        <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
+        <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+
+</ipv4>
         <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
       </interface>
     </interfaces>
-    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
-      <enable-nacm>true</enable-nacm>
-      <read-default>deny</read-default>
-      <write-default>deny</write-default>
-      <exec-default>deny</exec-default>
-      <enable-external-groups>true</enable-external-groups>
-      <rule-list>
-        <name>admin</name>
-        <group>PRIV15</group>
-        <rule>
-          <name>permit-all</name>
-          <module-name>*</module-name>
-          <access-operations>*</access-operations>
-          <action>permit</action>
-        </rule>
-      </rule-list>
-    </nacm>
     <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
       <routing-instance>
         <name>default</name>
