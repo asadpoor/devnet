@@ -1,7 +1,7 @@
 ---
 
 cisco:
-#  platform: ios
+#  platform: iosxe
   data:
     community: rayka-co.ir
 

@@ -87,7 +87,7 @@ nr = InitNornir(config_file="config.yaml")
 
 def netconf_edit_config_example(task):
     task.run(task=netconf_edit_config, target="candidate", config=config2)
-#    task.run(task=netconf_edit_config, xmldict="false", target="candidate", config=config1)
+#    task.run(task=netconf_edit_config, xmldict="false", target="candidate", config=config2)
     task.run(task=netconf_commit)
 
 results = nr.run(task=netconf_edit_config_example)
