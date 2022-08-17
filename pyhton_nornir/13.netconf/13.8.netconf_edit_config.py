@@ -1,6 +1,6 @@
 from nornir import InitNornir
-from nornir_scrapli.tasks import netconf_edit_config
-#from nornir_netconf.plugins.tasks import netconf_edit_config
+#from nornir_scrapli.tasks import netconf_edit_config
+from nornir_netconf.plugins.tasks import netconf_edit_config
 from nornir_netconf.plugins.tasks import netconf_commit
 from nornir_utils.plugins.functions import print_result
 
@@ -13,7 +13,7 @@ config1 = """
   <config>
     <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
       <router>
-        <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+        <router-ospf operation="replace" xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
           <ospf>
             <process-id>
               <id>1</id>
@@ -60,9 +60,9 @@ config2 = """
               </global>
               <neighbors>
                 <neighbor>
-                  <neighbor-address>9.9.9.9</neighbor-address>
+                  <neighbor-address>91.91.91.91</neighbor-address>
                   <config>
-                    <neighbor-address>9.9.9.9</neighbor-address>
+                    <neighbor-address>91.91.91.91</neighbor-address>
                     <peer-as>65001</peer-as>
                   </config>
                 </neighbor>
@@ -86,8 +86,8 @@ config2 = """
 nr = InitNornir(config_file="config.yaml")
 
 def netconf_edit_config_example(task):
-    task.run(task=netconf_edit_config, target="candidate", config=config2)
-#    task.run(task=netconf_edit_config, xmldict="false", target="candidate", config=config2)
+#    task.run(task=netconf_edit_config, target="candidate", config=config2)
+    task.run(task=netconf_edit_config, xmldict="false", target="candidate", config=config1)
     task.run(task=netconf_commit)
 
 results = nr.run(task=netconf_edit_config_example)

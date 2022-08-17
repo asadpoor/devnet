@@ -1,10 +1,14 @@
 from nornir import InitNornir
 from nornir_netconf.plugins.tasks import netconf_get_config
-from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
 filter1 = """
+    <configuration>
+    </configuration>
+"""
+
+filter2 = """
     <configuration>
       <system>
         <login>
@@ -15,7 +19,7 @@ filter1 = """
     </configuration>
 """
 
-filter2 = """
+filter3 = """
     <configuration>
       <interfaces>
         <interface>
@@ -24,9 +28,20 @@ filter2 = """
     </configuration>
 """
 
+filter4 = """
+    <configuration>
+      <routing-options>
+        <static>
+          <route>
+          </route>
+        </static>
+      </routing-options>
+    </configuration>
+"""
+
 def netconf(task):
-#    config = task.run(task=netconf_get_config, source="running", xmldict="true")
-    config = task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter2)
+#    config = task.run(task=netconf_get_config, source="running", xmldict="false")
+    config = task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter4)
     config = config.result
     config = config["rpc"]
     print(config)
@@ -36,4 +51,3 @@ def netconf(task):
 
 nr_filter = nr.filter(platform="junos")
 results=nr_filter.run(task=netconf)
-#print_result(results)
