@@ -1,9 +1,0 @@
-# enable SSH
-# give IP address
-# then
-username rayka privilege 15 secret 9 $9$Id8U3L.qpoWlrU$AOi1GcwJ7JzkojQW7002AGdNkJsaG/enCy3DggoLuY6
-netconf-yang 
-netconf-yang feature candidate-datastore 
-
-#test netconf from a remote machine
-ssh rayka@192.168.2.91 -p 830

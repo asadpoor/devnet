@@ -2483,3 +2483,1241 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
 
 2022-08-17 19:47:26,503 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
 2022-08-17 19:48:49,132 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:01:46,111 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:01:46,113 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 43, in netconf
+    config = task.run(task=netconf_get_config, source="running", xmldict="false")
+NameError: name 'netconf_get_config' is not defined
+
+2022-08-17 20:02:11,660 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:02:36,343 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:03:09,106 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:03:20,393 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:06:22,891 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:06:31,238 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:24:04,771 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:24:06,167 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error
+
+2022-08-17 20:24:06,168 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 46, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 20:32:30,595 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:32:30,596 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 14, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+NameError: name 'filter3' is not defined
+
+2022-08-17 20:32:52,621 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:32:52,622 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 15, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+NameError: name 'filter3' is not defined
+
+2022-08-17 20:46:14,109 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:46:15,358 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-17 20:46:15,359 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 15, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 20:46:32,809 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:46:34,074 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-17 20:46:34,075 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 15, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 20:47:21,901 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:47:23,193 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-17 20:47:23,193 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 16, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 20:53:39,414 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:53:40,697 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-17 20:53:40,698 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 14, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 20:54:00,283 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:54:01,430 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 2
+lxml.etree.XMLSyntaxError: error parsing attribute name, line 2, column 30
+
+2022-08-17 20:54:01,431 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 13, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 20:56:40,991 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:59:51,798 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 20:59:52,877 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 2
+lxml.etree.XMLSyntaxError: Namespace prefix junos for style on interface-information is not defined, line 2, column 107
+
+2022-08-17 20:59:52,878 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 18, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 21:00:38,949 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 21:00:40,055 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 7
+lxml.etree.XMLSyntaxError: Opening and ending tag mismatch: physical-interface line 6 and interface-information, line 7, column 29
+
+2022-08-17 21:00:40,055 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 20, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 21:00:46,902 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 21:00:48,093 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 7
+lxml.etree.XMLSyntaxError: Opening and ending tag mismatch: physical-interface line 6 and interface-information, line 7, column 29
+
+2022-08-17 21:00:48,094 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 20, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 21:01:19,147 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 21:01:20,278 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 7
+lxml.etree.XMLSyntaxError: Opening and ending tag mismatch: physical-interface line 6 and interface-information, line 7, column 29
+
+2022-08-17 21:01:20,279 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 20, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 21:01:30,717 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 21:01:31,798 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 83, in request
+    node.append(util.build_filter(filter))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/util.py", line 65, in build_filter
+    rep.append(to_ele(criteria))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 129, in to_ele
+    return x if etree.iselement(x) else etree.fromstring(x.encode('UTF-8'), parser=_get_parser(huge_tree))
+  File "src/lxml/etree.pyx", line 3254, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1913, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1800, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1141, in lxml.etree._BaseParser._parseDoc
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "<string>", line 7
+lxml.etree.XMLSyntaxError: Opening and ending tag mismatch: physical-interface line 6 and interface-information, line 7, column 29
+
+2022-08-17 21:01:31,798 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 20, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 21:18:22,837 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 21:18:24,113 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-17 21:18:24,114 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 19, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-17 21:18:59,990 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-17 21:19:01,120 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-17 21:19:01,121 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 17, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:30:22,827 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:30:24,139 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:30:24,140 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 17, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:31:28,196 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:31:29,489 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:31:29,490 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 17, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:34:18,022 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:34:19,382 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error, expecting </configuration>
+error: syntax error, expecting </configuration>
+
+2022-08-18 17:34:19,382 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 17, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:35:21,325 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:35:22,574 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error, expecting </configuration>
+error: syntax error, expecting </configuration>
+
+2022-08-18 17:35:22,575 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 18, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:36:09,183 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:36:10,412 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:36:10,413 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 18, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:37:08,730 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:37:09,893 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:37:09,894 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 20, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:37:55,881 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:38:50,210 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:39:17,253 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:41:27,166 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:41:28,495 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:41:28,496 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 20, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:44:44,921 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:44:46,194 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:44:46,194 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 27, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:47:29,404 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:47:30,813 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: syntax error
+
+2022-08-18 17:47:30,814 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 27, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path="<interfaces></interfaces>")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:48:11,320 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 17:48:12,550 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 17:48:12,551 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 27, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 17:54:16,084 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_juniper' with args {} on 2 hosts
+2022-08-18 17:54:17,129 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 65, in request
+    node.append(validated_element(config, ("config", qualify("config"))))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 155, in validated_element
+    raise XMLError("Element [%s] does not meet requirement" % ele.tag)
+ncclient.xml_.XMLError: Element [configuration] does not meet requirement
+
+2022-08-18 17:54:17,129 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_edit_config_juniper' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.11.netconf_edit_config_juniper_srx.py", line 29, in netconf_edit_config_juniper
+    task.run(task=netconf_edit_config, target="candidate", config=config1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-18 17:54:17,194 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 65, in request
+    node.append(validated_element(config, ("config", qualify("config"))))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 155, in validated_element
+    raise XMLError("Element [%s] does not meet requirement" % ele.tag)
+ncclient.xml_.XMLError: Element [configuration] does not meet requirement
+
+2022-08-18 17:54:17,195 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_juniper' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.11.netconf_edit_config_juniper_srx.py", line 29, in netconf_edit_config_juniper
+    task.run(task=netconf_edit_config, target="candidate", config=config1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-18 17:56:04,841 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_juniper' with args {} on 2 hosts
+2022-08-18 17:56:05,846 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 65, in request
+    node.append(validated_element(config, ("config", qualify("config"))))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 155, in validated_element
+    raise XMLError("Element [%s] does not meet requirement" % ele.tag)
+ncclient.xml_.XMLError: Element [configuration] does not meet requirement
+
+2022-08-18 17:56:05,846 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_edit_config_juniper' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.11.netconf_edit_config_juniper_srx.py", line 28, in netconf_edit_config_juniper
+    task.run(task=netconf_edit_config, target="candidate", config=config1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-18 17:56:05,930 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 65, in request
+    node.append(validated_element(config, ("config", qualify("config"))))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 155, in validated_element
+    raise XMLError("Element [%s] does not meet requirement" % ele.tag)
+ncclient.xml_.XMLError: Element [configuration] does not meet requirement
+
+2022-08-18 17:56:05,930 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_juniper' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.11.netconf_edit_config_juniper_srx.py", line 28, in netconf_edit_config_juniper
+    task.run(task=netconf_edit_config, target="candidate", config=config1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-18 17:57:56,032 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_juniper' with args {} on 1 hosts
+2022-08-18 17:57:57,305 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_edit_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/editing/netconf_edit_config.py", line 44, in netconf_edit_config
+    result = manager.edit_config(config, target=target, default_operation=default_operation)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/edit.py", line 65, in request
+    node.append(validated_element(config, ("config", qualify("config"))))
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/xml_.py", line 155, in validated_element
+    raise XMLError("Element [%s] does not meet requirement" % ele.tag)
+ncclient.xml_.XMLError: Element [configuration] does not meet requirement
+
+2022-08-18 17:57:57,305 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_edit_config_juniper' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.11.netconf_edit_config_juniper_srx.py", line 28, in netconf_edit_config_juniper
+    task.run(task=netconf_edit_config, target="candidate", config=config1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-18 19:18:43,280 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:19:10,151 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:27:15,244 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:27:35,076 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:28:52,263 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:28:53,516 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:28:53,516 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 27, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:30:21,589 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:30:22,896 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:30:22,897 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 27, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:31:02,178 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:31:03,385 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:31:03,386 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 25, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:31:39,835 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:31:41,073 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:31:41,073 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 29, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:31:52,918 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:31:54,275 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:31:54,275 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 29, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:32:18,031 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:32:19,383 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:32:19,383 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 29, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter3)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:32:33,670 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:32:34,893 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:32:34,894 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 29, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:33:10,708 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:33:12,036 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:33:12,036 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 31, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:37:04,658 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:37:05,821 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:37:05,822 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 27, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:37:45,770 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:37:46,965 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:37:46,966 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 29, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter1)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:39:02,420 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:39:03,577 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:39:03,578 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 47, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter4)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:39:42,965 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:39:44,168 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netconf/plugins/tasks/retrieval/netconf_get.py", line 45, in netconf_get
+    result = manager.get(**params)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/retrieve.py", line 91, in request
+    return self._request(node)
+  File "/home/majid/.local/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 373, in _request
+    raise RPCError(to_ele(self._reply._raw), errs=errors)
+ncclient.operations.rpc.RPCError: error: syntax error
+error: syntax error, expecting </filter>
+
+2022-08-18 19:39:44,168 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 42, in netconf
+    config = task.run(task=netconf_get, xmldict="false", filter_type="subtree", path=filter4)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2022-08-18 19:40:05,571 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:40:20,207 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:41:20,171 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:41:50,016 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:42:44,688 -  nornir.core -     INFO -        run() - Running task 'netconf' with args {} on 1 hosts
+2022-08-18 19:42:47,465 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netconf' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.10.nornir_netconf_get_juniper_srx.py", line 44, in netconf
+    config = config["rpc"]["interface"]
+TypeError: 'NCElement' object is not subscriptable
+
+2022-08-19 02:06:06,994 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 02:06:06,997 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 02:06:07,030 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf.j2", line 8, in top-level template code
+    <id>{{ ospf.process_id }}</id>
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'process_id'
+
+2022-08-19 02:06:07,030 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.9.netconf_edit_config_with_template.py", line 18, in netconf_edit_config_with_template
+    template_to_load = task.run(task=template_file, template="ospf.j2", path="templates")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-19 02:13:52,109 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 02:13:52,113 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 02:13:52,808 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/13.netconf/13.9.netconf_edit_config_with_template.py", line 20, in netconf_edit_config_with_template
+    task.run(task=netconf_edit_config, target="running", config=configuration)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2022-08-19 02:14:30,744 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 02:14:30,747 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 02:18:09,056 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 02:18:09,058 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 03:48:20,621 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 03:48:20,624 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 04:06:10,368 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 04:06:10,371 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 04:06:55,157 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 04:06:55,160 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 04:08:09,115 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 04:08:09,118 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 04:09:19,937 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 04:09:19,940 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 04:10:14,055 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 04:10:14,058 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-19 04:11:12,307 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-19 04:11:12,310 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts

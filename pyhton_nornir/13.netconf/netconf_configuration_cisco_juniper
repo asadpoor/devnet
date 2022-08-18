@@ -1,0 +1,28 @@
+
+######################### cisco IOS XE #########################
+# enable SSH
+# give IP address
+# then
+username rayka privilege 15 secret 9 $9$Id8U3L.qpoWlrU$AOi1GcwJ7JzkojQW7002AGdNkJsaG/enCy3DggoLuY6
+netconf-yang 
+netconf-yang feature candidate-datastore 
+
+#test netconf from a remote machine
+ssh rayka@192.168.1.11 -p 830
+
+
+######################### Juniper SRX #########################
+https://ultraconfig.com.au/blog/introduction-to-netconf-and-juniper-yang-models/
+# enable SSH
+# give IP address
+# then
+
+set system login user rayka class super-user
+set system login user rayka authentication ...
+
+set system services netconf ssh port 830
+
+#test netconf from a remote machine
+ssh rayka@192.168.1.250 -p 830 -s netconf
+
+>show system schema module ?

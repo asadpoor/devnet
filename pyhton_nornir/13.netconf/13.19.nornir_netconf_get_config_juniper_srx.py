@@ -39,9 +39,16 @@ filter4 = """
     </configuration>
 """
 
+filter5 = """
+    <configuration>
+      <system>
+      </system>
+    </configuration>
+"""
+
 def netconf(task):
 #    config = task.run(task=netconf_get_config, source="running", xmldict="false")
-    config = task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter4)
+    config = task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter5)
     config = config.result
     config = config["rpc"]
     print(config)
