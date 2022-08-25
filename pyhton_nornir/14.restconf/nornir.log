@@ -1,0 +1,91 @@
+2022-08-25 23:18:32,323 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-25 23:19:20,602 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-25 23:22:36,494 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-25 23:22:36,651 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 26, in restconf_nornir_example
+    return Result(host=task.host, result=result.content)
+AttributeError: 'dict' object has no attribute 'content'
+
+2022-08-25 23:22:59,049 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-25 23:22:59,199 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 26, in restconf_nornir_example
+    return Result(host=task.host, result=result.result)
+AttributeError: 'dict' object has no attribute 'result'
+
+2022-08-25 23:23:14,037 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:29:40,463 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:30:30,843 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:31:34,112 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:32:58,975 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:33:46,853 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:34:29,018 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:34:29,175 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 30, in restconf_nornir_example
+    for key, value in result.items():
+AttributeError: 'list' object has no attribute 'items'
+
+2022-08-26 00:34:51,440 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:36:41,103 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:37:13,907 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:38:46,000 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:38:46,159 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 37, in restconf_nornir_example
+    result = task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]["process-id"][id]
+TypeError: list indices must be integers or slices, not dict
+
+2022-08-26 00:39:26,052 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:39:26,198 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 37, in restconf_nornir_example
+    result1 = task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]["process-id"][id]
+TypeError: list indices must be integers or slices, not dict
+
+2022-08-26 00:40:33,470 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:42:00,852 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:43:23,886 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:46:57,438 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:47:25,124 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:47:51,815 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:52:36,541 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:53:50,578 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:54:51,318 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:55:35,823 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:56:02,015 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:56:50,961 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:57:37,453 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:58:03,331 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:58:28,403 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 00:58:46,235 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:00:01,652 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:01:27,658 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:02:13,718 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:02:31,291 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:36:30,402 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:37:53,375 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:38:15,318 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:38:42,173 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:39:02,767 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:39:19,391 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-26 01:39:19,597 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 24, in restconf_nornir_example
+    for key, value in result.items():
+AttributeError: 'list' object has no attribute 'items'
+
+2022-08-26 01:40:04,437 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
