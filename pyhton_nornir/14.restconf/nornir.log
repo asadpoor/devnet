@@ -89,3 +89,490 @@ Traceback (most recent call last):
 AttributeError: 'list' object has no attribute 'items'
 
 2022-08-26 01:40:04,437 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-27 17:56:49,612 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-27 18:00:19,533 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:16:10,488 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:16:22,034 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:16:22,035 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_configuration_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.4.restconf_configuration_with_nornir.py", line 35, in restconf_configuration_nornir_example
+    response = requests.put(url, headers=headers, data=json.dumps(payload), auth=(f"{task.host.username}", f"{task.host.password}"), verify=False)
+NameError: name 'json' is not defined
+
+2022-08-27 18:17:48,047 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:17:48,048 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_configuration_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.4.restconf_configuration_with_nornir.py", line 36, in restconf_configuration_nornir_example
+    response = requests.put(url, headers=headers, data=json.dumps(payload), auth=(f"{task.host.username}", f"{task.host.password}"), verify=False)
+NameError: name 'json' is not defined
+
+2022-08-27 18:18:20,669 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:20:16,409 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:22:22,548 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-27 18:23:56,034 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-27 18:24:10,449 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-27 18:25:01,247 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-27 18:25:09,004 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-27 18:25:38,176 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-28 14:09:47,852 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-28 15:13:36,214 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 15:13:36,217 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 15:13:36,230 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf.j2", line 11, in template
+    'router-id': '{{ ospf.router_id }}'
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+
+2022-08-28 15:13:36,231 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.5.restconf_edit_config_with_template.py", line 26, in restconf_edit_config_with_template
+    template_to_load = task.run(task=template_file, template="ospf.j2", path="templates")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-08-28 15:16:35,689 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 15:16:35,691 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 15:17:08,946 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 15:17:08,949 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 15:17:54,672 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 15:17:54,675 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 15:58:39,861 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 15:58:39,864 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 15:59:08,139 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 15:59:08,144 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:00:18,857 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:00:18,859 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:01:41,584 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:01:41,586 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:03:48,648 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:03:48,650 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:09:41,102 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:09:41,106 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:10:37,951 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:10:37,955 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:11:17,370 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:11:17,373 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:12:13,807 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-28 16:12:23,485 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:12:23,488 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:14:32,238 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:14:32,241 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:15:41,557 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:15:41,560 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:15:56,824 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:15:56,827 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:18:01,655 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:18:01,658 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:18:42,577 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:18:42,579 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:19:12,036 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:19:12,039 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:19:48,353 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2022-08-28 16:20:38,634 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:20:38,637 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:21:14,270 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:21:14,273 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:21:14,276 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.5.restconf_edit_config_with_template.py", line 28, in restconf_edit_config_with_template
+    payload = payload.json()
+AttributeError: 'str' object has no attribute 'json'
+
+2022-08-28 16:22:40,997 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:22:41,000 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:23:22,220 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:23:22,223 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:23:56,617 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:23:56,620 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:24:30,629 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:24:30,632 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:25:28,280 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:25:28,283 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:31:53,144 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:31:53,147 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:31:53,151 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.5.restconf_edit_config_with_template.py", line 28, in restconf_edit_config_with_template
+    payload = json.dumps(payload)
+UnboundLocalError: local variable 'payload' referenced before assignment
+
+2022-08-28 16:32:20,617 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 16:32:20,620 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 16:32:20,632 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.5.restconf_edit_config_with_template.py", line 28, in restconf_edit_config_with_template
+    payload = json.dumps(template_to_load)
+  File "/usr/lib/python3.10/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/majid/.local/lib/python3.10/site-packages/jnpr/junos/factory/to_json.py", line 78, in default
+    obj = super(PyEzJSONEncoder, self).default(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Result is not JSON serializable
+
+2022-08-28 20:23:12,418 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:24:42,762 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:30:30,554 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:30:30,717 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 21, in restconf_nornir_example
+    print(result.json())
+AttributeError: 'dict' object has no attribute 'json'
+
+2022-08-28 20:31:09,455 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:31:59,983 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:32:00,133 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 15, in restconf_nornir_example
+    print(respnose.content)
+NameError: name 'respnose' is not defined
+
+2022-08-28 20:32:11,456 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:32:27,852 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:32:28,002 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 15, in restconf_nornir_example
+    print(respnose)
+NameError: name 'respnose' is not defined
+
+2022-08-28 20:33:01,067 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:33:01,218 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 15, in restconf_nornir_example
+    print(respnose.content)
+NameError: name 'respnose' is not defined
+
+2022-08-28 20:33:40,110 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:33:40,257 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 15, in restconf_nornir_example
+    print("hello",respnose.content)
+NameError: name 'respnose' is not defined
+
+2022-08-28 20:34:20,036 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:35:18,621 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:40:57,333 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:41:10,596 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:51:06,440 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:51:06,694 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 22, in restconf_nornir_example
+    rprint(json.dumps(result))
+NameError: name 'json' is not defined
+
+2022-08-28 20:51:33,355 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 20:53:11,750 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:53:11,753 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 20:53:47,133 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:53:47,212 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 20:54:28,755 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:54:28,867 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 20:56:10,343 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:56:10,434 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-08-28 20:57:14,469 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:57:14,483 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 20:57:55,982 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:57:55,997 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 20:59:11,776 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:59:11,791 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 20:59:12,889 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_stuff' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test.py", line 36, in configure_stuff
+    return Result(host=task.host, result=response)
+NameError: name 'Result' is not defined
+
+2022-08-28 20:59:32,333 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 20:59:32,345 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:01:47,300 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:01:47,313 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:04:15,804 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:04:15,814 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:05:35,808 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:05:35,823 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:09:01,611 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:09:01,623 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:09:01,624 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_stuff' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test.py", line 53, in configure_stuff
+    json=task.host["facts"]["configure_acl"],
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'facts'
+
+2022-08-28 21:09:40,189 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:09:40,202 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:09:40,203 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_stuff' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test.py", line 53, in configure_stuff
+    json=task.host["facts"]["configure_acl"],
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'facts'
+
+2022-08-28 21:10:33,834 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:10:33,838 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:10:33,838 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_stuff' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test.py", line 53, in configure_stuff
+    json=task.host["facts"]["configure_acl"],
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'facts'
+
+2022-08-28 21:11:27,771 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:11:27,775 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:11:27,776 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_stuff' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test.py", line 52, in configure_stuff
+    json=task.host["facts"]["configure_acl"],
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'facts'
+
+2022-08-28 21:12:35,966 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:12:35,977 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:13:03,545 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:13:03,558 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:13:04,668 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_stuff' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test1.py", line 31, in configure_stuff
+    rprint(response)
+NameError: name 'rprint' is not defined
+
+2022-08-28 21:13:17,627 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:13:17,640 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:14:17,097 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:14:17,110 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {'chained_url': 'data/openconfig-acl:acl', 'headers': {'Accept': 'application/yang-data+json', 'Content-Type': 'application/yang-data+json'}} on 1 hosts
+2022-08-28 21:14:55,232 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:14:55,243 -  nornir.core -     INFO -        run() - Running task 'configure_stuff' with args {} on 1 hosts
+2022-08-28 21:16:00,845 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:16:00,860 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:16:19,875 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:16:19,887 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:16:55,519 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:16:55,523 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:17:46,550 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:17:46,555 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:18:14,206 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:18:14,210 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:18:56,465 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:18:56,469 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:20:43,249 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:20:43,252 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:21:13,108 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:21:13,110 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:22:05,130 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:22:05,133 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:25:47,188 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:25:47,190 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:27:57,946 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-28 21:27:57,948 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-28 21:29:49,603 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 21:30:58,864 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-28 21:31:08,744 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-08-31 21:05:41,084 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:05:41,088 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:06:45,809 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:06:45,815 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:07:40,198 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:07:40,202 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:11:52,912 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:12:36,521 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:12:36,525 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:13:36,240 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:13:36,328 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:15:21,612 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:15:21,682 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:16:28,344 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:16:28,347 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:16:55,480 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:16:55,484 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:18:35,885 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:18:35,889 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:24:20,329 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:24:20,333 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:25:00,712 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:25:00,716 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:25:56,036 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:25:56,043 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:26:34,548 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:26:34,553 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:26:52,569 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:26:52,573 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:28:46,278 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:28:46,283 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:29:22,744 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:29:22,775 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 26, in load_yaml
+    data = yml.load(f)
+  File "/home/majid/.local/lib/python3.10/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/majid/.local/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 119, in get_single_data
+    node = self.composer.get_single_node()
+  File "_ruamel_yaml.pyx", line 706, in _ruamel_yaml.CParser.get_single_node
+  File "_ruamel_yaml.pyx", line 724, in _ruamel_yaml.CParser._compose_document
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 775, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 889, in _ruamel_yaml.CParser._compose_mapping_node
+  File "_ruamel_yaml.pyx", line 773, in _ruamel_yaml.CParser._compose_node
+  File "_ruamel_yaml.pyx", line 852, in _ruamel_yaml.CParser._compose_sequence_node
+  File "_ruamel_yaml.pyx", line 904, in _ruamel_yaml.CParser._parse_next_event
+ruamel.yaml.parser.ParserError: while parsing a block collection
+  in "host_vars/R1.yaml", line 24, column 5
+did not find expected '-' indicator
+  in "host_vars/R1.yaml", line 25, column 5
+
+2022-08-31 21:29:22,775 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test1.py", line 16, in load_data
+    data = task.run(task=load_yaml, file=f"host_vars/{task.host}.yaml")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-08-31 21:29:22,776 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:29:39,872 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:29:39,875 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:30:08,114 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:30:08,118 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:30:30,627 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:30:30,630 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:31:41,201 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:31:41,204 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:31:57,425 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:31:57,429 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:32:18,467 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:32:18,470 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:32:35,057 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:32:35,061 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:32:45,561 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:32:45,564 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:32:58,554 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:32:58,557 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:33:17,659 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:33:17,662 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:33:31,314 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:33:31,317 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:35:05,784 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:35:05,785 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:35:59,796 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:35:59,797 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 21:40:22,083 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 21:40:22,087 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:26:47,060 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:26:47,064 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:26:47,065 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/test1.py", line 25, in restconf_edit_config_with_yaml
+    url3 = f"https://{task.host.hostname}:443/restconf/data/{module3}"
+NameError: name 'module3' is not defined
+
+2022-08-31 22:27:23,027 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:27:23,031 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:39:48,923 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:39:48,928 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:41:24,788 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:41:24,793 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:43:24,783 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:43:24,788 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:45:08,632 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:45:08,637 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:46:39,238 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:46:39,243 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:55:54,167 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:55:54,178 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 22:58:56,223 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 22:58:56,230 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:24:28,257 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:24:28,264 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:25:54,352 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:25:54,358 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:26:25,619 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:26:25,625 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:27:04,577 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:27:04,583 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:27:27,203 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:27:27,210 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:28:24,370 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:28:24,376 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:28:41,926 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:28:41,932 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:29:02,068 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:29:02,074 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:33:53,299 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:33:53,307 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-08-31 23:35:08,099 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-08-31 23:35:08,108 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-09-01 00:18:32,428 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-01 00:18:32,435 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-09-01 00:19:24,160 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-01 00:19:24,167 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-09-01 00:51:13,068 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-01 00:51:13,074 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-09-01 00:53:17,797 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-01 00:53:17,804 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts

@@ -51,7 +51,15 @@ url10 = f"https://{HOST}:{PORT}/restconf/data/openconfig-interfaces:interfaces?c
 
 url11 = f"https://{HOST}:{PORT}/restconf/data/openconfig-interfaces:interfaces/interface=GigabitEthernet1?content=nonconfig"
 
-response = requests.get(url=url11, headers=header2, auth=(USER, PASSWORD), verify=False)
+url12 = f"https://{HOST}:{PORT}/restconf/data/Cisco-IOS-XE-native:native/router/bgp"
+
+url13 = f"https://{HOST}:{PORT}/restconf/data/Cisco-IOS-XE-native:native/ntp"
+
+url14 = f"https://{HOST}:{PORT}/restconf/data/Cisco-IOS-XE-native:native/ip/access-list/Cisco-IOS-XE-acl:extended"
+
+url15 = f"https://{HOST}:{PORT}/restconf/data/openconfig-acl:acl?content=config"
+
+response = requests.get(url=url12, headers=header2, auth=(USER, PASSWORD), verify=False)
 
 # print result inf the format of text or original format
 #rprint(response.text)
@@ -69,7 +77,7 @@ response = requests.get(url=url11, headers=header2, auth=(USER, PASSWORD), verif
 dic_response=response.json()
 #print(type(dic_response))
 #dic_response=dic_response["openconfig-interfaces:interface"]
-dic_response=dic_response["openconfig-interfaces:interface"]["state"]["counters"]
+#dic_response=dic_response["openconfig-interfaces:interface"]["state"]["counters"]
 #for  key,value in dic_response.items():
 #  print("key=",key)
 #  print("value=",value)

@@ -1,0 +1,24 @@
+{
+    'Cisco-IOS-XE-bgp:bgp': [
+        {
+            'id': 65000,
+            'bgp': {'log-neighbor-changes': True, 'router-id': {'ip-id': '2.2.2.2'}},
+            'neighbor': [
+                {
+                    'id': '21.21.21.21',
+                    'remote-as': 65003,
+                    'log-neighbor-changes': {},
+                    'timers': {'keepalive-interval': 30, 'holdtime': 90},
+                    'transport': {'connection-mode': 'active', 'path-mtu-discovery': {'disable': [None]}}
+                },
+                {
+                    'id': '91.91.91.91',
+                    'remote-as': 65001,
+                    'log-neighbor-changes': {},
+                    'timers': {'keepalive-interval': 30, 'holdtime': 90},
+                    'transport': {'connection-mode': 'active', 'path-mtu-discovery': {'disable': [None]}}
+                }
+            ]
+        }
+    ]
+}
