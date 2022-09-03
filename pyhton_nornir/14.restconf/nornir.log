@@ -576,3 +576,118 @@ NameError: name 'module3' is not defined
 2022-09-01 00:51:13,074 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
 2022-09-01 00:53:17,797 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2022-09-01 00:53:17,804 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2022-09-03 20:36:59,863 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-03 20:36:59,869 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:38:40,780 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-03 20:38:40,787 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:39:04,647 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-03 20:39:04,653 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:40:40,975 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-03 20:40:40,981 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:41:15,321 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:41:45,446 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:42:33,775 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:42:51,924 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:43:08,528 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:51:32,090 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-09-03 20:52:12,892 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-09-03 20:52:13,040 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.2.restconf_with_nornir.py", line 23, in restconf_nornir_example
+    rptint(response)
+NameError: name 'rptint' is not defined
+
+2022-09-03 20:52:30,960 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-09-03 20:53:04,524 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-09-03 20:53:50,331 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2022-09-03 20:54:46,083 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:55:17,084 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:55:44,693 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:56:09,760 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:57:20,483 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 20:58:28,110 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-03 21:00:14,408 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:06:46,239 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:07:59,053 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:08:45,365 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:43:10,342 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:52:33,924 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template_without_data' with args {} on 1 hosts
+2022-09-04 00:53:00,068 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template_without_data' with args {} on 1 hosts
+2022-09-04 00:54:07,991 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-04 00:54:07,993 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:54:08,005 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_.j2", line 9, in template
+    {"ip": "{{ networks.network }}", "wildcard": "{{ networks.wildmask }", "area": {{ networks.area }}}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2022-09-04 00:54:08,006 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.7.restconf_edit_config_with_template.py", line 26, in restconf_edit_config_with_template
+    template_to_load = task.run(task=template_file, template="ospf_.j2", path="templates")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-09-04 00:55:01,581 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-04 00:55:01,584 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:55:01,589 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 42, in template_file
+    t = env.get_template(template)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_.j2", line 9, in template
+    {"ip": {{ networks.network }}, "wildcard": {{ networks.wildmask }, "area": {{ networks.area }}}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2022-09-04 00:55:01,589 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/14.restconf/14.7.restconf_edit_config_with_template.py", line 26, in restconf_edit_config_with_template
+    template_to_load = task.run(task=template_file, template="ospf_.j2", path="templates")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-09-04 00:55:26,233 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-04 00:55:26,236 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:56:09,817 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-04 00:56:09,820 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 00:58:25,116 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template_without_data' with args {} on 1 hosts
+2022-09-04 00:58:50,610 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-04 00:58:50,613 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2022-09-04 01:27:34,635 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template_without_data' with args {} on 1 hosts
+2022-09-04 01:36:05,111 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-09-04 01:36:05,114 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts

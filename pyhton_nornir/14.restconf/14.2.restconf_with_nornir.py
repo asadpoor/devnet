@@ -11,8 +11,8 @@ header1 = {"Accept": "application/yang-data+json"}
 
 
 def restconf_nornir_example(task):
-#    url = f"https://{task.host.hostname}:443/restconf/data/Cisco-IOS-XE-native:native/router/router-ospf"
-    url = f"https://{task.host.hostname}:443/restconf/data/Cisco-IOS-XE-native:native/router/bgp"
+    url = f"https://{task.host.hostname}:443/restconf/data/Cisco-IOS-XE-native:native/router/router-ospf"
+#    url = f"https://{task.host.hostname}:443/restconf/data/Cisco-IOS-XE-native:native/router/bgp"
     response = requests.get(url=url, headers=header1, auth=(f"{task.host.username}", f"{task.host.password}"), verify=False)
     task.host["data"] = response.json()
     result = task.host["data"]
@@ -20,6 +20,7 @@ def restconf_nornir_example(task):
 #    result = task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]
 #    result = task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]["process-id"]
 #    print(type(result))
+    rprint(response)
     rprint(result)
     rprint(json.dumps(result))
 
