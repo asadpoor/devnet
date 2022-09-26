@@ -24,3 +24,23 @@ gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interf
 gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/config
 
 gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/config/enabled
+
+
+!!!!!!!!!!!! gnmic interactive mode
+gnmic --file public/release/models/ --dir ./ prompt
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/config/description
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /network-instances/network-instance[name=*]/protocols/protocol[identifier=*][name=*]
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /network-instances/network-instance[name=*]/protocols/protocol[identifier=ISIS][name=ISIS]/isis/global/config/net/
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/subinterfaces/subinterface/ipv4/addresses/
+
+
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure set --update-path interfaces/interface[name=Ethernet1]/config/description --update-value "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+
+
+
