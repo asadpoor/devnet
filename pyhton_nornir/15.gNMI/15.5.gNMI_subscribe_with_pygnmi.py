@@ -7,10 +7,15 @@ nr = InitNornir(config_file="config.yaml")
 subscribe1 = {
     'subscription': [
       {
-        'path': 'interfaces/interface[name=Ethernet1]/state/counters',
+        'path': 'interfaces/interface[name=Ethernet1]/state/counters/in-octets',
         'mode': 'sample', #on_change
         'sample_interval': 1000000000
-      }
+      },
+      {
+        'path': 'interfaces/interface[name=Ethernet1]/state/counters/out-octets',
+        'mode': 'on_change', #sample
+        'sample_interval': 1000000000
+      },
     ],
     'mode': 'stream',
     'encoding': 'json'
