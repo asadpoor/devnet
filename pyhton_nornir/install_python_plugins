@@ -38,6 +38,8 @@ python3 -m pip install nornir-netconf
 #xmltodict
 python3 -m pip install xmltodict
 
+#pygnmi
+python3 -m pip install pygnmi
 
 python3 -m venv .venv
 source .venv/bin/activate
