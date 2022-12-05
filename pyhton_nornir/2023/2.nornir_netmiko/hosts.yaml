@@ -1,0 +1,8 @@
+---
+
+R1:
+  hostname: "192.168.1.11"
+#  username: "rayka"
+#  password: "rayka-co.com"
+  groups:
+    - cisco
