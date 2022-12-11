@@ -1,0 +1,3 @@
+show ip interface brief | exc unassigned
+show version | inc XE
+ping 8.8.8.8

@@ -6,6 +6,7 @@ nr = InitNornir(config_file="config.yaml")
 
 def netmiko_send_commands_example(task):
     task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+    #task.run(task=netmiko_send_command, command_string="show version")
 
 results=nr.run(task=netmiko_send_commands_example)
 print_result(results)

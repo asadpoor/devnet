@@ -6,7 +6,7 @@ from nornir_utils.plugins.functions import print_result
 nr = InitNornir(config_file="config.yaml")
 
 def netmiko_send_config_from_file_exmaple(task):
-    task.run(task=netmiko_send_config, config_file="config_list")
+    task.run(task=netmiko_send_config, config_file="config_file.txt")
 
 def netmiko_save_config_exmaple(task):
     task.run(task=netmiko_save_config)
