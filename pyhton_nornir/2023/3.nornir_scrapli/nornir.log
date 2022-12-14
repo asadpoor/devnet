@@ -84,3 +84,47 @@ Traceback (most recent call last):
 NameError: name 'send_command_from_file' is not defined
 
 2022-12-11 02:52:55,673 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_commands_from_file_example' with args {} on 1 hosts
+2022-12-12 00:33:05,676 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_command_example' with args {} on 1 hosts
+2022-12-12 00:34:23,746 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_commands_example' with args {} on 1 hosts
+2022-12-12 00:36:23,619 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_commands_from_file_example' with args {} on 1 hosts
+2022-12-13 01:00:37,941 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-13 01:01:16,495 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-13 01:05:35,701 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:07:04,310 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:07:38,758 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-13 01:08:58,763 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:09:21,329 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:10:52,338 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:12:29,141 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:13:02,686 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:13:29,434 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:14:14,736 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:14:51,594 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:15:36,064 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:16:06,972 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:17:01,797 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-13 01:26:56,905 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_from_file_example' with args {} on 1 hosts
+2022-12-13 01:27:19,944 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_from_file_example' with args {} on 1 hosts
+2022-12-13 01:35:22,329 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_from_file_example' with args {} on 1 hosts
+2022-12-13 01:35:22,330 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs_from_file() got an unexpected keyword argument 'replace'
+
+2022-12-13 01:35:22,330 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli_send_configs_from_file_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/3.nornir_scrapli/3.6.nornir_scrapli_send_configs_from_file_example.py", line 8, in nornir_scrapli_send_configs_from_file_example
+    task.run(task=send_configs_from_file, file="config_file.txt", replace="True")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2022-12-14 01:10:14,116 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-14 01:10:58,455 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-14 01:12:16,989 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-14 01:14:01,185 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_from_file_example' with args {} on 1 hosts
+2022-12-14 15:04:58,905 -  nornir.core -     INFO -        run() - Running task 'interactive_commands_exmple' with args {} on 1 hosts

@@ -4,9 +4,9 @@ from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
-def send_configs_test(task):
-    task.run(task=send_configs_from_file, file="config_list", dry_run="true")
+def nornir_scrapli_send_configs_from_file_example(task):
+    task.run(task=send_configs_from_file, file="config_file.txt")
 
-results = nr.run(task=send_configs_test)
+results = nr.run(task=nornir_scrapli_send_configs_from_file_example)
 print_result(results)
 
