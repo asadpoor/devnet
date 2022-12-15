@@ -1,0 +1,44 @@
+2022-12-14 16:09:14,328 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:10:22,185 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:10:45,569 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:11:51,928 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:12:48,364 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:13:16,768 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:14:22,181 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:14:22,182 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_configuration_data_via_inventory_files' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.1.access_configuration_data_via_inventory_files.py", line 7, in access_configuration_data_via_inventory_files
+    print("eigrp process of device ", task.host, " is ", task.host['eigrp_process'])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'eigrp_process'
+
+2022-12-14 16:14:22,183 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_configuration_data_via_inventory_files' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.1.access_configuration_data_via_inventory_files.py", line 7, in access_configuration_data_via_inventory_files
+    print("eigrp process of device ", task.host, " is ", task.host['eigrp_process'])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'eigrp_process'
+
+2022-12-14 16:14:22,183 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_configuration_data_via_inventory_files' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.1.access_configuration_data_via_inventory_files.py", line 7, in access_configuration_data_via_inventory_files
+    print("eigrp process of device ", task.host, " is ", task.host['eigrp_process'])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'eigrp_process'
+
+2022-12-14 16:14:54,349 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:16:45,721 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:18:07,515 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:18:33,744 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:18:56,029 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:20:57,306 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts
+2022-12-14 16:29:31,479 -  nornir.core -     INFO -        run() - Running task 'access_configuration_data_via_inventory_files' with args {} on 3 hosts

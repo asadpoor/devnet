@@ -1,0 +1,36 @@
+---
+
+R1:
+  hostname: "192.168.1.11"
+#  username: "rayka"
+#  password: "rayka-co.com"
+  groups:
+    - router
+  data:
+    eigrp_as: 1
+    eigrp_networks:
+      - 192.168.1.0 0.0.0.255
+      - 192.168.2.0 0.0.0.255
+R2:
+  hostname: "192.168.1.12"
+#  username: "rayka"
+#  password: "rayka-co.com"
+  groups:
+    - router
+  data:
+    eigrp_as: 1
+    eigrp_networks:
+      - 192.168.2.0 0.0.0.255
+      - 192.168.3.0 0.0.0.255
+
+S1:
+  hostname: "192.168.1.13"
+  username: "RAYKA"
+  password: "RAYKA-CO.COM"
+  groups:
+    - switch
+  data:
+    eigrp_as: 1
+    eigrp_networks:
+      - 192.168.3.0 0.0.0.255
+      - 192.168.4.0 0.0.0.255

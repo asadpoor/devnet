@@ -1,0 +1,8 @@
+---
+
+username: "rayka"
+password: "rayka-co.com"
+platform: "ios"
+
+data:
+  ntp_server: 1.1.1.1

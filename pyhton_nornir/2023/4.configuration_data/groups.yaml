@@ -1,0 +1,11 @@
+---
+
+router:
+  platform: ios
+  data:
+    community: router_comunity
+
+switch:
+  platform: junos
+  data:
+    community: switch_community
