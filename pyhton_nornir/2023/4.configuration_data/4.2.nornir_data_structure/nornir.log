@@ -1,0 +1,518 @@
+2022-12-17 02:26:09,830 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:26:09,831 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", host.host_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:26:09,832 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", host.host_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:26:09,832 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", host.host_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:27:20,780 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:27:20,781 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.host_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:27:20,781 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.host_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:27:20,782 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.host_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:27:48,948 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:27:48,949 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:27:48,949 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:27:48,950 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data.eigrp)
+NameError: name 'host' is not defined
+
+2022-12-17 02:28:47,251 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:28:47,252 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", {{ host.hosts_data.eigrp }})
+NameError: name 'host' is not defined
+
+2022-12-17 02:28:47,252 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", {{ host.hosts_data.eigrp }})
+NameError: name 'host' is not defined
+
+2022-12-17 02:28:47,252 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", {{ host.hosts_data.eigrp }})
+NameError: name 'host' is not defined
+
+2022-12-17 02:29:37,542 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:29:37,543 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:29:37,543 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:29:37,544 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 20, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:33:08,479 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:33:08,481 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 21, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:33:08,481 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 21, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:33:08,481 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 21, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:33:33,036 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:34:18,659 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:34:18,668 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:36:27,720 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:36:27,731 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:37:28,626 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:37:28,635 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:37:28,636 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 26, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:37:28,636 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 26, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:37:28,637 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 26, in access_nornir_data
+    print("eigrp AS number of device ", " is ", host.hosts_data)
+NameError: name 'host' is not defined
+
+2022-12-17 02:38:49,835 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:38:49,846 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:40:04,288 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:40:04,297 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:41:16,750 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:41:16,760 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:42:51,047 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:42:51,056 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:42:51,057 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 22, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", task.host["eigrp"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'eigrp'
+
+2022-12-17 02:42:51,057 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 22, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", task.host["eigrp"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'eigrp'
+
+2022-12-17 02:42:51,058 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 22, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", task.host["eigrp"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'eigrp'
+
+2022-12-17 02:43:19,151 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:43:19,159 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:43:19,161 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 22, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", task.host.result)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'result'
+
+2022-12-17 02:43:19,161 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 22, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", task.host.result)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'result'
+
+2022-12-17 02:43:19,162 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 22, in access_nornir_data
+    print("eigrp AS number of device ", task.host, " is ", task.host.result)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'result'
+
+2022-12-17 02:44:40,720 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:44:40,730 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:46:26,424 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:46:26,435 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:48:48,596 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 02:48:48,608 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 02:48:48,610 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 25, in access_nornir_data
+    print("community of device ", task.group, " is ", task.host['community'])
+AttributeError: 'Task' object has no attribute 'group'
+
+2022-12-17 02:48:48,611 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 25, in access_nornir_data
+    print("community of device ", task.group, " is ", task.host['community'])
+AttributeError: 'Task' object has no attribute 'group'
+
+2022-12-17 02:48:48,611 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'access_nornir_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure.py", line 25, in access_nornir_data
+    print("community of device ", task.group, " is ", task.host['community'])
+AttributeError: 'Task' object has no attribute 'group'
+
+2022-12-17 03:20:09,933 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 03:20:09,941 -  nornir.core -     INFO -        run() - Running task 'access_nornir_data' with args {} on 3 hosts
+2022-12-17 03:25:29,742 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 03:25:29,754 -  nornir.core -     INFO -        run() - Running task 'access_nornir_hosts_data' with args {} on 3 hosts
+2022-12-17 03:25:29,756 -  nornir.core -     INFO -        run() - Running task 'access_nornir_groups_data' with args {} on 3 hosts
+2022-12-17 03:25:29,757 -  nornir.core -     INFO -        run() - Running task 'access_nornir_all_data' with args {} on 3 hosts
+2022-12-17 03:40:12,005 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 03:40:12,017 -  nornir.core -     INFO -        run() - Running task 'access_nornir_hosts_data' with args {} on 3 hosts
+2022-12-17 03:40:12,019 -  nornir.core -     INFO -        run() - Running task 'access_nornir_groups_data' with args {} on 3 hosts
+2022-12-17 03:40:12,021 -  nornir.core -     INFO -        run() - Running task 'access_nornir_all_data' with args {} on 3 hosts
+2022-12-17 03:42:52,131 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-17 03:42:52,149 -  nornir.core -     INFO -        run() - Running task 'access_nornir_hosts_data' with args {} on 3 hosts
+2022-12-17 03:42:52,152 -  nornir.core -     INFO -        run() - Running task 'access_nornir_groups_data' with args {} on 3 hosts
+2022-12-17 03:42:52,154 -  nornir.core -     INFO -        run() - Running task 'access_nornir_all_data' with args {} on 3 hosts
+2022-12-18 00:15:47,309 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-18 00:15:47,324 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_from_file_example' with args {} on 3 hosts
+2022-12-18 00:15:50,171 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli_send_configs_from_file_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config.py", line 21, in nornir_scrapli_send_configs_from_file_example
+    task.run(task=send_configs_from_file, file="config_file.txt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2022-12-18 00:15:53,300 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2022-12-18 00:15:53,301 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli_send_configs_from_file_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config.py", line 21, in nornir_scrapli_send_configs_from_file_example
+    task.run(task=send_configs_from_file, file="config_file.txt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2022-12-18 00:15:56,381 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'send_configs_from_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_configs_from_file.py", line 58, in send_configs_from_file
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2022-12-18 00:15:56,382 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'nornir_scrapli_send_configs_from_file_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config.py", line 21, in nornir_scrapli_send_configs_from_file_example
+    task.run(task=send_configs_from_file, file="config_file.txt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs_from_file (failed)
+
+
+2022-12-18 00:26:24,550 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 3 hosts
+2022-12-18 00:26:24,559 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 3 hosts
+2022-12-18 00:26:30,472 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_config.py", line 58, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2022-12-18 00:26:30,473 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'nornir_scrapli_send_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config_.py", line 20, in nornir_scrapli_send_config_example
+    task.run(task=send_config, config=f"snmp-server community {task.host['router_data']['snmp']['community']} RO")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2022-12-18 00:26:33,564 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_config.py", line 58, in send_config
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: No route to host
+
+2022-12-18 00:26:33,565 - nornir.core.task -    ERROR -      start() - Host 'S1': task 'nornir_scrapli_send_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config_.py", line 20, in nornir_scrapli_send_config_example
+    task.run(task=send_config, config=f"snmp-server community {task.host['router_data']['snmp']['community']} RO")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_config (failed)
+
+
+2022-12-18 00:27:27,486 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:27:27,490 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-18 00:31:20,027 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:31:20,031 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-18 00:31:20,032 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_configs' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: send_configs() got an unexpected keyword argument 'config'
+
+2022-12-18 00:31:20,032 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli_send_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config_.py", line 20, in nornir_scrapli_send_config_example
+    task.run(task=send_configs, config=[f"snmp-server community {task.host['router_data']['snmp']['community']}, ntp server 1.1.1.1]"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-12-18 00:31:42,209 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:31:42,213 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-18 00:31:45,042 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli_send_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/4.configuration_data/4.2.nornir_data_structure/4.2.nornir_data_structure_scrapli_config_.py", line 20, in nornir_scrapli_send_config_example
+    task.run(task=send_configs, configs=[f"snmp-server community {task.host['router_data']['snmp']['community']}, ntp server 1.1.1.1]"])
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
+
+
+2022-12-18 00:32:42,949 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:32:42,953 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-18 00:38:46,823 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:38:46,828 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-18 00:41:46,726 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:41:46,729 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_config_example' with args {} on 1 hosts
+2022-12-18 00:44:08,181 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:44:08,185 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
+2022-12-18 00:47:09,991 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:47:09,995 -  nornir.core -     INFO -        run() - Running task 'send_scrapli_configs_via_nornir_data_structure_example' with args {} on 1 hosts

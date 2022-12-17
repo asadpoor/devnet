@@ -1,0 +1,1 @@
+router eigrp task.host["hosts_data"]["eigrp"]["as"]

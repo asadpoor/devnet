@@ -1,0 +1,7 @@
+---
+
+router:
+  platform: ios
+
+switch:
+  platform: junos

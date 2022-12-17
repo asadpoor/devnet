@@ -1,0 +1,21 @@
+---
+
+R1:
+  hostname: "192.168.1.11"
+#  username: "rayka"
+#  password: "rayka-co.com"
+  groups:
+    - router
+#R2:
+#  hostname: "192.168.1.12"
+#  username: "rayka"
+#  password: "rayka-co.com"
+#  groups:
+#    - router
+
+#S1:
+#  hostname: "192.168.1.13"
+#  username: "RAYKA"
+#  password: "RAYKA-CO.COM"
+#  groups:
+#    - switch
