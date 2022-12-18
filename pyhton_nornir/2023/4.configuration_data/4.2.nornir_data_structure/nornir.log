@@ -516,3 +516,7 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_configs (failed)
 2022-12-18 00:44:08,185 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_send_configs_example' with args {} on 1 hosts
 2022-12-18 00:47:09,991 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2022-12-18 00:47:09,995 -  nornir.core -     INFO -        run() - Running task 'send_scrapli_configs_via_nornir_data_structure_example' with args {} on 1 hosts
+2022-12-18 00:48:47,536 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-18 00:48:47,540 -  nornir.core -     INFO -        run() - Running task 'send_scrapli_configs_via_nornir_data_structure_example' with args {} on 1 hosts
+2022-12-19 01:16:18,783 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2022-12-19 01:16:18,787 -  nornir.core -     INFO -        run() - Running task 'send_scrapli_configs_via_nornir_data_structure_example' with args {} on 1 hosts

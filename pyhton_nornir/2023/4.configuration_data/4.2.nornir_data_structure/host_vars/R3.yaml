@@ -1,7 +1,0 @@
----
-
-snmp:
-  community: "rayka"
-ntp:
-  server: 3.3.3.3
-
