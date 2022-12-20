@@ -1,0 +1,10 @@
+2022-12-19 16:26:51,263 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-19 16:27:41,493 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_cli_commands_example' with args {} on 1 hosts
+2022-12-19 16:31:03,278 -  nornir.core -     INFO -        run() - Running task 'napalm_get_example' with args {} on 1 hosts
+2022-12-19 16:31:53,019 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-19 16:32:27,382 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-19 16:54:54,788 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-19 16:55:18,900 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-19 17:56:14,326 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-19 17:58:50,624 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_cli_commands_example' with args {} on 1 hosts
+2022-12-19 18:00:24,617 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
