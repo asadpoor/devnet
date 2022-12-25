@@ -4,3 +4,4 @@ sudo apt-get install python3 python3-venv python3-pip
 python3 -m pip install nornir
 python3 -m pip install nornir-napalm
 python3 -m pip install nornir-utils
+python3 -m pip install rich

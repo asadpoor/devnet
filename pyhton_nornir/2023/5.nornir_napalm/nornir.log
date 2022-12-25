@@ -8,3 +8,41 @@
 2022-12-19 17:56:14,326 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
 2022-12-19 17:58:50,624 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_cli_commands_example' with args {} on 1 hosts
 2022-12-19 18:00:24,617 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-21 01:40:53,048 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-23 01:24:47,289 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_cli_commands_example' with args {} on 1 hosts
+2022-12-24 23:44:48,068 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:46:01,816 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:46:53,432 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:47:36,664 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:48:27,523 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:49:49,201 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:49:50,083 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.3.nornir_napalm_get_result_parsing.py", line 18, in nornir_napalm_get_example
+    rprint(config.result)    #6
+NameError: name 'config' is not defined
+
+2022-12-24 23:50:41,512 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:50:42,148 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.3.nornir_napalm_get_result_parsing.py", line 19, in nornir_napalm_get_example
+    rprint(config.result["get_config"]) #7
+NameError: name 'config' is not defined
+
+2022-12-24 23:51:01,493 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2022-12-24 23:51:02,381 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_get_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.3.nornir_napalm_get_result_parsing.py", line 20, in nornir_napalm_get_example
+    rprint(config.result["get_config"]["running"])    #8
+NameError: name 'config' is not defined
+
+2022-12-24 23:52:13,846 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
+2022-12-24 23:52:34,710 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
+2022-12-25 03:26:45,740 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
+2022-12-25 03:30:22,717 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
