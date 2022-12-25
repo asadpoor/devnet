@@ -19,7 +19,7 @@ def nornir_napalm_structured_output_example(task):
 
 ### the result of the second example
 #    rprint(config.result)    #1
-    rprint(config.result["get_config"]) #2
-#    rprint(config.result["get_config"]["running"])    #3
+#    rprint(config.result["get_config"]) #2
+    rprint(config.result["get_config"]["running"])    #3
 
 nr.run(task=nornir_napalm_structured_output_example)
