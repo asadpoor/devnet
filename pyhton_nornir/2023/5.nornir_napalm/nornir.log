@@ -61,3 +61,159 @@ NameError: name 'config' is not defined
 2022-12-26 01:47:25,303 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
 2022-12-26 01:48:01,747 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
 2022-12-26 01:48:28,256 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_structured_output_example' with args {} on 1 hosts
+2022-12-27 13:44:29,179 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 13:44:31,225 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 317, in load_merge_candidate
+    return_status, msg = self._load_candidate_wrapper(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 284, in _load_candidate_wrapper
+    (return_status, msg) = self._scp_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 733, in _scp_file
+    return self._xfer_file(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 802, in _xfer_file
+    raise CommandErrorException(msg)
+napalm.base.exceptions.CommandErrorException: SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+
+2022-12-27 13:44:31,226 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.4.nornir_napalm_send_config.py", line 9, in nornir_napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename="config_file.txt")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-27 13:45:39,014 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 13:50:05,940 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_write_file_example' with args {} on 1 hosts
+2022-12-27 13:50:51,239 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_write_file_example' with args {} on 1 hosts
+2022-12-27 13:51:37,387 -  nornir.core -     INFO -        run() - Running task 'nornir_utils_write_file_example' with args {} on 1 hosts
+2022-12-27 13:51:45,318 -  nornir.core -     INFO -        run() - Running task 'nornir_utils_write_file_example' with args {} on 1 hosts
+2022-12-27 13:53:39,795 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:02:44,271 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:02:47,997 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 573, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: napalm-ios replace() requires Cisco 'archive' feature to be enabled
+
+2022-12-27 14:02:47,998 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.6.nornir_napalm_send_config_replace.py", line 9, in nornir_napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-27 14:03:05,427 -  nornir.core -     INFO -        run() - Running task 'nornir_utils_write_file_example' with args {} on 1 hosts
+2022-12-27 14:03:37,307 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:03:40,966 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 573, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: napalm-ios replace() requires Cisco 'archive' feature to be enabled
+
+2022-12-27 14:03:40,967 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.6.nornir_napalm_send_config_replace.py", line 9, in nornir_napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-27 14:05:20,120 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:05:42,284 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:05:45,764 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 573, in commit_config
+    raise ReplaceConfigException(msg)
+napalm.base.exceptions.ReplaceConfigException: napalm-ios replace() requires Cisco 'archive' feature to be enabled
+
+2022-12-27 14:05:45,765 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.6.nornir_napalm_send_config_replace.py", line 9, in nornir_napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-27 14:06:17,293 -  nornir.core -     INFO -        run() - Running task 'nornir_utils_write_file_example' with args {} on 1 hosts
+2022-12-27 14:06:37,187 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:07:02,665 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:07:35,574 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:08:52,176 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 14:09:06,221 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 43, in napalm_configure
+    device.commit_config()
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 559, in commit_config
+    output = self._commit_handler(cmd)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 467, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/ios/ios.py", line 484, in _commit_handler
+    output = self.device.send_command(cmd, expect_string=patterns)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/utilities.py", line 596, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1691, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: '(?:[>##]\\s*$|.*all username.*confirm)' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-12-27 14:09:06,222 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_send_config_exmaple' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.6.nornir_napalm_send_config_replace.py", line 9, in nornir_napalm_send_config_exmaple
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-27 14:09:53,232 -  nornir.core -     INFO -        run() - Running task 'nornir_utils_write_file_example' with args {} on 1 hosts
+2022-12-27 14:10:20,188 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 15:10:21,201 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 15:17:44,234 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 16:05:27,561 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 16:06:12,777 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 16:06:48,274 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 16:08:08,642 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-27 16:19:39,775 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-28 03:06:08,967 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-28 03:06:57,716 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts

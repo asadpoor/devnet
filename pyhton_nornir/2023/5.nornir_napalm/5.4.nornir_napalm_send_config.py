@@ -1,12 +1,12 @@
-from dataclasses import replace
 from nornir import InitNornir
 from nornir_napalm.plugins.tasks import napalm_configure
 from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
-def napalm_send_config_exmaple(task):
-    task.run(task=napalm_configure, filename="config_list")
+def nornir_napalm_send_config_exmaple(task):
+    task.run(task=napalm_configure, filename="config_file.txt")
+    #task.run(task=napalm_configure, filename="config_file1.txt")
 
-results=nr.run(task=napalm_send_config_exmaple)
+results=nr.run(task=nornir_napalm_send_config_exmaple)
 print_result(results)
