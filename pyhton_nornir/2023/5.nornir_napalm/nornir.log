@@ -217,3 +217,11 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
 2022-12-27 16:19:39,775 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
 2022-12-28 03:06:08,967 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
 2022-12-28 03:06:57,716 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-29 02:26:21,080 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-29 02:27:49,654 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_send_config_exmaple' with args {} on 1 hosts
+2022-12-30 02:16:22,273 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2022-12-30 02:17:21,584 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2022-12-30 02:17:36,705 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2022-12-30 02:21:32,045 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_restore_with_send_config_replace' with args {} on 1 hosts
+2022-12-30 02:26:35,256 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2022-12-30 02:29:01,739 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_restore_with_send_config_replace' with args {} on 1 hosts
