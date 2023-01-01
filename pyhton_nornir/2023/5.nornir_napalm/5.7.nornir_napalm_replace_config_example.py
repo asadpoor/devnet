@@ -19,7 +19,7 @@ router ospf 1
  network 10.2.0.0 0.0.255.255 area 2
 """
 
-def nornir_napalm_utils_backup_example(task):
+def nornir_napalm_replace_config_example(task):
     config=task.run(task=napalm_get, getters=["get_config"])
     running_config=config.result["get_config"]["running"]
 
@@ -34,5 +34,5 @@ def nornir_napalm_utils_backup_example(task):
     task.run(task=napalm_configure, configuration=running_config_new, replace=True)
 
 
-results=nr.run(task=nornir_napalm_utils_backup_example)
+results=nr.run(task=nornir_napalm_replace_config_example)
 print_result(results)
