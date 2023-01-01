@@ -225,3 +225,43 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
 2022-12-30 02:21:32,045 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_restore_with_send_config_replace' with args {} on 1 hosts
 2022-12-30 02:26:35,256 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
 2022-12-30 02:29:01,739 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_restore_with_send_config_replace' with args {} on 1 hosts
+2022-12-30 13:51:49,053 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2022-12-30 13:51:49,054 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_utils_backup_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.5.nornir_napalm_utils_backup_example.py", line 9, in nornir_napalm_utils_backup_example
+    running_config=task.run(task=napalm_get, getters=["get_config"]["running"])
+TypeError: list indices must be integers or slices, not str
+
+2022-12-30 13:52:39,619 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 01:40:36,351 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 01:43:39,981 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_restore_with_send_config_replace' with args {} on 1 hosts
+2023-01-01 04:25:52,750 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 04:25:53,944 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_utils_backup_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.7.nornir_napalm_replace_config_example.py", line 15, in nornir_napalm_utils_backup_example
+    task.run(task=napalm_configure, filename=f"{task.host}", replace=True)
+NameError: name 'napalm_configure' is not defined
+
+2023-01-01 04:28:06,162 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 05:02:52,111 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 13:40:26,484 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:50:27,467 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:51:57,225 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:52:17,127 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:52:50,444 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:52:57,229 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:53:38,862 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:53:48,342 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:54:20,708 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:57:02,454 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:57:28,965 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:57:56,131 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 16:58:36,243 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 17:01:42,030 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 19:48:50,777 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 19:50:38,536 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-01 19:53:24,439 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
