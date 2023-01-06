@@ -265,3 +265,64 @@ NameError: name 'napalm_configure' is not defined
 2023-01-01 19:48:50,777 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
 2023-01-01 19:50:38,536 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
 2023-01-01 19:53:24,439 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_utils_backup_example' with args {} on 1 hosts
+2023-01-03 01:51:43,464 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_replace_config_example' with args {} on 1 hosts
+2023-01-03 01:52:24,760 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_replace_config_example' with args {} on 1 hosts
+2023-01-03 01:53:13,389 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_replace_config_example' with args {} on 1 hosts
+2023-01-03 13:47:18,208 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2023-01-03 13:56:40,983 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 13:56:41,796 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_validate.py", line 30, in napalm_validate
+    r = device.compliance_report(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/base/base.py", line 1800, in compliance_report
+    return validate.compliance_report(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/base/validate.py", line 237, in compliance_report
+    assert isinstance(validation_source, list), validation_source
+AssertionError: {'get_ntp_servers': {'1.2.3.4': {}, '5.6.7.8': {}}}
+
+2023-01-03 13:56:41,796 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_compliance_validation_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.8.nornir_napalm_compliance_validation.py", line 10, in nornir_napalm_compliance_validation_check
+    result = task.run(task=napalm_validate, src="ntp.yaml")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_validate (failed)
+
+
+2023-01-03 13:57:46,632 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 13:58:59,607 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 13:59:42,913 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 14:00:15,710 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 14:00:43,445 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 14:42:12,082 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-03 14:42:12,870 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_validate' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_validate.py", line 30, in napalm_validate
+    r = device.compliance_report(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/base/base.py", line 1800, in compliance_report
+    return validate.compliance_report(
+  File "/home/majid/.local/lib/python3.10/site-packages/napalm/base/validate.py", line 237, in compliance_report
+    assert isinstance(validation_source, list), validation_source
+AssertionError: {'get_ntp_servers': {'1.2.3.4': {}, '5.6.7.8': {}}}
+
+2023-01-03 14:42:12,871 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_napalm_compliance_validation_check' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/5.nornir_napalm/5.8.nornir_napalm_compliance_validation.py", line 8, in nornir_napalm_compliance_validation_check
+    task.run(task=napalm_validate, src="ntp.yaml")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_validate (failed)
+
+
+2023-01-03 14:42:26,451 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-05 01:59:18,307 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_get_example' with args {} on 1 hosts
+2023-01-05 02:05:47,584 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts
+2023-01-05 02:06:53,881 -  nornir.core -     INFO -        run() - Running task 'nornir_napalm_compliance_validation_check' with args {} on 1 hosts

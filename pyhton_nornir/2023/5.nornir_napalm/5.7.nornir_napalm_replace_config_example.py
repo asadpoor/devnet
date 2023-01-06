@@ -14,9 +14,9 @@ ntp server 5.6.7.8
 
 ospf = """
 router ospf 1
- router-id 11.11.11.11
- network 10.1.0.0 0.0.255.255 area 1
- network 10.2.0.0 0.0.255.255 area 2
+ router-id 1.1.1.1
+ network 10.11.0.0 0.0.255.255 area 1
+ network 10.12.0.0 0.0.255.255 area 2
 """
 
 def nornir_napalm_replace_config_example(task):
@@ -24,12 +24,12 @@ def nornir_napalm_replace_config_example(task):
     running_config=config.result["get_config"]["running"]
 
 ###### example1
-    to_be_replaced = re.compile("^ntp server([^!]+)", flags=re.MULTILINE)
-    running_config_new = re.sub(to_be_replaced, ntp, running_config)
+#    to_be_replaced = re.compile("^ntp server([^!]+)", flags=re.MULTILINE)
+#    running_config_new = re.sub(to_be_replaced, ntp, running_config)
 
 ###### example2
-#    to_be_replaced = re.compile("^router ospf([^!]+)", flags=re.MULTILINE)
-#    running_config_new = re.sub(to_be_replaced, ospf, running_config)
+    to_be_replaced = re.compile("^router ospf([^!]+)", flags=re.MULTILINE)
+    running_config_new = re.sub(to_be_replaced, ospf, running_config)
 
     task.run(task=napalm_configure, configuration=running_config_new, replace=True)
 

@@ -1,0 +1,70 @@
+2023-01-05 16:55:01,107 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2023-01-05 16:55:03,794 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1021, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 351, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 434, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 439, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1058, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.11:22
+
+
+Authentication failed.
+
+2023-01-05 16:55:03,795 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/6.avoid_clear_text_passwords_in_nornir_inventory/6.1.get_password_by_getpass.py", line 14, in netmiko_send_commands_example
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-05 16:55:13,373 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2023-01-05 17:22:20,635 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-05 17:24:29,769 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-05 17:26:19,647 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-05 17:27:05,117 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-05 17:34:07,346 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-05 17:36:19,935 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2023-01-05 17:37:49,266 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-05 17:40:27,112 -  nornir.core -     INFO -        run() - Running task 'get_multiple_password_by_getpass_example' with args {} on 1 hosts
