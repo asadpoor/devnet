@@ -68,3 +68,6 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 2023-01-05 17:36:19,935 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
 2023-01-05 17:37:49,266 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
 2023-01-05 17:40:27,112 -  nornir.core -     INFO -        run() - Running task 'get_multiple_password_by_getpass_example' with args {} on 1 hosts
+2023-01-07 01:36:11,287 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
+2023-01-07 01:38:14,952 -  nornir.core -     INFO -        run() - Running task 'get_multiple_password_by_getpass_example' with args {} on 1 hosts
+2023-01-08 13:48:34,076 -  nornir.core -     INFO -        run() - Running task 'get_password_by_sysargv_example' with args {} on 1 hosts
