@@ -3,7 +3,7 @@ python3 -m pip install python-gnupg
 
 #create a file with teh name of (for example) credential including variables to be encrypted:
 username=rayka
-password=rayka-co.ir
+password=rayka-co.com
 
 
 gpg --symmetric -o credential.gpg credential
