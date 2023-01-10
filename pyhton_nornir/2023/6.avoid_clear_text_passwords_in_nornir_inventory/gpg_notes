@@ -1,0 +1,26 @@
+# Install GPG Package
+python3 -m pip install python-gnupg
+
+#create a file with teh name of (for example) credential including variables to be encrypted:
+username=rayka
+password=rayka-co.ir
+
+
+gpg --symmetric -o credential.gpg credential
+# GIVE A PASSWORD TO ENCRYPT THE FILE
+
+# NOW REMOVE ORIGINAL credential FILE. I DO NOT delete just for documentation.
+# YOU CAN DECRYPT ENCRYPTED FILE if you want to look at inside 
+gpg --decrypt credential.gpg
+
+# CLEAR SYMMETRIC KEY FROM CACHE/MEMORY after DECRYPTION
+echo RELOADAGENT | gpg-connect-agent
+
+
+# HOW TO USE encrypted variales inside PYTHON SCRIPT
+import os
+nr.inventory.hosts["R1"].username=os.environ["username"]
+nr.inventory.hosts["R1"].password=os.environ["password"]
+
+# HOW TO RUN RUN A SCRIPT
+env $(gpg --decrypt credential.gpg) python3 script.py

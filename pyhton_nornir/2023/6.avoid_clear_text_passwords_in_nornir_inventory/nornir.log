@@ -71,3 +71,106 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 2023-01-07 01:36:11,287 -  nornir.core -     INFO -        run() - Running task 'get_password_by_getpass_example' with args {} on 1 hosts
 2023-01-07 01:38:14,952 -  nornir.core -     INFO -        run() - Running task 'get_multiple_password_by_getpass_example' with args {} on 1 hosts
 2023-01-08 13:48:34,076 -  nornir.core -     INFO -        run() - Running task 'get_password_by_sysargv_example' with args {} on 1 hosts
+2023-01-09 00:15:20,256 -  nornir.core -     INFO -        run() - Running task 'get_password_by_sysargv_example' with args {} on 1 hosts
+2023-01-11 01:37:06,752 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2023-01-11 01:37:09,408 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1021, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 435, in connect
+    self._auth(
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 766, in _auth
+    raise saved_exception
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 753, in _auth
+    self._transport.auth_password(username, password)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/transport.py", line 1564, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/auth_handler.py", line 259, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 351, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 434, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 439, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 1058, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 192.168.1.11:22
+
+
+Authentication failed.
+
+2023-01-11 01:37:09,409 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/6.avoid_clear_text_passwords_in_nornir_inventory/6.4.get_password_from_gpg_encrypted_password.py", line 12, in netmiko_send_commands_example
+    task.run(task=netmiko_send_command, command_string="show ip int brief | exc unass")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-01-11 01:38:29,464 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
+2023-01-11 01:38:36,593 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-01-11 01:38:36,594 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_commands_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/6.avoid_clear_text_passwords_in_nornir_inventory/6.4.get_password_from_gpg_encrypted_password.py", line 12, in netmiko_send_commands_example
+    task.run(task=send_command, command="show ip interface brief | exc unassigned")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-01-11 01:40:30,849 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_commands_example' with args {} on 1 hosts
