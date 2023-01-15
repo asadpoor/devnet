@@ -1,0 +1,67 @@
+!!!!!!!! ubuntu !!!!!!!!
+ssh-keygen
+ls ~/.ssh
+fold -b -w 64 ~/.ssh/id_rsa.pub
+
+majid@devnet:~/devnet/pyhton_nornir$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/majid/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/majid/.ssh/id_rsa
+Your public key has been saved in /home/majid/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:2ht/CbrtzOaGrQEZztaRVf/vv1eDYQIAWjvnE95pdzM majid@devnet
+The key's randomart image is:
++---[RSA 3072]----+
+|     o... ...    |
+|    o .  +   .   |
+|   . o.oo .   .  |
+|     o=+o... o . |
+|      *+S+ .oEo .|
+|     . +o o ..o.o|
+|      . ++ . .  +|
+|        oO+ o  ..|
+|        +BB.   .*|
++----[SHA256]-----+
+
+
+majid@devnet:~/devnet/pyhton_nornir$ fold -b -w 64 ~/.ssh/id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2+CWyA1WupQoUQxbXw613Okkn
+G2/F74DE/uH5Kl0yI6HK1vF32vyoAMKRhN3SP7DxOvvwOW5QF0Y+3IuODlz1A9he
+OQaSv8CJoH7kxe4eRHnT6oU4LNJzEOYLQwPvqxZDKumnnmvHenL8800rAwsi5nJZ
+0B8klTWCKgSqXWTbSNgswpf80KdqcELWDEKP5ydHDEcqgeM2agchhqM6ZGB6emhv
+ceaDRUWqmyhlgv07BY2lJOJeZxmYeQ3sWogjO0C73kGFngyz+/L1ViLNRg7km+94
+XmDg/H7JrZDRtX37ZUPN1QCanCgHuh0xj15UsvWVYBnCx0tVtkOHGIRe5/j8ZU67
+OpTHs7/O/ES4samPAP9zUfG1qwRl99+8nlGuzAmBpF416wtUPa8O7aA2mnuNCqSw
+Vb6dW6ulrHmNsUv9dYtUy98mp1eUdXvXmRYPcH5SOi07M+4zed/U4LOpV9xuiIAD
+56rQ4WpPGGQXn81H5GdL3MTERiOm7KqgectjXBk= majid@devnet
+
+
+
+majid@devnet:~/devnet/pyhton_nornir$ ssh-keygen -E md5 -lf ~/.ssh/id_rsa.pub 
+3072 MD5:15:13:22:55:f3:bc:a3:24:ae:89:96:75:93:58:f0:91 majid@devnet (RSA)
+
+
+
+!!!!!!!! cisco !!!!!!!!
+R1(config)#username rayka1 privilege 15
+R1(config)#ip ssh pubkey-chain 
+R1(conf-ssh-pubkey)#username rayka1
+R1(conf-ssh-pubkey-user)#key-string 
+R1(conf-ssh-pubkey-data)#ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2+CWyA1WupQoUQxbXw613Okkn
+R1(conf-ssh-pubkey-data)#G2/F74DE/uH5Kl0yI6HK1vF32vyoAMKRhN3SP7DxOvvwOW5QF0Y+3IuODlz1A9he
+R1(conf-ssh-pubkey-data)#OQaSv8CJoH7kxe4eRHnT6oU4LNJzEOYLQwPvqxZDKumnnmvHenL8800rAwsi5nJZ
+R1(conf-ssh-pubkey-data)#0B8klTWCKgSqXWTbSNgswpf80KdqcELWDEKP5ydHDEcqgeM2agchhqM6ZGB6emhv
+R1(conf-ssh-pubkey-data)#ceaDRUWqmyhlgv07BY2lJOJeZxmYeQ3sWogjO0C73kGFngyz+/L1ViLNRg7km+94
+R1(conf-ssh-pubkey-data)#XmDg/H7JrZDRtX37ZUPN1QCanCgHuh0xj15UsvWVYBnCx0tVtkOHGIRe5/j8ZU67
+R1(conf-ssh-pubkey-data)#OpTHs7/O/ES4samPAP9zUfG1qwRl99+8nlGuzAmBpF416wtUPa8O7aA2mnuNCqSw
+R1(conf-ssh-pubkey-data)#Vb6dW6ulrHmNsUv9dYtUy98mp1eUdXvXmRYPcH5SOi07M+4zed/U4LOpV9xuiIAD
+R1(conf-ssh-pubkey-data)#56rQ4WpPGGQXn81H5GdL3MTERiOm7KqgectjXBk= majid@devnet
+R1(conf-ssh-pubkey-data)#exit
+R1(conf-ssh-pubkey-user)#do sh runn | begin pubkey-chain
+ip ssh pubkey-chain
+  username rayka1
+   key-hash ssh-rsa 15132255F3BCA324AE8996759358F091 majid@devnet
+
+ip ssh server algorithm authentication publickey password keyboard
