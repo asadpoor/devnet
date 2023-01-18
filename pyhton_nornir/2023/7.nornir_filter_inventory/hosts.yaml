@@ -8,7 +8,7 @@ R1:
     type: router
     city: babolsar
     core: False
-    as: 65001
+    as_number: 65001
 
 R2:
   hostname: "192.168.2.92"
@@ -18,7 +18,7 @@ R2:
     type: switch
     city: munich
     core: True
-    as: 65002
+    as_number: 65002
 
 R3:
   hostname: "192.168.200.101"
@@ -28,4 +28,4 @@ R3:
     type: switch
     city: frankfurt
     core: True
-    as: 65002
+    as_number: 65002
