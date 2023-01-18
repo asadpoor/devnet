@@ -1,0 +1,31 @@
+---
+
+R1:
+  hostname: "192.168.2.91"
+  groups:
+    - cisco
+  data:
+    type: router
+    city: babolsar
+    core: False
+    as: 65001
+
+R2:
+  hostname: "192.168.2.92"
+  groups:
+    - cisco
+  data:
+    type: switch
+    city: munich
+    core: True
+    as: 65002
+
+R3:
+  hostname: "192.168.200.101"
+  groups:
+    - juniper
+  data:
+    type: switch
+    city: frankfurt
+    core: True
+    as: 65002

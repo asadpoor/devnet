@@ -81,3 +81,4 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2023-01-15 12:41:26,735 -  nornir.core -     INFO -        run() - Running task 'public_key_authentication_example' with args {} on 1 hosts
 2023-01-15 12:41:41,843 -  nornir.core -     INFO -        run() - Running task 'public_key_authentication_example' with args {} on 1 hosts
 2023-01-15 12:42:00,750 -  nornir.core -     INFO -        run() - Running task 'public_key_authentication_example' with args {} on 1 hosts
+2023-01-15 23:19:24,179 -  nornir.core -     INFO -        run() - Running task 'public_key_authentication_example' with args {} on 1 hosts
