@@ -1,0 +1,147 @@
+2023-01-20 12:58:00,859 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 12:58:00,935 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 493, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 287, in channel_authenticate_ssh
+    buf = self.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 177, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2023-01-20 12:58:00,936 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli_textfsm_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/8.textfsm_parser/8.1.nornir_scrapli_textfsm_example.py", line 8, in nornir_scrapli_textfsm_example
+    scrapli_result=task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-01-20 12:59:45,133 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 12:59:45,154 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 493, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 287, in channel_authenticate_ssh
+    buf = self.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 99, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 177, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2023-01-20 12:59:45,155 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'nornir_scrapli_textfsm_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/8.textfsm_parser/8.1.nornir_scrapli_textfsm_example.py", line 8, in nornir_scrapli_textfsm_example
+    result=task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-01-20 13:00:47,876 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 13:01:31,351 -  nornir.core -     INFO -        run() - Running task 'nornir_netmiko_textfsm_example' with args {} on 1 hosts
+2023-01-20 13:02:22,891 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 13:02:58,715 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 13:03:59,369 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 13:04:45,096 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
+2023-01-20 13:05:24,992 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_textfsm_example' with args {} on 1 hosts
