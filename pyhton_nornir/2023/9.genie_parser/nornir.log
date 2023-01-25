@@ -1,0 +1,14 @@
+2023-01-24 10:29:40,123 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:32:37,903 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:33:40,382 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:34:40,493 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:35:29,568 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:36:55,825 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:38:57,202 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:39:47,981 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:40:23,888 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_scrapli_example' with args {} on 1 hosts
+2023-01-24 10:46:41,112 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2023-01-24 10:48:09,536 -  nornir.core -     INFO -        run() - Running task 'textfsm_nornir_netmiko_example' with args {} on 1 hosts
+2023-01-25 10:16:08,267 -  nornir.core -     INFO -        run() - Running task 'nornir_scrapli_genie_example' with args {} on 1 hosts
+2023-01-25 10:17:48,354 -  nornir.core -     INFO -        run() - Running task 'nornir_netmiko_genie_example' with args {} on 1 hosts
+2023-01-25 13:05:19,578 -  nornir.core -     INFO -        run() - Running task 'nornir_netmiko_genie_example' with args {} on 1 hosts
