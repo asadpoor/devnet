@@ -1,0 +1,8 @@
+---
+snmp:
+  community: "raykag"
+ntp:
+  server: 5.5.5.5
+  servers: 
+    - 5.5.5.5
+    - 55.55.55.55

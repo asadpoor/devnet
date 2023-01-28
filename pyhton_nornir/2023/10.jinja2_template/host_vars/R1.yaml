@@ -1,0 +1,14 @@
+---
+
+snmp:
+  community: "rayka"
+ntp:
+  server: 1.1.1.1
+  servers:
+    - 1.1.1.1
+    - 11.11.11.11
+  authentication:
+    hash: md5
+    key:
+      - rayka1
+      - rayka2

@@ -19,9 +19,9 @@ def nornir_scrapli_genie_example(task):
 
     for key in interfaces["interface"].keys():
 #        rprint("key=", key)
-        rprint(interfaces["interface"][key])
+#        rprint(interfaces["interface"][key])
 #        rprint(type(interfaces["interface"][key]))
-#        rprint("IP Address of", key, " is ", interfaces["interface"][key]["ip_address"])
+        rprint("IP Address of", key, " is ", interfaces["interface"][key]["ip_address"])
 
 
 

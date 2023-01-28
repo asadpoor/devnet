@@ -1,0 +1,49 @@
+sudo apt-get update
+sudo apt-get install python3 python3-venv python3-pip
+
+python3 -m pip install nornir
+python3 -m pip install nornir-scrapli
+python3 -m pip install nornir-netmiko
+python3 -m pip install nornir-napalm
+python3 -m pip install nornir-utils
+python3 -m pip install rich
+python3 -m pip install python-gnupg
+
+# genie
+python3 -m pip install pyats
+python3 -m pip install genie
+
+#jinja2
+python3 -m pip install nornir_jinja2
+
+#netbox
+python3 -m pip install nornir-netbox
+
+
+#pyang
+python3 -m pip install pyang
+sudo apt-get install git
+git clone https://github.com/YangModels/yang.git
+cd yang/standard/ietf/RFC/
+pyang -f tree ietf-interfaces.yang
+pyang -f sample-xml-skeleton ietf-interfaces.yang
+
+#netconf
+python3 -m pip install nornir
+python3 -m pip install nornir-scrapli
+python3 -m pip install nornir-utils
+python3 -m pip install nornir-netconf
+
+
+#xmltodict
+python3 -m pip install xmltodict
+
+#pygnmi
+python3 -m pip install pygnmi
+
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install nornir
+python3 -m pip install nornir-scrapli
+python3 -m pip install nornir-utils
+
