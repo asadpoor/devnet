@@ -1,0 +1,265 @@
+2022-07-10 01:42:09,348 -  nornir.core -  WARNING -        run() - Task 'randomtest' has not been run – 0 hosts selected
+2022-07-10 02:04:32,497 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
+2022-07-10 02:05:06,348 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
+2022-07-10 02:05:16,025 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
+2022-07-10 02:19:31,752 -  nornir.core -     INFO -        run() - Running task 'test_show_command' with args {} on 1 hosts
+2022-07-10 02:19:31,757 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 81, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `R1`
+
+2022-07-10 02:19:31,757 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.netbox/12.1.netbox.py", line 12, in test_show_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-07-10 02:20:36,159 -  nornir.core -     INFO -        run() - Running task 'test_show_command' with args {} on 1 hosts
+2022-07-10 02:20:36,179 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 81, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `R1`
+
+2022-07-10 02:20:36,180 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.netbox/12.1.netbox.py", line 12, in test_show_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-07-10 02:20:52,061 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
+2022-07-10 02:21:44,806 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
+2022-07-10 02:21:50,348 -  nornir.core -     INFO -        run() - Running task 'test_show_command' with args {} on 1 hosts
+2022-07-10 02:21:50,357 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 91, in open
+    connection = Scrapli(**parameters, platform=final_platform)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/factory.py", line 497, in __new__
+    final_driver, additional_kwargs = cls._get_driver(platform=platform, variant=variant)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/factory.py", line 326, in _get_driver
+    final_driver, additional_kwargs = cls._get_community_driver(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/factory.py", line 288, in _get_community_driver
+    platform_details = _get_community_platform_details(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/factory.py", line 173, in _get_community_platform_details
+    raise ScrapliException(msg)
+scrapli.exceptions.ScrapliException: Community platform missing required attribute `SCRAPLI_PLATFORM`
+
+2022-07-10 02:21:50,357 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.netbox/12.1.netbox.py", line 12, in test_show_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-07-10 02:22:26,161 -  nornir.core -     INFO -        run() - Running task 'randomtest' with args {} on 1 hosts
+2022-07-10 02:22:30,129 -  nornir.core -     INFO -        run() - Running task 'test_show_command' with args {} on 1 hosts
+2022-07-10 02:22:31,193 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Could not resolve address for host
+
+2022-07-10 02:22:31,193 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'test_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.netbox/12.1.netbox.py", line 12, in test_show_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-07-10 02:27:02,923 -  nornir.core -     INFO -        run() - Running task 'test_show_command' with args {} on 1 hosts
+2022-07-10 14:04:50,835 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2022-07-10 14:06:42,495 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2022-07-10 14:06:57,659 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 439, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 391, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 290, in channel_authenticate_ssh
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Timed out connecting to host
+
+2022-07-10 14:06:57,661 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netbox_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/12.netbox/12.1.netbox_send_command.py", line 12, in netbox_send_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2022-07-11 00:03:15,599 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2022-07-11 00:05:34,759 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-07 16:48:16,207 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-07 16:48:23,689 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-07 16:48:30,256 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-07 16:48:30,256 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netbox_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.2.netbox_send_command.py", line 12, in netbox_send_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-07 16:56:02,973 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-07 17:07:18,614 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-07 17:07:24,965 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-07 17:07:24,966 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netbox_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.2.netbox_send_command.py", line 12, in netbox_send_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-07 17:10:57,317 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-07 17:12:27,751 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts

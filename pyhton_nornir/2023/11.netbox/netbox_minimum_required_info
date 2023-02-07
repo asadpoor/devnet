@@ -1,0 +1,29 @@
+Organization -> Sites -> Add
+ name:central_office
+
+Devices -> Device Roles -> Add
+ Name: router
+
+Devices -> Manufacturer -> Add
+ Name: cisco
+
+Devices -> Device Types -> Add
+ Manufacturer: cisco
+ Model: ios
+
+Devices -> platform -> Add
+ Name: ios
+ Manufacturer: cisco
+
+Devices -> Devices -> Add
+ Name: R1
+ Device Type: ios
+ platform: ios
+
+Devices -> click R1 -> Add Components -> Interface
+ Name: GigabitEthernet1
+ Type: 1000BASE-T (1GE)
+
+Devices -> click R1 -> Interfaces Tab -> + IP Address
+ Address: 192.168.2.91/24
+ select: make this the primary IP for the device

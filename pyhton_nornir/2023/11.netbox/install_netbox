@@ -1,0 +1,55 @@
+#majid@devnet:~/devnet/pyhton_nornir$ lsb_release -a
+#No LSB modules are available.
+#Distributor ID:	Ubuntu
+#Description:	Ubuntu 22.04 LTS
+#Release:	22.04
+#Codename:	jammy
+
+# https://ducko.uk/install-netbox-on-proxmox-docker/
+# https://www.youtube.com/watch?v=djNis2wFfNU
+
+
+sudo apt update
+sudo apt upgrade
+
+#sudo adduser admin
+#sudo usermod -aG sudo admin
+
+sudo apt install git
+sudo apt install docker
+sudo apt install docker-compose
+
+git clone -b release https://github.com/netbox-community/netbox-docker.git
+ls
+cd netbox-docker
+cp docker-compose.override.yml.example docker-compose.override.yml
+
+# this is the configuration of docker-compose.override.yml
+cat docker-compose.override.yml
+version: '3.4'
+services:
+  netbox:
+    ports:
+      - 8000:8080
+
+sudo docker-compose pull
+sudo docker-compose up &
+
+sudo docker ps
+
+#connect netxbox 
+http://NET-BOX-IP:8000/
+admin/admin
+
+#docker-compose up, down, stop start
+# Stop services only
+docker-compose stop
+
+# Stop and remove containers, networks..
+docker-compose down 
+
+# Down and remove volumes
+docker-compose down --volumes 
+
+# Down and remove images
+docker-compose down --rmi <all|local>

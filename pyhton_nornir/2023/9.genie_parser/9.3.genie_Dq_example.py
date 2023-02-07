@@ -8,39 +8,42 @@ nr = InitNornir(config_file="config.yaml")
 def genie_Dq_example(task):
     result=task.run(task=netmiko_send_command, command_string="show interfaces", use_genie=True)
     interfaces = result.result
-#    rprint(interfaces)
+    rprint(interfaces)
 #    rprint(interfaces["GigabitEthernet1"]["counters"]["out_pkts"])
 
-    rprint("keep the path which contains GigabitEthernet1 and does not contain False : ", \
-      Dq(interfaces).contains("GigabitEthernet1").not_contains(False))
+#    rprint("return the list of values of out_pkts key :", \
+#     Dq(interfaces).get_values("out_pkts"))
 
-    rprint("keep the path which contains GigabitEthernet1 and and does not contain False and rebuild the dictionary : ", \
-      Dq(interfaces).contains("GigabitEthernet1").not_contains(False).reconstruct())
+#    rprint("return the value of out_pkts key of index 0 in the list:", \
+#      Dq(interfaces).get_values("out_pkts")[0])
 
-    rprint("keep the path which contains GigabitEthernet1 and return the list of value of out_pkts key :", \
-      Dq(interfaces).contains("GigabitEthernet1").get_values("out_pkts"))
+#    rprint("return the value of out_pkts key of GigabitEthernet1 interface:", 
+#      Dq(interfaces).contains("GigabitEthernet1").get_values("out_pkts"))
 
-    rprint("keep the path which contain the key_value pair of enable_True and return the index of 0 of the ouput list: ", \
-      interfaces.q.contains_key_value('enabled', True).get_values("[0]"))
+#
+#    rprint("return the value of out_pkts if it is greater than zero: ", \
+#      interfaces.q.value_operator("out_pkts", '>', 0).get_values("out_pkts"))
 
-    rprint("keep the path which contain the key_value pair of enable_True and return the key out_pkts: ", \
-      interfaces.q.not_contains_key_value('enabled', False).get_values("out_pkts"))
+#    rprint("keep the dictionary path which contain the key_value pair of enabled:True ", \
+#      interfaces.q.contains_key_value('enabled', True))
 
-    rprint("keep the path which the value of in_crc_errors is less than 100 and from the list output return the first element : ", \
-      interfaces.q.value_operator('in_crc_errors', '<', 100).get_values('[0]',0))
+#    rprint("keep the dictionary path which contain the key_value pair of enabled:True and rebuild the dictionary", \
+#      interfaces.q.contains_key_value('enabled', True).reconstruct())
 
-    rprint("count the number of elemenet matching the key in_crc_errors with the value greater  than 100 : ", \
-      interfaces.q.value_operator('in_crc_errors', '>', 100).count())
+#    rprint("keep the path which does not contains False string and te´hen return the value of out_pkts key : ", \
+#      Dq(interfaces).not_contains(False).get_values("out_pkts"))
 
-    rprint("keep the path with key of line_protocol which value is matched with regex u.* : ", \
-      interfaces.q.contains_key_value('line_protocol', 'u.*', value_regex=True))
+#    rprint("keep the path with key of line_protocol which value is matched with regex u.* : ", \
+#      interfaces.q.contains_key_value('line_protocol', 'u.*', value_regex=True).reconstruct())
 
-    rprint("keep the path with key matching with regex line.* and the value of up : ", \
-      interfaces.q.contains_key_value('line.*', 'up', key_regex=True))
+#    rprint("keep the path with key matching with regex line.* and the value of up : ", \
+#      interfaces.q.contains_key_value('line.*', 'up', key_regex=True).reconstruct())
 
 results=nr.run(task=genie_Dq_example)
 
+# Dq: Dictionary query allow to question Python dictionary in a very intuitive syntax.
 # https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html
+
 # contains: Filters down the dictionary and only keep the paths which contains the provided string
 # not_contains: Only keep paths which does not contains the provided string. remove unwanted path and have a dictionary wizh only desired keys/paths.
 # reconstruct: rebuilds a dictionary from Dq output 

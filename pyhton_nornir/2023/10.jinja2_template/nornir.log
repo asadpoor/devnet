@@ -244,3 +244,5 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 2023-01-29 00:55:01,217 -  nornir.core -     INFO -        run() - Running task 'jinja2_template_example' with args {} on 1 hosts
 2023-01-29 00:55:31,607 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2023-01-29 00:55:31,610 -  nornir.core -     INFO -        run() - Running task 'jinja2_template_example' with args {} on 1 hosts
+2023-01-31 23:57:06,926 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-01-31 23:57:06,930 -  nornir.core -     INFO -        run() - Running task 'jinja2_template_example' with args {} on 1 hosts

@@ -170,3 +170,89 @@ AttributeError: 'NoneType' object has no attribute 'get_values'
 2023-02-04 01:58:47,901 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
 2023-02-04 02:02:24,848 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
 2023-02-04 02:17:00,185 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-04 21:47:08,484 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-04 21:47:30,102 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 01:58:26,486 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:10:26,603 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:13:59,249 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:16:57,655 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:20:12,160 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:20:45,444 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:22:10,229 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:31:48,768 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:32:22,007 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:35:03,202 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:35:29,488 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:41:11,314 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:43:07,611 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:44:40,448 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:51:43,942 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 02:53:58,589 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 03:00:17,814 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 03:01:30,190 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 03:02:07,973 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 12:11:55,269 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 12:13:28,247 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:08:39,436 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:08:42,505 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 935, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/majid/.local/lib/python3.10/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.2.91
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/ssh_dispatcher.py", line 326, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/cisco/cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 350, in __init__
+    self._open()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 355, in _open
+    self.establish_connection()
+  File "/home/majid/.local/lib/python3.10/site-packages/netmiko/base_connection.py", line 957, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.2.91:22
+
+
+
+2023-02-05 22:08:42,505 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'genie_Dq_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/9.genie_parser/9.3.genie_Dq_example.py", line 9, in genie_Dq_example
+    result=task.run(task=netmiko_send_command, command_string="show interfaces", use_genie=True)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2023-02-05 22:10:05,856 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:11:33,719 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:12:26,215 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:13:45,915 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:15:09,949 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:16:09,692 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:17:02,689 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:18:20,232 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
+2023-02-05 22:19:45,775 -  nornir.core -     INFO -        run() - Running task 'genie_Dq_example' with args {} on 1 hosts
