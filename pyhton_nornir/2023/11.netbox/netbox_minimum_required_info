@@ -19,6 +19,9 @@ Devices -> Devices -> Add
  Name: R1
  Device Type: ios
  platform: ios
+ site: central_office
+ role: router
+ manufacture: cisco
 
 Devices -> click R1 -> Add Components -> Interface
  Name: GigabitEthernet1
