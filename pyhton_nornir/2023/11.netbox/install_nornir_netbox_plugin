@@ -1,0 +1,2 @@
+#install nornir netbox plugin
+python3 -m pip install nornir-netbox
