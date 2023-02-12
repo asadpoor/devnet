@@ -265,3 +265,186 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2023-02-07 17:12:27,751 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
 2023-02-07 20:16:57,866 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
 2023-02-07 20:17:28,999 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-11 12:18:20,294 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:21:37,716 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:21:37,751 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 13, in getnetboxdata
+    print(json.dumps(f"device inventory data: {task.host.data}", indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:21:55,648 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:23:01,293 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:23:01,326 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 15, in getnetboxdata
+    print(json.dumps(f"device inventory data: {task.host.data}", indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:23:54,252 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:23:54,284 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 15, in getnetboxdata
+    print(json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:24:07,515 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:24:07,549 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 15, in getnetboxdata
+    print(json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:24:29,500 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:25:03,684 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:25:03,716 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 14, in getnetboxdata
+    print(json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:25:18,113 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:25:18,146 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 14, in getnetboxdata
+    rprint(json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:25:41,275 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:25:41,307 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 14, in getnetboxdata
+    print(json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:26:34,889 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:26:34,921 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 13, in getnetboxdata
+    print(json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:26:57,297 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:26:57,329 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 13, in getnetboxdata
+    print("test",json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:27:31,699 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:27:31,731 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 13, in getnetboxdata
+    print(test1)
+NameError: name 'test1' is not defined
+
+2023-02-11 12:27:55,225 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:27:55,258 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 14, in getnetboxdata
+    print("test",json.dumps(parsed, indent=2))
+NameError: name 'json' is not defined
+
+2023-02-11 12:29:11,688 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-11 12:29:11,720 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'getnetboxdata' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.1.netbox_get_data.py", line 14, in getnetboxdata
+    print(json.dumps(parsed))
+NameError: name 'json' is not defined
+
+2023-02-11 12:29:30,229 -  nornir.core -     INFO -        run() - Running task 'getnetboxdata' with args {} on 1 hosts
+2023-02-12 01:14:20,439 -  nornir.core -     INFO -        run() - Running task 'get_inventory_from_netbox' with args {} on 1 hosts
+2023-02-12 02:35:22,390 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-12 02:35:22,394 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 81, in open
+    raise NornirScrapliInvalidPlatform(
+nornir_scrapli.exceptions.NornirScrapliInvalidPlatform: 'platform' not provided in inventory for host `192.168.2.91`
+
+2023-02-12 02:35:22,395 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netbox_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.2.netbox_send_command.py", line 22, in netbox_send_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-12 02:37:51,099 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-12 02:37:57,596 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/core/send_command.py", line 36, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 98, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/driver/base/sync_driver.py", line 86, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 280, in decorate
+    return self._multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 341, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 302, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2023-02-12 02:37:57,597 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netbox_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/11.netbox/11.2.netbox_send_command.py", line 22, in netbox_send_command
+    task.run(task=send_command, command="show ip interface brief")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2023-02-12 02:39:29,060 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-12 02:40:32,696 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-12 02:44:37,529 -  nornir.core -     INFO -        run() - Running task 'get_inventory_from_netbox' with args {} on 1 hosts
+2023-02-12 02:53:47,547 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts

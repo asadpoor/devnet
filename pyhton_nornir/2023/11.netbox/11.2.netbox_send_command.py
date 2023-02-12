@@ -5,22 +5,19 @@ from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
+# before running the script export username and password in environment variables in automation machine
+#majid@devnet:$ export USERNAME='rayka'
+#majid@devnet:$ export PASSWORD='rayka-co.com'
 
-# not recommended to store password in python code
-#nr.inventory.defaults.username = "rayka"
-#nr.inventory.defaults.password = "rayka-co.com"
+# read username and password from environment variables and storethem into nornir username and password variables
+nr.inventory.defaults.username = os.environ['USERNAME']
+nr.inventory.defaults.password = os.environ['PASSWORD']
 
-# or read from environment variable already created in os
-#majid@devnet:$ export NAPALM_USERNAME='rayka'
-#majid@devnet:$ export NAPALM_PASSWORD='rayka-co.com'
-nr.inventory.defaults.username = os.environ['NAPALM_USERNAME']
-nr.inventory.defaults.password = os.environ['NAPALM_PASSWORD']
-
-# or any other methods (like  piblic key authentication, sysargv, GPG or getpass, ...)
+# you can any other methods to not store clear text password in automation script
+# like  public key authentication, sysargv, GPG or getpass, ...
 
 def netbox_send_command(task):
     task.run(task=send_command, command="show ip interface brief")
-
 
 results = nr.run(task=netbox_send_command)
 print_result(results)
