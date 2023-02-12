@@ -16,8 +16,8 @@ nr.inventory.defaults.password = os.environ['PASSWORD']
 # you can any other methods to not store clear text password in automation script
 # like  public key authentication, sysargv, GPG or getpass, ...
 
-def netbox_send_command(task):
+def use_netbox_as_nornir_inventory_source(task):
     task.run(task=send_command, command="show ip interface brief")
 
-results = nr.run(task=netbox_send_command)
+results = nr.run(task=use_netbox_as_nornir_inventory_source)
 print_result(results)

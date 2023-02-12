@@ -448,3 +448,4 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
 2023-02-12 02:40:32,696 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
 2023-02-12 02:44:37,529 -  nornir.core -     INFO -        run() - Running task 'get_inventory_from_netbox' with args {} on 1 hosts
 2023-02-12 02:53:47,547 -  nornir.core -     INFO -        run() - Running task 'netbox_send_command' with args {} on 1 hosts
+2023-02-12 02:57:09,876 -  nornir.core -     INFO -        run() - Running task 'use_netbox_as_nornir_inventory_source' with args {} on 1 hosts
