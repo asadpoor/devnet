@@ -1,0 +1,144 @@
+#rayka-co.com
+
+#installation guid
+https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/download-your-nso-free-trial-installer-and-cisco-neds
+!
+
+
+lxadmin@vmg-ffm-oob-001:~$ cat /etc/lsb-release 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=22.04
+DISTRIB_CODENAME=jammy
+DISTRIB_DESCRIPTION="Ubuntu 22.04.1 LTS"
+!
+
+sudo apt-get install default-jdk
+sudo apt-get install ant
+sudo apt-get install python3 python3-pip python3-setuptools
+sudo apt install libxml2-utils
+sudo apt-get install tree
+sudo apt-get install -y xsltproc
+pip3 install paramiko
+!
+
+#download free trial and Cisco NED
+https://software.cisco.com/download/home/286331591/type/286283941/release/6.0
+
+nso-6.0-freetrial.linux.x86_64.signed.bin
+ncs-6.0-cisco-asa-6.16-freetrial.signed.bin
+ncs-6.0-cisco-ios-6.88-freetrial.signed.bin
+ncs-6.0-cisco-iosxr-7.43-freetrial.signed.bin
+ncs-6.0-cisco-nx-5.23.6-freetrial.signed.bin
+
+!
+
+#note for directory names that I have chosen
+# cisco_nso: downloaded files
+# nso-6.0: installed nso
+# nso-instance: an instance of project 
+
+
+#upload to ubunutu machine to folder "cisco_nso" as an example
+!
+majid@devnet:~/cisco_nso$ ls
+ncs-6.0-cisco-asa-6.16-freetrial.signed.bin    ncs-6.0-cisco-nx-5.23.6-freetrial.signed.bin
+ncs-6.0-cisco-ios-6.88-freetrial.signed.bin    nso-6.0-freetrial.linux.x86_64.signed.bin
+ncs-6.0-cisco-iosxr-7.43-freetrial.signed.bin
+
+
+#unzip file
+cd cisco_nso
+sh nso-6.0-freetrial.linux.x86_64.signed.bin --skip-verification
+!
+
+# install ncs
+mkdir $HOME/nso-6.0
+sh nso-6.0.linux.x86_64.installer.bin $HOME/nso-6.0 --local-install
+!
+
+majid@devnet:~/cisco_nso$ ls ../nso-6.0/packages/neds/
+a10-acos-cli-3.0  cisco-asa-cli-6.6  cisco-ios-cli-3.8    cisco-iosxr-cli-3.5  dell-ftos-cli-3.0
+alu-sr-cli-3.4    cisco-ios-cli-3.0  cisco-iosxr-cli-3.0  cisco-nx-cli-3.0     juniper-junos-nc-3.0
+ 
+
+# unzip new NED
+cd cisco_nso/
+sh ncs-6.0-cisco-nx-5.23.6-freetrial.signed.bin --skip-verification
+sh ncs-6.0-cisco-asa-6.16-freetrial.signed.bin --skip-verification
+sh ncs-6.0-cisco-ios-6.88-freetrial.signed.bin --skip-verification
+sh ncs-6.0-cisco-iosxr-7.43-freetrial.signed.bin --skip-verification
+
+majid@devnet:~/cisco_nso$ ls -l ncs*.tar.gz
+-rw-r--r-- 1 majid majid  7140942 Okt 18 18:45 ncs-6.0-cisco-asa-6.16.tar.gz
+-rw-r--r-- 1 majid majid 54021270 Nov  4 21:41 ncs-6.0-cisco-ios-6.88.tar.gz
+-rw-r--r-- 1 majid majid 39305257 Okt  7 17:47 ncs-6.0-cisco-iosxr-7.43.tar.gz
+-rw-r--r-- 1 majid majid  9895988 Nov 12 14:03 ncs-6.0-cisco-nx-5.23.6.tar.gz
+
+
+
+majid@devnet:~/cisco_nso$ cd ~/nso-6.0/packages/neds/
+tar -zxvf ~/cisco_nso/ncs-6.0-cisco-asa-6.16.tar.gz 
+tar -zxvf ~/cisco_nso/ncs-6.0-cisco-ios-6.88.tar.gz 
+tar -zxvf ~/cisco_nso/ncs-6.0-cisco-iosxr-7.43.tar.gz
+tar -zxvf ~/cisco_nso/ncs-6.0-cisco-nx-5.23.6.tar.gz
+
+
+majid@devnet:~/nso-6.0/packages/neds$ ls ~/nso-6.0/packages/neds/
+a10-acos-cli-3.0    cisco-asa-cli-6.6  cisco-ios-cli-6.88   cisco-iosxr-cli-7.43  dell-ftos-cli-3.0
+alu-sr-cli-3.4      cisco-ios-cli-3.0  cisco-iosxr-cli-3.0  cisco-nx-cli-3.0      juniper-junos-nc-3.0
+cisco-asa-cli-6.16  cisco-ios-cli-3.8  cisco-iosxr-cli-3.5  cisco-nx-cli-5.23
+
+
+# Source this file to get these settings in your shell which sets the environment variables 
+# after reboot start from here
+majid@devnet:~$ source $HOME/nso-6.0/ncsrc
+
+
+# create an instance of ncs with ncs-setup
+mkdir $HOME/nso-instance
+
+ncs-setup --package ~/nso-6.0/packages/neds/cisco-iosxr-cli-7.43 \
+--package ~/nso-6.0/packages/neds/cisco-asa-cli-6.16 \
+--package ~/nso-6.0/packages/neds/cisco-ios-cli-6.88 \
+--package ~/nso-6.0/packages/neds/cisco-nx-cli-5.23 \
+--package ~/nso-6.0/packages/neds/juniper-junos-nc-3.0 \
+--dest ~/nso-instance  
+
+# start ncs
+cd $HOME/nso-instance
+ncs
+!
+
+#check ncs
+majid@devnet:~/nso-instance$ ncs --status | grep status
+status: started
+        db=running id=34 priority=1 path=/ncs:devices/device/live-status-protocol/device-type
+
+# visit the site
+http://192.168.2.163:8080/login.html
+admin/admin
+
+# connect to ncs instance
+ncs_cli -C -u admin # cisco style
+ncs_cli -J -u admin # juniper style
+
+admin@ncs# show ncs-state version
+ncs-state version 6.0
+
+admin@ncs# show packages package package-version
+
+
+# add devices using "netsim"
+cd ~/nso-instance/
+ncs-netsim delete-network # if already exist
+ncs-netsim create-network packages/cisco-ios-cli-6.88 3 ios
+ncs-netsim add-to-network packages/cisco-asa-cli-6.16 1 asa
+ncs-netsim add-to-network packages/cisco-iosxr-cli-7.43 1 iosxr
+ncs-netsim add-to-network packages/cisco-nx-cli-5.23 1 nxos
+ncs-netsim add-to-network packages/juniper-junos-nc-3.0 1 junos
+ncs-netsim start
+
+# Juniper (default/cli) Cisco IOS (cli-i) or Cisco XR (cli-c)
+ncs-netsim cli-i ios1
+enable
+show running-config
