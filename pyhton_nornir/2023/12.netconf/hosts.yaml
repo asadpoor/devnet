@@ -1,0 +1,72 @@
+---
+
+R1:
+  hostname: "192.168.2.91"
+#  username: "rayka"
+#  password: "rayka-co.ir"
+  groups:
+    - cisco
+  connection_options:
+#     scrapli_netconf:
+     nornir_netconf:
+       extras:
+         port: 830
+         ssh_config_file: True
+         auth_strict_key: False
+         timeout_transport: 10
+#    netmiko:
+#      username: "rayka1"
+#      extras:
+#        use_keys: True
+#        key_file: "/home/majid/.ssh/id_rsa"
+#        conn_timeout: 20
+#    napalm:
+#      platfotm: ios
+#      username: "rayka1"
+#      extras:
+#        use_keys: True
+#        key_file: '/home/majid/.ssh/id_rsa'
+#        conn_timeout: 20
+#  extras:
+#    use_keys: True
+#    key_file: '/home/majid/.ssh/id_rsa'
+#  data:
+#    community: rayka
+#    type: router
+#    city: babolsar
+#    core: False
+#    as: 65001
+
+#R2:
+#  hostname: "192.168.2.92"
+#  username: "rayka"
+#  password: "rayka-co.ir"
+#  groups:
+#    - cisco
+#  data:
+#    community: rayka
+#    type: switch
+#    city: shiraz
+#    core: True
+#    as: 65002
+
+#R3:
+#  hostname: "192.168.1.250"
+#  username: "rayka"
+#  password: "rayka-co.com"
+#  groups:
+#    - juniper
+#  connection_options:
+##     scrapli_netconf:
+#     nornir_netconf:
+#       extras:
+#         port: 830
+#         ssh_config_file: True
+#         auth_strict_key: False
+#         timeout_transport: 10
+#  data:
+#    community: rayka-co.com
+#    type: switch
+#    city: tehran
+#    core: True
+#    as: 65003

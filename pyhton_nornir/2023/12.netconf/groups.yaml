@@ -1,0 +1,6 @@
+---
+
+cisco:
+#  platform: iosxe
+  data:
+    community: rayka-co.com

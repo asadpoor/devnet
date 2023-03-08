@@ -3722,3 +3722,15 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
 2022-08-19 04:11:12,307 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2022-08-19 04:11:12,310 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
 2023-02-20 13:00:09,435 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 13:34:03,719 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-06 13:38:24,101 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-06 15:09:06,631 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:11:08,909 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:11:33,477 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:20:26,532 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:20:53,867 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:21:11,596 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:21:56,827 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:22:26,812 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 15:23:22,964 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-06 16:09:27,928 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
