@@ -3734,3 +3734,256 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
 2023-03-06 15:22:26,812 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
 2023-03-06 15:23:22,964 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
 2023-03-06 16:09:27,928 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:11:03,515 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 01:11:03,678 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 483, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 31, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 287, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 117, in open
+    self.channel.channel_authenticate_netconf(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 102, in channel_authenticate_netconf
+    buf = self.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 214, in read
+    return super().read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2023-03-11 01:11:03,679 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.3.netconf_xpath_filter_get_config.py", line 9, in netconf_xpath
+    task.run(task=netconf_get_config, source="running")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2023-03-11 01:11:40,375 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:11:40,466 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 483, in read
+    s = self.fileobj.read1(size)
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 158, in read
+    buf = self.session.read(65535)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/ptyprocess.py", line 488, in read
+    raise EOFError("End Of File (EOF). Exception style platform.")
+EOFError: End Of File (EOF). Exception style platform.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 31, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 287, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 117, in open
+    self.channel.channel_authenticate_netconf(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 102, in channel_authenticate_netconf
+    buf = self.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 214, in read
+    return super().read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/transport/plugins/system/transport.py", line 165, in read
+    raise ScrapliConnectionError(msg) from exc
+scrapli.exceptions.ScrapliConnectionError: encountered EOF reading from transport; typically means the device closed the connection
+
+2023-03-11 01:11:40,467 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.1.netconf_get_config.py", line 9, in get_config
+    task.run(task=netconf_get_config, source="running")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2023-03-11 01:20:12,325 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:20:12,437 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 31, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 287, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 117, in open
+    self.channel.channel_authenticate_netconf(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 107, in channel_authenticate_netconf
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2023-03-11 01:20:12,437 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.1.netconf_get_config.py", line 9, in get_config
+    task.run(task=netconf_get_config, source="running")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2023-03-11 01:26:47,679 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:26:47,784 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get_config.py", line 31, in netconf_get_config
+    scrapli_conn = task.host.get_connection("scrapli_netconf", task.nornir.config)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/connection.py", line 287, in open
+    connection.open()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 117, in open
+    self.channel.channel_authenticate_netconf(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 113, in _multiprocessing_timeout
+    return future.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 107, in channel_authenticate_netconf
+    self._ssh_message_handler(output=authenticate_buf)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/base_channel.py", line 432, in _ssh_message_handler
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: Host key verification failed
+
+2023-03-11 01:26:47,784 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'get_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.1.netconf_get_config.py", line 9, in get_config
+    task.run(task=netconf_get_config, source="running")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2023-03-11 01:27:38,094 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:29:49,270 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:30:00,846 -  nornir.core -     INFO -        run() - Running task 'get_config' with args {} on 1 hosts
+2023-03-11 01:30:57,829 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 01:31:05,682 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 01:34:00,355 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 01:35:20,817 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 01:35:32,687 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 01:36:50,848 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 23:13:53,065 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath' with args {} on 1 hosts
+2023-03-11 23:14:23,001 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-11 23:16:05,279 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-12 01:13:46,210 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-12 01:14:38,706 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-12 01:15:29,774 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-12 01:15:59,102 -  nornir.core -     INFO -        run() - Running task 'get_device_config' with args {} on 1 hosts
+2023-03-12 01:27:34,202 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:27:47,656 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:30:01,325 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:30:58,397 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:31:41,012 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:32:02,336 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:33:58,984 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:34:45,512 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 01:35:39,583 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts

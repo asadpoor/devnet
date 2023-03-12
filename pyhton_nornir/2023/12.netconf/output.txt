@@ -1,6 +1,6 @@
-[1m[36mget_config**********************************************************************[0m
+[1m[36mnetconf_xpath_filter_example****************************************************[0m
 [0m[1m[34m* R1 ** changed : False ********************************************************[0m
-[0m[1m[32mvvvv get_config ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO[0m
+[0m[1m[32mvvvv netconf_xpath_filter_example ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvv INFO[0m
 [0m[1m[32m---- netconf_get_config ** changed : False ------------------------------------- INFO[0m
 [0m<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="101">
   <data>
@@ -35,6 +35,9 @@
           <log>
             <datetime>
               <msec/>
+              <localtime/>
+              <show-timezone/>
+              <year/>
             </datetime>
           </log>
         </timestamps>
@@ -205,6 +208,9 @@
             <ipv4-host>1.1.1.1</ipv4-host>
           </ipv4-host-list>
           <ipv4-host-list>
+            <ipv4-host>3.3.3.3</ipv4-host>
+          </ipv4-host-list>
+          <ipv4-host-list>
             <ipv4-host>6.6.6.6</ipv4-host>
           </ipv4-host-list>
         </host>
@@ -274,9 +280,13 @@
           <id>65500</id>
           <bgp>
             <router-id>
-              <ip-id>5.6.7.8</ip-id>
+              <ip-id>1.1.1.1</ip-id>
             </router-id>
           </bgp>
+          <neighbor>
+            <id>2.2.2.2</id>
+            <remote-as>65501</remote-as>
+          </neighbor>
         </bgp>
         <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
           <ospf>
@@ -287,7 +297,7 @@
                 <wildcard>0.255.255.255</wildcard>
                 <area>0</area>
               </network>
-              <router-id>1.2.3.4</router-id>
+              <router-id>3.4.5.6</router-id>
             </process-id>
           </ospf>
         </router-ospf>
@@ -305,7 +315,7 @@
               </spf>
             </throttle>
           </timers>
-          <router-id>1.2.3.4</router-id>
+          <router-id>3.4.5.6</router-id>
           <compatible>
             <rfc1583/>
           </compatible>
@@ -355,6 +365,9 @@
         <server xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ntp">
           <server-list>
             <ip-address>2.2.2.2</ip-address>
+          </server-list>
+          <server-list>
+            <ip-address>4.4.4.4</ip-address>
           </server-list>
         </server>
       </ntp>
@@ -586,7 +599,7 @@
               <global>
                 <config>
                   <as>65500</as>
-                  <router-id>5.6.7.8</router-id>
+                  <router-id>1.1.1.1</router-id>
                 </config>
                 <graceful-restart>
                   <config>
@@ -600,6 +613,26 @@
                   </config>
                 </route-selection-options>
               </global>
+              <neighbors>
+                <neighbor>
+                  <neighbor-address>2.2.2.2</neighbor-address>
+                  <config>
+                    <neighbor-address>2.2.2.2</neighbor-address>
+                    <peer-as>65501</peer-as>
+                  </config>
+                  <timers>
+                    <config>
+                      <hold-time>180.0</hold-time>
+                      <keepalive-interval>60.0</keepalive-interval>
+                    </config>
+                  </timers>
+                  <ebgp-multihop>
+                    <config>
+                      <enabled>false</enabled>
+                    </config>
+                  </ebgp-multihop>
+                </neighbor>
+              </neighbors>
             </bgp>
           </protocol>
           <protocol>
@@ -674,74 +707,73 @@
         <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
       </interface>
     </interfaces>
-    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
-      <enable-nacm>true</enable-nacm>
-      <read-default>deny</read-default>
-      <write-default>deny</write-default>
-      <exec-default>deny</exec-default>
-      <enable-external-groups>true</enable-external-groups>
-      <rule-list>
-        <name>admin</name>
-        <group>PRIV15</group>
-        <rule>
-          <name>permit-all</name>
-          <module-name>*</module-name>
-          <access-operations>*</access-operations>
-          <action>permit</action>
-        </rule>
-      </rule-list>
-    </nacm>
-    <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
-      <routing-instance>
-        <name>default</name>
-        <description>default-vrf [read-only]</description>
-        <routing-protocols>
-          <routing-protocol>
-            <type xmlns:ospf="urn:ietf:params:xml:ns:yang:ietf-ospf">ospf:ospfv2</type>
-            <name>1</name>
-            <ospf xmlns="urn:ietf:params:xml:ns:yang:ietf-ospf">
-              <instance>
-                <af xmlns:rt="urn:ietf:params:xml:ns:yang:ietf-routing">rt:ipv4</af>
-                <router-id>1.2.3.4</router-id>
-                <nsr>
-                  <enable>false</enable>
-                </nsr>
-                <auto-cost>
-                  <enable>true</enable>
-                  <reference-bandwidth>100</reference-bandwidth>
-                </auto-cost>
-                <spf-control>
-                  <throttle-timers xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
-                    <init-delay>50</init-delay>
-                    <min-delay>200</min-delay>
-                    <max-delay>5000</max-delay>
-                  </throttle-timers>
-                </spf-control>
-                <redistribution xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
-                  <rip/>
-                </redistribution>
-              </instance>
-            </ospf>
-          </routing-protocol>
-          <routing-protocol>
-            <type>static</type>
-            <name>1</name>
-            <static-routes>
-              <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ipv4-unicast-routing">
-                <route>
-                  <destination-prefix>0.0.0.0/0</destination-prefix>
-                  <next-hop>
-                    <next-hop-address>192.168.2.1</next-hop-address>
-                  </next-hop>
-                </route>
-              </ipv4>
-            </static-routes>
-          </routing-protocol>
-        </routing-protocols>
-      </routing-instance>
-    </routing>
+    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm"/>
+    <enable-nacm>true</enable-nacm>
+    <read-default>deny</read-default>
+    <write-default>deny</write-default>
+    <exec-default>deny</exec-default>
+    <enable-external-groups>true</enable-external-groups>
+    <rule-list>
+      <name>admin</name>
+      <group>PRIV15</group>
+      <rule>
+        <name>permit-all</name>
+        <module-name>*</module-name>
+        <access-operations>*</access-operations>
+        <action>permit</action>
+      </rule>
+    </rule-list>
   </data>
+  <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
+    <routing-instance>
+      <name>default</name>
+      <description>default-vrf [read-only]</description>
+      <routing-protocols>
+        <routing-protocol>
+          <type xmlns:ospf="urn:ietf:params:xml:ns:yang:ietf-ospf">ospf:ospfv2</type>
+          <name>1</name>
+          <ospf xmlns="urn:ietf:params:xml:ns:yang:ietf-ospf">
+            <instance>
+              <af xmlns:rt="urn:ietf:params:xml:ns:yang:ietf-routing">rt:ipv4</af>
+              <router-id>3.4.5.6</router-id>
+              <nsr>
+                <enable>false</enable>
+              </nsr>
+              <auto-cost>
+                <enable>true</enable>
+                <reference-bandwidth>100</reference-bandwidth>
+              </auto-cost>
+              <spf-control>
+                <throttle-timers xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
+                  <init-delay>50</init-delay>
+                  <min-delay>200</min-delay>
+                  <max-delay>5000</max-delay>
+                </throttle-timers>
+              </spf-control>
+              <redistribution xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
+                <rip/>
+              </redistribution>
+            </instance>
+          </ospf>
+        </routing-protocol>
+        <routing-protocol>
+          <type>static</type>
+          <name>1</name>
+          <static-routes>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ipv4-unicast-routing">
+              <route>
+                <destination-prefix>0.0.0.0/0</destination-prefix>
+                <next-hop>
+                  <next-hop-address>192.168.2.1</next-hop-address>
+                </next-hop>
+              </route>
+            </ipv4>
+          </static-routes>
+        </routing-protocol>
+      </routing-protocols>
+    </routing-instance>
+  </routing>
 </rpc-reply>
 [0m
-[0m[1m[32m^^^^ END get_config ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[0m[1m[32m^^^^ END netconf_xpath_filter_example ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
 [0m

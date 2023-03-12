@@ -5,8 +5,8 @@ from nornir_utils.plugins.functions import print_result
 
 nr = InitNornir(config_file="config.yaml")
 
-def netconf_xpath(task):
-    task.run(task=netconf_get_config, source="running")
+def netconf_xpath_filter_example(task):
+#    task.run(task=netconf_get_config, source="running")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/username")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/ip/access-list/standard")
@@ -27,5 +27,5 @@ def netconf_xpath(task):
 #    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="xpath", path="/native/router/router-ospf")
 #    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="xpath", path="//router-ospf")
 
-results = nr.run(task=netconf_xpath)
+results = nr.run(task=netconf_xpath_filter_example)
 print_result(results)
