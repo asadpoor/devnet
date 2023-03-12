@@ -3987,3 +3987,39 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
 2023-03-12 01:33:58,984 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
 2023-03-12 01:34:45,512 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
 2023-03-12 01:35:39,583 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:10:16,661 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:16:37,826 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:16:56,237 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:17:37,140 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:26:25,578 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:28:48,032 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:29:18,382 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:30:58,106 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:30:58,554 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath_filter_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.2.netconf_xpath_filter_example.py", line 12, in netconf_xpath_filter_example
+    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/interface/GigabitEthernet/1")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
+
+
+2023-03-12 12:31:44,562 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:32:32,678 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:32:53,050 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:33:03,099 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:33:29,203 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:33:51,887 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:47:57,992 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:48:03,491 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:51:48,946 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:51:52,685 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:54:13,766 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:56:44,325 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:56:48,978 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 12:59:46,473 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 13:04:40,259 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 13:05:09,141 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 13:05:20,967 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
