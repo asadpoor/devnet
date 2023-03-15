@@ -4023,3 +4023,55 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get_config (failed)
 2023-03-12 13:04:40,259 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
 2023-03-12 13:05:09,141 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
 2023-03-12 13:05:20,967 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 21:58:44,891 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 21:59:45,354 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 22:01:16,045 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 22:02:07,666 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 22:03:52,392 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 22:04:45,714 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 22:06:01,936 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-12 22:06:47,662 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-15 15:07:55,702 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:12:41,031 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:13:35,490 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:14:06,245 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_scrapli/tasks/netconf/get.py", line 28, in netconf_get
+    scrapli_response = scrapli_conn.get(filter_=filter_, filter_type=filter_type)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/driver/sync_driver.py", line 145, in get
+    raw_response = self.channel.send_input_netconf(response.channel_input)
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 342, in send_input_netconf
+    buf = self._read_until_prompt(buf=b"")
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 137, in _read_until_prompt
+    read_buf.write(self.read())
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli_netconf/channel/sync_channel.py", line 214, in read
+    return super().read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/channel/sync_channel.py", line 69, in read
+    buf = self.transport.read()
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 216, in decorate
+    return _multiprocessing_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 108, in _multiprocessing_timeout
+    return _handle_timeout(
+  File "/home/majid/.local/lib/python3.10/site-packages/scrapli/decorators.py", line 134, in _handle_timeout
+    raise ScrapliTimeout(message)
+scrapli.exceptions.ScrapliTimeout: timed out reading from transport
+
+2023-03-15 15:14:06,245 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xpath_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.3.netconf_xpath_filter_get.py", line 10, in netconf_xpath_get
+    task.run(task=netconf_get, filter_type="xpath", filter_="//interface/statistics/in-octets")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_get (failed)
+
+
+2023-03-15 15:14:42,710 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:15:37,670 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:18:02,379 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:19:28,043 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:20:10,386 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts
+2023-03-15 15:21:45,572 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_get' with args {} on 1 hosts

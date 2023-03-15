@@ -6,14 +6,14 @@ from nornir_utils.plugins.functions import print_result
 nr = InitNornir(config_file="config.yaml")
 
 def netconf_xpath_filter_example(task):
-#    task.run(task=netconf_get_config, source="running")
+    task.run(task=netconf_get_config, source="running")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//address")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//ip/address/primary/address")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/interface/GigabitEthernet/ip/address")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//wildcard")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/router/router-ospf")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="//as")
-    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/network-instances/network-instance/protocols/protocol/bgp")
+#    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/network-instances/network-instance/protocols/protocol/bgp")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/username")
 #    task.run(task=netconf_get_config, source="running", filter_type="xpath", filter_="/native/ip/access-list/standard")

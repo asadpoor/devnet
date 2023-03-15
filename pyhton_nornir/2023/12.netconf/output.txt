@@ -279,6 +279,7 @@
         <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
           <id>65500</id>
           <bgp>
+            <log-neighbor-changes>true</log-neighbor-changes>
             <router-id>
               <ip-id>1.1.1.1</ip-id>
             </router-id>
