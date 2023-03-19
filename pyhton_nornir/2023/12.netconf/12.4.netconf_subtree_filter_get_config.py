@@ -27,25 +27,25 @@ filter3 = """
 """
 
 filter4 = """
-    <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    </native>
-"""
-
-filter5 = """
     <network-instances xmlns="http://openconfig.net/yang/network-instance">
       <network-instance>
         <protocols>
           <protocol>
             <bgp>
-              <neighbors>
-                <neighbor>
-                </neighbor>
-              </neighbors>
             </bgp>
           </protocol>
         </protocols>
       </network-instance>
-    </network>
+    </network-instances>
+"""
+
+filter5 = """
+    <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+      <router>
+        <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
+        </bgp>
+      </router>
+    </native>
 """
 
 
