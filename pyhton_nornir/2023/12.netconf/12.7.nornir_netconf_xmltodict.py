@@ -15,12 +15,12 @@ filter1 = """
 def netconf_xmltodict(task):
     interfaces = task.run(task=netconf_get_config, source="running", xmldict="true", filter_type="subtree", path=filter1)
     interfaces_dic = interfaces.result
-#    pprint(interfaces_dic)
+    pprint(interfaces_dic)
 #    pprint(interfaces_dic["xml_dict"])
 #    pprint(interfaces_dic["xml_dict"]["data"])
 
     interfaceslist = interfaces_dic["xml_dict"]["data"]["interfaces"]["interface"]
-    pprint(type(interfaceslist))
+#    pprint(type(interfaceslist))
 
 #    for key,value in interfaceslist.items():
 #        print("key=",key)

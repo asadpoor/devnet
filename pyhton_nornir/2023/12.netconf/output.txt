@@ -200,23 +200,6 @@
             <auto>true</auto>
           </negotiation>
         </GigabitEthernet>
-        <Loopback>
-          <name>100</name>
-          <ip>
-            <address>
-              <primary>
-                <address>172.16.1.1</address>
-                <mask>255.255.255.0</mask>
-              </primary>
-            </address>
-            <igmp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-igmp">
-              <explicit-tracking>false</explicit-tracking>
-              <proxy-service>false</proxy-service>
-              <unidirectional-link>false</unidirectional-link>
-              <v3lite>false</v3lite>
-            </igmp>
-          </ip>
-        </Loopback>
       </interface>
       <control-plane/>
       <logging>
@@ -526,39 +509,6 @@
           </config>
         </ethernet>
       </interface>
-      <interface>
-        <name>Loopback100</name>
-        <config>
-          <name>Loopback100</name>
-          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:softwareLoopback</type>
-          <enabled>true</enabled>
-        </config>
-        <subinterfaces>
-          <subinterface>
-            <index>0</index>
-            <config>
-              <index>0</index>
-              <enabled>true</enabled>
-            </config>
-            <ipv4 xmlns="http://openconfig.net/yang/interfaces/ip">
-              <addresses>
-                <address>
-                  <ip>172.16.1.1</ip>
-                  <config>
-                    <ip>172.16.1.1</ip>
-                    <prefix-length>24</prefix-length>
-                  </config>
-                </address>
-              </addresses>
-            </ipv4>
-            <ipv6 xmlns="http://openconfig.net/yang/interfaces/ip">
-              <config>
-                <enabled>false</enabled>
-              </config>
-            </ipv6>
-          </subinterface>
-        </subinterfaces>
-      </interface>
     </interfaces>
     <lldp xmlns="http://openconfig.net/yang/lldp">
       <config>
@@ -757,86 +707,73 @@
         <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
         <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
       </interface>
-      <interface>
-        <name>Loopback100</name>
-        <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:softwareLoopback</type>
-        <enabled>true</enabled>
-        <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
-          <address>
-            <ip>172.16.1.1</ip>
-            <netmask>255.255.255.0</netmask>
-          </address>
-        </ipv4>
-        <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
-      </interface>
     </interfaces>
-    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
-      <enable-nacm>true</enable-nacm>
-      <read-default>deny</read-default>
-      <write-default>deny</write-default>
-      <exec-default>deny</exec-default>
-      <enable-external-groups>true</enable-external-groups>
-      <rule-list>
-        <name>admin</name>
-        <group>PRIV15</group>
-        <rule>
-          <name>permit-all</name>
-          <module-name>*</module-name>
-          <access-operations>*</access-operations>
-          <action>permit</action>
-        </rule>
-      </rule-list>
-    </nacm>
-    <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
-      <routing-instance>
-        <name>default</name>
-        <description>default-vrf [read-only]</description>
-        <routing-protocols>
-          <routing-protocol>
-            <type xmlns:ospf="urn:ietf:params:xml:ns:yang:ietf-ospf">ospf:ospfv2</type>
-            <name>1</name>
-            <ospf xmlns="urn:ietf:params:xml:ns:yang:ietf-ospf">
-              <instance>
-                <af xmlns:rt="urn:ietf:params:xml:ns:yang:ietf-routing">rt:ipv4</af>
-                <router-id>3.4.5.6</router-id>
-                <nsr>
-                  <enable>false</enable>
-                </nsr>
-                <auto-cost>
-                  <enable>true</enable>
-                  <reference-bandwidth>100</reference-bandwidth>
-                </auto-cost>
-                <spf-control>
-                  <throttle-timers xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
-                    <init-delay>50</init-delay>
-                    <min-delay>200</min-delay>
-                    <max-delay>5000</max-delay>
-                  </throttle-timers>
-                </spf-control>
-                <redistribution xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
-                  <rip/>
-                </redistribution>
-              </instance>
-            </ospf>
-          </routing-protocol>
-          <routing-protocol>
-            <type>static</type>
-            <name>1</name>
-            <static-routes>
-              <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ipv4-unicast-routing">
-                <route>
-                  <destination-prefix>0.0.0.0/0</destination-prefix>
-                  <next-hop>
-                    <next-hop-address>192.168.2.1</next-hop-address>
-                  </next-hop>
-                </route>
-              </ipv4>
-            </static-routes>
-          </routing-protocol>
-        </routing-protocols>
-      </routing-instance>
-    </routing>
+    <nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm"/>
+    <enable-nacm>true</enable-nacm>
+    <read-default>deny</read-default>
+    <write-default>deny</write-default>
+    <exec-default>deny</exec-default>
+    <enable-external-groups>true</enable-external-groups>
+    <rule-list>
+      <name>admin</name>
+      <group>PRIV15</group>
+      <rule>
+        <name>permit-all</name>
+        <module-name>*</module-name>
+        <access-operations>*</access-operations>
+        <action>permit</action>
+      </rule>
+    </rule-list>
   </data>
+  <routing xmlns="urn:ietf:params:xml:ns:yang:ietf-routing">
+    <routing-instance>
+      <name>default</name>
+      <description>default-vrf [read-only]</description>
+      <routing-protocols>
+        <routing-protocol>
+          <type xmlns:ospf="urn:ietf:params:xml:ns:yang:ietf-ospf">ospf:ospfv2</type>
+          <name>1</name>
+          <ospf xmlns="urn:ietf:params:xml:ns:yang:ietf-ospf">
+            <instance>
+              <af xmlns:rt="urn:ietf:params:xml:ns:yang:ietf-routing">rt:ipv4</af>
+              <router-id>3.4.5.6</router-id>
+              <nsr>
+                <enable>false</enable>
+              </nsr>
+              <auto-cost>
+                <enable>true</enable>
+                <reference-bandwidth>100</reference-bandwidth>
+              </auto-cost>
+              <spf-control>
+                <throttle-timers xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
+                  <init-delay>50</init-delay>
+                  <min-delay>200</min-delay>
+                  <max-delay>5000</max-delay>
+                </throttle-timers>
+              </spf-control>
+              <redistribution xmlns="urn:ietf:params:xml:ns:yang:cisco-ospf">
+                <rip/>
+              </redistribution>
+            </instance>
+          </ospf>
+        </routing-protocol>
+        <routing-protocol>
+          <type>static</type>
+          <name>1</name>
+          <static-routes>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ipv4-unicast-routing">
+              <route>
+                <destination-prefix>0.0.0.0/0</destination-prefix>
+                <next-hop>
+                  <next-hop-address>192.168.2.1</next-hop-address>
+                </next-hop>
+              </route>
+            </ipv4>
+          </static-routes>
+        </routing-protocol>
+      </routing-protocols>
+    </routing-instance>
+  </routing>
 </rpc-reply>
 [0m
 [0m[1m[32m^^^^ END get_config ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
