@@ -4336,3 +4336,66 @@ KeyError: 'address'
 2023-03-24 16:39:39,547 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
 2023-03-24 16:39:54,447 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
 2023-03-24 16:46:33,910 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-24 23:08:03,286 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-24 23:08:03,955 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.6.nornir_scrapli_netconf_xmltodict.py", line 36, in netconf_xmltodict
+    print(interface["name"], " has the IP address of ", interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2023-03-24 23:08:11,892 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-24 23:08:16,071 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.6.nornir_scrapli_netconf_xmltodict.py", line 36, in netconf_xmltodict
+    print(interface["name"], " has the IP address of ", interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2023-03-24 23:13:37,711 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-24 23:13:38,267 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.6.nornir_scrapli_netconf_xmltodict.py", line 36, in netconf_xmltodict
+    print(interface["name"], " has the IP address of ", interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2023-03-24 23:16:23,559 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-24 23:16:24,128 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_xmltodict' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.6.nornir_scrapli_netconf_xmltodict.py", line 36, in netconf_xmltodict
+    print(interface["name"], " has the IP address of ", interface["ipv4"]["address"]["ip"])
+KeyError: 'address'
+
+2023-03-24 23:17:00,626 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-24 23:19:08,948 -  nornir.core -     INFO -        run() - Running task 'netconf_xmltodict' with args {} on 1 hosts
+2023-03-28 00:36:24,142 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2023-03-28 00:38:23,938 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2023-03-28 00:39:56,631 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2023-03-28 00:43:24,102 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2023-03-28 00:43:24,758 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netconf_edit_config_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/12.netconf/12.8.netconf_edit_config.py", line 89, in netconf_edit_config_example
+    task.run(task=netconf_edit_config, target="candidate", config=config2)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
+
+
+2023-03-28 00:45:02,293 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_example' with args {} on 1 hosts
+2023-03-28 00:46:44,643 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 00:47:36,597 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 00:48:06,496 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 00:49:12,638 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 00:51:41,611 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 00:51:47,012 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 00:52:51,931 -  nornir.core -     INFO -        run() - Running task 'netconf_subtree_get_config' with args {} on 1 hosts
+2023-03-28 00:53:56,980 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts
+2023-03-28 11:32:02,208 -  nornir.core -     INFO -        run() - Running task 'netconf_xpath_filter_example' with args {} on 1 hosts

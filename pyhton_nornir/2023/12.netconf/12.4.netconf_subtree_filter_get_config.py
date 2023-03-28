@@ -50,7 +50,7 @@ filter5 = """
 
 
 def netconf_subtree_get_config(task):
-    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter5)
+    task.run(task=netconf_get_config, source="running", filter_type="subtree", filter_=filter3)
 #    task.run(task=netconf_get_config, source="running", xmldict="false", filter_type="subtree", path=filter3)
 
 results = nr.run(task=netconf_subtree_get_config)
