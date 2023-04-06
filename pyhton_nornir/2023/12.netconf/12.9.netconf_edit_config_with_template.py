@@ -6,7 +6,7 @@ from nornir_utils.plugins.functions import print_result
 from nornir_jinja2.plugins.tasks import template_file
 from nornir_utils.plugins.tasks.data import load_yaml
 
-# you can user one of the operations in template.  but it did not work. always configuration is replaced.
+# you can use one of the operations in template.
 #        <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
 #        <router-ospf operation="merge" xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
 #        <router-ospf operation="replace" xmlns="http://cisco.co
