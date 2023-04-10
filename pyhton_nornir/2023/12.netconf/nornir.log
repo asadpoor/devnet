@@ -4417,3 +4417,7 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netconf_edit_config (failed)
 2023-04-06 23:23:06,948 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
 2023-04-06 23:28:00,549 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2023-04-06 23:28:00,552 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2023-04-07 23:26:40,151 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-04-07 23:26:40,159 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts
+2023-04-07 23:28:20,817 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-04-07 23:28:20,820 -  nornir.core -     INFO -        run() - Running task 'netconf_edit_config_with_template' with args {} on 1 hosts

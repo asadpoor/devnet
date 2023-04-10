@@ -1,0 +1,4 @@
+username rayka privilege 15 secret rayka-co.ir
+ip http server
+ip http secure-server
+restconf

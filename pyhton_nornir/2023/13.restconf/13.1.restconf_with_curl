@@ -1,0 +1,17 @@
+curl -vk \
+-u rayka:rayka-co.com \
+-H "accept: application/yang-data+xml" \
+https://192.168.2.91/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces/interface=GigabitEthernet1/statistics
+
+
+curl -vk \
+-u rayka:rayka-co.com \
+-H "accept: application/yang-data+json" \
+https://192.168.2.91/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces/interface=GigabitEthernet1/statistics
+
+# oher URI examples
+https://192.168.2.91/restconf/data/Cisco-IOS-XE-native:native/router/router-ospf/ospf"
+https://192.168.2.91/restconf/data/Cisco-IOS-XE-native:native/router/router-ospf/ospf/process-id"
+https://192.168.2.91/restconf/data/Cisco-IOS-XE-native:native/router/router-ospf/ospf/process-id=1"
+https://192.168.2.91/restconf/data/openconfig-interfaces:interfaces?content=config"
+https://192.168.2.91/restconf/data/openconfig-interfaces:interfaces?content=nonconfig"
