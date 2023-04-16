@@ -1,0 +1,92 @@
+module l3vpn {
+  namespace "http://cisco/devnet/l3vpn";
+  prefix l3vpn;
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+
+  augment /ncs:services {
+    list l3vpn {
+      key vpn-name;
+      uses ncs:service-data;
+      ncs:servicepoint "l3vpn";
+
+      leaf vpn-name {
+        tailf:info "Service Instance Name";
+        type string;
+      }
+
+      leaf vpn-id {
+        tailf:info "Service Instance ID";
+        type uint32 {
+          range "10001..19999";
+        }
+      }
+
+      leaf customer {
+        tailf:info "VPN Customer";
+        type string;
+      }
+
+      list link {
+        tailf:info "PE-CE Attachment Point";
+        key link-id;
+        unique "pe-device interface";
+
+        leaf link-id {
+          tailf:info "Link ID";
+          type uint32 {
+            range "1..255";
+          }
+        }
+
+        leaf link-name {
+          tailf:info "Link Name";
+          type string;
+        }
+
+        leaf pe-device {
+          tailf:info "PE Router";
+          type leafref {
+            path "/ncs:devices/ncs:device/ncs:name";
+          }
+        }
+
+        leaf interface {
+          tailf:info "Customer Facing Interface";
+          type string;
+        }
+
+        leaf routing-protocol {
+          tailf:info "Routing option on PE-CE link";
+          type enumeration {
+            enum rip;
+            enum static;
+          }
+        }
+
+        list static-route {
+          tailf:info "Static Route";
+          key prefix;
+          when "../routing-protocol='static'";
+
+          leaf prefix {
+            tailf:info "Static Route Prefix";
+            type inet:ipv4-address;
+          }
+
+          leaf mask {
+            tailf:info "Static Route Subnet Mask";
+            type inet:ipv4-address;
+          }
+        }
+      }
+    }
+  }
+}

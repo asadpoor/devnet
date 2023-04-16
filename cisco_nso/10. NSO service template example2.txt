@@ -1,0 +1,256 @@
+cd ~/nso-instance/packages/
+ncs-make-package --service-skeleton template service1
+
+
+ncs_cli -C -u admin
+
+
+admin@ncs(config)# show configuration
+devices device ios0
+ config
+  interface Loopback111
+   ip address 11.11.11.11 255.255.255.255
+   no shutdown
+  exit
+  router bgp 65500
+   redistribute connected
+  !
+ !
+!
+devices device iosxr0
+ config
+  interface Loopback 111
+   ipv4 address 1.1.1.1 255.255.255.255
+   no shutdown
+  exit
+  router bgp 65500
+   address-family ipv4 unicast
+    redistribute connected
+   exit
+  exit
+ !
+!
+!!!!!!!!!!!!!!!!
+admin@ncs(config)# commit dry-run outformat xml
+result-xml {
+    local-node {
+        data <devices xmlns="http://tail-f.com/ns/ncs">
+               <device>
+                 <name>ios0</name>
+                 <config>
+                   <interface xmlns="urn:ios">
+                     <Loopback>
+                       <name>111</name>
+                       <ip>
+                         <address>
+                           <primary>
+                             <address>11.11.11.11</address>
+                             <mask>255.255.255.255</mask>
+                           </primary>
+                         </address>
+                       </ip>
+                     </Loopback>
+                   </interface>
+                   <router xmlns="urn:ios">
+                     <bgp>
+                       <as-no>65500</as-no>
+                       <redistribute>
+                         <connected/>
+                       </redistribute>
+                     </bgp>
+                   </router>
+                 </config>
+               </device>
+               <device>
+                 <name>iosxr0</name>
+                 <config>
+                   <interface xmlns="http://tail-f.com/ned/cisco-ios-xr">
+                     <Loopback>
+                       <id>111</id>
+                       <ipv4>
+                         <address>
+                           <ip>1.1.1.1</ip>
+                           <mask>255.255.255.255</mask>
+                         </address>
+                       </ipv4>
+                     </Loopback>
+                   </interface>
+                   <router xmlns="http://tail-f.com/ned/cisco-ios-xr">
+                     <bgp>
+                       <bgp-no-instance>
+                         <id>65500</id>
+                         <address-family>
+                           <ipv4>
+                             <unicast>
+                               <redistribute>
+                                 <connected/>
+                               </redistribute>
+                             </unicast>
+                           </ipv4>
+                         </address-family>
+                       </bgp-no-instance>
+                     </bgp>
+                   </router>
+                 </config>
+               </device>
+             </devices>
+    }
+}
+!!!!!!!!!!!!!!!!!!!!!!!
+
+
+majid@ubuntu2204tls:~/nso-instance/packages$ cat service1/templates/service1-template.xml
+<config-template xmlns="http://tail-f.com/ns/config/1.0"
+                 servicepoint="service1">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <!--
+          Select the devices from some data structure in the service
+          model. In this skeleton the devices are specified in a leaf-list.
+          Select all devices in that leaf-list:
+      -->
+      <name>{/device}</name>
+      <config>
+                   <interface xmlns="urn:ios">
+                     <Loopback>
+                       <name>{/LPNO}</name>
+                       <ip>
+                         <address>
+                           <primary>
+                             <address>{/IPV4}</address>
+                             <mask>255.255.255.255</mask>
+                           </primary>
+                         </address>
+                       </ip>
+                     </Loopback>
+                   </interface>
+                   <router xmlns="urn:ios">
+                     <bgp>
+                       <as-no>65500</as-no>
+                       <redistribute>
+                         <connected/>
+                       </redistribute>
+                     </bgp>
+                   </router>
+                   <interface xmlns="http://tail-f.com/ned/cisco-ios-xr">
+                     <Loopback>
+                       <id>{/LPNO}</id>
+                       <ipv4>
+                         <address>
+                           <ip>{/IPV4}</ip>
+                           <mask>255.255.255.255</mask>
+                         </address>
+                       </ipv4>
+                     </Loopback>
+                   </interface>
+                   <router xmlns="http://tail-f.com/ned/cisco-ios-xr">
+                     <bgp>
+                       <bgp-no-instance>
+                         <id>65500</id>
+                         <address-family>
+                           <ipv4>
+                             <unicast>
+                               <redistribute>
+                                 <connected/>
+                               </redistribute>
+                             </unicast>
+                           </ipv4>
+                         </address-family>
+                       </bgp-no-instance>
+                     </bgp>
+                   </router>
+      </config>
+    </device>
+  </devices>
+</config-template>
+
+
+!!!!!!!!!!!!!!!!!!!!
+
+majid@ubuntu2204tls:~/nso-instance/packages$ cat service1/src/yang/service1.yang
+module service1 {
+  namespace "http://com/example/service1";
+  prefix service1;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  list service1 {
+    key name;
+
+    uses ncs:service-data;
+    ncs:servicepoint "service1";
+
+    leaf name {
+      type string;
+    }
+
+    leaf-list device {
+      type leafref {
+        path "/ncs:devices/ncs:device/ncs:name";
+      }
+    }
+
+    leaf IPV4 {
+      type inet:ipv4-address;
+    }
+    leaf LPNO {
+      type int32;
+    }
+  }
+}
+
+!!!!!!!!!!!!!!!!!!!
+
+majid@ubuntu2204tls:~/nso-instance/packages/service1/src$ make
+
+cd ~/nso-instance/
+ncs_cli -C -u admin
+packages reload force
+
+
+!!!!!!!!!!!!!!!!!!!
+
+admin@ncs(config)# show configuration
+service1 test11
+ device [ ios1 ]
+ IPV4   11.11.11.11
+ LPNO   11
+!
+service1 test111
+ device [ iosxr0 ]
+ IPV4   111.111.111.111
+ LPNO   11
+
+
+admin@ncs(config)# commit dry-run outformat native
+native {
+    device {
+        name ios1
+        data interface Loopback11
+              ip redirects
+              ip address 11.11.11.11 255.255.255.255
+              no shutdown
+             exit
+             router bgp 65500
+              redistribute connected
+             !
+    }
+    device {
+        name iosxr0
+        data interface Loopback 11
+              ipv4 address 111.111.111.111 255.255.255.255
+              no shutdown
+             exit
+             router bgp 65500
+              address-family ipv4 unicast
+               redistribute connected
+              exit
+             exit
+    }
+}
+admin@ncs(config)#

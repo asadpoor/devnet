@@ -1,0 +1,35 @@
+!!!! configure device template with variables
+
+devices template SNMP
+ned-id cisco-ios-cli-6.88
+config
+snmp-server community {$RO_COMMUNITY} RO
+snmp-server community {$RW_COMMUNITY} RW
+
+ned-id cisco-nx-cli-5.23
+config
+snmp-server community {$RO_COMMUNITY} group network-operator
+snmp-server community {$RW_COMMUNITY} group network-admin
+
+ned-id cisco-asa-cli-6.16
+config
+snmp-server community secret {$RO_COMMUNITY}
+snmp-server enable-conf enable true
+
+top 
+show configuration
+commit check
+commit dry-run
+
+
+
+!!!! apply template
+
+devices device ios0 apply-template template-name SNMP variable { name RO_COMMUNITY value 'raykaro' } variable { name RW_COMMUNITY value 'raykarw' }
+devices device nxos0 apply-template template-name SNMP variable { name RO_COMMUNITY value 'raykaro' } variable { name RW_COMMUNITY value 'raykarw' }
+devices device asa0 apply-template template-name SNMP variable { name RO_COMMUNITY value 'raykaro' } variable { name RW_COMMUNITY value 'raykarw' }
+
+
+top 
+show configuration
+commit

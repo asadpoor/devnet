@@ -1,0 +1,221 @@
+cd ~/nso-instance/packages/
+ncs-make-package --service-skeleton template loopback-service
+
+
+ncs_cli -C -u admin
+
+
+
+admin@ncs(config)# devices device ios0 config interface Loopback 100
+admin@ncs(config-if)# ip address 1.1.1.1 255.255.255.255
+admin@ncs(config-if)# top
+admin@ncs(config)# show configuration
+devices device ios0
+ config
+  interface Loopback100
+   ip address 1.1.1.1 255.255.255.255
+  exit
+ !
+!
+admin@ncs(config)# commit dry-run outformat xml
+result-xml {
+    local-node {
+        data <devices xmlns="http://tail-f.com/ns/ncs">
+               <device>
+                 <name>ios0</name>
+                 <config>
+                   <interface xmlns="urn:ios"> /------- copy this section
+                     <Loopback>
+                       <name>100</name>
+                       <ip>
+                         <address>
+                           <primary>
+                             <address>1.1.1.1</address>
+                             <mask>255.255.255.255</mask>
+                           </primary>
+                         </address>
+                       </ip>
+                     </Loopback>
+                   </interface> /------- copy this section
+                 </config>
+               </device>
+             </devices>
+    }
+}
+
+
+
+majid@ubuntu2204tls:~/nso-instance/packages$ nano loopback-service/templates/loopback-service-template.xml
+<config-template xmlns="http://tail-f.com/ns/config/1.0"
+                 servicepoint="loopback-service">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <!--
+          Select the devices from some data structure in the service
+          model. In this skeleton the devices are specified in a leaf-list.
+          Select all devices in that leaf-list:
+      -->
+      <name>{/device}</name>
+      <config>
+        <!--
+            Add device-specific parameters here.
+            In this skeleton the service has a leaf "dummy"; use that
+            to set something on the device e.g.:
+            <ip-address-on-device>{/dummy}</ip-address-on-device>
+        -->
+      </config>
+    </device>
+  </devices>
+</config-template>
+
+!!!! copy code snippet to the template file and use dummy variable 
+
+<config-template xmlns="http://tail-f.com/ns/config/1.0"
+                 servicepoint="loopback-service">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <!--
+          Select the devices from some data structure in the service
+          model. In this skeleton the devices are specified in a leaf-list.
+          Select all devices in that leaf-list:
+      -->
+      <name>{/device}</name>
+      <config>
+                   <interface xmlns="urn:ios">
+                     <Loopback>
+                       <name>100</name>
+                       <ip>
+                         <address>
+                           <primary>
+                             <address>1.1.1.1</address>
+                             <mask>255.255.255.255</mask>
+                           </primary>
+                         </address>
+                       </ip>
+                     </Loopback>
+                   </interface>
+      </config>
+    </device>
+  </devices>
+</config-template>
+
+
+majid@ubuntu2204tls:~/nso-instance/packages$ cat loopback-service/src/yang/loopback-service.yang
+
+module loopback-service {
+  namespace "http://com/example/loopbackservice";
+  prefix loopback-service;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  list loopback-service {
+    key name;
+
+    uses ncs:service-data;
+    ncs:servicepoint "loopback-service";
+
+    leaf name {
+      type string;
+    }
+
+    // may replace this with other ways of refering to the devices.
+    leaf-list device {
+      type leafref {
+        path "/ncs:devices/ncs:device/ncs:name";
+      }
+    }
+
+    // replace with your own stuff here
+    leaf dummy {
+      type inet:ipv4-address;
+    }
+  }
+}
+
+
+!!! use dummay variable in template file as follwos
+<config-template xmlns="http://tail-f.com/ns/config/1.0"
+                 servicepoint="loopback-service">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <!--
+          Select the devices from some data structure in the service
+          model. In this skeleton the devices are specified in a leaf-list.
+          Select all devices in that leaf-list:
+      -->
+      <name>{/device}</name>
+      <config>
+                   <interface xmlns="urn:ios">
+                     <Loopback>
+                       <name>100</name>
+                       <ip>
+                         <address>
+                           <primary>
+                             <address>{/dummy}</address>
+                             <mask>255.255.255.255</mask>
+                           </primary>
+                         </address>
+                       </ip>
+                     </Loopback>
+                   </interface>
+      </config>
+    </device>
+  </devices>
+</config-template>
+
+
+majid@ubuntu2204tls:~/nso-instance/packages$ cd ~/nso-instance/packages/loopback-service/src/
+majid@ubuntu2204tls:~/nso-instance/packages/anycastgw/src$ make
+majid@ubuntu2204tls:~/nso-instance/packages/loopback-service/src$ make
+mkdir -p ../load-dir
+/home/majid/nso-6.0/bin/ncsc `ls loopback-service-ann.yang  > /dev/null 2>&1 && echo "-a loopback-service-ann.yang"` \
+        --fail-on-warnings \
+         \
+        -c -o ../load-dir/loopback-service.fxs yang/loopback-service.yang
+majid@ubuntu2204tls:~/nso-instance/packages/loopback-service/src$
+
+
+
+cd ~/nso-instance/
+ncs_cli -C -u admin
+packages reload force
+admin@ncs# exit
+ncs_cli -C -u admin
+
+
+
+admin@ncs(config)# no loopback-service test1
+admin@ncs(config)# loopback-service test1
+admin@ncs(config-loopback-service-test1)# device R1
+admin@ncs(config-loopback-service-test1)# dummy 1.1.1.1
+admin@ncs(config-loopback-service-test1)# top
+admin@ncs(config)# show configuration
+loopback-service test1
+ device [ R1 ]
+ dummy  1.1.1.1
+!
+admin@ncs(config)# commit dry-run outformat native
+native {
+    device {
+        name R1
+        data interface Loopback100
+              ip address 1.1.1.1 255.255.255.255
+             exit
+    }
+}
+
+
+!!! delete the neue configuration from device directly
+R1(config)#no interface loopback 100
+R1(config)#
+
+!!! redeploy the service
+loopback-service test1 un-deploy
+loopback-service test1 re-deploy
+
+

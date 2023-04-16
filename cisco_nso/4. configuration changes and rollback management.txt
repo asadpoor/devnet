@@ -1,0 +1,54 @@
+# connect directly to network devices
+# Juniper (default/cli) Cisco IOS (cli-i) or Cisco XR (cli-c)
+ncs-netsim cli-i ios1
+enable
+show running-config
+
+!!!! change configuration of the device directly and then check sync from nso
+ncs_cli -C -u admin
+devices device R1
+ check-sync
+ compare-config
+ sync-to
+ check-sync
+
+!!! change some config in router directly (not sync any more) and then upload the config from NSO to the device
+devices device R1 
+ sync-to
+ end
+
+
+!!! change config from NSO and sync the changes to the device
+devices device R1 
+ config
+  pwd !!! which device you are configuring
+  logging host 1.1.1.1
+  commit dry-run !!! what is changed
+  commit dry-run outformat native !!! what is changed
+  commit
+  end
+
+top
+show configuration | display xml !!! before committing
+
+
+
+!!! rollback management
+# show configuration commit list 
+# show configuration commit changes NUMBER !!! commit a specific commit version
+
+!!! top, show configuration,exit no-confirm
+
+
+# show configuration rollback changes 10010
+# rollback configuration|selective  NO
+# top
+# show configuration
+
+# cat logs/
+# cat logs/rollback10010
+
+
+!!! discard candidate configuration
+exit no-confirm
+revert

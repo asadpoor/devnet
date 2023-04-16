@@ -1,0 +1,141 @@
+<config-template xmlns="http://tail-f.com/ns/config/1.0" servicepoint="l3vpn">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <?foreach {/link}?>
+    <device>
+      <name>{pe-device}</name>
+      <config>
+        <!-- IOS -->
+        <vrf xmlns="urn:ios">
+          <definition>
+            <name>vpn{string(../vpn-id)}</name>
+            <description>L3 VPN for customer {/customer}</description>
+            <address-family>
+              <ipv4/>
+            </address-family>
+            <rd>1:{string(../vpn-id)}</rd>
+            <route-target>
+              <export>
+                <asn-ip>1:{string(../vpn-id)}</asn-ip>
+              </export>
+              <import>
+                <asn-ip>1:{string(../vpn-id)}</asn-ip>
+              </import>
+            </route-target>
+          </definition>
+        </vrf>
+        <?if {routing-protocol='static'}?>
+        <ip xmlns="urn:ios">
+          <route>
+            <vrf>
+              <name>vpn{string(../vpn-id)}</name>
+               <?foreach {static-route}?>
+              <ip-route-forwarding-list>
+                <prefix>{prefix}</prefix>
+                <mask>{mask}</mask>
+                <forwarding-address>172.31.{../link-id}.2</forwarding-address>
+              </ip-route-forwarding-list>
+              <?end?>
+            </vrf>
+          </route>
+        </ip>
+        <?end?>
+        <interface xmlns="urn:ios">
+          <GigabitEthernet>
+            <name>{interface}</name>
+            <description>Connection to Customer ACME - Site 5</description>
+            <vrf>
+              <forwarding>vpn{string(../vpn-id)}</forwarding>
+            </vrf>
+            <ip>
+              <address>
+                <primary>
+                  <address>172.31.{link-id}.1</address>
+                  <mask>255.255.255.252</mask>
+                </primary>
+              </address>
+            </ip>
+          </GigabitEthernet>
+        </interface>
+        <router xmlns="urn:ios">
+          <?if {routing-protocol='rip'}?>
+          <rip>
+            <address-family>
+              <ipv4>
+                <vrf>
+                  <name>{string(../vpn-id)}</name>
+                  <network>
+                    <ip>0.0.0.0</ip>
+                  </network>
+                  <default-information>
+                    <originate/>
+                  </default-information>
+                </vrf>
+              </ipv4>
+            </address-family>
+          </rip>
+          <?end?>
+        </router>
+        <!-- IOS-XR -->
+        <vrf xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <vrf-list>
+            <name>vpn{string(../vpn-id)}</name>
+            <description>L3 VPN for customer {/customer}</description>
+            <address-family>
+              <ipv4>
+                <unicast>
+                  <import>
+                    <route-target>
+                      <address-list>
+                        <name>1:{string(../vpn-id)}</name>
+                      </address-list>
+                    </route-target>
+                  </import>
+                  <export>
+                    <route-target>
+                      <address-list>
+                        <name>1:{string(../vpn-id)}</name>
+                      </address-list>
+                    </route-target>
+                  </export>
+                </unicast>
+              </ipv4>
+            </address-family>
+          </vrf-list>
+        </vrf>
+        <interface xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <GigabitEthernet>
+            <id>{interface}</id>
+            <description>Connection to Customer ACME - Site 9</description>
+            <ipv4>
+              <address>
+                <ip>172.31.{link-id}.1</ip>
+                <mask>255.255.255.252</mask>
+              </address>
+            </ipv4>
+            <vrf>vpn{string(../vpn-id)}</vrf>
+          </GigabitEthernet>
+        </interface>
+        <router xmlns="http://tail-f.com/ned/cisco-ios-xr">
+          <?if {routing-protocol='static'}?>
+          <static>
+            <address-family>
+              <ipv4>
+                <unicast>
+                <?foreach {static-route} ?>
+                  <routes>
+                    <net>{prefix}</net>
+                    <interface>{interface}</interface>
+                    <address>172.31.{../link-id}.2</address>
+                  </routes>
+                  <?end?>
+                </unicast>
+              </ipv4>
+            </address-family>
+          </static>
+          <?end?>
+        </router>
+      </config>
+    </device>
+    <?end?>
+  </devices>
+</config-template>

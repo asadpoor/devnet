@@ -1,0 +1,91 @@
+ncs_cli -C -u admin
+admin@ncs# show devices list
+
+admin@ncs# show devices list
+NAME    ADDRESS       DESCRIPTION  NED ID                ADMIN STATE
+--------------------------------------------------------------------
+R1      192.168.2.91  -            cisco-ios-cli-6.88    unlocked
+asa0    127.0.0.1     -            cisco-asa-cli-6.16    unlocked
+ios0    127.0.0.1     -            cisco-ios-cli-6.88    unlocked
+ios1    127.0.0.1     -            cisco-ios-cli-6.88    unlocked
+ios2    127.0.0.1     -            cisco-ios-cli-6.88    unlocked
+iosxr0  127.0.0.1     -            cisco-iosxr-cli-7.43  unlocked
+junos0  127.0.0.1     -            juniper-junos-nc-3.0  unlocked
+nxos0   127.0.0.1     -            cisco-nx-cli-5.23     unlocked
+
+
+devices device-group IOS-DEVICES
+device-name R1
+device-name ios0
+device-name ios1
+device-name ios2
+
+devices device-group ASA-DEVICES
+device-name asa0
+
+devices device-group XR-DEVICES
+device-name iosxr0
+
+devices device-group NXOS-DEVICES
+device-name nxos0
+
+devices device-group JUNOS-DEVICES
+device-name junos0
+
+devices device-group ALL
+device-group IOS-DEVICES
+device-group ASA-DEVICES
+device-group XR-DEVICES
+device-group NXOS-DEVICES
+
+top 
+show configuration
+commit
+
+
+devices template SET-DNS-SERVER
+ned-id cisco-nx-cli-5.23
+config
+ip name-server servers 1.1.1.1
+ip name-server servers 2.2.2.2
+exit
+exit
+exit
+
+devices template SET-DNS-SERVER
+ned-id cisco-ios-cli-6.88
+config
+ip name-server name-server-list 1.1.1.1
+ip name-server name-server-list 2.2.2.2
+exit
+exit
+exit
+
+ned-id cisco-asa-cli-6.16
+config
+dns domain-lookup mgmt
+dns server-group DefaultDNS
+name-server 1.1.1.1
+name-server 2.2.2.2
+exit
+exit
+exit
+
+
+ned-id cisco-iosxr-cli-7.43
+config
+domain name-server 1.1.1.1
+exit
+domain name-server 2.2.2.2
+exit
+exit
+exit
+
+
+devices device-group ALL apply-template template-name SET-DNS-SERVER
+ 
+top 
+show configuration
+commit check
+commit
+

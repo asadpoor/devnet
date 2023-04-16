@@ -1,0 +1,69 @@
+!!! add and connect to a real device
+
+configure terminal
+
+admin@ncs# show running-config devices global-settings ssh-algorithms public-key | details
+admin@ncs(config)# devices global-settings ssh-algorithms public-key ssh-rsa
+
+
+!!! add authentication group 
+devices authgroups group RAYKA
+ default-map remote-name rayka
+ default-map remote-password rayka-co.com
+ default-map remote-secondary-password rayka-co.com !!! enable password
+
+!!! add a device
+devices device R1
+ address 192.168.2.91
+ authgroup RAYKA
+ ssh host-key-verification none
+ device-type cli ned-id cisco-ios-cli-6.88
+ device-type cli protocol ssh
+ state admin-state unlocked
+ commit
+ connect !!! connect to the device
+ end
+
+!!! show devices list
+
+# add and connect to netsim devices
+
+ncs-netsim ncs-xml-init > devices.xml
+
+ncs_cli -u admin -C
+
+config
+ load merge devices.xml
+ commit dry-run
+ commit
+
+# devices connect !!! to check he connectivity
+
+# show devices list
+
+# show running-config devices device R1 
+# devices check-sync !!! check if devices are sync
+# devices device R1 check-sync !!! check if device R1 is sync
+# show running-config devices device R1
+
+devices device R1 
+ sync-from !!! syn config from the device to the NSO
+ end
+
+# show running-config devices device R1 !!! now synced
+# show running-config devices device R1 | include interface
+# show running-config devices device R1 | select config
+# show running-config devices device R1 | de-select config
+# show running-config devices device R1 config interface
+# show running-config devices device R1 config interface | display xml
+# show running-config devices device R1 config interface | display json
+
+# show running-config devices device dist-sw01 config interface Vlan * ip address
+
+
+
+!!!! show configuration vs. show running-config vs. show full-configuration
+!!!! show configuration ;; staged configuration
+!!!! show running-config ;; active configuration
+!!!! show full-configuration ;; active+staged configuration
+

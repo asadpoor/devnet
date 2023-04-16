@@ -1,0 +1,25 @@
+what is cisco NSO and Features:
+ - Automation (through device/config template)
+ - Version Controll (rollback)
+ - Orchestration (through service template)
+
+ - multi-vendor (170+ Device Type)
+
+
+Cisco NSP Components:
+ - Device Manager -> Automation 
+ - Service Manager -> Orchestration
+ - NED: Network Element Driver
+ - Package Manager -> contain templates, data models and code. might be a NED for specific device, or service application like MPLS VPN
+ - northband API
+  - Network Engineer: CLI/WEB UI
+  - Operation and provisioning: Java/Python/Erlang
+  - Service Developer: NETCONF/RESTCONF
+ - southband
+  - CLI
+  - SNMP
+  - NETCONF/RESTCONF
+
+
+
+

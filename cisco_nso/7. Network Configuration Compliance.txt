@@ -1,0 +1,74 @@
+!!!! Building COMPLIANCE Device Template
+
+devices template COMPLIANCE-CHECK
+ned-id cisco-ios-cli-6.88
+config
+ip name-server name-server-list 1.1.1.1
+ip name-server name-server-list 2.2.2.2
+
+service timestamps log datetime localtime show-timezone year
+logging host ipv4 3.3.3.3
+
+ntp server peer-list 4.4.4.4
+
+ned-id cisco-nx-cli-5.23
+config
+ip name-server servers 1.1.1.1
+ip name-server servers 2.2.2.2
+
+logging timestamp milliseconds
+logging server 3.3.3.3 level 5
+
+ntp server 4.4.4.4
+
+
+ned-id cisco-asa-cli-6.16
+config
+dns domain-lookup mgmt
+dns server-group DefaultDNS
+name-server 1.1.1.1
+name-server 2.2.2.2
+
+logging timestamp
+logging host mgmt 3.3.3.3
+
+ntp server 4.4.4.4
+
+top 
+show configuration
+commit check
+commit dry-run
+commit
+
+
+!!!! Building the Compliance Report
+
+compliance reports report REPORT
+ compare-template COMPLIANCE-CHECK ALL
+
+
+top 
+show configuration
+commit
+
+
+
+!!!! From the "enable mode" of NSO, run the compliance report
+!!!! they are saved in the folder state/compliance-reports
+
+
+end
+compliance reports report REPORT run
+
+compliance reports report REPORT run outformat text
+compliance reports report REPORT run outformat html
+
+
+
+!!!!! The top of the report provides some details about the report instance, then you'll get a list of devices and their compliance status. Here you can see that there are Discrepancies found in all our devices.
+
+
+!!!! In the Details section, you'll find a device by device breakdown of what the problems are. This is shown in a diff format, where lines with a + indicate missing configuration. If there were configurations on the devices that should not be there, they'd be indicated with -.
+
+
+

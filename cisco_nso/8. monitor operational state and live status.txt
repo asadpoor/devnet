@@ -1,0 +1,32 @@
+!!! NED supported
+admin@ncs# show devices device ios* platform
+
+admin@ncs# show devices device R1 live-status interfaces-state
+
+admin@ncs# show devices device R1 live-status version
+
+admin@ncs# show devices device R1 live-status version | display xml
+admin@ncs# show devices device R1 live-status version | display json
+admin@ncs# show devices device R1 live-status version | display xpath
+admin@ncs# show devices device R1 live-status version | display restconf
+
+
+!!! but occasionally the NED may not support 
+admin@ncs# devices device R1 live-status exec ping 4.2.2.4
+
+admin@ncs# devices device R1 live-status exec show ip int brief
+
+devices device R1 live-status exec show ip int bri | save show_ip_int_brief
+
+admin@ncs# devices device R1 live-status exec show ip int bri | save /home/majid/show_ip_int_brief
+
+admin@ncs# exit
+majid@ubuntu2204tls:~/nso-instance$ cat show_ip_int_brief
+
+!!! get live status through REST API
+majid@ubuntu2204tls:~/nso-instance$ curl -X GET -u admin:admin -H 'Accept: application/yang-data+json' http://192.168.2.201:8080/restconf/data/tailf-ncs:devices/device=R1/live-status/tailf-ned-cisco-ios-stats:version/model
+
+!!! get configuration through REST API
+admin@ncs# show running-config devices device R1 config router ospf | display restconf
+
+majid@ubuntu2204tls:~/nso-instance$ curl -X GET -u admin:admin -H 'Accept: application/yang-data+json' http://192.168.2.201:8080/restconf/data/tailf-ncs:devices/device=R1/config/tailf-ned-cisco-ios:router/ospf=1

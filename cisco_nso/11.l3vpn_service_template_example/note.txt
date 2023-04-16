@@ -1,0 +1,51 @@
+ncs-make-package --service-skeleton template l3vpn
+
+copy l3vpn.yang in ~/nso-instance/packages/l3vpn/src/yang/l3vpn.yang
+copy l3vpn-template.xml in ~/nso-instance/packages/l3vpn/templates/l3vpn-template.xml
+
+ncs_cli -C -u admin
+admin@ncs# packages reload
+
+
+admin@ncs(config)# services l3vpn test-vpn vpn-id 10001 customer Cisco link 1 interface 5 link-name branch-office pe-device ios0 routing-protocol static static-route 10.0.0.0 mask 255.255.255.0
+admin@ncs(config-static-route-10.0.0.0)# top
+admin@ncs(config)# show configuration
+services l3vpn test-vpn
+ vpn-id   10001
+ customer Cisco
+ link 1
+  link-name        branch-office
+  pe-device        ios0
+  interface        5
+  routing-protocol static
+  static-route 10.0.0.0
+   mask 255.255.255.0
+  !
+ !
+!
+admin@ncs(config)# commit dry-run outformat native
+native {
+    device {
+        name ios0
+        data vrf definition vpn10001
+              description "L3 VPN for customer Cisco"
+              rd 1:10001
+              route-target export 1:10001
+              route-target import 1:10001
+              address-family ipv4
+               exit-address-family
+              !
+             !
+             interface GigabitEthernet5
+              no shutdown
+              no switchport
+              description "Connection to Customer ACME - Site 5"
+              vrf forwarding vpn10001
+              ip address 172.31.1.1 255.255.255.252
+             exit
+             ip route vrf vpn10001 10.0.0.0 255.255.255.0 172.31.1.2
+    }
+}
+
+
+
