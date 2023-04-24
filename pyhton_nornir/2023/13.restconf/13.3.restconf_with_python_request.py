@@ -57,7 +57,7 @@ response = requests.get(url=url11, headers=header2, auth=(USER, PASSWORD), verif
 dic_response=response.json()
 #print(type(dic_response))
 # with url11
-dic_response=dic_response["openconfig-interfaces:interface"]["state"]["counters"]
+dic_response=dic_response["openconfig-interfaces:interface"]["state"]["counters"]["in-octets"]
 #for  key,value in dic_response.items():
 #  print("key=",key)
 #  print("value=",value)

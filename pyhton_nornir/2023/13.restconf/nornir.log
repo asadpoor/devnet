@@ -1,0 +1,144 @@
+2023-04-23 22:45:21,500 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:45:21,556 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1012, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f844efb0760>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='192.168.1.11', port=443): Max retries exceeded with url: /restconf/data/Cisco-IOS-XE-native:native/router/router-ospf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f844efb0760>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.4.restconf_nornir_example.py", line 16, in restconf_nornir_example
+    response = requests.get(url=url, headers=header1, auth=(f"{task.host.username}", f"{task.host.password}"), verify=False)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='192.168.1.11', port=443): Max retries exceeded with url: /restconf/data/Cisco-IOS-XE-native:native/router/router-ospf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f844efb0760>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+2023-04-23 22:46:09,876 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:46:09,889 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 96, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 86, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 382, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1012, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 353, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fa7c13ec7c0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='192.168.1.11', port=443): Max retries exceeded with url: /restconf/data/Cisco-IOS-XE-native:native/router/router-ospf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa7c13ec7c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.4.restconf_nornir_example.py", line 16, in restconf_nornir_example
+    response = requests.get(url=url, headers=header1, auth=(f"{task.host.username}", f"{task.host.password}"), verify=False)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='192.168.1.11', port=443): Max retries exceeded with url: /restconf/data/Cisco-IOS-XE-native:native/router/router-ospf (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa7c13ec7c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+2023-04-23 22:48:57,176 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:49:38,875 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:49:38,984 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.4.restconf_nornir_example.py", line 23, in restconf_nornir_example
+    rprint(result.json())
+AttributeError: 'dict' object has no attribute 'json'
+
+2023-04-23 22:50:13,932 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:51:43,459 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:52:13,542 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:52:57,964 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:55:06,206 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:55:41,285 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 22:58:30,908 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 23:14:19,940 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 23:15:31,623 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 23:21:03,818 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-23 23:21:04,000 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.4.restconf_nornir_example.py", line 29, in restconf_nornir_example
+    for ospf_process_id in task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]["process-id"]:
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'data'
+
+2023-04-23 23:21:30,236 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-24 13:04:52,093 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
