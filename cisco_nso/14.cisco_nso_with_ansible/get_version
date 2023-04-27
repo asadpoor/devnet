@@ -1,0 +1,19 @@
+---
+- name: "Get software version from devices"
+  hosts: R1
+  gather_facts: no
+
+  vars:
+    device_path: "/devices/device{% raw %}{{% endraw %}{{ inventory_hostname }}{% raw %}}{% endraw %}/"
+
+  tasks:
+
+    - name: "Get software version from devices using live status"
+      nso_action:
+        url: "{{ nso_url }}"
+        username: "{{ nso_username }}"
+        password: "{{ nso_password }}"
+        path: "{{ device_path }}/live-status/exec/show"
+        input:
+          args: "version"
+      register: "show_version"

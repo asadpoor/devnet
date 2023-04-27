@@ -1,0 +1,18 @@
+# === Hosts ===
+
+[ios]
+R1  ansible_host=192.168.2.91
+
+# === Variables ===
+
+[ios:vars]
+ned=cisco-ios-cli-6.88
+protocol=ssh
+
+[all:vars]
+authgroup=RAYKA
+
+nso_url=https://127.0.0.1/jsonrpc
+nso_username="majid"
+nso_password="Asadp00r.ir"
+ansible_connection=local

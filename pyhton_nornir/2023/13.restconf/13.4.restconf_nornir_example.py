@@ -26,10 +26,10 @@ def restconf_nornir_example(task):
     rprint(result)
 
 # to search in list structure
-#    for ospf_process_id in task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]["process-id"]:
-#      rprint("ospf pricess id = ", ospf_process_id["id"])
-#      for network_ in ospf_process_id["network"]:
-#        rprint("network = ", network_)
+    for ospf_process_id in task.host["data"]["Cisco-IOS-XE-ospf:router-ospf"]["ospf"]["process-id"]:
+      rprint("ospf pricess id = ", ospf_process_id["id"])
+      for network_ in ospf_process_id["network"]:
+        rprint("network = ", network_)
 
 # dictionary parsing
 #    for key, value in result.items():

@@ -142,3 +142,41 @@ KeyError: 'data'
 
 2023-04-23 23:21:30,236 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
 2023-04-24 13:04:52,093 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-24 23:17:02,269 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-24 23:23:21,533 -  nornir.core -     INFO -        run() - Running task 'restconf_nornir_example' with args {} on 1 hosts
+2023-04-27 10:22:34,957 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 10:23:05,367 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 10:24:38,261 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 10:25:08,854 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 10:26:41,175 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 10:27:21,004 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 12:37:23,576 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 12:37:48,990 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 12:39:52,299 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 12:47:48,644 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 12:48:06,078 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 12:59:56,865 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 13:00:40,539 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 15:12:28,407 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 15:13:12,336 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 17:16:29,841 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 17:16:29,853 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_configuration_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.5.restconf_configuration_with_nornir.py", line 57, in restconf_configuration_nornir_example
+    rprint(response)
+UnboundLocalError: local variable 'response' referenced before assignment
+
+2023-04-27 17:16:44,419 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 17:16:44,420 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_configuration_nornir_example' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.5.restconf_configuration_with_nornir.py", line 57, in restconf_configuration_nornir_example
+    rprint(response)
+UnboundLocalError: local variable 'response' referenced before assignment
+
+2023-04-27 20:04:32,039 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 20:06:01,342 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 20:06:49,452 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
