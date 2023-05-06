@@ -39,7 +39,7 @@ url14 = f"https://{HOST}:{PORT}/restconf/data/Cisco-IOS-XE-native:native/ip/acce
 
 url15 = f"https://{HOST}:{PORT}/restconf/data/openconfig-acl:acl?content=config"
 
-response = requests.get(url=url11, headers=header2, auth=(USER, PASSWORD), verify=False)
+response = requests.get(url=url12, headers=header2, auth=(USER, PASSWORD), verify=False)
 
 # print result inf the format of text or original format
 #rprint(response.text)
@@ -57,7 +57,7 @@ response = requests.get(url=url11, headers=header2, auth=(USER, PASSWORD), verif
 dic_response=response.json()
 #print(type(dic_response))
 # with url11
-dic_response=dic_response["openconfig-interfaces:interface"]["state"]["counters"]["in-octets"]
+#dic_response=dic_response["openconfig-interfaces:interface"]["state"]["counters"]["in-octets"]
 #for  key,value in dic_response.items():
 #  print("key=",key)
 #  print("value=",value)

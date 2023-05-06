@@ -180,3 +180,17 @@ UnboundLocalError: local variable 'response' referenced before assignment
 2023-04-27 20:04:32,039 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
 2023-04-27 20:06:01,342 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
 2023-04-27 20:06:49,452 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 22:42:42,143 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 22:45:04,934 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 22:46:34,892 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 22:48:02,517 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 22:48:20,716 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-04-27 22:49:14,658 -  nornir.core -     INFO -        run() - Running task 'restconf_configuration_nornir_example' with args {} on 1 hosts
+2023-05-04 12:39:10,074 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-04 12:39:10,084 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2023-05-04 12:40:03,268 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-04 12:40:03,275 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2023-05-04 14:20:41,439 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-04 14:20:41,446 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2023-05-05 00:00:09,733 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-05 00:00:09,739 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts

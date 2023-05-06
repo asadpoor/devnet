@@ -1,0 +1,97 @@
+---
+ospf_config:
+  Cisco-IOS-XE-ospf:router-ospf:
+    ospf:
+      process-id:
+      - id: 1
+        network:
+        - ip: 192.168.22.0
+          wildcard: 0.0.0.255
+          area: 0
+        - ip: 192.168.23.0
+          wildcard: 0.0.0.255
+          area: 1
+        - ip: 192.168.24.0
+          wildcard: 0.0.0.255
+          area: 1
+        - ip: 192.168.111.0
+          wildcard: 0.0.0.255
+          area: 0
+        router-id: 1.1.1.1
+
+ntp_config:
+  Cisco-IOS-XE-native:ntp:
+    Cisco-IOS-XE-ntp:server:
+      server-list:
+      - ip-address: 13.15.17.18
+      - ip-address: 13.15.17.20
+      - ip-address: 13.15.17.21
+
+acl_config:
+  openconfig-acl:acl:
+    acl-sets:
+      acl-set:
+      - name: '101'
+        type: openconfig-acl:ACL_IPV4
+        config:
+          name: '101'
+          type: openconfig-acl:ACL_IPV4
+        acl-entries:
+          acl-entry:
+          - sequence-id: 10
+            config:
+              sequence-id: 10
+            ipv4:
+              config:
+                protocol: openconfig-packet-match-types:IP_TCP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: 80
+            actions:
+              config:
+                forwarding-action: openconfig-acl:ACCEPT
+                log-action: openconfig-acl:LOG_NONE
+          - sequence-id: 20
+            config:
+              sequence-id: 20
+            ipv4:
+              config:
+                protocol: openconfig-packet-match-types:IP_UDP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: 53
+            actions:
+              config:
+                forwarding-action: openconfig-acl:ACCEPT
+                log-action: openconfig-acl:LOG_NONE
+          - sequence-id: 30
+            config:
+              sequence-id: 30
+            ipv4:
+              config:
+                protocol: openconfig-packet-match-types:IP_ICMP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: ANY
+            actions:
+              config:
+                forwarding-action: openconfig-acl:ACCEPT
+                log-action: openconfig-acl:LOG_NONE
+          - sequence-id: 40
+            config:
+              sequence-id: 40
+            ipv4:
+              config:
+                source-address: 1.2.3.4/32
+                protocol: cisco-xe-openconfig-acl-ext:IP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: ANY
+            actions:
+              config:
+                forwarding-action: openconfig-acl:ACCEPT
+                log-action: openconfig-acl:LOG_NONE
