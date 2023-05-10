@@ -1,0 +1,17 @@
+{
+    "Cisco-IOS-XE-ospf:ospf": {
+        {% for ospf in host.hdata.ospf %}
+        "process-id": [
+            {
+                "id": "{{ ospf.process_id }}",
+                "network": [
+                {% for networks in ospf.networks %}
+                    {"ip": "{{ networks.network }}", "wildcard": "{{ networks.wildmask }}", "area": "{{ networks.area }}"},
+                {% endfor %}
+                ],
+                "router-id": "{{ ospf.router_id }}"
+            }
+        ]
+    {% endfor %}
+    }
+}

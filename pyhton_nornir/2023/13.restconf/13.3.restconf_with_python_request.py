@@ -39,7 +39,7 @@ url14 = f"https://{HOST}:{PORT}/restconf/data/Cisco-IOS-XE-native:native/ip/acce
 
 url15 = f"https://{HOST}:{PORT}/restconf/data/openconfig-acl:acl?content=config"
 
-response = requests.get(url=url12, headers=header2, auth=(USER, PASSWORD), verify=False)
+response = requests.get(url=url5, headers=header2, auth=(USER, PASSWORD), verify=False)
 
 # print result inf the format of text or original format
 #rprint(response.text)

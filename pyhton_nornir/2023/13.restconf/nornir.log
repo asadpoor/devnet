@@ -194,3 +194,68 @@ UnboundLocalError: local variable 'response' referenced before assignment
 2023-05-04 14:20:41,446 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
 2023-05-05 00:00:09,733 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2023-05-05 00:00:09,739 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_yaml' with args {} on 1 hosts
+2023-05-06 11:15:03,063 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_jinja2_template' with args {} on 1 hosts
+2023-05-08 17:05:19,722 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:05:19,737 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:17:30,942 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:17:30,945 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:19:09,422 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:19:09,425 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:23:04,791 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:23:04,794 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:23:52,055 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:23:52,058 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:24:40,794 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:24:40,797 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:24:40,846 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/majid/.local/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/ospf_.j2", line 5, in top-level template code
+    "id": "{{ host.hdata.ospf.process_id }}",
+jinja2.exceptions.UndefinedError: 'list object' has no attribute 'process_id'
+
+2023-05-08 17:24:40,846 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'restconf_edit_config_with_template' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/13.restconf/13.8.restconf_edit_config_with_template.py", line 26, in restconf_edit_config_with_template
+    template_to_load = task.run(task=template_file, template="ospf_.j2", path="templates")
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2023-05-08 17:25:55,154 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:25:55,157 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:28:07,921 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:28:07,924 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:28:26,964 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:28:26,967 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:30:19,261 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:30:19,264 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:35:16,751 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:35:16,754 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:38:36,513 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:38:36,516 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:38:46,438 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:38:46,441 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:42:42,429 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:42:42,432 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:43:39,806 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:43:39,809 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 17:44:12,111 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 17:44:12,115 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 22:57:39,835 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 22:57:39,839 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 22:58:05,045 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 22:58:05,048 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-08 23:09:07,010 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-08 23:09:07,014 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-09 23:33:23,731 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_jinja2_template' with args {} on 1 hosts
