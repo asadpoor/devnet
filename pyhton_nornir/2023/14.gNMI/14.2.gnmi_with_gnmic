@@ -1,0 +1,49 @@
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path / > output
+cat output | egrep "openconfig" | grep -v http
+
+!!!!!!!!!!!! network-instance yang model
+pyang -f tree public/release/models/network-instance/openconfig-network-instance.yang
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /network-instances
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /network-instances/network-instance[name=*]
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /network-instances/network-instance[name=*]/protocols/protocol[identifier=*][name=*]
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /network-instances/network-instance[name=default]/protocols/protocol[identifier=ISIS][name=ISIS]
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]
+
+!!!!!!!!!!!! interface yang model
+pyang -f tree public/release/models/interfaces/openconfig-interfaces.yang
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interfaces/interface[name=*]
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/config
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/config/enabled
+
+
+!!!!!!!!!!!! gnmic interactive mode
+gnmic --file public/release/models/ --dir ./ prompt
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/config/description
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /network-instances/network-instance[name=*]/protocols/protocol[identifier=*][name=*]
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /network-instances/network-instance[name=*]/protocols/protocol[identifier=ISIS][name=ISIS]/isis/global/config/net/
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure get --path /interfaces/interface[name=Ethernet1]/subinterfaces/subinterface/ipv4/addresses/
+
+
+
+--address 192.168.2.61:6030 --username rayka --password rayka-co.ir --insecure set --update-path interfaces/interface[name=Ethernet1]/config/description --update-value "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+
+
+!!!!!!!!!!!! gnmic subscribe gRPC
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure subscribe --path /interfaces/interface[name=Ethernet1]/state/counters/in-octets --stream-mode sample --sample-interval 1s
+
+gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure subscribe --path /interfaces/interface[name=Ethernet1]/state/counters/in-octets --stream-mode on_change

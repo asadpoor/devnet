@@ -259,3 +259,11 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
 2023-05-08 23:09:07,010 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
 2023-05-08 23:09:07,014 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
 2023-05-09 23:33:23,731 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_jinja2_template' with args {} on 1 hosts
+2023-05-10 23:07:55,269 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-10 23:07:55,272 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-10 23:09:37,834 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-10 23:09:37,837 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-10 23:09:51,876 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-10 23:09:51,879 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
+2023-05-10 23:11:41,924 -  nornir.core -     INFO -        run() - Running task 'load_data' with args {} on 1 hosts
+2023-05-10 23:11:41,927 -  nornir.core -     INFO -        run() - Running task 'restconf_edit_config_with_template' with args {} on 1 hosts
