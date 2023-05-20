@@ -1,8 +1,8 @@
 #zerotouch cancel
 hostname R1 
-username rayka privilege 15 secret rayka-co.ir
+username rayka privilege 15 secret rayka-co.com
 interface Management1
-   ip address 192.168.2.61/24
+   ip address 192.168.2.91/24
    no shutdown
 
 R1(config)#management api gnmi
@@ -13,7 +13,7 @@ show management api gnmi
 https://github.com/karimra/gnmic
 quick start guide
 bash -c "$(curl -sL https://get-gnmic.kmrd.dev)"
-gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure capabilities
-gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path /
-gnmic -a 192.168.2.61:6030 -u rayka -p rayka-co.ir --insecure get --path "network-instances/"
+gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.ir --insecure capabilities
+gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.ir --insecure get --path /
+gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.ir --insecure get --path "network-instances/"
 
