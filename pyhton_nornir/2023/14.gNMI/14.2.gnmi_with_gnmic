@@ -1,7 +1,7 @@
 gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure get --path / > output
 cat output | egrep "10.10.10.1|10.10.10.2|1.1.1.1|2.2.2.2|ISIS1|openconfig|arista|ietf"
 
-!!!!!!!!!!!! network-instance yang model
+!!!!!!!!!!!! gnmi get command network-instance yang model
 pyang -f tree public/release/models/network-instance/openconfig-network-instance.yang
 
 gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure get --path /network-instances
@@ -14,7 +14,7 @@ gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure get --path /netwo
 
 gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure get --path /network-instances/network-instance[name=default]/protocols/protocol[identifier=BGP][name=BGP]
 
-!!!!!!!!!!!! interface yang model
+!!!!!!!!!!!! gnmi get command interface yang model
 pyang -f tree public/release/models/interfaces/openconfig-interfaces.yang
 
 gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure get --path /interfaces/interface[name=*]
@@ -39,11 +39,33 @@ gnmic --file public/release/models/ --dir ./ prompt
 --address 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure get --path /interfaces/interface[name=Ethernet1]/subinterfaces/subinterface/ipv4/addresses/
 
 
+!!!!!!!!!!!! gnmi set/delete command
+gnmic -a 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure set --update-path interfaces/interface[name=Ethernet1]/config/description --update-value "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+gnmic -a 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure set --update-path /system/config/hostname --update-value "R1"
+gnmic -a 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure set --update-path /system/config/domain-name --update-value "rayka-co.com"
 
---address 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure set --update-path interfaces/interface[name=Ethernet1]/config/description --update-value "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+gnmic -a 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure set --delete /interfaces/interface[name=Ethernet1]/config/description
+
+!!!!!!!!!!!! gnmi set command with external json file: update hostname and domain-name
+majid@devnet:~$ cat system.json 
+{
+  "openconfig-system:domain-name": "rayka-co.com",
+  "openconfig-system:hostname": "R1"
+}
+
+gnmic -a 192.168.2.91:6030 --username rayka --password rayka-co.com --insecure set --update-path /system/config --update-file system.json
+
+!!!!!!!!!!!! gnmi set command with external json file: update bgp neighbour
+majid@devnet:~$ cat neighbor.json 
+{"config": {"neighbor-address":"10.11.12.13", "peer-as": 123}}
 
 
-!!!!!!!!!!!! gnmic subscribe gRPC
-gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure subscribe --path /interfaces/interface[name=Ethernet1]/state/counters/in-octets --stream-mode sample --sample-interval 1s
+gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure --gzip set --update-path '/network-instances/network-instance[name=default]/protocols/protocol[name=BGP]/bgp/neighbors/neighbor[neighbor-address=10.11.12.13]' --update-file neighbor.json
 
-gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure subscribe --path /interfaces/interface[name=Ethernet1]/state/counters/in-octets --stream-mode on_change
+!!!!!!!!!!!! gnmic subscribe command / gnmi streaming
+gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure subscribe --path /interfaces/interface[name=Ethernet1]/state/counters/in-octets --stream-mode sample --sample-interval 5s
+
+gnmic -a 192.168.2.91:6030 -u rayka -p rayka-co.com --insecure subscribe --path /interfaces/interface[name=Ethernet1]/state/oper-status --stream-mode on_change
+
+other gnmi examples:
+https://aristanetworks.github.io/openmgmt/examples/gnmi-clients/gnmic/#subscribe-to-interface-counters-and-save-them-to-a-file

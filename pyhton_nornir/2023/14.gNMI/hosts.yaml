@@ -1,0 +1,9 @@
+---
+
+R1:
+  hostname: "192.168.2.91"
+  username: "rayka"
+  password: "rayka-co.com"
+  port: "6030"
+  groups:
+    - arista_group
