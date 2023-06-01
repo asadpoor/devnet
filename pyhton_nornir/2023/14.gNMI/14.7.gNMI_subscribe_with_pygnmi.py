@@ -8,13 +8,12 @@ subscribe1 = {
     'subscription': [
       {
         'path': 'interfaces/interface[name=Ethernet1]/state/counters/in-octets',
-        'mode': 'sample', #on_change
-        'sample_interval': 1000000000
+        'mode': 'sample',
+        'sample_interval': 10000000000
       },
       {
-        'path': 'interfaces/interface[name=Ethernet1]/state/counters/out-octets',
-        'mode': 'on_change', #sample
-        'sample_interval': 1000000000
+        'path': '/interfaces/interface[name=Ethernet1]/state/oper-status',
+        'mode': 'on_change',
       },
     ],
     'mode': 'stream',

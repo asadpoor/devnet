@@ -429,3 +429,33 @@ pygnmi.client.gNMIException: GRPC ERROR Host: 192.168.2.91:6030, Error: Get requ
 2023-05-28 13:55:58,070 -  nornir.core -     INFO -        run() - Running task 'get_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]']} on 1 hosts
 2023-05-28 13:56:22,845 -  nornir.core -     INFO -        run() - Running task 'get_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/state/counters/in-octets']} on 1 hosts
 2023-05-28 13:56:59,122 -  nornir.core -     INFO -        run() - Running task 'get_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/state/counters/in-octets']} on 1 hosts
+2023-05-30 23:16:48,968 -  nornir.core -     INFO -        run() - Running task 'capabilities_with_pygnmi' with args {} on 1 hosts
+2023-05-30 23:36:07,372 -  nornir.core -     INFO -        run() - Running task 'capabilities_with_pygnmi' with args {} on 1 hosts
+2023-05-30 23:38:20,203 -  nornir.core -     INFO -        run() - Running task 'get_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/state/counters/in-octets']} on 1 hosts
+2023-05-30 23:38:30,224 -  nornir.core -     INFO -        run() - Running task 'get_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/state/counters/in-octets']} on 1 hosts
+2023-05-30 23:38:42,927 -  nornir.core -     INFO -        run() - Running task 'get_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/state/counters/in-octets']} on 1 hosts
+2023-06-02 00:13:31,185 -  nornir.core -     INFO -        run() - Running task 'set_with_pygnmi' with args {'config': [('openconfig:/interfaces/interface[name=Ethernet1]', {'config': {'name': 'Ethernet1', 'enabled': True, 'description': 'TestTEST'}})]} on 1 hosts
+2023-06-02 00:13:41,910 -  nornir.core -     INFO -        run() - Running task 'delete_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/config/description']} on 1 hosts
+2023-06-02 00:13:43,057 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'delete_with_pygnmi' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/14.gNMI/14.6.gNMI_delete_with_pygnmi.py", line 18, in delete_with_pygnmi
+    print(respone)
+NameError: name 'respone' is not defined
+
+2023-06-02 00:13:56,544 -  nornir.core -     INFO -        run() - Running task 'set_with_pygnmi' with args {'config': [('openconfig:/interfaces/interface[name=Ethernet1]', {'config': {'name': 'Ethernet1', 'enabled': True, 'description': 'TestTEST'}})]} on 1 hosts
+2023-06-02 00:15:52,581 -  nornir.core -     INFO -        run() - Running task 'subscribe_with_pygnmi' with args {} on 1 hosts
+2023-06-02 00:16:08,778 -  nornir.core -     INFO -        run() - Running task 'subscribe_with_pygnmi' with args {} on 1 hosts
+2023-06-02 00:18:07,068 -  nornir.core -     INFO -        run() - Running task 'set_with_pygnmi' with args {'config': [('openconfig:/interfaces/interface[name=Ethernet1]', {'config': {'name': 'Ethernet1', 'enabled': True, 'description': 'TestTEST'}})]} on 1 hosts
+2023-06-02 00:18:50,277 -  nornir.core -     INFO -        run() - Running task 'delete_with_pygnmi' with args {'path': ['/interfaces/interface[name=Ethernet1]/config/description']} on 1 hosts
+2023-06-02 00:18:51,212 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'delete_with_pygnmi' failed with traceback:
+Traceback (most recent call last):
+  File "/home/majid/.local/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/majid/devnet/pyhton_nornir/2023/14.gNMI/14.6.gNMI_delete_with_pygnmi.py", line 18, in delete_with_pygnmi
+    print(respone)
+NameError: name 'respone' is not defined
+
+2023-06-02 00:19:30,160 -  nornir.core -     INFO -        run() - Running task 'set_with_pygnmi' with args {'config': [('openconfig:/interfaces/interface[name=Ethernet1]', {'config': {'name': 'Ethernet1', 'enabled': True, 'description': 'TestTEST'}})]} on 1 hosts
+2023-06-02 00:21:18,046 -  nornir.core -     INFO -        run() - Running task 'subscribe_with_pygnmi' with args {} on 1 hosts
