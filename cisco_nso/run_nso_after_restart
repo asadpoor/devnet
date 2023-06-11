@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "setup nso environment variable"
+source $HOME/nso-6.0/ncsrc
+echo -e "done \n"
+
+echo "starting nso instance with running ncs command..."
+echo "please wait. it takes a few minutes ..."
+cd ~/nso-instance/
+ncs
+echo -e "done \n"
+
+echo "starting netsim devices"
+ncs-netsim start
+echo -e "done \n"
+
+echo -e "connect to nso CLI environment \n"
+ncs_cli -C -u admin

@@ -60,7 +60,7 @@ alu-sr-cli-3.4    cisco-ios-cli-3.0  cisco-iosxr-cli-3.0  cisco-nx-cli-3.0     j
  
 
 # unzip new NED
-cd cisco_nso/
+cd ~/cisco_nso/
 sh ncs-6.0-cisco-nx-5.23.6-freetrial.signed.bin --skip-verification
 sh ncs-6.0-cisco-asa-6.16-freetrial.signed.bin --skip-verification
 sh ncs-6.0-cisco-ios-6.88-freetrial.signed.bin --skip-verification
@@ -139,7 +139,7 @@ ncs-netsim start
 ncs-netsim cli-i ios1
 enable
 show running-config
-
+show ip interface brief #does not work which is netsim limitation
 
 
 
@@ -147,28 +147,7 @@ show running-config
 
 majid@devnet:~$ source $HOME/nso-6.0/ncsrc
 
-cd ~/nso-6.0/
-ncs-setup --package ~/nso-6.0/packages/neds/cisco-iosxr-cli-7.43 \
---package ~/nso-6.0/packages/neds/cisco-asa-cli-6.16 \
---package ~/nso-6.0/packages/neds/cisco-ios-cli-6.88 \
---package ~/nso-6.0/packages/neds/cisco-nx-cli-5.23 \
---package ~/nso-6.0/packages/neds/juniper-junos-nc-3.0 \
---dest ~/nso-instance 
-
 cd ~/nso-instance/
 ncs
 
 ncs-netsim start
-
-ncs_cli -C -u admin
-admin@ncs# show devices list
-NAME    ADDRESS       DESCRIPTION  NED ID                ADMIN STATE
---------------------------------------------------------------------
-R1      192.168.2.91  -            cisco-ios-cli-6.88    unlocked
-asa0    127.0.0.1     -            cisco-asa-cli-6.16    unlocked
-ios0    127.0.0.1     -            cisco-ios-cli-6.88    unlocked
-ios1    127.0.0.1     -            cisco-ios-cli-6.88    unlocked
-ios2    127.0.0.1     -            cisco-ios-cli-6.88    unlocked
-iosxr0  127.0.0.1     -            cisco-iosxr-cli-7.43  unlocked
-junos0  127.0.0.1     -            juniper-junos-nc-3.0  unlocked
-nxos0   127.0.0.1     -            cisco-nx-cli-5.23     unlocked
