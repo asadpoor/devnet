@@ -7,13 +7,13 @@ with ncs.maapi.single_read_trans("admin", "python") as t:
     # instead of dir you can xpath command in nso to find the path
 
     #print(dir(device_object.platform))
-    #print(device_object.platform.model)
+    #print(device_object.platform.serial_number)
 
     #print(dir(device_object.config))
     #print(dir(device_object.config.ios__interface))
     #print(dir(device_object.config.ios__interface.GigabitEthernet))
     # show running-config devices device R1 config interface | display xpath
-    #print(device_object.config.ios__interface.GigabitEthernet[1].ip.address.primary.address)
+    print(device_object.config.ios__interface.GigabitEthernet[2].ip.address.primary.address)
     for interface in device_object.config.ios__interface.GigabitEthernet:
       int_name = interface.name
       int_ip = interface.ip.address.primary.address

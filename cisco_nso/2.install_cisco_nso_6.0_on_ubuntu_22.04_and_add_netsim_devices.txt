@@ -145,9 +145,12 @@ show ip interface brief #does not work which is netsim limitation
 
 #after reboot, start nso instance again
 
-majid@devnet:~$ source $HOME/nso-6.0/ncsrc
+source $HOME/nso-6.0/ncsrc
 
 cd ~/nso-instance/
 ncs
 
 ncs-netsim start
+
+ncs_cli -C -u admin
+
