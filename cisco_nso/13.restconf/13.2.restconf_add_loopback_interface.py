@@ -1,7 +1,12 @@
 import requests
 import json
 
-url = "http://192.168.2.201:8080/restconf/data/tailf-ncs:devices/device=R1/config/tailf-ned-cisco-ios:interface/"
+HOST = "192.168.2.101"
+PORT = "8080"
+USER = "admin"
+PASSWORD = "admin"
+
+url = f"http://{HOST}:{PORT}/restconf/data/tailf-ncs:devices/device=R1/config/tailf-ned-cisco-ios:interface/"
 
 payload = json.dumps({
   "Loopback": [
@@ -19,11 +24,10 @@ payload = json.dumps({
   ]
 })
 headers = {
-  'Authorization': 'Basic YWRtaW46YWRtaW4=',
   'Accept': 'application/yang-data+json',
   'Content-Type': 'application/yang-data+json'
 }
 
-response = requests.request("POST", url, headers=headers, data=payload)
+response = requests.request("POST", url, headers=headers, auth=(USER, PASSWORD), data=payload)
 
 print(response.text)

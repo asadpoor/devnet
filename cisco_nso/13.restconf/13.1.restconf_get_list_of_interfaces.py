@@ -1,11 +1,9 @@
 import requests
-import json
 
-url = "http://192.168.2.201:8080/restconf/data/tailf-ncs:devices/device=R1/config/tailf-ned-cisco-ios:interface"
+url = "http://192.168.2.101:8080/restconf/data/tailf-ncs:devices/device=R1/config/tailf-ned-cisco-ios:interface/"
 
-payload={}
+payload = {}
 headers = {
-  'Content-Type': 'application/yang-data+json',
   'Accept': 'application/yang-data+json',
   'Authorization': 'Basic YWRtaW46YWRtaW4='
 }
