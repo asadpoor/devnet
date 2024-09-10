@@ -148,6 +148,14 @@ show ip interface brief #does not work which is netsim limitation
 
 source $HOME/nso-6.0/ncsrc
 
+
+# or add it to the .bashrc file to make it permanent
+echo "source $HOME/nso-6.0/ncsrc" >> ~/.bashrc
+
+# refresh the current terminal
+source ~/.bashrc
+
+
 cd ~/nso-instance/
 ncs
 
