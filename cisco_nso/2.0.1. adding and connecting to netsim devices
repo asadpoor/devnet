@@ -1,0 +1,71 @@
+### FROM CISCO DEVNET
+
+# create netsim network and add devices
+ncs-netsim --dir ~/nso-instance-demo/netsim create-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 2 dist-rtr <br>
+ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 1 edge-sw
+ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 1 internet-rtr
+ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-iosxr-cli-7.55 2 core-rtr
+ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-nx-cli-5.25 2 dist-sw
+ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-asa-cli-6.6 1 edge-firewall
+
+# create nso instance with netsim
+ncs-setup --dest ~/nso-instance-demo --netsim-dir ~/nso-instance-demo/netsim   ## no need to create the netsim dir in nso-instance dir, it will be created automatically
+
+# start netsim
+ncs-netsim start
+#### output ####
+DEVICE dist-rtr0 OK STARTED
+DEVICE dist-rtr1 OK STARTED
+DEVICE edge-sw0 OK STARTED
+DEVICE internet-rtr0 OK STARTED
+DEVICE core-rtr0 OK STARTED
+DEVICE core-rtr1 OK STARTED
+DEVICE dist-sw0 OK STARTED
+DEVICE dist-sw1 OK STARTED
+DEVICE edge-firewall0 OK STARTED
+
+# start nso instance
+ncs
+
+# check if the nso instance has started
+ncs --status | grep status:
+
+# connecting to nso instance
+ncs_cli -C -u admin
+
+# view list of devices
+show devices list
+#### output ####
+admin@ncs# show devices list
+NAME            ADDRESS    DESCRIPTION  NED ID               ADMIN STATE  
+------------------------------------------------------------------------
+core-rtr0       127.0.0.1  -            cisco-iosxr-cli-7.55  unlocked     
+core-rtr1       127.0.0.1  -            cisco-iosxr-cli-7.55  unlocked     
+dist-rtr0       127.0.0.1  -            cisco-ios-cli-6.106  unlocked     
+dist-rtr1       127.0.0.1  -            cisco-ios-cli-6.106  unlocked     
+dist-sw0        127.0.0.1  -            cisco-nx-cli-5.25    unlocked     
+dist-sw1        127.0.0.1  -            cisco-nx-cli-5.25    unlocked     
+edge-firewall0  127.0.0.1  -            cisco-asa-cli-6.6    unlocked     
+edge-sw0        127.0.0.1  -            cisco-ios-cli-6.106  unlocked     
+internet-rtr0   127.0.0.1  -            cisco-ios-cli-6.106  unlocked
+
+
+# connect to devices
+devices connect
+#### output ####
+admin@ncs# devices connect 
+connect-result {
+    device core-rtr0
+    result true
+    info (admin) Connected to core-rtr0 - 127.0.0.1:10026
+}
+connect-result {
+    device core-rtr1
+    result true
+    info (admin) Connected to core-rtr1 - 127.0.0.1:10027
+}
+connect-result {
+    device dist-rtr0
+    result true
+    info (admin) Connected to dist-rtr0 - 127.0.0.1:10022
+} ...
