@@ -1,7 +1,7 @@
 ### FROM CISCO DEVNET
 
 # create netsim network and add devices
-ncs-netsim --dir ~/nso-instance-demo/netsim create-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 2 dist-rtr <br>
+ncs-netsim --dir ~/nso-instance-demo/netsim create-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 2 dist-rtr
 ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 1 edge-sw
 ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-ios-cli-6.106 1 internet-rtr
 ncs-netsim --dir ~/nso-instance-demo/netsim add-to-network ~/nso-6.3/packages/neds/cisco-iosxr-cli-7.55 2 core-rtr
