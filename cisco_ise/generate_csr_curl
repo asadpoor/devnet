@@ -1,0 +1,23 @@
+curl -k -v -u admin:Asadp00r.ir -X 'POST' \
+  'https://192.168.2.123:443/api/v1/certs/certificate-signing-request' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "allowWildCardCert": false,
+  "digestType": "SHA-256",
+  "hostnames": ["ise34"],
+  "keyLength": "2048",
+  "keyType": "RSA",
+  "portalGroupTag": "default",
+  "sanDNS": [],
+  "sanDir": [],
+  "sanIP": [],
+  "sanURI": [],
+  "subjectCity": "Tehran",
+  "subjectCommonName": "ise34.rayka-co.local",
+  "subjectCountry": "IR",
+  "subjectOrg": "RAYKA",
+  "subjectOrgUnit": "Security",
+  "subjectState": "Tehran",
+  "usedFor": "MULTI-USE"
+}'

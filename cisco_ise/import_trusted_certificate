@@ -1,0 +1,18 @@
+curl -k -v -u admin:Asadp00r.ir -X 'POST' \
+  'https://192.168.2.123:443/api/v1/certs/trusted-certificate/import' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "allowBasicConstraintCAFalse": true,
+  "allowMultipleCNCert": false,
+  "allowOutOfDateCert": true,
+  "allowSHA1Certificates": true,
+  "data": "-----BEGIN CERTIFICATE-----\nMIID+jCCAuKgAwIBAgIJALjRtA8q9K1JMA0GCSqGSIb3DQEBCwUAMFoxCzAJBgNV\nBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdTZWF0dGxlMSQw\nIgYDVQQKExtnZXRhQ2VydCAtIHd3dy5nZXRhY2VydC5jb20wHhcNMTYxMTA2MTY0\nNjQ4WhcNMzgwMTE1MTY0NjQ4WjBaMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2Fz\naGluZ3RvbjEQMA4GA1UEBxMHU2VhdHRsZTEkMCIGA1UEChMbZ2V0YUNlcnQgLSB3\nd3cuZ2V0YWNlcnQuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA\no5BIPGopF4vvAfZBuaW3yRMSIbVsRnp2wvYTCwOLP02if8XJXZd3hC09Va3cNmCy\n9pRaXXFkj1cGRRvLvD6d+7MarBNG5rMQA7YacYraKLLhSwmgJDI+jxi/jJmW5mWi\nfFDkki2JV6/w2jv3ntTjreU4b7yebToRpNrEw6VuugMEGVD8n5dfv+1ko5yICmMH\nP4tykzDerAFf9uv/+vWAhJj1bIGlnZwDqUnZBD0aIu9zvsYQZ0O3P0ylvJsBmGyz\nYSKY7FFVU1M46YR6KmswqhV+IGreD/a9DwjcvrrOPzw7D3/70O0eV4a5cKiWKGYO\nOtSyqjIUlQo/5Rf42MyRqQIDAQABo4HCMIG/MB0GA1UdDgQWBBTN3xggim10Tzfc\nsuCJoqkLlYjLCzCBjAYDVR0jBIGEMIGBgBTN3xggim10TzfcsuCJoqkLlYjLC6Fe\npFwwWjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcT\nB1NlYXR0bGUxJDAiBgNVBAoTG2dldGFDZXJ0IC0gd3d3LmdldGFjZXJ0LmNvbYIJ\nALjRtA8q9K1JMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAB9B\nIZE+vY03wvE0/qvXBdlZFNVqA5qC/dYcAP1jCAL29aEf3UDgMMM4JcKdbohYCd+1\nxsp+1tTruq2qd4DNSaNg5J6yQQTz57A1T0NibuGWYaixktuwjT0Jmgm1dD8R8gyf\nAGdAcpjVgVeRh6o6T7ypJxiyb8wCRJGXXSMM4H9D+ZWQxM3S6JJTfm2GP1D7PkYz\nHx45LKBg6nq9l1f0wZnvg1jCJko2OxPQAgJconyc7IGTJoVVnxaULYhOu2BVqOMf\nUcJwQAy9qhhEg7quRo9rmqqDohb1pUHvn1YTVNWtqgPbSC6qlxciX9Mb+P3yMQ8A\nxUrZglZYLRSg4q7Hj8s=\n-----END CERTIFICATE-----",
+  "description": "getacert Trust Certificate",
+  "name": "getacert",
+  "trustForCertificateBasedAdminAuth": false,
+  "trustForCiscoServicesAuth": false,
+  "trustForClientAuth": false,
+  "trustForIseAuth": false,
+  "validateCertificateExtensions": false
+}'

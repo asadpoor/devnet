@@ -1,0 +1,28 @@
+# profiling echanisms: pyATS CLI or pyATS API or pyATS robot 
+
+pyats learn bgp --testbed-file ./testbed.yaml {--devices R1} --output bgp_state
+pyats learn interface --testbed-file ./testbed.yaml {--devices R1} --output interface_state
+pyats learn all --testbed-file ./testbed.yaml {--devices R1} --output all_state
+
+
+# what collect
+- configuration data
+- status data like environmental conditions (CPU, memory, temperature)
+- physical state (interface status, cable connectivity)
+- logical state (routing tables, access lists, protocols)
+
+# output files
+"Log connection" (connection details to the network device)
+"Ops structure" (a unified data model of parsed BGP data from multiple commands)
+"Device Console" (raw command outputs before parsing).
+
+
+# pyats diff
+#genie diff (pr pyats diff) to compare data structures created by genie learn and genie parse commands.
+genie learn ospf interface --testbed-file ./testbed.yaml --output pre_change
+genie learn ospf interface --testbed-file ./testbed.yaml --output post_change
+
+genie diff pre_change post_change –output change_diff
+
+#These excluded keys include counters, timestamps, and uptime,
+

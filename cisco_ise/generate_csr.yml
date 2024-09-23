@@ -1,0 +1,29 @@
+---
+- name: Generate CSR
+  hosts: ise_servers
+  gather_facts: false
+  tasks:
+    - name: Generate CSR on ISE
+      cisco.ise.csr_generate:
+        ise_hostname: "ise34"
+        ise_username: "admin"
+        ise_password: "Asadp00r.ir"
+        ise_verify: false
+        allowWildCardCert: false
+        digestType: "SHA-256"
+        hostnames:
+          - "ise34"
+        keyLength: 2048
+        keyType: "RSA"
+        portalGroupTag: "default"
+        sanDNS: []
+        sanDir: []
+        sanIP: []
+        sanURI: []
+        subjectCity: "Munich"
+        subjectCommonName: "ise34.rayka-co.local"
+        subjectCountry: "DE"
+        subjectOrg: "RAYKA"
+        subjectOrgUnit: "Security"
+        subjectState: "Bayern"
+        usedFor: "MULTI-USE"

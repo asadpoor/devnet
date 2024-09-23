@@ -1,0 +1,35 @@
+import requests
+import json
+
+url = "https://10.215.26.83:443/api/v1/certs/certificate-signing-request"
+
+payload = json.dumps({
+  "digestType": "SHA-256",
+  "keyLength": "2048",
+  "keyType": "RSA",
+  "usedFor": "MULTI-USE",
+  "allowWildCardCert": False,
+  "hostnames": [
+    "ise34",
+    "ise34.rayka-co.local"
+  ],
+  "portalGroupTag": "default",
+  "sanDNS": [],
+  "sanDir": [],
+  "sanIP":  [],
+  "sanURI": [],
+  "subjectCity": "Tehran",
+  "subjectCommonName": "ise34.rayka-co.local",
+  "subjectCountry": "IR",
+  "subjectOrg": "RAYKA",
+  "subjectOrgUnit": "security",
+  "subjectState": "Tehran"
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)

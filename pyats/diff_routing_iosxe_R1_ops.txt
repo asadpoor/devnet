@@ -1,0 +1,22 @@
+--- pre-change-routing/routing_iosxe_R1_ops.txt
++++ post-change-routing/routing_iosxe_R1_ops.txt
+ info:
+  vrf:
+   default:
+    address_family:
+     ipv4:
+      routes:
+-      172.16.2.2/32:
+-       active: True
+-       metric: 2
+-       next_hop:
+-        next_hop_list:
+-         1:
+-          index: 1
+-          next_hop: 192.168.2.92
+-          outgoing_interface: GigabitEthernet1
+-          updated: 00:01:36
+-       route: 172.16.2.2/32
+-       route_preference: 110
+-       source_protocol: ospf
+-       source_protocol_codes: O

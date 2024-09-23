@@ -1,0 +1,54 @@
+---
+- name: Create a CSR on ASA
+  hosts: asa
+  gather_facts: false
+  connection: network_cli
+  vars:
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_pass: rayka-co.com  # Replace with your ASA enable password
+    ansible_command_timeout: 300  # Set task-level timeout
+  tasks:
+    - name: Check if the trustpoint exists
+      asa_command:
+        commands:
+          - show crypto ca trustpoints | include ASDM_TrustPoint0
+      register: trustpoint_exists
+      ignore_errors: yes  # Ignore errors if the trustpoint doesn't exist
+
+    - name: Remove existing Trustpoint if it exists
+      asa_config:
+        lines:
+          - no crypto ca trustpoint ASDM_TrustPoint0 noconfirm
+      when: trustpoint_exists.stdout != ""  # Remove if trustpoint exists
+      ignore_errors: yes  # Ignore errors if the trustpoint doesn't exist
+
+    - name: Create Trustpoint with ASDM generated settings
+      asa_config:
+        lines:
+          - crypto ca trustpoint ASDM_TrustPoint0
+          - revocation-check none
+          - no ca-check
+          - id-usage ssl-ipsec
+          - no fqdn
+          - subject-name CN=asa991.rayka-co.com,OU=Security,O=RAYKA,C=DE,St=Bayern,L=Munich
+          - enrollment terminal
+
+    - name: Enter global configuration mode
+      asa_command:
+        commands:
+          - configure terminal
+
+    - name: Enroll Trustpoint and create CSR using existing RSA keys
+      asa_command:
+        commands:
+          - crypto ca enroll ASDM_TrustPoint0 noconfirm
+      register: enroll_result
+
+    - name: Wait for CSR generation to complete
+      wait_for:
+        timeout: 10  # Adjust the timeout as needed
+
+    - name: Display Enrollment Result
+      debug:
+        var: enroll_result.stdout

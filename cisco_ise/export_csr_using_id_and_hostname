@@ -1,0 +1,3 @@
+curl -k -v -u admin:Asadp00r.ir -X 'GET' \
+  'https://192.168.2.123:443/api/v1/certs/certificate-signing-request/export/ise34/f9377862-ac4c-489d-89e7-a5dd08bec0ad' \
+  -H 'accept: application/octet-stream'

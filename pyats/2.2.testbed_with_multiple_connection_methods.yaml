@@ -1,0 +1,63 @@
+---
+testbed:
+  name: FullConnectionTestbed
+  devices:
+    R1:
+      type: iosxe
+      os: iosxe
+      connections:
+        cli:
+          protocol: ssh
+          ip: 192.168.2.91
+          port: 22
+        rest:
+          protocol: rest
+          ip: 192.168.2.91
+          port: 443
+        netconf:
+          protocol: netconf
+          ip: 192.168.2.91
+          port: 830
+      credentials:
+        default:
+          username: rayka
+          password: rayka-co.com
+        enable:
+          password: rayka-co.com
+    R2:
+      type: iosxe
+      os: iosxe
+      connections:
+        cli:
+          protocol: ssh
+          ip: 192.168.2.92
+          port: 22
+        rest:
+          protocol: rest
+          ip: 192.168.2.92
+          port: 443
+        netconf:
+          protocol: netconf
+          ip: 192.168.2.92
+          port: 830
+      credentials:
+        default:
+          username: rayka
+          password: rayka-co.com
+
+# from pyats.topology import loader
+
+# Load the testbed
+# testbed = loader.load('testbed.yaml')
+
+# Access the device
+# device = testbed.devices['router1']
+
+# Connect using CLI (default)
+# device.connect()
+
+# Or connect using REST
+# device.connect(alias='rest')
+
+# Or connect using NETCONF
+# device.connect(alias='netconf')

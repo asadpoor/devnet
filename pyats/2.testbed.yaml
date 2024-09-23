@@ -1,0 +1,28 @@
+---
+devices:
+  R1:
+    connections:
+      cli:
+        ip: 192.168.2.91
+        protocol: ssh
+    credentials:
+      default:
+        password: rayka-co.com
+        username: rayka
+      enable:
+        password: rayka-co.com
+    os: iosxe
+    type: iosxe
+  R2:
+    connections:
+      cli:
+        ip: 192.168.2.92
+        protocol: ssh
+    credentials:
+      default:
+        password: rayka-co.com
+        username: rayka
+      enable:
+        password: rayka-co.com
+    os: iosxe
+    type: iosxe

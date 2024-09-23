@@ -1,0 +1,15 @@
+--- pre-change-ospf/ospf_iosxe_R2_ops.txt
++++ post-change-ospf/ospf_iosxe_R2_ops.txt
+ info:
+  vrf:
+   default:
+    address_family:
+     ipv4:
+      instance:
+       1:
+        areas:
+         0.0.0.0:
+          interfaces:
+           Loopback1:
+-           enable: True
++           enable: False

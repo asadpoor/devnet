@@ -1,0 +1,32 @@
+---
+- name: bind signed certificate to CSR
+  hosts: ise_servers
+  gather_facts: false
+  tasks:
+    - name: bind signed certificate to CSR 
+      cisco.ise.bind_signed_certificate:
+        ise_hostname: "ise34"
+        ise_username: "admin"
+        ise_password: "Asadp00r.ir"
+        ise_verify: "false"
+        admin: false
+        allowExtendedValidity: true
+        allowOutOfDateCert: true
+        allowReplacementOfCertificates: true
+        allowReplacementOfPortalGroupTag: true
+        data: "-----BEGIN CERTIFICATE-----\nMIIDkzCCAnugAwIBAgICGoAwDQYJKoZIhvcNAQELBQAwWjELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1NlYXR0bGUxJDAiBgNVBAoT\nG2dldGFDZXJ0IC0gd3d3LmdldGFjZXJ0LmNvbTAeFw0yNDA5MTIxMDEwMjJaFw0y\nNDExMTExMDEwMjJaMHExCzAJBgNVBAYTAkRFMQ8wDQYDVQQIEwZCYXllcm4xDzAN\nBgNVBAcTBk11bmljaDEOMAwGA1UEChMFUkFZS0ExETAPBgNVBAsTCFNlY3VyaXR5\nMR0wGwYDVQQDExRpc2UzNC5yYXlrYS1jby5sb2NhbDCCASIwDQYJKoZIhvcNAQEB\nBQADggEPADCCAQoCggEBAOtPGlsNdNhecUH9dS7MiT3Igjdsltoyq+f2y0ky1NFB\n3koKfThig6HUR0QidsZiUb1pU8joniCOSVbfY8BlLV2n4Y2b4+D6JO+tKSuA1DsV\nKvX2Jcj9YkJL0kazzSsLjsnL43Zt0hOzcU1uxoOnz515UP6VrQ1CF6Eu3R1s4wq/\n8k6d782o6x9fxiUnxWpNWLmKvJfTZpu/CcdC8OvpQNmH9/c8Z03Ac6Z8UCSLBd0p\naT0syOHFmKXGFdQE75n/SIM6qYiOXmSzYiOaLIQIpwGs2qIuhuM8DAcGmlqms5gY\ng80ThxgTeB/wBqo2n/U8azgOWkcGkrX8yAPlhuuZynsCAwEAAaNMMEowCQYDVR0T\nBAIwADARBglghkgBhvhCAQEEBAMCBPAwCwYDVR0PBAQDAgWgMB0GA1UdJQQWMBQG\nCCsGAQUFBwMCBggrBgEFBQcDATANBgkqhkiG9w0BAQsFAAOCAQEAbpO13YPCPyoY\n/nhVS/zqt0VGJjBh5oNTaMcKLwkC4PCAJxObDWdAHEAIb+t61LlYeIcuBWHkdyas\n70kR9xTvLK77MPTKgMitkko1KrlmNCqJzI470+zQbpRP5eRyOI/T36GK9bCmmmxT\nLQJvhW3bUuhYCx2mo4ruK1agDr/ZBVkHfvS3FhEhExQivdA9dsumW9yw2i8GWx6A\nD8rsOStNy5BR+wUnMSmKfgGbO/MEgdE0dHZWntQuZRMT70PGufwIwkWnGfeuuzyo\n0Nc+Mq5I5OEi9nfFYa+4jnEE11dXlaljEHT/BU92DLp3auH46p59VTQEvXF5ssQZ\nKgxbulwjBg==\n-----END CERTIFICATE-----"
+        eap: false
+        hostName: "ise34"
+        id: "9b65b7df-eacb-4d13-b9bb-b0e01e8155c6"
+        ims: false
+        name: "RAYKCA Signed Certificate2"
+        portal: false
+        portalGroupTag: "default"
+        pxgrid: false
+        radius: false
+        saml: false
+        validateCertificateExtensions: false
+      register: result
+    - name: Debug CSR result
+      debug:
+        msg: "{{ result }}"

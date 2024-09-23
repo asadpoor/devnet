@@ -1,0 +1,78 @@
+!!!!!!!!!!!!!!!!! pyATS  !!!!!!!!!!!!!!!!!
+- Profile the current state of your network and take a snapshot for later comparison 
+- compliance check
+- automated testcases:
+ - monitoring of the operational state of your devices
+ - connectivity testing using ping and traceroute
+ - interface testing if they are operational
+ - routing table verification
+ - check acl rules
+ - measuring  throughput, latency, and other performance metrics
+ - ...
+- Automate configuration and upgrade tasks --> Nornir and Netmiko are often preferred over pyATS
+
+pyATS without Genie:
+ - testbed management
+ - connection handling
+ - script execution
+ - logging & reporting
+ - Genie Features:
+   - built-in parsers
+   - advanced test pre-built scripts: BGP, OSPF, health check
+
+   
+Connect to devices over Telnet, SSH, REST, RESTCONF, NETCONF, and YANG.
+Device Agnostic (Cisco IOS, IOXE, IOSXR, NXOS, ASA, APIC, Juniper JUNOS, LINUX, BIG-IP, IRONWARE, ... )
+Genie parser list: https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/parsers
+
+
+Create Virtual Environment
+$ mkdir pyats
+$ cd pyats
+$ python3 -m venv .
+$ source bin/activate .
+(pyats)$
+$ pip install --upgrade pip setuptools ## Upgrade pip with the latest setup tool packages:
+
+$ pip install pyats[full] # Install pyATS and the pyATS Library
+
+pyats { --help | -h }
+
+# to check your current pyats version
+(pyats)$ pyats version check
+
+# to check if any packages are out-dated
+(pyats)$ pyats version check --outdated
+
+
+$ pip install pyats[full] --upgrade # Updates only the specified library or package
+or 
+pyats version update # Updates the entire pyATS framework and all associated packages
+
+
+To test the installation
+git clone https://github.com/CiscoTestAutomation/examples
+pyats run job examples/basic/basic_example_job.py
+
+pyats main documentation
+https://developer.cisco.com/docs/pyats-getting-started/
+https://developer.cisco.com/docs/pyats/introduction/#cisco-pyats-network-test--automation-solution
+
+
+intro to pyATS
+https://developer.cisco.com/learning/labs/intro-to-pyats/stepping-into-the-realm-of-total-network-automation-with-pyats/
+
+# pyATS sample scripts
+https://github.com/CiscoDevNet/pyats-ios-sample
+https://github.com/CiscoDevNet/pyats-coding-101
+https://github.com/CiscoDevNet/pyats-sample-scripts
+https://github.com/CiscoDevNet/ansible-pyats
+https://github.com/CiscoDevNet/pyats-gui-sample
+https://github.com/CiscoDevNet/pyats-plugin-examples
+
+# githib pyATS genie examples
+https://github.com/CiscoTestAutomation/genie/tree/main/docs
+   
+use pyATS with ansible
+https://developer.cisco.com/learning/labs/04-pyats-parsers/using-pyats-parsers-with-ansible/
+

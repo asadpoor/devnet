@@ -1,0 +1,23 @@
+curl -k -v -u admin:Asadp00r.ir -X 'POST' \
+  'https://192.168.2.123:443/api/v1/certs/signed-certificate/bind' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "admin": false,
+  "allowExtendedValidity": true,
+  "allowOutOfDateCert": true,
+  "allowReplacementOfCertificates": true,
+  "allowReplacementOfPortalGroupTag": true,
+  "data": "-----BEGIN CERTIFICATE-----\nMIIDkzCCAnugAwIBAgICGlkwDQYJKoZIhvcNAQELBQAwWjELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1NlYXR0bGUxJDAiBgNVBAoT\nG2dldGFDZXJ0IC0gd3d3LmdldGFjZXJ0LmNvbTAeFw0yNDA5MTExMTExMTBaFw0y\nNDExMTAxMTExMTBaMHExCzAJBgNVBAYTAklSMQ8wDQYDVQQIEwZUZWhyYW4xDzAN\nBgNVBAcTBlRlaHJhbjEOMAwGA1UEChMFUkFZS0ExETAPBgNVBAsTCHNlY3VyaXR5\nMR0wGwYDVQQDExRpc2UzNC5yYXlrYS1jby5sb2NhbDCCASIwDQYJKoZIhvcNAQEB\nBQADggEPADCCAQoCggEBAK6A4/jDH2jXMQJdJ/0DQch1GSMJPX9GRjBZAvEOByBK\nG+sNVvJN5CetuJaHcxgTvY4dW7uxEHa6cE3NcraCcE08qx4Lk5rQx4SSlkOe1txz\nk/rR2qMCpBdeUQmLP1kVVvIxe+D1LF4n5bF6fQ9ysFCBkNyGbkdvYDP5/Sr6PvFl\n2SC5j6dVRl2FlRBPwGOjGoDiSQbRCGUvbRn9VHJ/mNBVrtnR7Fa6gsDfrwgqaTFY\nt5VPxcd6wtsSkVO43DwbPz3tPFt6x2PXBI5NxRFyl+q8v4eQrB31BSPQN8/PvxAR\nFaV+pLyS4zZAvDeEHsk42H0z+J8L5UFoZisnDJPdWY8CAwEAAaNMMEowCQYDVR0T\nBAIwADARBglghkgBhvhCAQEEBAMCBPAwCwYDVR0PBAQDAgWgMB0GA1UdJQQWMBQG\nCCsGAQUFBwMCBggrBgEFBQcDATANBgkqhkiG9w0BAQsFAAOCAQEAlesyOYQjT6+U\nHdmoR83U+JhylW14tLr8eW7Sn6ZiEEKTMjsWUUc6dV952HVw2jrf1DPH76jwcUtr\nHdKwlcLJ/EKx7BQaejaKMohFNNnZe29tEwd4Zp/vLH4iPpMh7UdvAF1W11hnD2lY\nn55b2RH6aUu7T4g14MaeRlr06TBLOC0q+ktlynCN6biVhcsf1kdrouv6Q9JClfRt\ngs6PhT2bWnE+tlh2yguGyONItyxgqLb4QSS6AHZZ7EwP0rctvniwONGJEI8BdIZo\nCbKCneLeKuNqnQTJsq9XltV+clBzENbd0btNstQ+rambO5eTu9XeX+5JqbBZJqo6\n6bhKqvUFug==\n-----END CERTIFICATE-----",
+  "eap": false,
+  "hostName": "ise34",
+  "id": "f9377862-ac4c-489d-89e7-a5dd08bec0ad",
+  "ims": false,
+  "name": "RAYKCA Signed Certificate",
+  "portal": false,
+  "portalGroupTag": "default",
+  "pxgrid": false,
+  "radius": false,
+  "saml": false,
+  "validateCertificateExtensions": false
+}'

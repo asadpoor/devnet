@@ -1,0 +1,66 @@
+---
+- name: Add CA certificate as trusted certificate on ASA
+  hosts: asa
+  gather_facts: false
+  connection: network_cli
+  vars:
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_pass: rayka-co.com  # Replace with your ASA enable password
+    ansible_command_timeout: 300  # Set task-level timeout
+  tasks:
+    - name: Check if the trustpoint ASDM_TrustPoint2 exists
+      asa_command:
+        commands:
+          - show crypto ca trustpoints | include ASDM_TrustPoint2
+      register: trustpoint_exists
+      ignore_errors: yes  # Ignore errors if the trustpoint doesn't exist
+
+    - name: Create Trustpoint ASDM_TrustPoint2 if it doesn't exist
+      asa_config:
+        lines:
+          - crypto ca trustpoint ASDM_TrustPoint2
+          - revocation-check none
+          - no id-usage
+          - enrollment terminal
+      when: trustpoint_exists.stdout == ""  # Create if trustpoint does not exist
+      ignore_errors: yes  # Ignore errors if trustpoint already exists
+
+    - name: Authenticate Trustpoint ASDM_TrustPoint2 with CA certificate
+      asa_config:
+        lines:
+          - crypto ca authenticate ASDM_TrustPoint2 nointeractive
+          - |
+            MIID+jCCAuKgAwIBAgIJALjRtA8q9K1JMA0GCSqGSIb3DQEBCwUAMFoxCzAJBgNV
+            BAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdTZWF0dGxlMSQw
+            IgYDVQQKExtnZXRhQ2VydCAtIHd3dy5nZXRhY2VydC5jb20wHhcNMTYxMTA2MTY0
+            NjQ4WhcNMzgwMTE1MTY0NjQ4WjBaMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2Fz
+            aGluZ3RvbjEQMA4GA1UEBxMHU2VhdHRsZTEkMCIGA1UEChMbZ2V0YUNlcnQgLSB3
+            d3cuZ2V0YWNlcnQuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+            o5BIPGopF4vvAfZBuaW3yRMSIbVsRnp2wvYTCwOLP02if8XJXZd3hC09Va3cNmCy
+            9pRaXXFkj1cGRRvLvD6d+7MarBNG5rMQA7YacYraKLLhSwmgJDI+jxi/jJmW5mWi
+            fFDkki2JV6/w2jv3ntTjreU4b7yebToRpNrEw6VuugMEGVD8n5dfv+1ko5yICmMH
+            P4tykzDerAFf9uv/+vWAhJj1bIGlnZwDqUnZBD0aIu9zvsYQZ0O3P0ylvJsBmGyz
+            YSKY7FFVU1M46YR6KmswqhV+IGreD/a9DwjcvrrOPzw7D3/70O0eV4a5cKiWKGYO
+            OtSyqjIUlQo/5Rf42MyRqQIDAQABo4HCMIG/MB0GA1UdDgQWBBTN3xggim10Tzfc
+            suCJoqkLlYjLCzCBjAYDVR0jBIGEMIGBgBTN3xggim10TzfcsuCJoqkLlYjLC6Fe
+            pFwwWjELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcT
+            B1NlYXR0bGUxJDAiBgNVBAoTG2dldGFDZXJ0IC0gd3d3LmdldGFjZXJ0LmNvbYIJ
+            ALjRtA8q9K1JMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAB9B
+            IZE+vY03wvE0/qvXBdlZFNVqA5qC/dYcAP1jCAL29aEf3UDgMMM4JcKdbohYCd+1
+            xsp+1tTruq2qd4DNSaNg5J6yQQTz57A1T0NibuGWYaixktuwjT0Jmgm1dD8R8gyf
+            AGdAcpjVgVeRh6o6T7ypJxiyb8wCRJGXXSMM4H9D+ZWQxM3S6JJTfm2GP1D7PkYz
+            Hx45LKBg6nq9l1f0wZnvg1jCJko2OxPQAgJconyc7IGTJoVVnxaULYhOu2BVqOMf
+            UcJwQAy9qhhEg7quRo9rmqqDohb1pUHvn1YTVNWtqgPbSC6qlxciX9Mb+P3yMQ8A
+            xUrZglZYLRSg4q7Hj8s=
+      ignore_errors: yes  # Ignore errors if CA certificate is already authenticated
+
+    - name: Verify the Trustpoint authentication
+      asa_command:
+        commands:
+          - show crypto ca trustpoints
+      register: trustpoint_status
+
+    - name: Display Trustpoint status
+      debug:
+        var: trustpoint_status.stdout

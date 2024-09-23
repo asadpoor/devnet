@@ -1,0 +1,6 @@
+pyats parse "show version" --testbed-file testbed.yaml
+genie parse "show version" --testbed-file testbed.yaml
+
+pyats parse "show interfaces" --testbed-file testbed.yaml --devices R1 --output show_interfaces/
+pyats parse "show version" --testbed-file testbed.yaml --devices R1 --output show_version/
+pyats parse "show ip interface brief" --testbed-file testbed.yaml --devices R1 --output show_ip_interface_brief/

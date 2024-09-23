@@ -1,0 +1,7 @@
+-k not verify certificate
+-v verbose
+-u username/password
+
+curl -k -v -u admin:Asadp00r.ir -X 'GET' \
+'https://192.168.2.123:443/api/v1/certs/certificate-signing-request' \
+-H 'accept: application/json'

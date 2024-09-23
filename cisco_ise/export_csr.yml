@@ -1,0 +1,17 @@
+---
+- name: Export CSR
+  hosts: ise_servers
+  gather_facts: false
+  tasks:
+    - name: Get CSR Export by id
+      cisco.ise.csr_export_info:
+        ise_hostname: "ise34"
+        ise_username: "admin"
+        ise_password: "Asadp00r.ir"
+        ise_verify: "false"
+        hostname: ise34
+        id: "9b65b7df-eacb-4d13-b9bb-b0e01e8155c6"
+      register: result
+    - name: Debug CSR result
+      debug:
+        msg: "{{ result }}"

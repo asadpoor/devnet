@@ -1,0 +1,4 @@
+majid@majid-ubuntu:~/pyats$ source bin/activate .
+(pyats) majid@majid-ubuntu:~/pyats$ pip install yamllint
+
+yamllint testbed.yaml

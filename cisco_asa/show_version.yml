@@ -1,0 +1,15 @@
+---
+- name: show version
+  hosts: asa
+  gather_facts: false
+  connection: network_cli
+  tasks:
+    - name: Show the ASA version
+      cisco.asa.asa_command:
+        commands:
+          - show version
+      register: result
+
+    - name: Debug ASA version result
+      debug:
+        msg: "{{ result }}"

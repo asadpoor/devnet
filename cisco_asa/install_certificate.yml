@@ -1,0 +1,50 @@
+---
+- name: Import CA certificate and bind it to Trustpoint on ASA
+  hosts: asa
+  gather_facts: false
+  connection: network_cli
+  vars:
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_pass: rayka-co.com  # Replace with your ASA enable password
+    ansible_command_timeout: 300  # Set task-level timeout
+  tasks:
+    - name: Import CA certificate to Trustpoint ASDM_TrustPoint0
+      cisco.asa.asa_command:
+        commands:
+          - |
+            crypto ca import ASDM_TrustPoint0 certificate nointeractive
+            MIIDkzCCAnugAwIBAgICG0wwDQYJKoZIhvcNAQELBQAwWjELMAkGA1UEBhMCVVMx
+            EzARBgNVBAgTCldhc2hpbmd0b24xEDAOBgNVBAcTB1NlYXR0bGUxJDAiBgNVBAoT
+            G2dldGFDZXJ0IC0gd3d3LmdldGFjZXJ0LmNvbTAeFw0yNDA5MTgwOTM4MjVaFw0y
+            NDExMTcwOTM4MjVaMHAxCzAJBgNVBAYTAkRFMQ8wDQYDVQQIEwZCYXllcm4xDzAN
+            BgNVBAcTBk11bmljaDEOMAwGA1UEChMFUkFZS0ExETAPBgNVBAsTCFNlY3VyaXR5
+            MRwwGgYDVQQDExNhc2E5OTEucmF5a2EtY28uY29tMIIBIjANBgkqhkiG9w0BAQEF
+            AAOCAQ8AMIIBCgKCAQEAs+CMtWnLawrudRMoLixkm88qihOFQSHeSyN7lywHvr4R
+            aXnS3beHkQPah4N+mwokaPclop5j9eJtBPbQqcKG6o0Xa/okeX99YLYy7ZriP5zv
+            /tTeO9/sLK4/QTqnb3DOlTzJKARvgZ7h363NIcZrqqc57bRTnMDyaeZa+Y5zmtUm
+            iNbdmKHrwAe6Pw5eJEJopmUmF9aL6L2y2jI/kSpb9vloZiEXQlc2HaCJevHkhO/V
+            yTET7iC341/nzqFn5SGm1lvk38YGkSMVcqkljgeyg6Upq/HsPF5hKDB9egtlUtHW
+            9lM1bInVFEnhKNOgZ9dhDbb7hJbx4EznoW9/JdatdQIDAQABo00wSzAJBgNVHRME
+            AjAAMBEGCWCGSAGG+EIBAQQEAwIE8DALBgNVHQ8EBAMCBSAwHgYDVR0RBBcwFYIT
+            YXNhOTkxLnJheWthLWNvLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAN1tIEkHKH1uu
+            8LWD0KDb3oLroo6NHpIycsjXljksJHf+GtWzJG40a/h0AEptKfa31X3xgjWNcjSf
+            ehm6TMFzhqB6JV4IPcX9uCClHbxExDUbKi3IdgVpxISyg538qPnD2LmDgfs+v8Lw
+            P/Mf1qQ4cfAL1jao48+PkSqO7qY71XE5vIg1YbxvOENba5d55zUuI/Z64FiiMWjR
+            kVaJQI2XvK7hDEPFWOHIqS2qJF/bgIWsFO1AAJPsIu+7tylIeF4FrzOGNGAveN4c
+            I5faH+c+efl/+JphqJiepfeyMT2SrYFGPbVDIIP8m+fboMMOKpXkqot45+CpKuGl
+            IOLx7Abf5g==
+            quit
+      register: import_result
+      failed_when: "'ERROR:' in import_result.stdout"
+      ignore_errors: no
+
+    - name: Check if the certificate was imported successfully
+      debug:
+        msg: "Certificate import to Trustpoint ASDM_TrustPoint0 was successful."
+      when: "'ERROR:' not in import_result.stdout"
+      
+    - name: Fail if certificate import was not successful
+      fail:
+        msg: "Certificate import to Trustpoint ASDM_TrustPoint0 failed."
+      when: "'ERROR:' in import_result.stdout"

@@ -1,0 +1,6 @@
+# how to run ansible playbook in virtual environment
+/home/majid/ise/bin/ansible-playbook -i hosts bind_ca_sined_certificate_to_csr.yml
+
+# .yml files are ansible-playbook using "ciscoisesdk"
+# .py files are python files using ise Open API
+# files without postfix are using curl comand to communicate with cisco ise

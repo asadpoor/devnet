@@ -1,0 +1,15 @@
+---
+- name: Get all CSR
+  hosts: ise_servers
+  gather_facts: false
+  tasks:
+    - name: Get all CSR
+      cisco.ise.csr_info:
+        ise_hostname: "ise34"
+        ise_username: "admin"
+        ise_password: "Asadp00r.ir"
+        ise_verify: "false"
+      register: result
+    - name: Debug CSR result
+      debug:
+        msg: "{{ result }}"
