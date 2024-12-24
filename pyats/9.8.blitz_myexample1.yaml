@@ -1,0 +1,25 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  test_sections:
+    - execute_commands:
+      - execute:
+          device: R1
+          command: show version
+          include:
+              - '17.1.1'
+              - 'CSR1000V'
+          exclude:
+              - 'Should not be in the output'
+      - parse:
+          device: R2
+          command: show arp
+          context: yang
+          connection_alias: cli
+          save:
+            - variable_name: parse_output
+              filter: contains('ARPA')
+      - print:
+          item:
+            value: "%VARIABLES{parse_output}"

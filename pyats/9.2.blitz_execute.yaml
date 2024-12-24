@@ -1,0 +1,20 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  trigger_uids:
+    - Testcase1
+  test_sections:
+    - execute_commands:
+        - execute:
+            device: R1
+            command: show ip interface brief
+            save:
+              - variable_name: IPs
+                regex_findall: (\d+\.\d+\.\d+\.\d+)
+              - variable_name: execute_output
+        - print:
+            item:
+              value:
+                - "!!!! IP addresses: %VARIABLES{IPs}"
+                - "!!!! show ip interface brief: %VARIABLES{execute_output}"

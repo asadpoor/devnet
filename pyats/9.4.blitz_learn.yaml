@@ -1,0 +1,16 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  test_sections:
+    - learn_commands:
+      - learn:
+          device: R1
+          feature: bgp
+          include:
+              - raw("[info][instance][default][vrf][default][neighbor]")
+          save:
+            - variable_name: bgp
+      - print:
+          item:
+            value: "%VARIABLES{bgp.info.instance.default.vrf.default.neighbor}"

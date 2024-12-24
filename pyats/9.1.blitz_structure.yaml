@@ -1,0 +1,47 @@
+# Name of the testcase
+Testcase1:
+  # Leave this as is for most use cases
+  source: pkg: genie.libs.sdk
+  class: triggers.blitz.blitz.Blitz
+
+  # Field containing all the sections
+  test_sections:
+    # Section name - Can be any name, it will show as the first section
+    # of the testcase
+    section_one:
+      - ">>>> <ACTION> <<<<"
+      - ">>>> <ACTION> <<<<"
+      - ">>>> <ACTION> <<<<"
+
+    section_two:
+      - ">>>> <ACTION> <<<<"
+      - ">>>> <ACTION> <<<<"
+
+
+
+'''
+
+pyATS Blitz: a feature of the Cisco pyATS framework that allows network engineers to automate network testing using
+a low-code, YAML-based approach
+
+Blitz YAML File Structure:
+Testcases: Composed of multiple test sections.
+Test Sections: Include a series of actions, which are individual tasks (e.g., executing commands, parsing output).
+Popular actions: execute, configure, parse, learn, api, diff.
+
+Output Handling: Outputs can be filtered (e.g., using Dq, regex, or list filters),
+saved to variables, files, or dictionaries, and reused across actions.
+
+Filters:
+Dq Filter: Extracts values from JSON/dictionary structures.
+RegEx Filter: Extracts string patterns or matches multiple items.
+List Filter: Targets specific elements in a list.
+
+
+Advanced Actions:
+Parallel Execution: Run multiple actions concurrently.
+Looping: Iterate actions based on lists, dictionaries, or conditions.
+Run Conditions: Conditional execution based on logical evaluations.
+Prompt Handling: Automate responses to device prompts.
+
+'''

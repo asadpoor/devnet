@@ -1,0 +1,12 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  test_sections:
+    - parallel:
+      - configure:
+          device: R1
+          command: ntp server 1.1.1.1
+      - configure:
+          device: R2
+          command: snmp-server community public

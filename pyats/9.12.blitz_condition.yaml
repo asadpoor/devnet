@@ -1,0 +1,59 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+
+  test_sections:
+    - get_gig_mtu:
+        - parse:
+            device: R1
+            command: show interfaces GigabitEthernet1
+            save:
+              - variable_name: g1_mtu
+                filter: get_values('mtu')
+        - print:
+            item:
+              #value: "%VARIABLES{g1_mtu}"
+              value: "g1_mtu value: '%VARIABLES{g1_mtu}'"
+
+        - run_condition:
+            - if: "%VARIABLES{g1_mtu} == [1300]"
+              actions:
+                - parse:
+                    command: show vrf
+                    device: R1
+                    save:
+                      - variable_name: cmd
+                - print:
+                    item:
+                      value: "%VARIABLES{cmd}"
+                - sleep:
+                    sleep_time: 1
+
+            - elif: "%VARIABLES{g1_mtu} == [1000]"
+              actions:
+                - parse:
+                    command: show ip interface brief
+                    device: R1
+                    save:
+                      - variable_name: cmd
+                - print:
+                    item:
+                      value: "%VARIABLES{cmd}"
+
+            - elif: "%VARIABLES{g1_mtu} == [1500]"
+              actions:
+                - parse:
+                    command: show version
+                    device: R1
+                    save:
+                      - variable_name: cmd
+                - print:
+                    item:
+                      value: "Condition met: g1_mtu is 1500 %VARIABLES{cmd}"
+
+            - else:
+              actions:
+                - print:
+                    item1:
+                      value: "The MTU does not match any given values."

@@ -1,0 +1,15 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  run_show_commands:
+    - loop:
+        loop_variable_name: command
+        value:
+          - show version
+          - show ip interface brief
+      actions:
+        - execute:
+            alias: execute_
+            device: R1
+            command: "%VARIABLES{command}"

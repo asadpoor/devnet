@@ -1,0 +1,23 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  test_sections:
+    - parse_commands:
+      - parse:
+          device: R2
+          command: show version
+          context: yang
+          connection_alias: cli
+          include:
+              - raw("[version][version]")
+              - contains("version")
+          save:
+            - variable_name: version_
+              filter: get_values('physical')
+            - file_name: ./uptime.txt
+              filter: get_values("uptime")
+              append: True
+      - print:
+          item:
+            value: "%VARIABLES{version_}"

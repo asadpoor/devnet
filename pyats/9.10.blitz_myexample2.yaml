@@ -1,0 +1,43 @@
+Testcase1:
+  source:
+    pkg: genie.libs.sdk
+    class: triggers.blitz.blitz.Blitz
+  test_sections:
+    - parse_commands:
+      - parse:
+          device: R1
+          command: show ip bgp neighbors
+          context: yang
+          save:
+            - variable_name: bgp_neighbor
+              filter: contains('Established').get_values('neighbor')
+      - print:
+          item:
+            value: "%VARIABLES{bgp_neighbor}"
+
+    - configure_commands:
+      - configure:
+          device: R1
+          command: |
+              interface GigabitEthernet2
+              shutdown
+      - sleep:
+          sleep_time: 5
+
+    - parse_commands:
+      - parse:
+          device: R1
+          command: show ip bgp neighbors
+          context: yang
+          save:
+            - variable_name: bgp_neighbor
+              filter: contains('Established').get_values('neighbor')
+
+    - configure_commands:
+      - configure:
+          device: R1
+          command: |
+              interface GigabitEthernet2
+              no shutdown
+      - sleep:
+          sleep_time: 5
