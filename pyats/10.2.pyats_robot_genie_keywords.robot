@@ -55,4 +55,4 @@ Disconnect from device
     disconnect from device "R1"
     disconnect from device "R2"
 
-# pyats run robot pyats_robot_genie_keywords.robot
+# pyats run robot 10.2.pyats_robot_genie_keywords.robot
