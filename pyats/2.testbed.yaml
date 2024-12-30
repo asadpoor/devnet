@@ -26,3 +26,6 @@ devices:
         password: rayka-co.com
     os: iosxe
     type: iosxe
+
+# pyats validate testbed testbed.yaml
+

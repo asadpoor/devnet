@@ -13,7 +13,6 @@ Testcase1:
                 filter: get_values('mtu')
         - print:
             item:
-              #value: "%VARIABLES{g1_mtu}"
               value: "g1_mtu value: '%VARIABLES{g1_mtu}'"
 
         - run_condition:
