@@ -1,5 +1,4 @@
 *** Settings ***
-# Importing test libraries, resource files and variable files.
 Library        ats.robot.pyATSRobot
 Library        genie.libs.robot.GenieRobot
 Library        genie.libs.robot.GenieRobotApis
@@ -13,9 +12,7 @@ ${F_NAME}          Danny
 ${L_NAME}          Wade
 
 *** Test Cases ***
-# Creating test cases from available keywords.
 Connect to device
-    # Specify testbed file to use
     use genie testbed "${testbed}"
     connect to devices "R1;R2"
 
@@ -42,9 +39,9 @@ verify bgp neighbor count
 verify bgp routes 
     verify count "0" "bgp routes" on device "R1"
 
-#Execute command
-#    configure "router bgp 65001" on device "R1"
-#    configure "router bgp 65001\n network 10.10.10.10 mask 255.255.255.255" on device "R1"
+Execute command
+    configure "router bgp 65001" on device "R1"
+    configure "router bgp 65001\n network 10.10.10.10 mask 255.255.255.255" on device "R1"
 
 Profile bgp on All and Compare
     Profile the system for "bgp" on devices "R1;R2" as "${POST}"
