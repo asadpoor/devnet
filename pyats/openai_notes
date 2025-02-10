@@ -1,0 +1,10 @@
+pip install openai
+pip install python-dotenv
+https://platform.openai.com/api-keys
+export OPENAI_API_KEY="your-api-key-here"
+
+https://platform.openai.com/settings/organization/billing/overview
+pip install chromadb
+pip install --upgrade langchain openai
+pip install -U langchain-community
+pip install tiktoken
