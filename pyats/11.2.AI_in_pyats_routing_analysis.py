@@ -73,17 +73,12 @@ class Test_Cisco_IP_Route(aetest.Testcase):
     def get_ip_route(self):
         self.ip_routes = self.device.parse("show ip route")
 
-#    @aetest.test
-#    def create_file(self):
-#        """Create .JSON file"""
-#        with open(f'{self.device.alias}_Learn_Interface.json', 'w') as f:
-#            f.write(json.dumps(self.parsed_json, indent=4, sort_keys=True))
-
     @aetest.test
     def test_ip_route(self):
         # Test ip route
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
+            #model="gpt-4-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful network assistant who will help the user understand the Cisco IOS XE device's routing table."},
                 {"role": "user", "content": f"Please analyze the following Cisco IOS XE routing table and help me understand the state of this device's routing table. Summarize and highlight anything important such as the default route or other key pieces of information.\n { self.ip_routes }"},

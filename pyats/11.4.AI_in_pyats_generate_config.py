@@ -66,6 +66,7 @@ class Generate_Config(aetest.Testcase):
         # Test config
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
+            #model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a helpful Cisco IOS XE network configuration assistant who will help the user generate configuration commands."},
                 {"role": "user", "content": "Please generate the configuration for a new logical interface called loopback100 with a description of configuration via AI and an IP address of 192.168.200.200/24. Please also enable the port. Please respond only with the configuration and no notes or other characters."}

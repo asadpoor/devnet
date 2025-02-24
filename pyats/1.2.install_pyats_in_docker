@@ -1,0 +1,2 @@
+sudo docker run -it masadpoor/devnet:latest /bin/bash
+sudo docker run -it -v $(pwd):/devnet/workspace masadpoor/devnet:latest /bin/bash
