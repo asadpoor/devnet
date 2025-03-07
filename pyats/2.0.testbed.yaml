@@ -7,8 +7,8 @@ devices:
         protocol: ssh
     credentials:
       default:
-        password: Asadp00r.ir
-        username: majid
+        password: rayka-co.com
+        username: rayka
     os: iosxe
     type: iosxe
 
@@ -19,7 +19,7 @@ devices:
         protocol: ssh
     credentials:
       default:
-        password: Asadp00r.ir
-        username: majid
+        password: rayka
+        username: rayka-co.com
     os: iosxe
     type: iosxe
