@@ -1,0 +1,17 @@
+testbed:
+  name: myTestbed
+
+devices:
+  R1:
+    os: iosxe
+    type: router
+    connections:
+      netconf:
+        class: 'yang.connector.Netconf'
+        protocol: ssh
+        ip: 192.168.2.91
+        port: 830
+        credentials:
+          default:
+            username: rayka
+            password: rayka-co.com

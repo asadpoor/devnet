@@ -1,0 +1,32 @@
+---
+devices:
+  R1:
+    connections:
+      cli:
+        ip: 192.168.2.91
+        protocol: ssh
+        ssh_options: \
+          -o KexAlgorithms=+diffie-hellman-group-exchange-sha1 \
+          -o HostKeyAlgorithms=+ssh-rsa
+        arguments:
+          connection_timeout: 360
+          init_exec_commands: []
+          init_config_commands: []
+    credentials:
+      default:
+        password: rayka-co.com
+        username: rayka
+    os: iosxe
+    type: iosxe
+
+  R2:
+    connections:
+      cli:
+        ip: 192.168.2.92
+        protocol: ssh
+    credentials:
+      default:
+        password: rayka
+        username: rayka-co.com
+    os: iosxe
+    type: iosxe

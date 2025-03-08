@@ -1,0 +1,17 @@
+testbed:
+  name: myTestbed
+
+devices:
+  R1:
+    os: iosxe
+    type: router
+    connections:
+      rest:
+        class: rest.connector.Rest
+        ip: 192.168.2.91
+        port: 443
+        verify: False
+        credentials:
+          rest:
+            username: rayka
+            password: rayka-co.com

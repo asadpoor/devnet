@@ -12,7 +12,7 @@ devices:
       enable:
         password: rayka-co.com
     os: iosxe
-    type: iosxe
+    type: router
   R2:
     connections:
       cli:
@@ -25,7 +25,4 @@ devices:
       enable:
         password: rayka-co.com
     os: iosxe
-    type: iosxe
-
-# pyats validate testbed testbed.yaml
-
+    type: router
