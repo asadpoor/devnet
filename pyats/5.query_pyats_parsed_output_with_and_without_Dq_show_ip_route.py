@@ -1,42 +1,34 @@
 ############## Find all the routes which are connected ##############
 
-import json
 from genie.testbed import load
+from genie.libs.parser.ios import show_interface
+from pprint import pprint
+import json
+from genie.utils import Dq
 import ipdb
 
-# Load the testbed file
-testbed = load("testbed.yaml")
+testbed = load('testbed.yaml')
+device = testbed.devices['R2']
+device.connect(log_stdout=False)
 
-# Get all devices from the testbed
-devices = testbed.devices
+parsed_output = device.parse('show ip route')
 
-R1 = testbed.devices["R1"]
+# to show clean structured ouput use pprint or json.dumps
+#pprint(parsed_output)
+print(json.dumps(parsed_output, indent=2))
 
-# Connect to device, learn BGP feature, and disconnect from the device
-R1.connect(log_stdout=False)
-parsed_output = R1.parse("show ip route")
-
-#if
-#  parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"]["172.16.1.1/32"]["source_protocol"] == connected
-#then
-#  172.16.1.1/32
-
-#or
-
-#if
-#  parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"][route]["source_protocol"] == connected
-#then
-#  route
-
-
+print("\nconnected routes extracted form loop :")
 for route in parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"]:
   if parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"][route]["source_protocol"] == "connected":
     print(route)
 
+print("\nconnected routes extracted with Dq:")
 print(parsed_output.q.contains('connected').get_values('routes'))
+
+print("\nospf routes extracted with Dq: ")
 print(parsed_output.q.contains('ospf').get_values('routes'))
 
 #ipdb.set_trace()
 
 # Disconnect from the device
-R1.disconnect()
+device.disconnect()

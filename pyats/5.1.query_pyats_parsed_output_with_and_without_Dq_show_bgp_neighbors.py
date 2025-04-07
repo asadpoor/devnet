@@ -1,42 +1,31 @@
 ############## Find all bgp neighbors in established state ##############
 
-import json
 from genie.testbed import load
+from genie.libs.parser.ios import show_interface
+from pprint import pprint
+import json
+from genie.utils import Dq
 import ipdb
 
-# Load the testbed file
-testbed = load("testbed.yaml")
+testbed = load('testbed.yaml')
+device = testbed.devices['R2']
+device.connect(log_stdout=False)
 
-# Get all devices from the testbed
-devices = testbed.devices
+parsed_output = device.parse('show bgp neighbors')
 
-R1 = testbed.devices["R1"]
+# to show clean structured ouput use pprint or json.dumps
+#pprint(parsed_output)
+print(json.dumps(parsed_output, indent=2))
 
-# Connect to device, learn BGP feature, and disconnect from the device
-R1.connect(log_stdout=False)
-parsed_output = R1.parse("show bgp neighbors")
+print("\nlist of BGP established neighbors extracted with loop: ")
+for neighbor in parsed_output["vrf"]["default"]["neighbor"].keys():
+  if parsed_output["vrf"]["default"]["neighbor"][neighbor]["session_state"] == "Established":
+    print(neighbor)
 
-#if
-#  parsed_output["vrf"]["default"]["neighbor"]["192.168.2.92"]["session_state"] == 'Established'
-#then
-#  192.168.2.92
-
-#or
-
-#if
-#  parsed_output["vrf"]["default"]["neighbor"][neighbor]["session_state"] == 'Established'
-#then
-#  neighbor
-
-
-for n in parsed_output["vrf"]["default"]["neighbor"].keys():
-  if parsed_output["vrf"]["default"]["neighbor"][n]["session_state"] == "Established":
-    print(n)
-
+print("\nlist of BGP established neighbors extracted with Dq: ")
 print(parsed_output.q.contains("Established").get_values("neighbor"))
-
 
 #ipdb.set_trace()
 
 # Disconnect from the device
-R1.disconnect()
+device.disconnect()
