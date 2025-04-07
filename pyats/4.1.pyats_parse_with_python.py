@@ -24,6 +24,18 @@ for device_name, device in devices.items():
     # Print the parsed output
     print(f"Parsed output for {device_name}:")
     print(parsed_output_json)
+
+
+    try:
+        routes = parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"]
+
+        print(f"\nRoutes Lists for {device_name}:")
+        for route, details in routes.items():
+            print(f"- Route: {route}")
+    except KeyError:
+        print("Error: Some expected keys are missing in the parsed output.")
+
+
     print("\n")
 
     # Disconnect from the device
