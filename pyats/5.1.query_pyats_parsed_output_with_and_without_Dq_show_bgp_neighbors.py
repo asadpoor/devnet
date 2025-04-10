@@ -17,15 +17,14 @@ parsed_output = device.parse('show bgp neighbors')
 #pprint(parsed_output)
 print(json.dumps(parsed_output, indent=2))
 
-print("\nlist of BGP established neighbors extracted with loop: ")
+print("\nlist of BGP established neighbors without using Dq filter: ")
 for neighbor in parsed_output["vrf"]["default"]["neighbor"].keys():
   if parsed_output["vrf"]["default"]["neighbor"][neighbor]["session_state"] == "Established":
     print(neighbor)
 
-print("\nlist of BGP established neighbors extracted with Dq: ")
+print("\nlist of BGP established neighbors extracted using Dq filter: ")
 print(parsed_output.q.contains("Established").get_values("neighbor"))
 
 #ipdb.set_trace()
 
-# Disconnect from the device
 device.disconnect()

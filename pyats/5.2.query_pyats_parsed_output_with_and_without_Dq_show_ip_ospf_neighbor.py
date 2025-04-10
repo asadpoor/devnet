@@ -18,17 +18,16 @@ parsed_output = device.parse('show ip ospf neighbor')
 print(json.dumps(parsed_output, indent=2))
 
 
-print("\nlist of ospf neighbors in full state extracted from loop:")
+print("\nlist of ospf neighbors in full state extracted without using Dq filter:")
 for interface in parsed_output["interfaces"].keys():
   for neighbor in parsed_output["interfaces"][interface]["neighbors"].keys():
     if "FULL" in parsed_output["interfaces"][interface]["neighbors"][neighbor]["state"]:
       print(neighbor)
 
-print("\nlist of ospf neighbors in full state extracted from Dq:")
+print("\nlist of ospf neighbors in full state extracted using Dq filter:")
 print(parsed_output.q.contains("FULL/DR").get_values("interfaces"))
 print(parsed_output.q.contains("FULL/DR").get_values("neighbors"))
 
 #ipdb.set_trace()
 
-# Disconnect from the device
 device.disconnect()

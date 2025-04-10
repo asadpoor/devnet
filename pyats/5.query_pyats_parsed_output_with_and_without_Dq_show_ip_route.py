@@ -17,18 +17,14 @@ parsed_output = device.parse('show ip route')
 #pprint(parsed_output)
 print(json.dumps(parsed_output, indent=2))
 
-print("\nconnected routes extracted form loop :")
+print("\nconnected routes without Dq filter :")
 for route in parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"]:
   if parsed_output["vrf"]["default"]["address_family"]["ipv4"]["routes"][route]["source_protocol"] == "connected":
     print(route)
 
-print("\nconnected routes extracted with Dq:")
+print("\nconnected routes extracted using Dq filter:")
 print(parsed_output.q.contains('connected').get_values('routes'))
 
-print("\nospf routes extracted with Dq: ")
-print(parsed_output.q.contains('ospf').get_values('routes'))
+ipdb.set_trace()
 
-#ipdb.set_trace()
-
-# Disconnect from the device
 device.disconnect()
