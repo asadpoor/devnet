@@ -8,7 +8,7 @@ class CommonSetup(aetest.CommonSetup):
 
     @aetest.subsection
     def connect_to_devices(self):
-        testbed.connect()
+        testbed.connect(log_stdout=False)
 
 class TestcaseOne(aetest.Testcase):
 
