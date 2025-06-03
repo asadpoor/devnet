@@ -14,6 +14,7 @@ class MyTest(Testcase):
             device.connect(log_stdout=False)
             print(f"Parsing {device.name} interfaces...")
             parsed_output = device.parse('show ip interface brief')
+            device.disconnect()
             return {device.name: parsed_output}
 
         results = pcall(parse_interfaces, device=list(testbed.devices.values()))

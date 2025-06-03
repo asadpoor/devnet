@@ -1,18 +1,20 @@
 import json
-from genie.testbed import load
+#from genie.testbed import load
 from pyats.async_ import pcall
 from pyats import aetest
 from genie.conf import Genie
+from pyats.topology import loader
+
+testbed = loader.load('testbed.yaml')
 
 class VersionCheck(aetest.Testcase):
     @aetest.setup
-    def setup(self, testbed):
-        self.testbed = load(testbed)
-        self.ios_xe_devices = [dev for dev in self.testbed.devices.values()]
+    def setup(self):
+        self.devices = [dev for dev in testbed.devices.values()]
 
     @aetest.test
     def check_version(self):
-        version_mismatch = []
+        os_mismatch = []
 
         def get_version(device):
             device.connect(log_stdout=False)
@@ -20,22 +22,21 @@ class VersionCheck(aetest.Testcase):
             device.disconnect()
             return output
 
-        # Use pcall correctly by passing the devices as a positional argument
-        results = pcall(get_version, device=self.ios_xe_devices)
-        print("type of results = ",results)
+        results = pcall(get_version, device=self.devices)
 
-        for device, output in zip(self.ios_xe_devices, results):
-            #print("device=",device.name," ouput=",output['version']['version'])
-            version = output['version']['os']
-            if not version.startswith('IOS'):
-                version_mismatch.append({
+        for device, output in zip(self.devices, results):
+            print("device=",device.name," version=",output['version']['version'])
+            os = output['version']['os']
+            if not os.startswith('IOS'):
+                os_mismatch.append({
                     'device': device.name,
-                    'version': version
+                    'version': os
                 })
 
-        if version_mismatch:
-            self.failed(f"Devices with incorrect version: {json.dumps(version_mismatch, indent=2)}")
+        if os_mismatch:
+            self.failed(f"Devices with incorrect OS: {json.dumps(os_mismatch, indent=2)}")
         else:
-            self.passed("All devices are running expected version")
+            self.passed("All devices are running expected OS")
 
-aetest.main(testbed="testbed.yaml")
+if __name__ == '__main__':
+    aetest.main()

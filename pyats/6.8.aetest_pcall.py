@@ -9,7 +9,7 @@ class CommonSetup(aetest.CommonSetup):
     @aetest.subsection
     def connect_to_devices(self, testbed):
         """Connect to all devices defined in the testbed file."""
-        testbed.connect()
+        testbed.connect(log_stdout=False)
 
 class PingTest(aetest.Testcase):
     @aetest.setup

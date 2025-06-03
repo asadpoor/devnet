@@ -16,7 +16,7 @@ class Version_Check(aetest.Testcase):
             output = device.parse('show version')
 
             print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-            print("device=",device.name," ouput=",output['version']['version'])
+            print("device=",device.name," version=",output['version']['version'])
             print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
             device.disconnect()

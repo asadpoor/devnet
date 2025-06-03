@@ -16,11 +16,12 @@ class PingCheck(aetest.Testcase):
             device.connect(log_stdout=False)
             output = device.execute("ping 8.8.8.8")
             print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-            print("device=",device.name," ouput=",output)
+            print("device=",device.name," ping output=",output)
             print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
             device.disconnect()
 
         pcall(ping_test, device=self.device_list)
 
 
-aetest.main()
+if __name__ == '__main__':
+    aetest.main()
