@@ -13,11 +13,13 @@ Testcase1:
               - raw("[version][version]")
               - contains("version")
           save:
-            - variable_name: version_
-              filter: get_values('physical')
-            - file_name: ./uptime.txt
+            - variable_name: image_id
+              filter: get_values('image_id')
+            - variable_name: uptime
               filter: get_values("uptime")
-              append: True
       - print:
           item:
-            value: "%VARIABLES{version_}"
+            value: "!!!! image_id !!!!: %VARIABLES{image_id}"
+      - print:
+          item:
+            value: "!!!! uptime !!!!: %VARIABLES{uptime}"

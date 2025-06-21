@@ -11,7 +11,7 @@ Testcase1:
           connection_alias: cli
           save:
             - variable_name: bgp_neighbor_
-              #filter: contains('Established').get_values('neighbor')
+              filter: contains('Established').get_values('neighbor')
       - print:
           item:
-            value: "%VARIABLES{bgp_neighbor_}"
+            value: "!!! Established Neighbor IP Address: %VARIABLES{bgp_neighbor_}"
