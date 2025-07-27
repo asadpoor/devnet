@@ -1,0 +1,115 @@
+Method 0: Unterstand non-persistent Data in Container
+
+docker run -d --name dev1 alpine tail -f /dev/null
+docker exec dev1 sh -c "echo 'Hello from dev1' > ~/test.txt"
+docker exec -it dev1 sh 
+cat ~/test.txt
+exit
+
+# After exiting:
+docker stop dev1
+docker rm dev1
+
+# Try checking the file:
+docker run -d --name dev1 alpine tail -f /dev/null
+docker exec -it dev1 sh 
+cat ~/test.txt
+
+
+Method 1: Bind Mounts (host control)
+
+mkdir -p ~/docker-data/dev1
+docker run -d --name dev1 -v ~/docker-data/dev1:/data alpine tail -f /dev/null
+docker exec dev1 sh -c "echo 'Hello from dev1' > /data/test.txt"
+cat ~/docker-data/dev1/test.txt
+
+docker exec -it dev1 sh 
+cat /data/test.txt
+Hello from dev1
+
+
+docker stop dev1
+docker rm dev1
+
+docker run -d --name dev2 -v ~/docker-data/dev1:/data alpine tail -f /dev/null
+docker exec dev2 cat /data/test.txt
+
+Applications:
+- Web development (e.g., mapping source code for hot reloading).
+- Data processing pipelines needing host file access.
+- Scenarios where data must be accessible outside Docker (e.g., for manual inspection or backups).
+
+
+Method 2: Docker Volumes
+
+docker volume create dev2_volume
+docker run -d --name dev2 -v dev2_volume:/data alpine tail -f /dev/null
+docker exec dev2 sh -c "echo 'Hello from dev2' > /data/test.txt"
+
+docker exec dev2 sh -c "echo 'Hello from dev2' > /data/test.txt"
+docker exec -it dev2 sh
+cat /data/test.txt
+Hello from dev2
+
+
+docker volume inspect dev2_volume | grep Mountpoint
+sudo cat /var/lib/docker/volumes/dev2_volume/_data/test.txt
+
+docker stop dev2
+docker rm dev2
+
+docker run -d --name dev2_new -v dev2_volume:/data alpine tail -f /dev/null
+docker exec dev2_new cat /data/test.txt
+
+
+Applications:
+- Databases (e.g., MySQL, PostgreSQL) requiring persistent storage with specific performance characteristics.
+- Enterprise applications with custom storage backends (e.g., cloud or networked storage).
+- Automated deployments needing predictable volume setup.
+
+
+Method 3: Named Volumes
+Named volumes are similar to Docker volumes but are implicitly created when referenced in a container.
+
+docker run -d --name dev3 -v dev3_data:/data alpine tail -f /dev/null
+docker volume ls
+docker exec dev3 sh -c "echo 'Hello from dev3' > /data/test.txt"
+
+docker stop dev3
+docker rm dev3
+
+docker run -d --name dev3_new -v dev3_data:/data alpine tail -f /dev/null
+docker exec dev3_new cat /data/test.txt
+
+Applications:
+- Databases (e.g., MongoDB, PostgreSQL) for data persistence.
+- Web applications (e.g., WordPress, Drupal) for content storage.
+- Microservices needing shared or persistent storage.
+
+
+Method 4: Combination of all methods
+
+mkdir -p ~/docker-data/dev_combined
+echo "[mysqld]\nlog_error=/var/log/mysql/error.log" > ~/docker-data/dev_combined/my.cnf
+docker volume create db_volume
+
+docker run -d --name dev4 \
+  -v ~/docker-data/dev_combined:/etc/mysql/conf.d \
+  -v db_volume:/var/lib/mysql \
+  -v log_data:/var/log/mysql \
+  alpine
+
+
+5. Clean up
+# stop and remove docker containers to make volume free
+
+docker ps -a  # List all containers (running and stopped)
+docker inspect <container_name> | grep -i volume
+
+# to remove all unused volumes.
+docker volume prune
+
+# remove a specific volume
+docker volume ls
+docker volume rm myvolume
+

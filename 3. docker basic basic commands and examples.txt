@@ -1,0 +1,121 @@
+Part 1: Working with Images
+docker pull ciscotestautomation/pyats
+docker pull redis
+docker pull masadpoor/devnet
+
+# Downloads the image from Docker Hub into your local system.
+
+2. List Downloaded Images
+docker images	# Shows all images available locally with repository name, tag, image ID, size, etc.
+
+3. Remove an Image
+docker rmi ciscotestautomation/pyats	# or by ID
+docker rmi <image-id>	# Use this only if you're sure the image isn't needed by any container.
+
+
+4. Clean Up Unused Images (with caution)
+docker image prune	# Basic (safe) cleanup:: Removes dangling images only (those with no tag, e.g., <none>).
+docker image prune -a	# Remove all unused images
+
+
+5. Run a Container (attached mode)
+docker run ciscotestautomation/pyats	# Runs the container interactively. It stops when you press Ctrl+C.
+
+
+6. Run in Interactive Bash Mode
+docker run -it ciscotestautomation/pyats /bin/bash
+
+
+7. Name Your Container
+docker run -it --name pyats-lab ciscotestautomation/pyats /bin/bash
+
+
+8. Mount a Local Folder
+docker run -it -v $(pwd):/work ciscotestautomation/pyats /bin/bash
+# This gives the container access to your local directory files.
+
+
+9. Run in Detached Mode
+docker run -dit --name pyats-lab ciscotestautomation/pyats /bin/bash
+
+
+10. Run a pyATS Job Directly
+docker run --rm -v $(pwd):/work ciscotestautomation/pyats pyats run job /work/my_job.py
+
+
+11. List Running Containers
+docker ps
+
+
+12. List All Containers (including stopped ones)
+docker ps -a
+
+
+13. Start a Stopped Container
+docker start pyats-lab
+
+
+14. Stop a Running Container
+docker stop pyats-lab
+
+
+15. Remove a Container
+docker rm pyats-lab
+
+
+16. Run a Command in a Running Container
+docker exec -it pyats-lab pyats version
+
+
+17. Access Container Shell
+docker exec -it pyats-lab /bin/bash
+
+
+18. Copy Files Between Host and Container
+docker cp test.py pyats-lab:/work/
+
+
+19. View Container Logs
+docker logs pyats-lab
+docker logs -f pyats-lab  # follow logs in real time
+
+
+20. Inspect a Container
+docker inspect pyats-lab	# docker inspect <container-id or image-id>
+
+
+21. Host Port vs. Container Port
+docker run -d -p 6000:5500 myimage
+
+
+22. stop all docker containers at once 
+docker stop $(docker ps -q)
+-q: output only the object IDs (like container IDs or image IDs)
+
+23. stop and remove all containers
+docker rm -f $(docker ps -aq)
+-a: includes all containers (not just running)
+-f: forces stop (if needed) before removal
+
+24. Delete All Docker Images
+docker rmi -f $(docker images -q)
+
+
+
+Advanced Topics (To Be Covered Later)
+docker build – Build your own image from a Dockerfile
+docker network – Custom networking between containers
+docker volume – Manage persistent data outside container lifecycle
+Docker Compose - Run and manage multi-container applications.
+Container Restart Policies - Auto-restart containers after crash or reboot.
+Container Resource Limits - Control CPU and memory usage
+Environment Variables - Inject config into containers
+Bind Mounts vs Named Volumes - 
+Docker Registry
+Docker Networks in Depth - bridge, host, none, and custom networks
+Docker Events - Monitor real-time container lifecycle events
+Docker Integration with CI/CD
+
+
+
+
