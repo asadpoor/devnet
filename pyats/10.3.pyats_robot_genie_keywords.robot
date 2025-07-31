@@ -1,54 +1,36 @@
 *** Settings ***
 Library        ats.robot.pyATSRobot
 Library        genie.libs.robot.GenieRobot
-Library        genie.libs.robot.GenieRobotApis
 Library        unicon.robot.UniconRobot
 
 *** Variables ***
 ${testbed}         testbed.yaml
-${PRE}             /home/majid/devnet/pyats/pre
-${POST}            /home/majid/devnet/pyats/post
-${F_NAME}          Danny
-${L_NAME}          Wade
 
 *** Test Cases ***
-Connect to device
+Connect to Devices
     use genie testbed "${testbed}"
     connect to devices "R1;R2"
 
-Greeting 
-    Log    Hello, ${F_NAME} ${L_NAME}
-
-Profile bgp on All 
-    Profile the system for "bgp" on devices "R1;R2" as "${PRE}"
-    Log    Profile saved at ${PRE}
-parser show version 
+Parse Show Version
     ${output}=    parse "show version" on device "R1"
     Log    ${output}
     Set Suite Variable    ${parsed_output}    ${output}
 
-Verify version
+Verify Version Info
     ${result}=    dq query    data=${parsed_output}    filters=contains('version').get_values('version')('version')
+    Log    Version extracted: ${result}
 
-Learn bgp 
-    ${output}=    learn "bgp" on device "R1"
+Learn BGP on R1
+    ${bgp_data}=    learn "bgp" on device "R1"
+    Log    ${bgp_data}
 
-verify bgp neighbor count 
+Verify BGP Neighbor Count
     verify count "1" "bgp neighbors" on device "R1"
 
-verify bgp routes 
+Verify BGP Routes Count
     verify count "0" "bgp routes" on device "R1"
 
-Execute command
-    configure "router bgp 65001" on device "R1"
-    configure "router bgp 65001\n network 10.10.10.10 mask 255.255.255.255" on device "R1"
-
-Profile bgp on All and Compare
-    Profile the system for "bgp" on devices "R1;R2" as "${POST}"
-    Log    Profile saved at ${POST}
-    Compare profile "${PRE}" with "${POST}" on devices "R1;R2"
-
-Disconnect from device
+Disconnect from Devices
     disconnect from device "R1"
     disconnect from device "R2"
 

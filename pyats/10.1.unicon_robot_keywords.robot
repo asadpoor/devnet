@@ -4,11 +4,23 @@ Library        unicon.robot.UniconRobot
 
 *** Variables ***
 ${testbed}         testbed.yaml
+${device}          R2
 
 *** Test Cases ***
-Verify Logging Config
+Configure And Verify Logging
     use testbed "${testbed}"
-    connect to device "R1"
-    ${output}=    execute "show run | include logging host" on device "R1"
-    should contain    ${output}    logging host
-    disconnect from device "R1"
+    connect to device "${device}"
+
+    # ✅ Configure logging settings
+    ${config}=    Create List
+    ...    logging buffered notifications
+    ...    no logging console
+    configure "${config}" on device "${device}"
+
+    # ✅ Verify the applied logging config
+    ${output}=    execute "show run | include logging" on device "${device}"
+    log    ${output}
+    should contain    ${output}    logging buffered notifications
+    should contain    ${output}    no logging console
+
+    disconnect from device "${device}"
