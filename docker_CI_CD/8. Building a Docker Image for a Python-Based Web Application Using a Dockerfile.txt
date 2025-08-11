@@ -1,0 +1,74 @@
+majid@majid-ubuntu:~/network-monitor$ ls
+app.py  Dockerfile  requirements.txt
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+majid@majid-ubuntu:~/network-monitor$ cat requirements.txt
+flask==2.0.1
+psutil==5.9.8
+netifaces==0.11.0
+werkzeug==2.3.8
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+majid@majid-ubuntu:~/network-monitor$ cat app.py
+from flask import Flask, jsonify
+import psutil
+import netifaces
+
+app = Flask(__name__)
+
+@app.route('/')
+def network_info():
+    interfaces = netifaces.interfaces()
+    net_info = {}
+    for iface in interfaces:
+        addrs = netifaces.ifaddresses(iface)
+        net_info[iface] = {
+            'addresses': addrs.get(netifaces.AF_INET, []),
+            'stats': psutil.net_if_stats().get(iface, {})
+        }
+    return jsonify(net_info)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
+
+!
+# Flask: Creates a simple web server
+# psutil: Retrieves network interface statistics
+# netifaces: Lists all available network interfaces.
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+majid@majid-ubuntu:~/network-monitor$ cat Dockerfile
+# Use an official Python runtime as the base image
+FROM python:3.9-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy the requirements file from the local host to the container
+COPY requirements.txt .
+
+# Run pip to install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the application code from the local host to the container
+COPY app.py .
+
+# Set an environment variable for Flask
+ENV FLASK_ENV=production
+
+# Expose port 8080 for the web application
+EXPOSE 80
+
+# Define the command to run the application
+CMD ["python", "app.py"]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+docker build -t network-monitor .
+docker run -d -p 8080:80 network-monitor
+curl http://localhost:8080
+docker ps
+docker logs <container_id>

@@ -1,0 +1,136 @@
+1. What is a Dockerfile?
+💡 Concept:
+A Dockerfile is a text file that contains instructions to build a Docker image. It automates the image creation process and ensures repeatability. Think of it as a recipe for building an image.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2. Dockerfile Basic Structure
+
+2.1. FROM
+Sets the base image for your container.
+FROM python:3.11-slim
+
+2.2. RUN
+Executes commands inside the container at build time. Used to install packages or set things up
+RUN apt-get update && apt-get install -y git
+
+2.3. COPY
+Copies files/folders from your local machine into the image.
+COPY requirements.txt /app/
+
+
+2.4. ADD
+Like COPY but more powerful: can fetch remote URLs and extract archives. Use with care.
+ADD https://example.com/file.tar.gz /tmp/
+
+
+2.5. WORKDIR
+Sets the working directory inside the container. All subsequent commands are run from here.
+WORKDIR /app
+
+2.6. ENTRYPOINT
+Defines the primary executable (PID 1) that runs at container start. Less easily overridden than CMD (requires docker run --entrypoint). Ideal for network automation tools.
+
+ENTRYPOINT ["python3", "main.py"] – Direct execution, best for CI/CD.
+With CMD: ENTRYPOINT ["ansible-playbook"] with CMD ["site.yml"] for default playbook.
+
+2.7. CMD
+Specifies the default command or arguments for the container. If ENTRYPOINT is set, CMD provides its default arguments; otherwise, it’s the command to run. Easily overridden (e.g., docker run image custom_command).
+
+CMD ["python3", "main.py"] – Runs directly, efficient for CI/CD.
+Arguments: CMD ["site.yml"] – Default args for ENTRYPOINT ["ansible-playbook"].
+
+2.8. ENV
+Sets environment variables.
+ENV APP_ENV=production
+
+
+2.9. VOLUME
+Declares a mount point for persistent or shared data.
+VOLUME /data
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+3. Dockerfile Example
+majid@docker:~/temp$ cat Dockerfile
+# Use a stable and minimal base image
+FROM python:3.11-slim
+
+# Metadata
+LABEL maintainer="majid@asadpoor.com"
+LABEL version="1.0"
+LABEL description="DevNet automation toolbox with Nornir and pyATS"
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    DEVNET_HOME=/devnet
+
+# Set working directory
+WORKDIR $DEVNET_HOME
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        sshpass \
+        openssh-client \
+        build-essential \
+        libssl-dev \
+        libffi-dev \
+        libyaml-dev \
+        ca-certificates \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Clone your GitHub repository
+RUN git clone https://github.com/asadpoor/devnet.git $DEVNET_HOME
+
+# Optional: If you have a requirements.txt in the repo, use it
+# COPY requirements.txt $DEVNET_HOME/
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# Install Python dependencies
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir \
+        nornir \
+        nornir-scrapli \
+        nornir-netmiko \
+        nornir-napalm \
+        nornir-utils \
+        nornir_jinja2 \
+        nornir-netbox \
+        pyats[full] \
+        pygnmi \
+        rich \
+        python-gnupg \
+        pyang \
+        xmltodict
+
+# Copy local scripts or configs (optional)
+# COPY ./scripts/ $DEVNET_HOME/scripts/
+
+# Use ADD for optional remote file or tar auto-extracts
+# ADD https://example.com/config.tar.gz /tmp/
+
+# Create mountable volume for persistent data or configs
+VOLUME ["/devnet/config", "/devnet/logs"]
+
+# Set entrypoint to bash
+ENTRYPOINT ["bash"]
+
+# a login shell
+CMD ["-l"]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+4. Build the image
+docker build -t devnet:1.0 .
+
+-t tags the image with a name (my-custom-image) and optional version (1.0).
+. means build context is current directory.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5. Run the image
+docker run -it devnet:1.0
+
+
+
+

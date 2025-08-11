@@ -1,0 +1,66 @@
+## Docker Restart Policies: control how containers behave after stopping or failing
+- no: The default. The container does not restart automatically under any circumstances.
+- always: The container always restarts, even if it was stopped manually or the Docker daemon restarts.
+- on-failure: The container restarts only if it exits with a non-zero exit code (indicating failure). You can optionally specify a maximum number of restart attempts, e.g., --restart on-failure:3.
+- unless-stopped: Similar to always, but the container does not restart if it was explicitly stopped (e.g., via docker stop).
+
+Most Important Application:
+no,"One-off tasks (e.g., data migration scripts)"
+always,"Critical services (e.g., production web server)"
+on-failure,"Non-critical apps with transient failures (e.g., queue workers)"
+unless-stopped,"Production services with manual maintenance (e.g., databases)"
+
+
+## no
+docker pull alpine
+docker run --name no-restart -d alpine sleep 10
+docker ps -a
+
+sudo systemctl restart docker
+docker ps -a
+
+
+## always
+docker run --name always-restart --restart always -d alpine sleep 10
+docker ps -a
+
+docker run --name always-restart --restart always -d alpine sh -c "exit 1"
+docker ps -a
+
+docker logs always-restart
+
+docker kill always-restart
+docker ps -a
+docker stop always-restart
+docker ps -a
+
+docker rm -f always-restart
+
+
+
+## on-failure
+docker run --name on-failure-restart --restart on-failure -d alpine sh -c "exit 1"
+docker ps -a
+docker rm -f on-failure-restart
+
+docker run --name on-failure-success --restart on-failure -d alpine sleep 10
+docker ps -a
+
+docker rm -f on-failure-restart
+docker rm on-failure-success
+
+
+## unless-stopped
+docker run --name unless-stopped-restart --restart unless-stopped -d alpine sleep 10
+docker ps -a
+
+docker run --name unless-stopped-restart --restart unless-stopped -d alpine sh -c "exit 1"
+docker ps -a
+
+
+docker kill unless-stopped-restart
+docker ps -a
+docker stop unless-stopped-restart
+docker ps -a
+
+docker rm -f unless-stopped-restart
