@@ -1,1 +1,20 @@
 
+0. exit immediately
+docker run alpine
+# Show that it exits immediately (docker ps -a)
+
+# 1. Interactive Shell
+docker run -it alpine sh
+# show a container can stay alive interactively
+# type "exit" to see container stops
+# Show with "docker ps -a" the stopped container
+
+
+# 2. tail -f /dev/null Trick
+# tail -f /dev/null continuously reads from /dev/null, which never produces data. Since the command never exits, the container’s main process stays running.
+docker run -d --name alpine-tail alpine tail -f /dev/null
+docker ps
+# exec into the container
+docker exec -it alpine-tail sh
+
+
