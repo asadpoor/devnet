@@ -18,3 +18,33 @@ docker ps
 docker exec -it alpine-tail sh
 
 
+# 3. sleep infinity
+docker run -d --name alpine-sleep alpine sleep infinity
+docker ps
+docker exec -it alpine-sleep sh
+
+# 4. Infinite Loop
+docker run -d --name alpine-loop alpine sh -c "while true; do sleep 60; done"
+# Flexible: Can add tasks inside the loop
+# Keeps CPU usage low with sleep 60
+
+# 5. Timed Auto-Stop Container
+docker run -d --name alpine-timed alpine sh -c "sleep 180"
+
+# 6. Dockerfile
+# Example 1
+FROM alpine:latest
+CMD ["tail", "-f", "/dev/null"]
+
+
+# Example 2
+FROM alpine:latest
+CMD ["sh", "-c", "while true; do sleep 60; done"]
+
+# Example 3
+docker build -t alpine-tail-dockerfile .
+docker run -d alpine-tail-dockerfile
+
+# 7. run real services
+docker run -d --name alpine-nginx alpine sh -c "apk add --no-cache nginx && nginx -g 'daemon off;'"
+
