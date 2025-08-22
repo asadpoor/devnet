@@ -35,6 +35,11 @@ docker run -d --name alpine-timed alpine sh -c "sleep 180"
 # Example 1
 FROM alpine:latest
 CMD ["tail", "-f", "/dev/null"]
+# then 
+docker build -t alive .
+docker run -d --name alive alive
+docker ps
+docker exec -it alive sh
 
 
 # Example 2
