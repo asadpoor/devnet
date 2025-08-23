@@ -10,7 +10,7 @@ docker run -it alpine sh
 # Show with "docker ps -a" the stopped container
 
 
-# 2. tail -f /dev/null Trick
+# 2. "tail -f /dev/null" Trick
 # tail -f /dev/null continuously reads from /dev/null, which never produces data. Since the command never exits, the container’s main process stays running.
 docker run -d --name alpine-tail alpine tail -f /dev/null
 docker ps
