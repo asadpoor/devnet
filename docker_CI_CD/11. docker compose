@@ -3,16 +3,16 @@ Docker Compose is a tool that lets you define and manage multi-container Docker 
 Instead of starting each container manually and configuring networks/volumes, you describe your entire topology in code and bring it up with a single command.
 
 Key features:
-- Orchestrates multiple services (containers).
-- Handles networks and volumes automatically.
+- Orchestrates multiple containers
+- Handles networks and volumes central and simple.
 - Reproducible environments (portable between systems).
 - One-file configuration, version-controlled.
 
-Lab Topology Overview
-Subnet: 10.20.20.0/24
-Server: 10.20.20.2 (runs HTTP service on port 8080)
-Client: 10.20.20.3 (tests connectivity and fetches data from server)
-Goal: The client should reach the server’s HTTP service (http://10.20.20.2:8080).
+Lab Topology Overview:
+- Subnet: 10.20.20.0/24
+- Server: 10.20.20.2 (runs HTTP service on port 8080)
+- Client: 10.20.20.3 (tests connectivity and fetches data from server)
+- Goal: The client should reach the server’s HTTP service (http://10.20.20.2:8080).
 
 docker-compose.yml
 
