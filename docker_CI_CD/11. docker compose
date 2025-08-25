@@ -1,0 +1,87 @@
+What is Docker Compose?
+Docker Compose is a tool that lets you define and manage multi-container Docker applications using a simple YAML configuration file (usually docker-compose.yml).
+Instead of starting each container manually and configuring networks/volumes, you describe your entire topology in code and bring it up with a single command.
+
+Key features:
+Orchestrates multiple services (containers).
+Handles networks and volumes automatically.
+Reproducible environments (portable between systems).
+One-file configuration, version-controlled.
+Why Network Engineers Use It
+
+Docker Compose is especially valuable for network engineers because it provides a “lab as code” approach:
+Topology as Code: Recreate the same lab setup anywhere using a single YAML file.
+Isolated Networks: Define your own subnets and connect containers to multiple segments.
+Deterministic IPs: Assign static IPs for predictable packet paths.
+Rapid Changes: Modify YAML, restart containers, and test again within seconds.
+Built-in Observability: Add tools like tcpdump, traceroute, and curl directly inside containers.
+
+Lab Topology Overview
+Subnet: 10.20.20.0/24
+Server: 10.20.20.2 (runs HTTP service on port 8080)
+Client: 10.20.20.3 (tests connectivity and fetches data from server)
+Goal: The client should reach the server’s HTTP service (http://10.20.20.2:8080).
+
+docker-compose.yml
+
+services:
+  server:
+    image: python:3.11-alpine
+    container_name: server
+    command: sh -c "apk add --no-cache iputils curl && python3 -m http.server 8080"
+    restart: unless-stopped
+    environment:
+      - SERVER_PORT=8080
+      - SERVER_MODE=development
+    volumes:
+      - ./server_data:/data
+    cap_add:                # Optional, useful for network testing
+      - NET_ADMIN
+      - NET_RAW
+    networks:
+      lan_net:
+        ipv4_address: 10.20.20.2
+
+  client:
+    image: alpine
+    container_name: client
+    command: sh -c "apk add --no-cache iputils curl tcpdump && sleep infinity"
+    restart: unless-stopped
+    environment:
+      - CLIENT_NAME=test-client
+    volumes:
+      - ./client_data:/data
+    privileged: false
+    networks:
+      lan_net:
+        ipv4_address: 10.20.20.3
+    depends_on:
+      - server
+
+networks:
+  lan_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.20.20.0/24
+
+!
+# Usage Guide
+# Start the Lab
+docker compose up -d
+
+# Check Interfaces & Routes
+docker compose exec client ip a
+docker compose exec server ip a
+docker compose exec client ip route
+docker compose exec server ip route
+
+# Connectivity Tests
+Ping server from client
+docker exec -it client ping -c 3 10.20.20.2
+
+# Access HTTP service
+docker exec -it client curl http://10.20.20.2:8080
+
+# Stop and Clean Up
+docker compose down -v
