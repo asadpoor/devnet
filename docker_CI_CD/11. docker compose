@@ -9,13 +9,6 @@ Reproducible environments (portable between systems).
 One-file configuration, version-controlled.
 Why Network Engineers Use It
 
-Docker Compose is especially valuable for network engineers because it provides a “lab as code” approach:
-Topology as Code: Recreate the same lab setup anywhere using a single YAML file.
-Isolated Networks: Define your own subnets and connect containers to multiple segments.
-Deterministic IPs: Assign static IPs for predictable packet paths.
-Rapid Changes: Modify YAML, restart containers, and test again within seconds.
-Built-in Observability: Add tools like tcpdump, traceroute, and curl directly inside containers.
-
 Lab Topology Overview
 Subnet: 10.20.20.0/24
 Server: 10.20.20.2 (runs HTTP service on port 8080)
