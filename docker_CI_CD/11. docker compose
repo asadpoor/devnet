@@ -77,11 +77,19 @@ docker compose exec client ip route
 docker compose exec server ip route
 
 # Connectivity Tests
-Ping server from client
+# Ping server from client
 docker exec -it client ping -c 3 10.20.20.2
 
 # Access HTTP service
 docker exec -it client curl http://10.20.20.2:8080
 
+# create a file in container
+docker exec -it client sh
+touch /data/testfile
+exit
+
 # Stop and Clean Up
 docker compose down -v
+
+# check if file exist after removing containers
+ls client_data/
