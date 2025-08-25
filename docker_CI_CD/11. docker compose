@@ -7,7 +7,6 @@ Orchestrates multiple services (containers).
 Handles networks and volumes automatically.
 Reproducible environments (portable between systems).
 One-file configuration, version-controlled.
-Why Network Engineers Use It
 
 Lab Topology Overview
 Subnet: 10.20.20.0/24
