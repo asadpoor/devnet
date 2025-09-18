@@ -1,0 +1,22 @@
+CI/CD: A platform for running automated scripts — manually, on a schedule, or when something changes in a repository.
+
+Forgejo: self-hosted Git service, a community-driven fork of Gitea, designed for managing Git repositories, issues, pull requests, and CI/CD workflows. 
+- Forgejo Service = the core (Git + Web + Registry + API).
+ - Database: supports SQLite (default), MySQL, PostgreSQL
+ - Forgejo Registry = store and share software packages and Docker images, similar to Docker Hub 
+- Forgejo Runner = executes workflows (uses DinD if pipelines need Docker builds).
+ - Docker-in-Docker: execute pipelines inside DinD containers 
+- Nginx Proxy Manager = Handles HTTPS, domain routing, and SSL certificate management
+
+
+[User] <--HTTPS--> [Nginx Proxy Manager] <---> [Forgejo Service]
+                                               |--- Git Repositories
+                                               |--- Web UI & API
+                                               |--- Package Registry
+                                               |--- CI/CD Pipelines
+                                                        |
+                                                        v
+                                                 [Forgejo Runner]
+                                                        |
+                                                        v
+                                                 [Docker-in-Docker]
