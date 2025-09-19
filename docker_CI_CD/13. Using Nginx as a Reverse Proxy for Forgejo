@@ -26,8 +26,7 @@ services:
         ipv4_address: 172.16.16.3
 
 # docker compose up -d
-!
-!
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # connect to Nginx admin panel using port 81
 http://NGINX-HOST:81
