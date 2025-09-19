@@ -1,4 +1,31 @@
 
+# docker-compose.yml
+networks:
+  forgejo_net:
+    driver: bridge
+    external: true
+    ipam:
+     config:
+       - subnet: 172.16.16.0/24
+         gateway: 172.16.16.1
+
+services:
+  nginx:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    container_name: nginxproxymanager
+    ports:
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port admin@example.com/changeme
+    volumes:
+      - ./data/data:/data
+      - ./data/letsencrypt:/etc/letsencrypt
+    networks:
+      forgejo_net:
+        ipv4_address: 172.16.16.3
+
+!
 !
 For Nginx Proxy Manager, the default login credentials are:
 Email: admin@example.com
