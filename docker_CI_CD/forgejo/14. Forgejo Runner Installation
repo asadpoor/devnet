@@ -157,3 +157,9 @@ majid@forgejo-runner:~/training$ cat data/.runner
     "devnet:docker://masadpoor/devnet:latest"
   ]
 }
+
+
+# hen you add a new label in data/.runner, the runner needs to reload its configuration to pick up the changes.
+docker compose down
+docker compose up -d
+
