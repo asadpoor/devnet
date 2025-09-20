@@ -137,6 +137,7 @@ https://forgejo.rayka-co.com/ --> settings --> actions --> runners
 
 
 # where labels are configured and how can you change labels
+# Labels let you match a pipeline to the right container that can provide that environment.
 majid@forgejo-runner:~/training$ ls
 data  docker-compose.yml  setup.sh
 majid@forgejo-runner:~/training$ ls -al data/
