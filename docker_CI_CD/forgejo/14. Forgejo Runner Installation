@@ -1,0 +1,29 @@
+
+# https://forgejo.org/docs/latest/admin/actions/runner-installation/#oci-image-installation
+# as root, first prepare a data directory with non-root permissions (in this case, we pick 1001:1001):
+
+majid@forgejo-runner:~/training$ cat setup.sh
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p data
+touch data/.runner
+mkdir -p data/.cache
+
+chown -R 1001:1001 data/.runner
+chown -R 1001:1001 data/.cache
+chmod 775 data/.runner
+chmod 775 data/.cache
+chmod g+s data/.runner
+chmod g+s data/.cache
+
+majid@forgejo-runner:~/training$ chmod +x setup.sh
+majid@forgejo-runner:~/training$ sudo ./setup.sh
+majid@forgejo-runner:~/training$ ls
+data  setup.sh
+majid@forgejo-runner:~/training$
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
