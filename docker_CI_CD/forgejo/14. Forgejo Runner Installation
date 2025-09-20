@@ -1,4 +1,19 @@
+undrestand forgejo runner container,  docker-in-docker container and job container
+host → forgejo runner container → d-in-d container → label-bound job container
 
+Forgejo Runner Container: 
+A containerized process (forgejo/runner image) that polls Forgejo for workflows, orchestrates jobs, and manages execution environments. 
+It coordinates with a Docker daemon (often via DinD) to spawn job containers.
+
+Docker-in-Docker (DinD) Container: 
+A container (docker:dind image) running an isolated Docker daemon. 
+It provides a secure, sandboxed environment for the runner to create and manage job containers without accessing the host's Docker.
+
+Job Container: 
+A temporary container (based on the runs-on label) spawned by the DinD daemon to execute a workflow's steps (scripts, builds). 
+It’s isolated and tailored to the job’s environment needs.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # https://forgejo.org/docs/latest/admin/actions/runner-installation/#oci-image-installation
 # as root, first prepare a data directory with non-root permissions (in this case, we pick 1001:1001):
 
