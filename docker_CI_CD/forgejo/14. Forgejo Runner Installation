@@ -104,3 +104,19 @@ to
 # Here, the sleep allows the docker-in-docker service to start up before the forgejo-runner daemon is started.
 # then run "docker compose up -d" again
 
+majid@forgejo-runner:~/training$ docker compose up -d
+[+] Running 2/2
+ ✔ Container docker_dind  Started                                                                                       11.6s
+ ✔ Container runner       Started                                                                                       10.6s
+majid@forgejo-runner:~/training$
+
+
+majid@forgejo-runner:~/training$ docker ps -a
+CONTAINER ID   IMAGE                                COMMAND                  CREATED          STATUS                  PORTS           NAMES
+ef597fd679f3   data.forgejo.org/forgejo/runner:11   "/bin/sh -c 'sleep 5…"   37 seconds ago   Up 26 seconds                           runner
+68902fe1588c   docker:dind                          "dockerd-entrypoint.…"   38 seconds ago   Up 26 seconds           2375-2376/tcp   docker_dind
+
+
+# now the status must change from “Offline” to “Idle”
+https://forgejo.rayka-co.com/ --> settings --> actions --> runners
+
