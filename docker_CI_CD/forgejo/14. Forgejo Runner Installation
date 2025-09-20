@@ -95,5 +95,12 @@ forgejo-runner register
 Forgejo instance URL: http://10.13.14.30:3000
 runner token: DDXAJq6zk3COxtI2ZzwCb7PiYFJeQBLmXHVnUUFH
 runner labels: devnet:docker://masadpoor/devnet:latest
-
+# if you check inside forgejo controller, you see the connectivizy is stablished but status is still offline
+# After that is done, take the service down again with "docker-compose down" and modify the last line in docker-compose.yml:
+from 
+    # command: '/bin/sh -c "while : ; do sleep 1 ; done ;"'
+to
+    command: '/bin/sh -c "sleep 5; forgejo-runner daemon"'
+# Here, the sleep allows the docker-in-docker service to start up before the forgejo-runner daemon is started.
+# then run "docker compose up -d" again
 
