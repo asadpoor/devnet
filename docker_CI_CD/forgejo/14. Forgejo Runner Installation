@@ -56,4 +56,44 @@ services:
     # command: '/bin/sh -c "sleep 5; forgejo-runner daemon"'
 
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# copy token from forgejo controller through GUI
+https://forgejo.rayka-co.com/user/settings/actions/runners
+https://forgejo.rayka-co.com/ --> settings --> actions --> runners --> create new runner --> registration token
+DDXAJq6zk3COxtI2ZzwCb7PiYFJeQBLmXHVnUUFH
+!
+
+
+majid@forgejo-runner:~/training$ docker-compose up -d
+Creating network "training_default" with the default driver
+Creating docker_dind ... done
+Creating runner      ... done
+majid@forgejo-runner:~/training$ docker exec -it runner /bin/sh
+~ $ forgejo-runner register
+INFO Registering runner, arch=amd64, os=linux, version=v11.0.0.
+WARN Runner in user-mode.
+INFO Runner is already registered, overwrite local config? [y/N]
+y
+INFO Enter the Forgejo instance URL (for example, https://next.forgejo.org/):
+http://10.13.14.30:3000
+INFO Enter the runner token:
+DDXAJq6zk3COxtI2ZzwCb7PiYFJeQBLmXHVnUUFH
+INFO Enter the runner name (if set empty, use hostname: 6d35eb7e69c0):
+forgejo-runner
+INFO Enter the runner labels, leave blank to use the default labels (comma-separated, for example, ubuntu-20.04:docker://node:20-bookworm,ubuntu-18.04:docker://node:20-bookworm):
+devnet:docker://masadpoor/devnet:latest
+INFO Registering runner, name=forgejo-runner, instance=http://10.13.14.30:3000, labels=[devnet:docker://masadpoor/devnet:latest].
+DEBU Successfully pinged the Forgejo instance server
+INFO Runner registered successfully.
+~ $
+
+## summary
+# copy token from forgejo controller through GUI
+docker-compose up -d
+docker exec -it runner /bin/sh
+forgejo-runner register
+Forgejo instance URL: http://10.13.14.30:3000
+runner token: DDXAJq6zk3COxtI2ZzwCb7PiYFJeQBLmXHVnUUFH
+runner labels: devnet:docker://masadpoor/devnet:latest
+
 
