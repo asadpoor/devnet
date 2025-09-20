@@ -159,7 +159,7 @@ majid@forgejo-runner:~/training$ cat data/.runner
 }
 
 
-# hen you add a new label in data/.runner, the runner needs to reload its configuration to pick up the changes.
+# when you add a new label in data/.runner, the runner needs to reload its configuration to pick up the changes.
 docker compose down
 docker compose up -d
 
