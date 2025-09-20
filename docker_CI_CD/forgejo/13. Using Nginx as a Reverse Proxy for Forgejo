@@ -1,0 +1,69 @@
+
+# docker-compose.yml
+networks:
+  forgejo_net:
+    driver: bridge
+    external: true
+    ipam:
+     config:
+       - subnet: 172.16.16.0/24
+         gateway: 172.16.16.1
+
+services:
+  nginx:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    container_name: nginxproxymanager
+    ports:
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port admin@example.com/changeme
+    volumes:
+      - ./data/data:/data
+      - ./data/letsencrypt:/etc/letsencrypt
+    networks:
+      forgejo_net:
+        ipv4_address: 172.16.16.3
+
+# docker compose up -d
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# connect to Nginx admin panel using port 81
+http://NGINX-HOST:81
+For Nginx Proxy Manager, the default login credentials are:
+Email: admin@example.com
+Password: changeme
+⚠️ Important: After first login, you should change both email and password.
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Forgejo Behind Nginx Proxy Manager with Let’s Encrypt SSL
+Step 1: Add Proxy Host
+Hosts → Proxy Hosts → Add Proxy Host
+Domain: forgejo.rayka-co.com → http://10.13.14.30:3000
+
+Step 2: Request Let’s Encrypt Certificate
+sudo apt update && sudo apt install certbot -y
+sudo certbot certonly --manual --preferred-challenges dns -d forgejo.rayka-co.com
+...
+Please deploy a DNS TXT record under the name:
+
+_acme-challenge.forgejo.rayka-co.com.
+
+with the following value:
+
+t2Q9BGBVUEtDpDLCTR5radXVju5l4kcGF3s_zcxWXzI
+...
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/forgejo.rayka-co.com/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/forgejo.rayka-co.com/privkey.pem
+...
+
+Step 3: Add SSL Certificate in NPM
+SSL Certificates → Add SSL Certificate → Custom
+Domain: forgejo.rayka-co.com
+Upload Certificate Key (privkey.pem) and Certificate (fullchain.pem)
+
+Step 4: Bind SSL to Proxy Host
+Hosts → Proxy Hosts → Edit forgejo.rayka-co.com → SSL
+Choose added certificate (forgejo.rayka-co.com)
+Enable Force SSL and HTTP/2 Support
