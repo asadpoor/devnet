@@ -29,7 +29,8 @@ majid@forgejo-runner:~$ docker compose up -d
 
 
 
-
+https://forgejo.rayka-co.com/ --> settings --> actions --> runners
+status must be again idle or active and not offline otherwise it shows probably some json syntax error or other errors in .runner configuration
 
 ############################################
 # .github/workflows/test-ubuntu22.yml
