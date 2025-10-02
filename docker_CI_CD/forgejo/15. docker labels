@@ -1,4 +1,4 @@
-# Forgejo Runner – Labels, Configuration, and Workflow Examples
+# A runner label is just a name (or tag) that tells Forgejo where a job should run.
 
 This guide explains how to **check and update Forgejo runner labels**, and how to run workflows either 
 in **container-based runners** (inside Docker-in-Docker) or directly on the **runner host container**.
