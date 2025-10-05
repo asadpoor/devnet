@@ -1,5 +1,18 @@
 # A runner label is just a name (or tag) that tells Forgejo where a job should run.
 
+Forgejo controller:
+  "This job needs runs-on: docker"
+      ↓
+Find a runner that has label 'docker'
+      ↓
+Runner selected (e.g., your host)
+      ↓
+Runner checks:
+  - does this job specify a 'container:'? → run in that
+  - else, does the label map to a docker://image? → run in that
+  - else → run directly on host
+
+!
 This guide explains how to **check and update Forgejo runner labels**, and how to run workflows either 
 in **container-based runners** (inside Docker-in-Docker) or directly on the **runner host container**.
 
