@@ -46,7 +46,7 @@ runs-on: self-hosted
 
 
 # Remove and clean up machine (recommended)
-./config.sh remove --token AOQPS6JEGKRTNM3VVW4ICQTI4OCEY
+./config.sh remove --token $TOKEN
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Workflow Example 1: runn job on self-hosted runner
