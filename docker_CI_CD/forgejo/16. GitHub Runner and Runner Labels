@@ -1,0 +1,50 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+# A runner label is just a name (or tag) that tells Forgejo on which runner a job should run.
+
+| Runner   | Labels                                          |
+| -------- | ----------------------------------------------- |
+| runner-1 | `self-hosted`, `linux`, `ubuntu`                |
+| runner-2 | `self-hosted`, `linux`, `ubuntu`, `high-memory` |
+| runner-3 | `self-hosted`, `windows`                        |
+
+# Example 1:
+jobs:
+  build:
+    runs-on: [self-hosted, linux, ubuntu, high-memory]
+
+# will only be eligible to run on runner-2.
+# If several runners match the labels, GitHub’s controller automatically selects one at random
+# If no runner is online with those labels → the job stays queued until a matching runner comes online.
+
+# Example 2:
+runs-on: self-hosted
+# then any self-hosted runner (no matter what other labels it has) can pick up the job.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://github.com/asadpoor/test
+
+Settings > Actions > Runners > New self-hosted runner > Linux
+
+# Download
+# Create a folder under the drive root
+$ mkdir actions-runner; cd actions-runner# Download the latest runner package
+$ Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.328.0/actions-runner-win-x64-2.328.0.zip -OutFile actions-runner-win-x64-2.328.0.zip# Optional: Validate the hash
+$ if((Get-FileHash -Path actions-runner-win-x64-2.328.0.zip -Algorithm SHA256).Hash.ToUpper() -ne 'a73ae192b8b2b782e1d90c08923030930b0b96ed394fe56413a073cc6f694877'.ToUpper()){ throw 'Computed checksum did not match' }# Extract the installer
+$ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.328.0.zip", "$PWD")
+
+
+# Configure
+# Create the runner and start the configuration experience
+$ ./config.cmd --url https://github.com/asadpoor/test --token $TOKEN
+# Run it!
+$ ./run.cmd
+
+# Using your self-hosted runner
+# Use this YAML in your workflow file for each job
+runs-on: self-hosted
+
+
+
+# Remove and clean up machine (recommended)
+./config.sh remove --token AOQPS6JEGKRTNM3VVW4ICQTI4OCEY
