@@ -1,4 +1,4 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  How Runner Label wokrs?
 # A runner label is just a name (or tag) that tells Forgejo on which runner a job should run.
 
 | Runner   | Labels                                          |
@@ -20,8 +20,7 @@ jobs:
 runs-on: self-hosted
 # then any self-hosted runner (no matter what other labels it has) can pick up the job.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Install GitHub self-hosted runner
 https://github.com/asadpoor/test
 
 Settings > Actions > Runners > New self-hosted runner > Linux
@@ -48,3 +47,36 @@ runs-on: self-hosted
 
 # Remove and clean up machine (recommended)
 ./config.sh remove --token AOQPS6JEGKRTNM3VVW4ICQTI4OCEY
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Workflow Example 1: runn job on self-hosted runner
+name: workflow 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Print a message
+        run: |
+          echo "Hello from self-hosted runner!"
+          sleep 111
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Workflow Example 2: runn job on a docker container on self-hosted runner
+name: workflow 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: self-hosted
+    container:
+      image: ghcr.io/catthehacker/ubuntu:act-22.04
+    steps:
+      - name: Run simple process
+        run: |
+          echo "Hello from self-hosted runner!"
+          sleep 109
