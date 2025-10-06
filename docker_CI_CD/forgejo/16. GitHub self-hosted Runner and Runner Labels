@@ -25,26 +25,27 @@ https://github.com/asadpoor/test
 
 Settings > Actions > Runners > New self-hosted runner > Linux
 
-# Download
 # Create a folder under the drive root
-$ mkdir actions-runner; cd actions-runner
+mkdir actions-runner; cd actions-runner
+
 # Download the latest runner package
-$ Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.328.0/actions-runner-win-x64-2.328.0.zip -OutFile actions-runner-win-x64-2.328.0.zip# Optional: Validate the hash
-$ if((Get-FileHash -Path actions-runner-win-x64-2.328.0.zip -Algorithm SHA256).Hash.ToUpper() -ne 'a73ae192b8b2b782e1d90c08923030930b0b96ed394fe56413a073cc6f694877'.ToUpper()){ throw 'Computed checksum did not match' }# Extract the installer
-$ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.328.0.zip", "$PWD")
+curl -o actions-runner-linux-x64-2.328.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.328.0/actions-runner-linux-x64-2.328.0.tar.gz
 
+# Optional: Validate the hash
+echo "01066fad3a2893e63e6ca880ae3a1fad5bf9329d60e77ee15f2b97c148c3cd4e  actions-runner-linux-x64-2.328.0.tar.gz" | shasum -a 256 -c
 
-# Configure
+# Extract the installer
+tar xzf ./actions-runner-linux-x64-2.328.0.tar.gz
+
 # Create the runner and start the configuration experience
-$ ./config.cmd --url https://github.com/asadpoor/test --token $TOKEN
+./config.sh --url https://github.com/asadpoor/test --token $TOKEN
+
 # Run it!
-$ ./run.cmd
+./run.sh
 
 # Using your self-hosted runner
 # Use this YAML in your workflow file for each job
 runs-on: self-hosted
-
-
 
 # Remove and clean up machine (recommended)
 ./config.sh remove --token $TOKEN
