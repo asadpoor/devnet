@@ -4,12 +4,25 @@
 - A workflow can have jobs, and jobs contain steps (commands or actions).
 - Forgejo Actions executes workflows using runners, which can be physical machines or containers.
 
-# Summary of a typical workflow in software development (not usuall in network automation)
+# a typical workflow in software development (not common in network automation)
 | Phase      | Purpose                | Example trigger      |
 | ---------- | ---------------------- | -------------------- |
 | **Build**  | Compile / package code | On push              |
 | **Test**   | Run automated tests    | After build          |
 | **Deploy** | Publish application    | On merge or approval |
+
+
+# worflow examples in network automaiton
+- schedule: backup network device configurations
+- schedule/manual: certificate automation
+- schedule: extract mac tables/arp tables/routing tables/routing neighbors
+- schedule/manual: compliance checking
+- manual: push configuration (dry run)
+- manual: push configuration
+- schedule: network test cases (Periodic Network Health Checks)
+- manual: firmware upgrades
+- schedule: notify configuration changes
+- schedule: Pull device facts and update asset inventory
 
 
 # workflow lifecycle
@@ -35,9 +48,6 @@ Jobs: A collection of steps.
 Steps: Individual commands or actions.
 Artifacts: Outputs stored for future use or download.
 
-# Workflow version control
-workflows are tracked in Git, so any change is history-aware.
-<repo>/.forgejo/workflows/
 
 # workflow trigger
 | Trigger             | When it runs                  | Example                                  |
@@ -47,9 +57,11 @@ workflows are tracked in Git, so any change is history-aware.
 | `schedule`          | Cron-based                    | Nightly backup                           |
 | `workflow_dispatch` | Manual                        | Run workflow via UI, with optional input |
 
+# Workflow version control
+workflows are tracked in Git, so any change is history-aware.
+<repo>/.forgejo/workflows/
 
 # workflow YAML sructure & format
-
 mkdir -p .forgejo/workflows
 https://forgejo.rayka-co.com/forgejo/workflow1.git
 
