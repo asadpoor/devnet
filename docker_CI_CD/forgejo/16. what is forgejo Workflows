@@ -1,0 +1,87 @@
+# what is workflow
+- workflow is an automated process triggered by events in the repository.
+- Workflows are defined in YAML files, stored inside the repo.
+- A workflow can have jobs, and jobs contain steps (commands or actions).
+- Forgejo Actions executes workflows using runners, which can be physical machines or containers.
+
+workflow Lifecycle: trigger → runner selection → job → steps → artifacts.
+
+trigger (push/PR/schedule/manual)
+        │
+        ▼
+runner selection (where it runs)
+        │
+        ▼
+job execution
+  ├─ step 1 (checkout code)
+  ├─ step 2 (run script)
+  └─ step 3 (upload artifact)
+        │
+        ▼
+artifacts/results
+
+Trigger: What causes the workflow to start.
+Runner selection: Which machine or container will execute the workflow.
+Jobs: A collection of steps.
+Steps: Individual commands or actions.
+Artifacts: Outputs stored for future use or download.
+
+# Workflow version control
+workflows are tracked in Git, so any change is history-aware.
+<repo>/.forgejo/workflows/
+
+# workflow trigger
+| Trigger             | When it runs                  | Example                                  |
+| ------------------- | ----------------------------- | ---------------------------------------- |
+| `push`              | When code is pushed           | Run tests on main branch                 |
+| `pull_request`      | When PR is created or updated | Validate changes before merge            |
+| `schedule`          | Cron-based                    | Nightly backup                           |
+| `workflow_dispatch` | Manual                        | Run workflow via UI, with optional input |
+
+
+# workflow YAML sructure & format
+
+mkdir -p .forgejo/workflows
+https://forgejo.rayka-co.com/forgejo/workflow1.git
+
+# hello.yml
+name: Hello Workflow
+
+on:
+  push:     # trigger workflow on any push
+    branches:
+      - main  # only on main branch
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest   # runner selection
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Say hello
+        run: echo "Hello from Forgejo"
+
+
+!
+git clone https://forgejo.rayka-co.com/forgejo/worfklow1.git
+git commit -m "Add hello workflow"
+git push origin main
+
+
+name: — human-readable workflow name.
+on: — trigger events.
+jobs: — define the tasks.
+runs-on: — runner type.
+steps: — series of commands or actions.
+Explain that actions/checkout is mandatory to fetch repo files.
+uses: — calls an action, like actions/checkout. action is a prebuilt workflow packaged as an action.
+run: — executes a command directly on the runner.
+
+# action/checkout
+actions/checkout is one of the most important steps in any Forgejo (or GitHub-like)
+actions/checkout copies your repository code from Forgejo into the runner, so your scripts, configs, or any files in your repo are available for the workflow steps.
+
+https://github.com/actions
+https://github.com/actions/checkout
