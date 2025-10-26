@@ -4,6 +4,15 @@
 - A workflow can have jobs, and jobs contain steps (commands or actions).
 - Forgejo Actions executes workflows using runners, which can be physical machines or containers.
 
+# Summary of a typical workflow in software development
+| Phase      | Purpose                | Example trigger      |
+| ---------- | ---------------------- | -------------------- |
+| **Build**  | Compile / package code | On push              |
+| **Test**   | Run automated tests    | After build          |
+| **Deploy** | Publish application    | On merge or approval |
+
+
+# workflow lifecycle
 workflow Lifecycle: trigger → runner selection → job → steps → artifacts.
 
 trigger (push/PR/schedule/manual)
