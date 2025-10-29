@@ -1,3 +1,9 @@
+Forgejo Workflow Triggers define when and how a workflow should start running.
+They are special keywords under the on: section of a workflow file (e.g., .forgejo/workflows/main.yml or .github/workflows/main.yml).
+
+A trigger listens for specific repository events (like a push or pull request), time-based schedules, or manual actions from the user interface — and automatically starts the workflow when those conditions are met.
+
+# workflow example with different common triggers
 name: Hello Workflow2
 
 on:
