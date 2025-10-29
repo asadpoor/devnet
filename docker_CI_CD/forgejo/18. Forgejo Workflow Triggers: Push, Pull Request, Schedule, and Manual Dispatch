@@ -1,0 +1,26 @@
+name: Hello Workflow2
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests targeting main branch
+  schedule:
+    - cron: "*/1 * * * *"  # Runs every 1 Minute 
+  workflow_dispatch:     # Allows manual triggering from the UI
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-22.04   # runner selection
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello from Forgejo"
+
+      - name: sleep 30 seconds
+        run: sleep 30
