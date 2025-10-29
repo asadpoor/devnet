@@ -1,7 +1,18 @@
-Forgejo Workflow Triggers define when and how a workflow should start running.
-They are special keywords under the on: section of a workflow file (e.g., .forgejo/workflows/main.yml or .github/workflows/main.yml).
+# Forgejo Workflow Triggers define when and how a workflow should start running.
+# They are special keywords under the on: section of a workflow file (e.g., .forgejo/workflows/main.yml or .github/workflows/main.yml).
+# A trigger listens for specific repository events (like a push or pull request), time-based schedules, or manual actions from the user interface — and automatically starts the workflow when those conditions are met.
 
-A trigger listens for specific repository events (like a push or pull request), time-based schedules, or manual actions from the user interface — and automatically starts the workflow when those conditions are met.
+# Most Common Forgejo Workflow Triggers
+| #   | Trigger                   | Description                                                              | Typical Use Case                                           |
+| --- | ------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| 1️⃣ | **`push`**                | Runs when code is pushed to a branch or tag.                             | Build, test, or lint code automatically after each commit. |
+| 2️⃣ | **`pull_request`**        | Runs when a pull request is opened, updated, or merged.                  | Validate changes before merging (CI checks, tests).        |
+| 3️⃣ | **`workflow_dispatch`**   | Allows users to manually trigger a workflow from the web UI.             | Manual deployments or rerunning tests.                     |
+| 4️⃣ | **`schedule`**            | Runs workflows automatically based on a cron schedule.                   | Nightly builds, backups, or cleanup tasks.                 |
+| 5️⃣ | **`release`**             | Runs when a release is created, published, or edited.                    | Build and publish binaries or release notes.               |
+| 6️⃣ | **`repository_dispatch`** | Triggers a workflow from an external system or another workflow via API. | Cross-repo automation or CI/CD chaining.                   |
+
+
 
 # workflow example with different common triggers
 name: Hello Workflow2
