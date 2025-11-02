@@ -1,0 +1,79 @@
+import streamlit as st
+import time
+from pathlib import Path
+
+# --------------------------
+# 1️⃣ Page Configuration
+# --------------------------
+st.set_page_config(page_title="Network Automation Dashboard", page_icon="🖧", layout="wide")
+st.title("🖧 Network Automation Dashboard")
+
+# --------------------------
+# 2️⃣ Mock Data (replace later)
+# --------------------------
+DEVICE_GROUPS = {
+    "Core Switches": ["core-sw1", "core-sw2"],
+    "Access Switches": ["acc-sw1", "acc-sw2", "acc-sw3"],
+    "Firewalls": ["fw1", "fw2"]
+}
+
+SCRIPTS = {
+    "Backup Configuration": "backup_config",
+    "Check Interface Status": "check_interfaces",
+    "Ping Test": "ping_test"
+}
+
+# --------------------------
+# 3️⃣ Helper Function
+# --------------------------
+def run_script_on_devices(script_name, devices):
+    """Simulate running an automation task on selected devices."""
+    results = {}
+    for device in devices:
+        with st.spinner(f"Running {script_name} on {device}..."):
+            time.sleep(1.5)  # Simulated execution delay
+            results[device] = f"{script_name} completed successfully on {device}"
+    return results
+
+# --------------------------
+# 4️⃣ User Input Section
+# --------------------------
+col1, col2 = st.columns(2)
+
+with col1:
+    group = st.selectbox("Select Device Group", list(DEVICE_GROUPS.keys()))
+    devices = DEVICE_GROUPS[group]
+    selected_devices = st.multiselect("Select Devices", devices, default=devices)
+
+with col2:
+    script_choice = st.selectbox("Select Automation Script", list(SCRIPTS.keys()))
+
+# --------------------------
+# 5️⃣ Execution Section
+# --------------------------
+if st.button("🚀 Run Automation"):
+    if not selected_devices:
+        st.warning("Please select at least one device.")
+    else:
+        st.info(f"Running **{script_choice}** on {len(selected_devices)} device(s)...")
+
+        results = run_script_on_devices(SCRIPTS[script_choice], selected_devices)
+
+        st.success("✅ Script Execution Completed!")
+        st.subheader("📄 Results:")
+        for dev, output in results.items():
+            st.code(f"{dev}: {output}", language="bash")
+
+# --------------------------
+# 6️⃣ Sidebar
+# --------------------------
+with st.sidebar:
+    st.header("About This App")
+    st.write("""
+    This dashboard allows network engineers to:
+    - Choose device groups
+    - Select automation scripts
+    - Run them and view results live
+
+    🧠 Powered by Streamlit
+    """)
