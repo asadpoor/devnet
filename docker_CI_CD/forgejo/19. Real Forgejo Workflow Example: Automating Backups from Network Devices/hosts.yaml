@@ -1,0 +1,29 @@
+---
+
+R1:
+  hostname: "10.13.14.16"
+  groups:
+    - cisco
+  #connection_options:
+  #  scrapli:
+  #    extras:
+  #      transport: paramiko
+  #      auth_strict_key: false
+  #      transport_options:
+  #        kex_algs: ["diffie-hellman-group14-sha1"]
+  #        encryption_algs: ["aes128-ctr", "aes256-ctr"]
+  #        key_algs: ["ssh-rsa"]
+  connection_options:
+    scrapli:
+      extras:
+        transport: system
+        auth_strict_key: false          
+R2:
+  hostname: "10.13.14.17"
+  groups:
+    - cisco
+  connection_options:
+    scrapli:
+      extras:
+        transport: system
+        auth_strict_key: false   
