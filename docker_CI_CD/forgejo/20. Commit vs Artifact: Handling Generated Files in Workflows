@@ -10,6 +10,7 @@ git push origin HEAD
     path: ./backup
 
 ⚖️ Comparison Table
+
 | Feature / Aspect               | Commit to Git                      | Artifact                              |
 | ------------------------------ | ---------------------------------- | ------------------------------------- |
 | **Versioning**                 | ✅ Full Git history                 | ❌ No history (ephemeral)              |
@@ -22,6 +23,7 @@ git push origin HEAD
 
 
 💡 Workflow Example
+
 name: BACKUP
 
 on:
