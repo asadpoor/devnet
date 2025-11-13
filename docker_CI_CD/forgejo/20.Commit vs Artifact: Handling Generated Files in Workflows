@@ -1,0 +1,128 @@
+1️⃣ Committing generated files back to Git
+git add ./backup
+git commit -m "Backup configs"
+git push origin HEAD
+
+2️⃣ Returning generated files as artifacts
+- uses: actions/upload-artifact@v3
+  with:
+    name: backup-configs
+    path: ./backup
+
+⚖️ Comparison Table
+| Feature / Aspect               | Commit to Git                      | Artifact                              |
+| ------------------------------ | ---------------------------------- | ------------------------------------- |
+| **Versioning**                 | ✅ Full Git history                 | ❌ No history (ephemeral)              |
+| **Repo cleanliness**           | ⚠️ Clutters repo if large/frequent | ✅ Repo stays clean                    |
+| **File size & frequency**      | ⚠️ Problematic for large/frequent  | ✅ Handles large/frequent files        |
+| **Sharing between jobs**       | ⚠️ Requires `git clone`            | ✅ Direct download in jobs             |
+| **Access after workflow ends** | ✅ Always available in repo         | ⚠️ Only via workflow/artifact storage |
+| **Security / sensitive data**  | ⚠️ Risky if repo is shared         | ✅ Can be restricted to workflow jobs  |
+| **Triggering extra workflows** | ⚠️ Push may trigger CI loops       | ✅ Doesn’t trigger Git events          |
+
+
+💡 Workflow Example
+name: BACKUP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-backup:
+    runs-on: ubuntu-22.04
+
+    env:
+      DEVICE_USERNAME: ${{ secrets.DEVICE_USERNAME }}
+      DEVICE_PASSWORD: ${{ secrets.DEVICE_PASSWORD }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Ensure Forgejo hostname is resolvable
+        run: |
+          if ! grep -q "forgejo.rayka-co.com" /etc/hosts; then
+            echo "10.13.14.30 forgejo.rayka-co.com" | sudo tee -a /etc/hosts
+          fi
+          echo "Verifying resolution:"
+          ping -c 2 forgejo.rayka-co.com || true
+
+      - name: Make Backup script executable
+        run: chmod +x backup.py
+
+      - name: Install Python and pip
+        run: |
+          apt-get update
+          apt-get install -y python3 python3-pip
+
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install nornir nornir-utils nornir-jinja2 netmiko jinja2 nornir-scrapli
+
+      - name: Copy SSH legacy config
+        run: |
+          mkdir -p /etc/ssh/ssh_config.d
+          cp config/legacy.conf /etc/ssh/ssh_config.d/legacy.conf
+
+      - name: Run Backup script
+        run: |
+          echo "The workspace directory is: ${{ github.workspace }}"
+          cd ${{ github.workspace }}
+          ./backup.py
+
+      - name: Upload backup folder as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: backup-configs
+          path: ./backup
+          if-no-files-found: warn
+
+      - name: Commit generated configs (if any)
+        run: |
+          echo "Listing generated configs in ./backup:"
+          ls -l ./backup || echo "No configs found"
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          CHANGED=$(git status --porcelain ./backup)
+          if [ -n "$CHANGED" ]; then
+            git add ./backup
+            git commit -m "Backup configs"
+            git push origin HEAD
+          else
+            echo "No changes to commit"
+          fi
+
+
+  # 🧪 Test job: Download and inspect the uploaded artifact
+  verify-artifact:
+    runs-on: ubuntu-22.04
+    needs: run-backup
+
+    steps:
+      - name: Ensure Forgejo hostname is resolvable
+        run: |
+          if ! grep -q "forgejo.rayka-co.com" /etc/hosts; then
+            echo "10.13.14.30 forgejo.rayka-co.com" | sudo tee -a /etc/hosts
+          fi
+
+      - name: Download artifact from previous job
+        uses: actions/download-artifact@v3
+        with:
+          name: backup-configs
+          path: ./downloaded-backups
+
+      - name: List downloaded artifact contents
+        run: |
+          echo "✅ Listing downloaded backup files:"
+          ls -R ./downloaded-backups || echo "No files found"
+
+      - name: Show first few lines of each backup file
+        run: |
+          for f in ./downloaded-backups/*; do
+            echo "----- $f -----"
+            head -n 5 "$f"
+            echo
+          done || echo "No backup files to show"
