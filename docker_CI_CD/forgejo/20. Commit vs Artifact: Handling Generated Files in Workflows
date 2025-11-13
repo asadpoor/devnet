@@ -1,3 +1,17 @@
+An artifact is a file or set of files produced by a CI/CD workflow that you want to store, share, or use in later steps/jobs.
+In CI/CD, artifacts can include:
+- Build outputs (e.g., binaries, Docker images)
+- Configuration files
+- Logs, reports, or test results
+- Backups or temporary files
+
+Key points:
+- Artifacts are usually ephemeral — they exist for the duration of the workflow or for a configurable retention period.
+- They allow you to pass files between jobs without committing them to Git.
+- In Forgejo (self-hosted Git with GitHub Actions compatibility), artifacts are uploaded using actions/upload-artifact and can be downloaded by other jobs using actions/download-artifact.
+- Unlike Git commits, artifacts do not create a permanent history; they are intended for temporary sharing and pipeline use.
+
+
 1️⃣ Committing generated files back to Git
 git add ./backup
 git commit -m "Backup configs"
