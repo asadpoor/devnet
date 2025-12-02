@@ -1,4 +1,4 @@
-# docker-compose.yml
+!!!!!!!!!!!!!!!!!! forrgejo-runner #docker-compose.yml
 majid@forgejo-runner:~$ cat docker-compose.yml
 services:
   docker-in-docker:
@@ -30,8 +30,8 @@ services:
 
     #command: '/bin/sh -c "while : ; do sleep 1 ; done ;"'
     command: '/bin/sh -c "sleep 5; forgejo-runner daemon"'
-!
-# Dockerfile
+
+!!!!!!!!!!!!!!!!!! # Dockerfile
 # Base image
 FROM python:3.11-slim
 
@@ -56,7 +56,7 @@ WORKDIR /workspace
 # Default command (can be overridden by workflow run)
 CMD ["bash"]
 
-# .forgejo/workflows/build-image.yml
+!!!!!!!!!!!!!!!!!! # .forgejo/workflows/build-image.yml
 name: build-image
 
 on:
@@ -113,3 +113,13 @@ jobs:
           docker push forgejo.rayka-co.com/${repo_lower}:${{ steps.extract_tag.outputs.tag }}
           docker push forgejo.rayka-co.com/${repo_lower}:latest
 
+!!!!!!!!!!!!!!!!!! # How to create a tag in the Forgejo GUI
+Open your repository in Forgejo.
+In the top navigation, click on Releases (sometimes under Code → Releases).
+Click New Release.
+In the release form:
+Tag name: enter the tag you want (e.g. v1.0, v1.1).
+If the tag doesn’t exist yet, Forgejo will create it for you.
+Target branch/commit: choose the branch or commit you want the tag to point to (usually main).
+Add a title/description if you want.
+Click Publish Release.
