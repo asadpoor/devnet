@@ -1,3 +1,4 @@
+# docker-compose.yml
 majid@forgejo-runner:~$ cat docker-compose.yml
 services:
   docker-in-docker:
@@ -29,3 +30,86 @@ services:
 
     #command: '/bin/sh -c "while : ; do sleep 1 ; done ;"'
     command: '/bin/sh -c "sleep 5; forgejo-runner daemon"'
+!
+# Dockerfile
+# Base image
+FROM python:3.11-slim
+
+# Install system dependencies needed for typical network automation tasks
+RUN apt-get update && \
+    apt-get install -y git curl ssh && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies common for network automation
+RUN python -m pip install --upgrade pip
+RUN python -m pip install \
+    nornir \
+    nornir-utils \
+    nornir-jinja2 \
+    netmiko \
+    jinja2 \
+    nornir-scrapli
+
+# Set a default working directory
+WORKDIR /workspace
+
+# Default command (can be overridden by workflow run)
+CMD ["bash"]
+
+# .forgejo/workflows/build-image.yml
+name: build-image
+
+on:
+  push:
+    tags:
+      - v*
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install Docker CLI
+        run: |
+          apt-get update
+          apt-get install -y docker.io
+
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: Add DNS override
+        run: |
+          echo "10.13.14.30 forgejo.rayka-co.com" >> /etc/hosts
+          cat /etc/hosts
+
+      - name: Extract version tag
+        id: extract_tag
+        run: |
+          echo "tag=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Login to Forgejo Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: forgejo.rayka-co.com
+          username: ${{ secrets.FORGEJO_USER }}
+          password: ${{ secrets.FORGEJO_PASSWORD }}
+
+      - name: Build the image
+        env:
+          repository: ${{ github.repository }}
+        run: |
+          export DOCKER_HOST=tcp://172.18.0.2:2375
+          repo_lower=$(echo "${repository}" | tr '[:upper:]' '[:lower:]')
+          docker build --network=host . \
+            -t forgejo.rayka-co.com/${repo_lower}:${{ steps.extract_tag.outputs.tag }} \
+            -t forgejo.rayka-co.com/${repo_lower}:latest
+
+      - name: Push the image
+        env:
+          repository: ${{ github.repository }}
+        run: |
+          export DOCKER_HOST=tcp://172.18.0.2:2375
+          repo_lower=$(echo "${repository}" | tr '[:upper:]' '[:lower:]')
+          docker push forgejo.rayka-co.com/${repo_lower}:${{ steps.extract_tag.outputs.tag }}
+          docker push forgejo.rayka-co.com/${repo_lower}:latest
+
