@@ -123,3 +123,26 @@ If the tag doesn’t exist yet, Forgejo will create it for you.
 Target branch/commit: choose the branch or commit you want the tag to point to (usually main).
 Add a title/description if you want.
 Click Publish Release.
+
+!!!!!!!!!!!!!!!!!! # pull the image via CLI
+majid@forgejo-runner:~$ docker login forgejo.rayka-co.com -u forgejo -p .....
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Login Succeeded
+majid@forgejo-runner:~$ docker pull forgejo.rayka-co.com/forgejo/backup:latest
+latest: Pulling from forgejo/backup
+d96c540105e0: Pull complete
+22b63e76fde1: Pull complete
+b3dd773c3296: Pull complete
+1771569cc129: Pull complete
+55411c57bdd3: Pull complete
+c2f997f676a1: Pull complete
+13ca42f1e83e: Extracting [==========================>                        ]   21.3MB/40.25MB
+a89e0740db08: Download complete
+
+
+!!!!!!!!!!!!!!!!!! # make image through repository packages tab visible
+https://forgejo.rayka-co.com/forgejo/-/packages
+Click on the package name (e.g. backup).
+On the package detail page, look for an “Link to repository” or “Manage repository links” option.
+Select your repo (backup) and save.
+After that, the package will appear under the repo’s Packages tab.
