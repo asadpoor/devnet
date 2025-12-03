@@ -1,0 +1,219 @@
+# CI/CD Workflow: Inputs, Secrets, and Environment Variables
+
+This workflow demonstrates how to use **workflow inputs, secrets, and environment variables** in Forgejo/GitHub CI/CD.
+
+---
+
+## 1. Secrets
+
+Secrets are sensitive values such as passwords, API tokens, or SSH keys.
+They are **masked in logs** and should never be hard-coded.
+
+### Where to define secrets
+
+* **Repository secrets:** `Repository → Settings → Actions → Secrets`
+* **Organization/global secrets:** `Settings → Actions → Secrets`
+
+### Referencing secrets in workflows
+
+Use the syntax `${{ secrets.SECRET_NAME }}`:
+
+```yaml
+env:
+  DEVICE_USERNAME: ${{ secrets.DEVICE_USERNAME }}
+  DEVICE_PASSWORD: ${{ secrets.DEVICE_PASSWORD }}
+  ORG_SHARED_TOKEN: ${{ secrets.ORG_SHARED_TOKEN }}
+```
+
+> Secrets are automatically masked in logs. Avoid printing actual values.
+
+---
+
+## 2. Environment Variables (`env:`)
+
+Environment variables can be defined at **three levels**:
+
+### Workflow-level env
+
+Available to all jobs:
+
+```yaml
+env:
+  TIMEOUT: 60
+```
+
+### Job-level env
+
+Available to all steps in a job:
+
+```yaml
+env:
+  DEVICE_USERNAME: ${{ secrets.DEVICE_USERNAME }}
+  DEVICE_PASSWORD: ${{ secrets.DEVICE_PASSWORD }}
+  NORMAL_VARIABLE: backup-process
+  INPUT_DEVICE_GROUP: ${{ inputs.device_group }}
+  INPUT_MAX_RETRIES: ${{ inputs.max_retries }}
+  INPUT_HOSTNAME: ${{ inputs.hostname }}
+  INPUT_DEBUG: ${{ inputs.debug_mode }}
+```
+
+### Step-level env
+
+Available only within a single step:
+
+```yaml
+- name: Show step-level variable
+  env:
+    STEP_MESSAGE: "Step-level variable example"
+  run: |
+    echo "STEP_MESSAGE: $STEP_MESSAGE"
+```
+
+---
+
+## 3. Workflow Inputs
+
+Workflow inputs are parameters that users can set when triggering a workflow.
+Forgejo supports `string`, `number`, and `boolean` inputs.
+
+### Example input definition
+
+```yaml
+on:
+  workflow_dispatch:
+    inputs:
+      device_group:
+        description: "Device group to backup"
+        required: true
+        default: "all"
+        type: string
+      max_retries:
+        description: "Maximum number of retries"
+        required: false
+        default: 3
+        type: number
+      hostname:
+        description: "Hostname of the device"
+        required: false
+        default: "R1"
+        type: string
+      debug_mode:
+        description: "Enable debug logging"
+        required: false
+        default: true
+        type: boolean
+```
+
+### Accessing inputs in workflow
+
+Inputs can be accessed via `${{ github.event.inputs.INPUT_NAME }}` or mapped to **job-level environment variables**:
+
+```yaml
+env:
+  INPUT_DEVICE_GROUP: ${{ inputs.device_group }}
+  INPUT_MAX_RETRIES: ${{ inputs.max_retries }}
+  INPUT_HOSTNAME: ${{ inputs.hostname }}
+  INPUT_DEBUG: ${{ inputs.debug_mode }}
+```
+
+---
+
+## 4. Example Usage in a Step
+
+```yaml
+- name: Show inputs, secrets, and variables
+  env:
+    STEP_MESSAGE: "Step-level variable example"
+  run: |
+    echo "Device Group: $INPUT_DEVICE_GROUP"
+    echo "Max Retries: $INPUT_MAX_RETRIES"
+    echo "Hostname: $INPUT_HOSTNAME"
+    echo "Debug Mode: $INPUT_DEBUG"
+
+    echo "Normal Variable: $NORMAL_VARIABLE"
+
+    echo "Using DEVICE_USERNAME: $DEVICE_USERNAME"
+    echo "DEVICE_PASSWORD is masked"
+```
+
+---
+
+## 5. Key Points
+
+* **Secrets** are masked automatically and referenced via `${{ secrets.SECRET_NAME }}`.
+* **Environment variables** can be defined at workflow, job, or step level.
+* **Inputs** allow dynamic configuration when triggering a workflow; Forgejo supports `string`, `number`, and `boolean`.
+* Mapping inputs to **job-level env variables** simplifies usage in scripts.
+
+## 6. workflow Example
+.forgejo/workflows/vars_secrets_input.yaml
+name: BACKUP Demo Inputs, Secrets, Env
+
+on:
+  workflow_dispatch:
+    inputs:
+      device_group:
+        description: "Device group to backup"
+        required: true
+        default: "all"
+        type: string
+      max_retries:
+        description: "Maximum number of retries"
+        required: false
+        default: 3
+        type: number
+      hostname:
+        description: "Hostname of the device"
+        required: false
+        default: "R1"
+        type: string
+      debug_mode:
+        description: "Enable debug logging"
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  demo-vars-secrets-inputs:
+    runs-on: ubuntu-22.04
+
+    env:
+      DEVICE_USERNAME: ${{ secrets.DEVICE_USERNAME }}
+      DEVICE_PASSWORD: ${{ secrets.DEVICE_PASSWORD }}
+      NORMAL_VARIABLE: backup-process
+      INPUT_DEVICE_GROUP: ${{ inputs.device_group }}
+      INPUT_MAX_RETRIES: ${{ inputs.max_retries }}
+      INPUT_HOSTNAME: ${{ inputs.hostname }}
+      INPUT_DEBUG: ${{ inputs.debug_mode }}
+
+    steps:
+      - name: Show inputs, secrets, and variables
+        env:
+          STEP_MESSAGE: "Step-level variable example"
+        run: |
+          echo "=== WORKFLOW INPUTS ==="
+          echo "Device Group: $INPUT_DEVICE_GROUP"
+          echo "Max Retries: $INPUT_MAX_RETRIES"
+          echo "Hostname: $INPUT_HOSTNAME"
+          echo "Debug Mode: $INPUT_DEBUG"
+
+          echo "=== JOB-LEVEL VARIABLES ==="
+          echo "NORMAL_VARIABLE: $NORMAL_VARIABLE"
+
+          echo "=== STEP-LEVEL VARIABLE ==="
+          echo "STEP_MESSAGE: $STEP_MESSAGE"
+
+          echo "=== SECRETS (masked) ==="
+          echo "DEVICE_USERNAME: $DEVICE_USERNAME"
+          echo "DEVICE_PASSWORD: $DEVICE_PASSWORD"
+          echo "NOTE: Real secret values are hidden by Forgejo"
+
+      - name: Run Backup script (demo)
+        run: |
+          echo "Running backup for group: $INPUT_DEVICE_GROUP"
+          echo "Hostname: $INPUT_HOSTNAME"
+          echo "Max Retries: $INPUT_MAX_RETRIES"
+          echo "Debug Mode: $INPUT_DEBUG"
+          echo "Using DEVICE_USERNAME: $DEVICE_USERNAME"
+          echo "DEVICE_PASSWORD is masked"
+
