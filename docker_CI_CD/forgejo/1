@@ -145,7 +145,31 @@ env:
 * **Inputs** allow dynamic configuration when triggering a workflow; Forgejo supports `string`, `number`, and `boolean`.
 * Mapping inputs to **job-level env variables** simplifies usage in scripts.
 
-## 6. workflow Example
+---
+
+## 6. Using Environment Variables in Python Scripts
+
+You can access environment variables in Python using the `os` module:
+
+```python
+import os
+
+DEVICE_USERNAME = os.getenv("DEVICE_USERNAME")
+DEVICE_PASSWORD = os.getenv("DEVICE_PASSWORD")
+
+if not DEVICE_USERNAME or not DEVICE_PASSWORD:
+    raise ValueError(
+        "Environment variables DEVICE_USERNAME and DEVICE_PASSWORD must be set!"
+    )
+
+print(f"Connecting with user: {DEVICE_USERNAME}")
+```
+
+* `os.getenv("VAR_NAME")` retrieves the value of the environment variable.
+* Use this approach to securely read secrets or inputs mapped as environment variables.
+* Avoid printing secrets directly; only use them internally in your scripts.
+
+## 7. workflow Example
 .forgejo/workflows/vars_secrets_input.yaml
 name: BACKUP Demo Inputs, Secrets, Env
 
