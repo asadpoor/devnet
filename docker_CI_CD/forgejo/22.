@@ -56,6 +56,12 @@ WORKDIR /workspace
 # Default command (can be overridden by workflow run)
 CMD ["bash"]
 
+!!!!!!!!!!!!!!!!!! where workflow is running
+Forgejo runner
+    └─> docker:dind (IP 172.18.0.2)
+           └─> Ubuntu-22.04 job container (workflow steps run here)
+
+
 !!!!!!!!!!!!!!!!!! # .forgejo/workflows/build-image.yml
 name: build-image
 
