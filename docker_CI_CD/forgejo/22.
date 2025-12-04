@@ -1,18 +1,4 @@
 
-!!!!!!!!!!!!!!!!!! where workflow is running
-Forgejo runner
-    └─> docker:dind (IP 172.18.0.2)
-           └─> Ubuntu-22.04 job container (workflow steps run here)
-
-This Forgejo workflow automatically builds and publishes a Docker image for a network-automation project 
-whenever a version tag is pushed or the workflow is triggered manually. In network automation, packaging scripts, tools, 
-and dependencies into a Docker image ensures that automation jobs run in a stable, reproducible environment across different systems. 
-The workflow executes inside an Ubuntu container that has the Docker CLI but no Docker daemon, so it connects to a separate docker:dind 
-container (at 172.18.0.2) where the Docker daemon runs. 
-This setup allows the workflow to safely build and tag the image with both the version and latest, and push it to 
-a private Forgejo container registry, making the automation tools available as a consistent, deployable container for orchestration systems 
-and scheduled tasks.
-
 !!!!!!!!!!!!!!!!!! # .forgejo/workflows/build-image.yml
 name: build-image
 
@@ -70,6 +56,20 @@ jobs:
           docker push forgejo.rayka-co.com/${repo_lower}:${{ steps.extract_tag.outputs.tag }}
           docker push forgejo.rayka-co.com/${repo_lower}:latest
 
+!!!!!!!!!!!!!!!!!! where workflow is running
+Forgejo runner
+    └─> docker:dind (IP 172.18.0.2)
+           └─> Ubuntu-22.04 job container (workflow steps run here)
+
+This Forgejo workflow automatically builds and publishes a Docker image for a network-automation project 
+whenever a version tag is pushed or the workflow is triggered manually. In network automation, packaging scripts, tools, 
+and dependencies into a Docker image ensures that automation jobs run in a stable, reproducible environment across different systems. 
+The workflow executes inside an Ubuntu container that has the Docker CLI but no Docker daemon, so it connects to a separate docker:dind 
+container (at 172.18.0.2) where the Docker daemon runs. 
+This setup allows the workflow to safely build and tag the image with both the version and latest, and push it to 
+a private Forgejo container registry, making the automation tools available as a consistent, deployable container for orchestration systems 
+and scheduled tasks.
+
 !!!!!!!!!!!!!!!!!! # How to create a tag in the Forgejo GUI
 Open your repository in Forgejo.
 In the top navigation, click on Releases (sometimes under Code → Releases).
@@ -103,8 +103,6 @@ Click on the package name (e.g. backup).
 On the package detail page, look for an “Link to repository” or “Manage repository links” option.
 Select your repo (backup) and save.
 After that, the package will appear under the repo’s Packages tab.
-
-
 
 
 !!!!!!!!!!!!!!!!!! forrgejo-runner #docker-compose.yml
