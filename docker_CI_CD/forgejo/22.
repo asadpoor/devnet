@@ -98,7 +98,7 @@ jobs:
         env:
           repository: ${{ github.repository }}
         run: |
-          export DOCKER_HOST=tcp://172.18.0.2:2375 # docker:dind
+          export DOCKER_HOST=tcp://172.18.0.2:2375 # docker:dind # 172.18.0.2 is docker:dind
           repo_lower=$(echo "${repository}" | tr '[:upper:]' '[:lower:]')
           docker build --network=host . \
             -t forgejo.rayka-co.com/${repo_lower}:${{ steps.extract_tag.outputs.tag }} \
