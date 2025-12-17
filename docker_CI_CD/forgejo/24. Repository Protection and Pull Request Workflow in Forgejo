@@ -1,0 +1,10 @@
+!!!!!!!!!!!!!!!!!! Configure Branch Protection !!!!!!!!!!!!!!!!!!
+Navigate to the repository → Settings → Branches → Branch Protection.
+Create a branch protection rule for main:
+Disable push → prevents direct pushes.
+Require pull request approvals → at least 1 approval.
+
+
+!!!!!!!!!!!!!!!!!! Pull Request Workflow !!!!!!!!!!!!!!!!!!
+Any changes in the repository must be made in a new branch as a pull request. 
+Changes must be reviewed and approved before merging into the main branch
