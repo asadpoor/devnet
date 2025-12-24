@@ -30,6 +30,20 @@ jobs:
     steps:
       - name: Print a message
         run: echo "Hello from self-hosted runner!"
+# .github/workflows/workflow1.yml
+name: workflow 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Print a message
+        run: |
+          echo "Hello from self-hosted runner!"
+          sleep 77
 
 # .github/workflows/workflow2.yml
 name: workflow 2
