@@ -1,0 +1,147 @@
+
+!!!!!!!!!! GitHub self-hosted runner !!!!!!!!!!
+# add new runner
+GitHub repository --> Click Settings --> Actions --> Runners --> New self-hosted runner
+
+# Create a folder
+$ mkdir actions-runner && cd actions-runner# Download the latest runner package
+$ curl -o actions-runner-linux-x64-2.330.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.330.0/actions-runner-linux-x64-2.330.0.tar.gz# Optional: Validate the hash
+$ echo "af5c33fa94f3cc33b8e97937939136a6b04197e6dadfcfb3b6e33ae1bf41e79a  actions-runner-linux-x64-2.330.0.tar.gz" | shasum -a 256 -c# Extract the installer
+$ tar xzf ./actions-runner-linux-x64-2.330.0.tar.gz
+
+# Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/asadpoor/test --token AOQPS6O4DQZN3ZFIJAO7CJ3JJQBYW# Last step, run it!
+$ ./run.sh
+
+# Use this YAML in your workflow file for each job
+runs-on: self-hosted
+
+
+!!!!!!!!!! GitHub workflow example !!!!!!!!!!
+# .github/workflows/test-runner.yml
+name: Test Self-Hosted Runner
+
+on:
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Print a message
+        run: echo "Hello from self-hosted runner!"
+
+# .github/workflows/workflow2.yml
+name: workflow 2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: self-hosted
+    container:
+      image: ghcr.io/catthehacker/ubuntu:act-22.04
+    steps:
+      - name: Run simple process
+        run: |
+          echo "Hello from self-hosted runner!"
+          sleep 109
+
+
+# add secret
+GitHub repository --> Click Settings -->  Actions secrets and variables -->  New repository secret
+
+# .github/workflows/run-first-python-script.yml
+name: Run Python Script on Self-Hosted Runner
+
+on:
+#  push:
+#    branches:
+#      - main
+  workflow_dispatch:  # Allow manual trigger from GitHub Actions UI
+
+jobs:
+  run-python-script:
+    runs-on: self-hosted  # This specifies that the job runs on your self-hosted runner
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Create a virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+    
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Install any dependencies from your repo
+
+      - name: Run Python script
+        env:
+          TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+        run: |
+          python get_config_with_restconf.py
+
+# requirements.txt
+PyYAML
+requests
+nornir
+rich
+
+# get_config_with_restconf.py
+import json
+import yaml
+import requests
+import os
+from nornir import InitNornir
+from rich import print as rprint
+
+requests.packages.urllib3.disable_warnings()
+
+# Initialize Nornir with the configuration file
+nr = InitNornir(config_file="config.yaml")
+
+# Load environment variables for username and password
+username = os.getenv('TEST_USERNAME')
+password = os.getenv('TEST_PASSWORD')
+
+if not username or not password:
+    raise ValueError("Username or password environment variable not set.")
+
+headers = {"Accept": "application/yang-data+json"}
+
+def restconf_get_config(task):
+    # Ensure the username and password are set from environment variables
+    task.host.username = username
+    task.host.password = password
+
+    url = f"https://{task.host.hostname}:443/restconf/data/Cisco-IOS-XE-native:native"
+    response = requests.get(url=url, headers=headers, auth=(task.host.username, task.host.password), verify=False)
+
+    if response.status_code == 200:
+        task.host["data"] = response.json()
+        result = task.host["data"]
+
+        # Convert JSON to YAML
+        yaml_data = yaml.dump(result, default_flow_style=False, sort_keys=False)
+
+        # Save YAML to a file named after the device
+        filename = f"host_vars/{task.host.name}.yaml"
+        with open(filename, "w") as yaml_file:
+            yaml_file.write(yaml_data)
+
+        rprint(f"Configuration saved to {filename}")
+    else:
+        rprint(f"Failed to retrieve config from {task.host.hostname}. Status code: {response.status_code}")
+
+# Run the task across all hosts in the inventory
+nr.run(task=restconf_get_config)
